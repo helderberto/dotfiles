@@ -11,21 +11,15 @@ source brew.sh
 source brew-cask.sh
 source mac-app-store.sh
 
-# Removes Workspace, .zshrc, .bash_profile, .gitconfig from $HOME (if it exists)
-rm -rf $HOME/Workspace $HOME/.zshrc $HOME/.bash_profile $HOME/.gitconfig
+# Remove Workspace
+rm -rf $HOME/Workspace
 
 # Create a Workspace directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Workspace
 mkdir $HOME/Workspace/labs
 
-# Removes .zshrc, .bash_profile, .gitconfig from $HOME (if it exists)
-rm -rf $HOME/.zshrc $HOME/.bash_profile $HOME/.gitconfig
-
-# Create symlinks from .zshrc, .bash_profile, .gitconfig files
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/.dotfiles/.bash_profile ~/.bash_profile
-ln -s $HOME/.dotfiles/.gitconfig ~/.gitconfig
+source symlink.sh
 
 # Install configurations from zsh
 source $HOME/.zshrc

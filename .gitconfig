@@ -22,7 +22,7 @@
 	d = difftool
 	reup = rebase-update
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 	precomposeUnicode = true
 [rebase]
