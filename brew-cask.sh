@@ -30,3 +30,4 @@ brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 brew cask install font-open-sans
 brew cask install font-roboto
+brew cask install font-hack-nerd-font
