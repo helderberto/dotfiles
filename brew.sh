@@ -28,7 +28,7 @@ brew install tree
 brew install zsh
 brew install antigen
 brew install node
-brew install yarn --ignore-dependencies
+brew install yarn
 
 # Remove outdated versions from the cellar
 brew cleanup
