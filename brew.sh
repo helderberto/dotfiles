@@ -20,13 +20,6 @@ brew install gnu-sed --with-default-names
 brew tap homebrew/bundle
 brew bundle
 
-# Install more recent versions of some OS X tools
-brew install vim --with-override-system-vi
-brew install homebrew/dupes/nano
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-
 # z hopping around folders
 brew install z
 
