@@ -5,7 +5,7 @@
 
 # Install native apps
 
-brew install caskroom/cask/brew-cask
+brew install homebrew/cask
 # brew tap caskroom/versions
 
 # productivity
