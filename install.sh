@@ -18,6 +18,9 @@ rm -rf $HOME/.zshrc
 # Create symlinks the .zshrc file from the .dotfiles
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
+# Create symbolic link from .gitconfig
+ln -s $HOME/.dotfiles/.gitconfig ~/.gitconfig
+
 # Set macOS preferences
 # We will run this last because this will reload the shell
 source .macos
