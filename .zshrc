@@ -18,9 +18,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Theme
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-POWERLEVEL9K_MODE='nerd-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
 antigen theme bhilburn/powerlevel9k powerlevel9k
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
