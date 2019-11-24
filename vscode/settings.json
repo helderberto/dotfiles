@@ -1,0 +1,43 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "workbench.welcome.enabled": false,
+  "editor.renderWhitespace": "all",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "window.zoomLevel": 1,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.colorTheme": "Dracula",
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": true,
+  "editor.minimap.enabled": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "postcss": "css"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "php.suggest.basic": false,
+  "files.associations": {
+    "*.php": [
+      "php",
+      "html"
+    ],
+    "*.css": "postcss"
+  },
+  "files.eol": "\n",
+  "editor.renderIndentGuides": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "explorer.confirmDelete": false,
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+  "editor.fontFamily": "Hack",
+  "editor.trimAutoWhitespace": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.fontSize": 11,
+  "editor.formatOnSave": false,
+  "eslint.autoFixOnSave": true,
+  "workbench.iconTheme": "material-icon-theme",
+}
