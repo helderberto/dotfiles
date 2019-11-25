@@ -1,8 +1,12 @@
+[user]
+	name = Helder Burato Berto
+	email = helder.burato@gmail.com
 [alias]
 	c = commit -am
 	co = checkout
 	br = branch
 	fpush = push --force
+	pu = push
 	s = status
 	sclone = clone --depth=1
 	amend = commit --amend --all
@@ -14,27 +18,16 @@
 	cherrypick = cherry-pick
 	cherry = cherry-pick
 	cp = cherry-pick
-
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-	reup = rebase-update # depot_tools specific
-	g = !exec git
-
-[user]
-	name = Helder Burato Berto
-	email = helder.burato@gmail.com
-
+	last = log -1 --stat
+	d = difftool
+	reup = rebase-update
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 	precomposeUnicode = true
-
 [rebase]
 	autosquash = true
-
 [push]
 	default = current
-
 [pull]
 	default = current
