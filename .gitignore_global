@@ -4,8 +4,6 @@ npm-debug.log
 node_modules
 .nyc_output
 .env
-*.sublime-project
-*.sublime-workspace
 yarn-*.log
 .vscode
 jsconfig.json
