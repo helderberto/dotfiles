@@ -42,9 +42,11 @@ function disable_recent_apps_from_dock {
     defaults write com.apple.dock show-recents -bool false
 }
 
+function enable_recent_apps_from_dock {
+    defaults write com.apple.dock show-recents -bool true
+}
 
 function reset_dock {
-  # reset macOS Dock to default settings
-
-  defaults write com.apple.dock; killall Dock
+  	defaults delete com.apple.dock
+    killall Dock
 }
