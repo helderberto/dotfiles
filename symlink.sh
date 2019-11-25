@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=$HOME/.dotfiles
+DOTFILE_DIR=$HOME/.dotfiles
 
 DOTFILES=(
 	".zshrc"
@@ -9,6 +9,9 @@ DOTFILES=(
 )
 
 for dotfile in "${DOTFILES[@]}";do
+	echo "🗑 Deleting dotfile: $HOME/${dotfile}"
 	rm -rf "$HOME/${dotfile}"
-	ln -sf "${DIR}/${dotfile}" "$HOME/${dotfile}"
+
+	echo "🔗 Linking dotfile: ${DOTFILE_DIR}/${dotfile} to $HOME/${dotfile}"
+	ln -sf "${DOTFILE_DIR}/${dotfile}" "$HOME/${dotfile}"
 done
