@@ -2,25 +2,24 @@
 	name = Helder Burato Berto
 	email = helder.burato@gmail.com
 [alias]
-	c = commit -am
-	co = checkout
-	br = branch
+	ci = commit -m
 	fpush = push --force
 	pu = push
-	s = status
 	sclone = clone --depth=1
 	amend = commit --amend --all
 	undocommit = reset HEAD~
 	hreset = reset --hard
 	co = checkout
 	df = diff --color --color-words --abbrev
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	cherrypick = cherry-pick
 	cherry = cherry-pick
 	cp = cherry-pick
 	last = log -1 --stat
 	d = difftool
 	reup = rebase-update
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+	br = branch
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
