@@ -34,10 +34,11 @@
     "postcss": "css"
   },
   "editor.fontFamily": "Hack",
+  "editor.fontLigatures": true,
   "editor.trimAutoWhitespace": false,
   "files.trimTrailingWhitespace": true,
   "editor.fontSize": 11,
-  "editor.formatOnSave": false,
-  "eslint.autoFixOnSave": true,
   "workbench.iconTheme": "material-icon-theme",
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true
 }
