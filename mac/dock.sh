@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./dock-fns.sh
+source ./mac/dock-fns.sh
 
 # WARNING: permanently clears existing dock
 clear_dock
