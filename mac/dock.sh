@@ -11,8 +11,10 @@ add_app_to_dock "Activity Monitor"
 add_app_to_dock "Google Chrome"
 add_app_to_dock "Visual Studio Code"
 add_app_to_dock "iTerm"
+add_app_to_dock "Todoist"
+add_app_to_dock "Bear"
 add_app_to_dock "Slack"
+add_app_to_dock "Spotify"
 add_app_to_dock "Insomnia"
-add_app_to_dock "Figma"
 
 killall Dock
