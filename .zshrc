@@ -31,6 +31,7 @@ fi
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
 antigen theme bhilburn/powerlevel9k powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
+TERM=xterm-256color
 
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
