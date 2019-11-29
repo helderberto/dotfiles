@@ -9,6 +9,11 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
+# vim
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 # workspace
 export WS="$HOME/Workspace"
 alias ws="cd $WS"
