@@ -41,7 +41,7 @@ antigen theme bhilburn/powerlevel9k powerlevel9k
 source $ZSH/oh-my-zsh.sh
 
 # Editor
-export EDITOR='vim'
+export EDITOR='nvim'
 
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
