@@ -38,7 +38,6 @@
   "editor.trimAutoWhitespace": false,
   "files.trimTrailingWhitespace": true,
   "editor.fontSize": 11,
-  "workbench.iconTheme": "material-icon-theme",
   "editor.formatOnSave": true,
   "eslint.autoFixOnSave": true
 }
