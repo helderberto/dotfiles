@@ -16,9 +16,8 @@ antigen bundle zsh-users/zsh-completions
 export ZSH=~/.oh-my-zsh
 
 # Theme
-ZSH_THEME=""
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+ZSH_THEME=''
+antigen theme romkatv/powerlevel10k
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,3 +35,6 @@ antigen apply
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
