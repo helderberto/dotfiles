@@ -4,7 +4,6 @@ DOTFILE_DIR=$HOME/.dotfiles
 
 DOTFILES=(
 	".zshrc"
-	".p10k.zsh"
 	".bash_profile"
 	".gitconfig"
 )
