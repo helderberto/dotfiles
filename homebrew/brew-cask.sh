@@ -28,7 +28,6 @@ brew cask install slack
 
 # fonts
 brew tap homebrew/cask-fonts
-brew cask install font-font-meslo-lg
 brew cask install font-hack
 brew cask install font-open-sans
 brew cask install font-roboto
