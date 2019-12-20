@@ -14,7 +14,7 @@ brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
