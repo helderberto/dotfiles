@@ -10,7 +10,7 @@ Set zsh as your login shell:
 sudo chsh -s $(which zsh) <your-username>
 ```
 
-### Setting up your Mac
+## Setting up your Mac
 
 - Update macOS to the latest version with the App Store;
 - Install Xcode from the App Store, open it and accept the license agreement;
@@ -28,12 +28,6 @@ git clone git://github.com/helderburato/dotfiles.git ~/.dotfiles
 
 ```bash
 sh ~/.dotfiles/install.sh
-```
-
-**Run installer:**
-
-```bash
-./install.sh
 ```
 
 Restart your computer and enjoy your new configuration.! ✌🏻
