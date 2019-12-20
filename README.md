@@ -32,9 +32,10 @@ sh ~/.dotfiles/install.sh
 
 Restart your computer and enjoy your new configuration.! ✌🏻
 
-## Inspired by the projects
+## Inspiration
 
 - [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles);
+- [Cătălin Mariș dotfiles](https://github.com/alrra/dotfiles);
 - [Paul's dotfiles](https://github.com/paulirish/dotfiles);
 - [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles);
 - [Dries's Dotfiles](https://github.com/driesvints/dotfiles);
