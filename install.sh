@@ -11,6 +11,10 @@ if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+if test ! $(which zsh); then
+	curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh
+fi
+
 echo "📲 Installing homebrew/app store packages..."
 source ./homebrew/brew.sh
 source ./homebrew/brew-cask.sh
