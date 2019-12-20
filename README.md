@@ -1,6 +1,6 @@
 # ⚙️ Helder's Dotfiles
 
-> My OS X setup and migration files, quickly start!
+My base settings for when I start in a new environment.
 
 ## Requirements
 
