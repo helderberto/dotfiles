@@ -16,5 +16,6 @@ add_app_to_dock "Bear"
 add_app_to_dock "Slack"
 add_app_to_dock "Spotify"
 add_app_to_dock "Insomnia"
+add_folder_to_dock $HOME/Downloads -d 0 -s 2 -v 1
 
 killall Dock
