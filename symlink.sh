@@ -3,15 +3,12 @@
 DOTFILE_DIR=$HOME/.dotfiles
 
 DOTFILES=(
-	".zshrc"
-	".bash_profile"
-	".gitconfig"
+	"zsh"
+	"bash"
+	"git"
 )
 
 for dotfile in "${DOTFILES[@]}";do
-	echo "🗑 Deleting dotfile: $HOME/${dotfile}"
-	rm -rf "$HOME/${dotfile}"
-
-	echo "🔗 Linking dotfile: ${DOTFILE_DIR}/${dotfile} to $HOME/${dotfile}"
-	ln -sf "${DOTFILE_DIR}/${dotfile}" "$HOME/${dotfile}"
+	echo "🔗 Linking dotfile: $HOME/.${dotfile}"
+	stow $dotfile
 done

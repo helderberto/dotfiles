@@ -5,9 +5,6 @@
 
 # Install native apps
 
-brew install homebrew/cask
-# brew tap caskroom/versions
-
 # productivity
 brew cask install 1password
 brew cask install google-chrome
