@@ -43,12 +43,12 @@ fi
 
 echo "📲 Installing homebrew/app store packages..."
 sh ./homebrew/brew.sh
-sh ./homebrew/brew-cask.sh
-sh ./mac/app-store.sh
+sh ./homebrew/brew_cask.sh
+sh ./mac/app_store.sh
 echo "✅ Successful installed packages"
 
 echo "📁 Creating workspaces directories..."
-sh ./mac/create-workspace.sh
+sh ./mac/create_workspace.sh
 echo "✅ Successful created workspaces"
 
 echo "🔗 Linking configuration files..."
@@ -62,7 +62,7 @@ echo "✅ Successful configured iTerm2 and zsh"
 
 # Add default apps to Dock
 echo "🖥 Setting apps to Mac dock..."
-sh ./mac/dock.sh
+sh ./mac/setup_dock.sh
 echo "✅ Successful set apps to Mac dock"
 
 echo "⚡️ All right! Restart your machine to complete the configuration."
