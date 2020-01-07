@@ -47,16 +47,8 @@ sh ./homebrew/brew-cask.sh
 sh ./mac/app-store.sh
 echo "✅ Successful installed packages"
 
-echo "🧹 Cleanup workspaces..."
-# Remove Workspace
-rm -rf $HOME/Workspace
-echo "✅ Successful cleanup workspaces"
-
-echo "📁 Creating workspaces dirs..."
-# Create a Workspace directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
-mkdir $HOME/Workspace
-mkdir $HOME/Workspace/labs
+echo "📁 Creating workspaces directories..."
+sh ./mac/create-workspace.sh
 echo "✅ Successful created workspaces"
 
 echo "🔗 Linking configuration files..."
