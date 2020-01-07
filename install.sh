@@ -48,11 +48,11 @@ sh ./mac/app_store.sh
 echo "✅ Successful installed packages"
 
 echo "📁 Creating workspaces directories..."
-sh ./mac/create_workspace.sh
+sh ./mac/tasks/create_workspace.sh
 echo "✅ Successful created workspaces"
 
 echo "🔗 Linking configuration files..."
-sh ./symlink.sh
+sh ./mac/tasks/symlink.sh
 echo "✅ Successful linked configuration files"
 
 # Install configurations from zsh
