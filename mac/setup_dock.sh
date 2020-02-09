@@ -6,8 +6,6 @@ source ./mac/dock_utils.sh
 clear_dock
 disable_recent_apps_from_dock
 
-add_app_to_dock "System Preferences"
-add_app_to_dock "Activity Monitor"
 add_app_to_dock "Google Chrome"
 add_app_to_dock "Visual Studio Code"
 add_app_to_dock "iTerm"
