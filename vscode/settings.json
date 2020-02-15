@@ -39,7 +39,11 @@
   "files.trimTrailingWhitespace": true,
   "editor.fontSize": 11,
   "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+  },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   }
 }
