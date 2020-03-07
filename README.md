@@ -4,10 +4,10 @@ My base settings for when I start in a new environment.
 
 ## Requirements
 
-Set zsh as your login shell:
+Set zsh as your default shell:
 
 ```bash
-sudo chsh -s $(which zsh) <your-username>
+sudo chsh -s $(which zsh)
 ```
 
 ## Setting up your Mac
