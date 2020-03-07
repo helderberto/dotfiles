@@ -23,10 +23,9 @@ brew bundle
 # z hopping around folders
 brew install z
 
+brew install antigen
 brew install git
 brew install tree
-brew install zsh
-brew install antigen
 brew install node
 brew install yarn
 brew install mas
