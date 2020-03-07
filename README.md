@@ -14,7 +14,7 @@ sudo chsh -s $(which zsh)
 
 - Update macOS to the latest version with the App Store;
 - Install Xcode from the App Store, open it and accept the license agreement;
-- Copy your public and private SSH keys to `~/.ssh` and make sure they're set to chmod `600`;
+- Copy your public and private SSH keys to `~/.ssh` and make sure they're set `chmod 700 ~/.ssh`;
 
 ## Installation
 
