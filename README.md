@@ -32,6 +32,10 @@ sh ~/.dotfiles/install.sh
 
 Restart your computer and enjoy your new configuration.! ✌🏻
 
+## Troubleshoot
+
+- If you get any problems with `antigen`, try `rm -rf ~/.antigen` after complete, close your terminal and open again to reinstall the packages from antigen.
+
 ## Inspiration
 
 - [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles);
