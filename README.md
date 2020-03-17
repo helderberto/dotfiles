@@ -4,17 +4,17 @@ My base settings for when I start in a new environment.
 
 ## Requirements
 
-Set zsh as your login shell:
+Set zsh as your default shell:
 
 ```bash
-sudo chsh -s $(which zsh) <your-username>
+sudo chsh -s $(which zsh)
 ```
 
 ## Setting up your Mac
 
 - Update macOS to the latest version with the App Store;
 - Install Xcode from the App Store, open it and accept the license agreement;
-- Copy your public and private SSH keys to `~/.ssh` and make sure they're set to chmod `600`;
+- Copy your public and private SSH keys to `~/.ssh` and make sure they're set `chmod 700 ~/.ssh`;
 
 ## Installation
 
@@ -31,6 +31,10 @@ sh ~/.dotfiles/install.sh
 ```
 
 Restart your computer and enjoy your new configuration.! ✌🏻
+
+## Troubleshoot
+
+- If you get any problems with `antigen`, try `rm -rf ~/.antigen` after complete, close your terminal and open again to reinstall the packages from antigen.
 
 ## Inspiration
 
