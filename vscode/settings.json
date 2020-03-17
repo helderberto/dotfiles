@@ -1,47 +1,26 @@
 {
-  "editor.tabSize": 2,
-  "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
   "workbench.welcome.enabled": false,
-  "editor.renderWhitespace": "all",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "window.zoomLevel": 1,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.colorTheme": "Dracula",
-  "editor.wordWrap": "on",
-  "editor.wordWrapColumn": 80,
-  "workbench.statusBar.visible": true,
-  "workbench.activityBar.visible": true,
-  "editor.minimap.enabled": false,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "postcss": "css"
-  },
-  "explorer.confirmDragAndDrop": false,
-  "php.suggest.basic": false,
+  "files.eol": "\n",
   "files.associations": {
-    "*.php": [
-      "php",
-      "html"
-    ],
     "*.css": "postcss"
   },
-  "files.eol": "\n",
-  "editor.renderIndentGuides": false,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "explorer.confirmDelete": false,
-  "emmet.syntaxProfiles": {
-    "postcss": "css"
-  },
+  "editor.renderWhitespace": "all",
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
   "editor.fontFamily": "Hack",
-  "editor.fontLigatures": true,
-  "editor.trimAutoWhitespace": false,
-  "files.trimTrailingWhitespace": true,
-  "editor.fontSize": 11,
+  "editor.fontSize": 12,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll": true,
     "source.fixAll.stylelint": true
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
   }
 }
