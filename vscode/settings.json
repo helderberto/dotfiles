@@ -9,8 +9,8 @@
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
   "editor.fontFamily": "Hack",
-  "editor.fontSize": 12,
   "editor.formatOnSave": false,
+  "editor.fontSize": 12,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll": true,
@@ -22,5 +22,6 @@
   },
   "emmet.syntaxProfiles": {
     "postcss": "css"
-  }
+  },
+  "window.zoomLevel": 1
 }
