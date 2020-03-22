@@ -1,27 +1,24 @@
 {
   "workbench.welcome.enabled": false,
   "workbench.colorTheme": "Dracula",
-  "files.eol": "\n",
-  "files.associations": {
-    "*.css": "postcss"
-  },
-  "editor.renderWhitespace": "all",
-  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.renderLineHighlight": "gutter",
   "editor.minimap.enabled": false,
   "editor.fontFamily": "Hack",
-  "editor.formatOnSave": false,
   "editor.fontSize": 12,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.renderWhitespace": "all",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.eslint": true
   },
+  "prettier.trailingComma": "all",
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "postcss": "css"
+    "javascript": "javascriptreact"
   },
-  "emmet.syntaxProfiles": {
-    "postcss": "css"
-  },
-  "window.zoomLevel": 1
+  "emmet.triggerExpansionOnTab": true,
+  "window.zoomLevel": 1,
+  "files.insertFinalNewline": true
 }
