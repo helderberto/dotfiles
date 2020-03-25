@@ -11,8 +11,12 @@
     120
   ],
   "editor.renderWhitespace": "all",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
   },
   "prettier.trailingComma": "all",
   "emmet.includeLanguages": {
@@ -20,5 +24,8 @@
   },
   "emmet.triggerExpansionOnTab": true,
   "window.zoomLevel": 1,
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enable": "always",
+  "explorer.confirmDragAndDrop": false
 }
