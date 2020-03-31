@@ -3,6 +3,7 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension dracula-theme.theme-dracula
 code --install-extension EditorConfig.EditorConfig
 code --install-extension esbenp.prettier-vscode
+code --install-extension jpoissonnier.vscode-styled-components
 code --install-extension ms-vscode.Go
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension pnp.polacode
