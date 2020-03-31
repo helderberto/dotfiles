@@ -6,19 +6,14 @@
   "editor.minimap.enabled": false,
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "editor.renderWhitespace": "all",
-  "editor.formatOnSave": false,
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    }
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.trailingComma": "all",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
@@ -26,6 +21,6 @@
   "window.zoomLevel": 1,
   "files.insertFinalNewline": true,
   "explorer.confirmDelete": false,
-  "javascript.updateImportsOnFileMove.enable": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDragAndDrop": false
 }
