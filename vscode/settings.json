@@ -8,11 +8,15 @@
   "editor.fontSize": 12,
   "editor.rulers": [80, 120],
   "editor.renderWhitespace": "all",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.trailingComma": "all",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.fixAll.stylelint": true
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
