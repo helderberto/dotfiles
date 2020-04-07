@@ -6,20 +6,22 @@
   "editor.minimap.enabled": false,
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "editor.renderWhitespace": "all",
   "prettier.trailingComma": "all",
-  "editor.formatOnSave": false,
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.tslint": true,
     "source.fixAll.stylelint": true
   },
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
   },
   "emmet.triggerExpansionOnTab": true,
   "window.zoomLevel": 1,
