@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./mac/dock_utils.sh
+source ./dock_utils.sh
 
 # WARNING: permanently clears existing dock
 clear_dock
@@ -14,6 +14,7 @@ add_app_to_dock "Bear"
 add_app_to_dock "Slack"
 add_app_to_dock "MindNode"
 add_app_to_dock "Spotify"
+add_app_to_dock "DevDocs"
 add_folder_to_dock $HOME/Downloads -d 0 -s 2 -v 1
 
 killall Dock
