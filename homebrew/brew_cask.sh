@@ -9,6 +9,7 @@
 brew cask install 1password
 brew cask install google-chrome
 brew cask install spotify
+brew cask install pomodone
 
 # dev
 brew cask install iterm2
