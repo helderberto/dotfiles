@@ -11,13 +11,15 @@
     120
   ],
   "editor.renderWhitespace": "all",
-  "prettier.trailingComma": "all",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.tslint": true,
     "source.fixAll.stylelint": true
   },
   "editor.formatOnSave": true,
+  "[html]": {
+    "editor.formatOnSave": false
+  },
   "[javascript]": {
     "editor.formatOnSave": false
   },
@@ -38,6 +40,5 @@
   "window.zoomLevel": 1,
   "files.insertFinalNewline": true,
   "explorer.confirmDelete": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDragAndDrop": false
 }
