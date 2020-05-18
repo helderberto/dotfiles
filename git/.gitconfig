@@ -3,23 +3,23 @@
 	email = helder.burato@gmail.com
 [alias]
 	ci = commit -m
-	fpush = push --force
+  ca = commit add --all && git commit -m
+	a  = commit --amend
+	am = commit --amend --all
+	s  = status
+	pf = push --force
 	pu = push
-	sclone = clone --depth=1
-	amend = commit --amend --all
-	undocommit = reset HEAD~
-	hreset = reset --hard
+	l  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lc = log -1 --stat
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	uc = reset HEAD~
+	rh = reset --hard
 	co = checkout
 	df = diff --color --color-words --abbrev
-	cherrypick = cherry-pick
-	cherry = cherry-pick
 	cp = cherry-pick
-	last = log -1 --stat
-	d = difftool
-	reup = rebase-update
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	st = status
-	br = branch
+	d  = difftool
+	ru = rebase-update
+	b  = branch
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
