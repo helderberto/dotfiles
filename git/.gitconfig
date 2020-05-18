@@ -3,10 +3,9 @@
 	email = helder.burato@gmail.com
 [alias]
 	ci = commit -m
-	ca = commit -a -m
-	a  = commit --amend
-	am = commit --amend --all
-	s  = status
+	ca = !git add -A . && git commit -m
+	a  = commit --amend -m
+	st  = status
 	pf = push --force
 	pu = push
 	l  = log --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
