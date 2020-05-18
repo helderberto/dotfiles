@@ -3,7 +3,7 @@
 	email = helder.burato@gmail.com
 [alias]
 	ci = commit -m
-  ca = commit add --all && git commit -m
+	ca = commit -a -m
 	a  = commit --amend
 	am = commit --amend --all
 	s  = status
