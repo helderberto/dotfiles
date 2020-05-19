@@ -2,9 +2,10 @@
 	name = Helder Burato Berto
 	email = helder.burato@gmail.com
 [alias]
-	ci = commit -m
+	c = commit -m
 	ca = !git add -A . && git commit -m
-	a  = commit --amend -m
+	am  = commit --amend
+	an  = commit --amend --no-edit
 	st  = status
 	pf = push --force
 	pu = push
