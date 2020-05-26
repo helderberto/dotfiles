@@ -4,12 +4,9 @@
   "editor.tabSize": 2,
   "editor.renderLineHighlight": "gutter",
   "editor.minimap.enabled": false,
-  "editor.fontFamily": "Hack",
-  "editor.fontSize": 12,
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80, 120],
   "editor.renderWhitespace": "all",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
@@ -37,8 +34,9 @@
     "typescript": "typescriptreact"
   },
   "emmet.triggerExpansionOnTab": true,
-  "window.zoomLevel": 1,
   "files.insertFinalNewline": true,
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 0,
+  "editor.fontSize": 13
 }
