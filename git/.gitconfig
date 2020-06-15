@@ -2,7 +2,7 @@
 	name = Helder Burato Berto
 	email = helder.burato@gmail.com
 [alias]
-	c = commit -m
+	ci = commit -m
 	ca = !git add -A . && git commit -m
 	am  = commit --amend
 	an  = commit --amend --no-edit
@@ -18,8 +18,7 @@
 	df = diff --color --color-words --abbrev
 	cp = cherry-pick
 	d  = difftool
-	ru = rebase-update
-	b  = branch
+	br  = branch
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
@@ -30,3 +29,4 @@
 	default = current
 [pull]
 	default = current
+  rebase = true
