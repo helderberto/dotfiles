@@ -19,6 +19,9 @@
 	cp = cherry-pick
 	d  = difftool
 	br  = branch
+  pom = pull origin master
+  pod = pull origin dev
+  pos = pull origin staging
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
