@@ -1,20 +1,24 @@
 ## Git Aliases
 
+- **git an:** Commit amend without edit message;
+- **git am:** Commit amend last commit;
+- **git br:** List local branchs;
 - **git c:** Commit with message;
 - **git ca:** Add all to stage and commit with message;
 - **git co:** Checkout;
-- **git st:** Show status of files;
-- **git p:** Push to remotely branch;
-- **git pf:** Push force to remotely branch;
-- **git am:** Commit amend last commit;
-- **git an:** Commit amend without edit message;
-- **git uc:** Undo last commit;
-- **git rh:** Reset hard;
-- **git df:** Difference with colors and abbreviation;
 - **git cp:** Cherry-pick;
-- **git lc:** Log last commit;
 - **git d:** Difftool;
-- **git ru:** Rebase update;
+- **git df:** Difference with colors and abbreviation;
+- **git uc:** Undo last commit;
 - **git l:** Simple log;
 - **git lg:** Log with trees;
-- **git b:** List local branchs;
+- **git lc:** Log last commit;
+- **git pf:** Push force to remotely branch;
+- **git pu:** Push to remotely branch;
+- **git po:** Pull from origin;
+- **git pod:** Pull from origin dev;
+- **git pom:** Pull from origin master;
+- **git pos:** Pull from origin staging;
+- **git rh:** Reset hard;
+- **git ru:** Rebase update;
+- **git st:** Show status of files;
