@@ -6,6 +6,7 @@
 	ca = !git add -A . && git commit -m
 	am  = commit --amend
 	an  = commit --amend --no-edit
+  ap  = !git add -A . -p
 	st  = status
 	pf = push --force
 	pu = push
