@@ -1,7 +1,8 @@
 ## Git Aliases
 
-- **git an:** Commit amend without edit message;
 - **git am:** Commit amend last commit;
+- **git an:** Commit amend without edit message;
+- **git ap:** Add all from stage and check modified lines;
 - **git br:** List local branchs;
 - **git c:** Commit with message;
 - **git ca:** Add all to stage and commit with message;
