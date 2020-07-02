@@ -11,7 +11,6 @@ add_app_to_dock "Visual Studio Code"
 add_app_to_dock "iTerm"
 add_app_to_dock "Todoist"
 add_app_to_dock "Bear"
-add_app_to_dock "Notion"
 add_app_to_dock "Slack"
 add_app_to_dock "Spotify"
 add_folder_to_dock $HOME/Downloads -d 0 -s 2 -v 1
