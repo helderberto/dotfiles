@@ -31,6 +31,7 @@ brew install yarn
 brew install mas
 brew install neovim
 brew install stow
+brew install tldr
 
 # Remove outdated versions from the cellar
 brew cleanup
