@@ -8,7 +8,7 @@ export TERM="xterm-256color"
 antigen bundle git
 antigen bundle brew
 antigen bundle command-not-found
-# antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle mafredri/zsh-async
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle mengelbrecht/slimline
