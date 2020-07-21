@@ -5,12 +5,6 @@ antigen use oh-my-zsh
 export TERM="xterm-256color"
 
 # Plugins
-antigen bundle git
-antigen bundle brew
-antigen bundle command-not-found
-antigen bundle mafredri/zsh-async
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
 antigen bundle mengelbrecht/slimline
 
 # Path to your oh-my-zsh installation.
