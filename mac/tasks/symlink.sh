@@ -5,7 +5,9 @@ DOTFILE_DIR=$HOME/.dotfiles
 DOTFILES=(
 	"zsh"
 	"bash"
-	"git"
+	"git",
+	"alacritty",
+	"tmux"
 )
 
 for dotfile in "${DOTFILES[@]}";do
