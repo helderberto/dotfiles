@@ -1,0 +1,356 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty it self.
+env:
+  # TERM env customization.
+  #
+  # If this property is not set, alacritty will set it to xterm-256color.
+  #
+  # Note that some xterm terminfo databases don't declare support for italics.
+  # You can verify this by checking for the presence of `smso` and `sitm` in
+  # `infocmp xterm-256color`.
+  TERM: xterm-256color
+
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels. If both are zero this
+  # setting is ignored.
+  dimensions:
+    columns: 0
+    lines: 0
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is not scaled by
+  # DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 2
+    y: 2
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window decorations
+  #
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+  decorations: full
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
+scrolling:
+  # maximum number of lines in the scrollback buffer. Specifying '0' will
+  # disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+# Colors (Dracula)
+colors:
+  # Default colors
+  primary:
+    background: "0x282a36"
+    foreground: "0xf8f8f2"
+
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '0x9a9a9a'
+    #bright_foreground: '0xffffff'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  cursor:
+    text: "0x44475a"
+    cursor: "0xf8f8f2"
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection
+  # background is unset, selection color will be the inverse of the cell colors.
+  # If only text is unset the cell text color will remain the same.
+  selection:
+    text: "0xf8f8f2"
+    background: "0x44475a"
+
+  # Normal colors
+  normal:
+    black: "0x000000"
+    red: "0xff5555"
+    green: "0x50fa7b"
+    yellow: "0xf1fa8c"
+    blue: "0xbd93f9"
+    magenta: "0xff79c6"
+    cyan: "0x8be9fd"
+    white: "0xbfbfbf"
+
+  # Bright colors
+  bright:
+    black: "0x4d4d4d"
+    red: "0xff6e67"
+    green: "0x5af78e"
+    yellow: "0xf4f99d"
+    blue: "0xcaa9fa"
+    magenta: "0xff92d0"
+    cyan: "0x9aedfe"
+    white: "0xe6e6e6"
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  dim:
+    black: "0x14151b"
+    red: "0xff2222"
+    green: "0x1ef956"
+    yellow: "0xebf85b"
+    blue: "0x4d5b86"
+    magenta: "0xff46b0"
+    cyan: "0x59dffc"
+    white: "0xe6e6d1"
+
+  # Indexed Colors
+  #
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  #
+  # Example:
+  #   `- { index: 16, color: '0xff00ff' }`
+  #
+  indexed_colors: []
+
+# Font configuration (changes require restart)
+font:
+  # The normal (roman) font face to use.
+  # Style can be specified to pick a specific face.
+  normal:
+    family: Hack
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: Hack
+    style: Bold
+
+  # The italic font face
+  italic:
+    family: Hack
+    style: "Bold Italic"
+
+  # Point size of the font
+  size: 13.0
+
+  # Offset is the extra space around each character. offset.y can be thought of
+  # as modifying the linespacing, and offset.x as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increase the x offset to move the glyph to
+  # the right, increase the y offset to move the glyph upward.
+  glyph_offset:
+    x: 0
+    y: 0
+
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina you
+  # probably want this set to false.
+  #
+  # macOS >= 10.14.x:
+  #
+  # If the font quality on non-retina display looks bad then set
+  # `use_thin_strokes` to `true` and enable font smoothing by running the
+  # following command:
+  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
+  #
+  # This is a global setting and will require a log out or restart to take
+  # effect.
+  use_thin_strokes: true
+
+# When true, bold text is drawn using the bright variant of colors.
+draw_bold_text_with_bright_colors: false
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+# custom_cursor_colors: false
+
+# Key bindings
+#
+# Key bindings are specified as a list of objects. Each binding will specify a
+# key and modifiers required to trigger it, terminal modes where the binding is
+# applicable, and what should be done when the key binding fires. It can either
+# send a byte sequence to the running application (`chars`), execute a
+# predefined action (`action`) or fork and execute a specified command plus
+# arguments (`command`).
+#
+# Bindings are always filled by default, but will be replaced when a new binding
+# with the same triggers is defined. To unset a default binding, it can be
+# mapped to the `None` action.
+#
+# Example:
+#   `- { key: V, mods: Control|Shift, action: Paste }`
+#
+# Available fields:
+#   - key
+#   - mods (optional)
+#   - chars | action | command (exactly one required)
+#   - mode (optional)
+#
+# Values for `key`:
+#   - `A` -> `Z`
+#   - `F1` -> `F12`
+#   - `Key1` -> `Key0`
+#
+#   A full list with available key codes can be found here:
+#   https://docs.rs/glutin/*/glutin/enum.VirtualKeyCode.html#variants
+#
+#   Instead of using the name of the keys, the `key` field also supports using
+#   the scancode of the desired key. Scancodes have to be specified as a
+#   decimal number.
+#   This command will allow you to display the hex scancodes for certain keys:
+#     `showkey --scancodes`
+#
+# Values for `mods`:
+#   - Command
+#   - Control
+#   - Option
+#   - Super
+#   - Shift
+#   - Alt
+#
+#   Multiple `mods` can be combined using `|` like this: `mods: Control|Shift`.
+#   Whitespace and capitalization is relevant and must match the example.
+#
+# Values for `chars`:
+#   The `chars` field writes the specified string to the terminal. This makes
+#   it possible to pass escape sequences.
+#   To find escape codes for bindings like `PageUp` ("\x1b[5~"), you can run
+#   the command `showkey -a` outside of tmux.
+#   Note that applications use terminfo to map escape sequences back to
+#   keys. It is therefore required to update the terminfo when
+#   changing an escape sequence.
+#
+# Values for `action`:
+#   - Paste
+#   - PasteSelection
+#   - Copy
+#   - IncreaseFontSize
+#   - DecreaseFontSize
+#   - ResetFontSize
+#   - ScrollPageUp
+#   - ScrollPageDown
+#   - ScrollLineUp
+#   - ScrollLineDown
+#   - ScrollToTop
+#   - ScrollToBottom
+#   - ClearHistory
+#   - Hide
+#   - Quit
+#   - ClearLogNotice
+#   - SpawnNewInstance
+#   - ToggleFullscreen
+#   - None
+#
+# Values for `action` (macOS only):
+#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
+#
+# Values for `command`:
+#   The `command` field must be a map containing a `program` string and
+#   an `args` array of command line parameter strings.
+#
+#   Example:
+#       `command: { program: "alacritty", args: ["-e", "vttest"] }`
+#
+# Values for `mode`:
+#   - ~AppCursor
+#   - AppCursor
+#   - ~AppKeypad
+#   - AppKeypad
+#
+key_bindings:
+  - { key: V, mods: Command, action: Paste }
+  - { key: C, mods: Command, action: Copy }
+  - { key: Q, mods: Command, action: Quit }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: Return, mods: Command, action: ToggleFullscreen }
+
+  - { key: Home, chars: "\x1bOH", mode: AppCursor }
+  - { key: Home, chars: "\x1b[H", mode: ~AppCursor }
+  - { key: End, chars: "\x1bOF", mode: AppCursor }
+  - { key: End, chars: "\x1b[F", mode: ~AppCursor }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }
+  - { key: Minus, mods: Command|Shift, action: ResetFontSize }
+  - { key: PageUp, mods: Shift, chars: "\x1b[5;2~" }
+  - { key: PageUp, mods: Control, chars: "\x1b[5;5~" }
+  - { key: PageUp, chars: "\x1b[5~" }
+  - { key: PageDown, mods: Shift, chars: "\x1b[6;2~" }
+  - { key: PageDown, mods: Control, chars: "\x1b[6;5~" }
+  - { key: PageDown, chars: "\x1b[6~" }
+  - { key: Left, mods: Shift, chars: "\x1b[1;2D" }
+  - { key: Left, mods: Control, chars: "\x1b[1;5D" }
+  - { key: Left, mods: Alt, chars: "\x1b[1;3D" }
+  - { key: Left, chars: "\x1b[D", mode: ~AppCursor }
+  - { key: Left, chars: "\x1bOD", mode: AppCursor }
+  - { key: Right, mods: Shift, chars: "\x1b[1;2C" }
+  - { key: Right, mods: Control, chars: "\x1b[1;5C" }
+  - { key: Right, mods: Alt, chars: "\x1b[1;3C" }
+  - { key: Right, chars: "\x1b[C", mode: ~AppCursor }
+  - { key: Right, chars: "\x1bOC", mode: AppCursor }
+  - { key: Up, mods: Shift, chars: "\x1b[1;2A" }
+  - { key: Up, mods: Control, chars: "\x1b[1;5A" }
+  - { key: Up, mods: Alt, chars: "\x1b[1;3A" }
+  - { key: Up, chars: "\x1b[A", mode: ~AppCursor }
+  - { key: Up, chars: "\x1bOA", mode: AppCursor }
+  - { key: Down, mods: Shift, chars: "\x1b[1;2B" }
+  - { key: Down, mods: Control, chars: "\x1b[1;5B" }
+  - { key: Down, mods: Alt, chars: "\x1b[1;3B" }
+  - { key: Down, chars: "\x1b[B", mode: ~AppCursor }
+  - { key: Down, chars: "\x1bOB", mode: AppCursor }
+  - { key: Tab, mods: Shift, chars: "\x1b[Z" }
+  - { key: F1, chars: "\x1bOP" }
+  - { key: F2, chars: "\x1bOQ" }
+  - { key: F3, chars: "\x1bOR" }
+  - { key: F4, chars: "\x1bOS" }
+  - { key: F5, chars: "\x1b[15~" }
+  - { key: F6, chars: "\x1b[17~" }
+  - { key: F7, chars: "\x1b[18~" }
+  - { key: F8, chars: "\x1b[19~" }
+  - { key: F9, chars: "\x1b[20~" }
+  - { key: F10, chars: "\x1b[21~" }
+  - { key: F11, chars: "\x1b[23~" }
+  - { key: F12, chars: "\x1b[24~" }
+  - { key: Back, chars: "\x7f" }
+  - { key: Back, mods: Alt, chars: "\x1b\x7f" }
+  - { key: Insert, chars: "\x1b[2~" }
+  - { key: Delete, chars: "\x1b[3~" }
+    # shortcuts for tmux. the leader key is control-b (0x02)
+  - { key: W, mods: Command, chars: "\x02&" } # close tab (kill)
+  - { key: T, mods: Command, chars: "\x02c" } # new tab
+  - { key: RBracket, mods: Command|Shift, chars: "\x02n" } # select next tab
+  - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # select previous tab
+  - { key: RBracket, mods: Command, chars: "\x02o" } # select next pane
+  - { key: LBracket, mods: Command, chars: "\x02;" } # select last (previously used) pane
+  - { key: F, mods: Command, chars: "\x02/" } # search (upwards) (see tmux.conf)

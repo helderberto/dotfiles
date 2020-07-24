@@ -1,8 +1,10 @@
 source /usr/local/share/antigen/antigen.zsh
 
+# tmux
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
-export TERM="xterm-256color"
 
 # Plugins
 antigen bundle mengelbrecht/slimline
@@ -13,9 +15,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Theme
 export SLIMLINE_PROMPT_VERSION=1 # Activate legacy option format
-
-# Editor
-export EDITOR='nvim'
 
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
