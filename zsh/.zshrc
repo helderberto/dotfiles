@@ -1,8 +1,5 @@
 source /usr/local/share/antigen/antigen.zsh
 
-# tmux
-if [ "$TMUX" = "" ]; then tmux; fi
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
