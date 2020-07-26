@@ -9,11 +9,6 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
-# TMUX new session
-if [[ "$TMUX" = "" ]]; then
-tmux attach -t default || tmux new -s default
-fi
-
 # NVM
 lazynvm() {
   unset -f nvm node npm

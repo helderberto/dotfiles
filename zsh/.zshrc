@@ -15,6 +15,11 @@ export SLIMLINE_PROMPT_VERSION=1 # Activate legacy option format
 
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
+if [ -z "$TMUX" ]
+then
+  tmux attach -t "default" || tmux new -s "default"
+fi
+
 # Load defaults
 source ~/.bash_profile
 
