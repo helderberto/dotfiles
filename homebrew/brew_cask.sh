@@ -9,8 +9,6 @@
 brew cask install 1password
 brew cask install google-chrome
 brew cask install spotify
-brew cask install notion
-brew cask install pomodone
 
 # dev
 brew cask install alacritty
