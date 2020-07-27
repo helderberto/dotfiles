@@ -38,5 +38,9 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "window.zoomLevel": 0,
-  "editor.fontSize": 13
+  "editor.fontSize": 14,
+  "explorer.compactFolders": false,
+  "sync.gist": "ead64288145f4b5e70a0cc744c525f5b",
+  "workbench.sideBar.location": "right"
 }
+
