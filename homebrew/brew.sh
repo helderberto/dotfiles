@@ -32,6 +32,7 @@ brew install mas
 brew install neovim
 brew install stow
 brew install tldr
+brew install emacs
 
 # Remove outdated versions from the cellar
 brew cleanup

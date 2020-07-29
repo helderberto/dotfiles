@@ -7,7 +7,8 @@ DOTFILES=(
 	"bash"
 	"git",
 	"alacritty",
-	"tmux"
+	"tmux",
+	"emacs"
 )
 
 for dotfile in "${DOTFILES[@]}";do
