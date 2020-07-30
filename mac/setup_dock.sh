@@ -7,7 +7,7 @@ clear_dock
 disable_recent_apps_from_dock
 
 add_app_to_dock "Google Chrome"
-add_app_to_dock "Visual Studio Code"
+add_app_to_dock "Emacs"
 add_app_to_dock "iTerm"
 add_app_to_dock "Todoist"
 add_app_to_dock "Bear"
