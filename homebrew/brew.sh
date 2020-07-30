@@ -32,7 +32,9 @@ brew install mas
 brew install neovim
 brew install stow
 brew install tldr
-brew install emacs
+
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@28
 
 # Remove outdated versions from the cellar
 brew cleanup
