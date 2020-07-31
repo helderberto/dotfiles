@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$(yarn global bin):$PATH";
+export PATH="$HOME/bin:$(yarn global bin):$HOME/.emacs.d/bin:$PATH";
 
 # Load our dotfiles like ~/.bash_prompt, etc…
 #   ~/.extra can be used for settings you don’t want to commit,
