@@ -72,4 +72,18 @@
        ("INPROGRESS" . "systemOrangeColor")
        ("HOLD"  . "indianRed")
        ("DONE" . "salmon1")
-       ("CANCELED" . "systemYellowColor"))))
+       ("CANCELED" . "systemYellowColor")))
+
+  (setq org-capture-templates
+    '(
+       ("n" "Note" entry (file +org-capture-notes-file)
+         "* %^{DESCRIPTION} \nEntered on %U\n%? %i\n  %a")
+       ("t" "Todo" entry (file+olp+datetree +org-capture-todo-file "Inbox")
+         "* TODO %?\n  %i\n  %a")
+       ("s" "Snippet" entry (file "snippets.org")
+         "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
+       ("c" "Changelog" entry (file+headline +org-capture-project-changelog-file "Unreleased")
+         "* %U %?\n%i\n%a")
+       ("j" "Journal" entry (file+olp+datetree +org-capture-journal-file)
+         "* %U %?\n%i\n%a" :prepend t))
+    ))
