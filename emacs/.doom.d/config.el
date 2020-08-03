@@ -35,12 +35,10 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -58,3 +56,20 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! org
+  :config
+  (setq org-log-done 'time)
+  (setq org-clock-persist 'history)
+  (setq org-directory "~/org/")
+  (setq org-log-into-drawer t)
+
+  (setq org-todo-keywords
+    '((sequence "BACKLOG(b)" "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELED(c@/!)"))
+    org-todo-keyword-faces
+    '(("BACKLOG"  . "orange")
+       ("TODO" . "systemRedColor")
+       ("INPROGRESS" . "systemOrangeColor")
+       ("HOLD"  . "indianRed")
+       ("DONE" . "salmon1")
+       ("CANCELED" . "systemYellowColor"))))
