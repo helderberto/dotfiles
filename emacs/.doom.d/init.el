@@ -92,7 +92,7 @@
        ;;gist              ; interacting with github gists
        (lookup +docsets)              ; navigate your code and its documentation
        ;;lsp
-       ;;macos             ; MacOS-specific commands
+       macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
