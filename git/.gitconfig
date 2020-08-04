@@ -35,3 +35,6 @@
 [pull]
 	default = current
   rebase = true
+[commit]
+  verbose = true
+  template = ~/.gittemplates/commit
