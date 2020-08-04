@@ -65,14 +65,13 @@
   (setq org-log-into-drawer t)
 
   (setq org-todo-keywords
-    '((sequence "BACKLOG(b)" "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELED(c@/!)"))
+    '((sequence "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELED(c@/!)"))
     org-todo-keyword-faces
-    '(("BACKLOG"  . "orange")
-       ("TODO" . "systemRedColor")
-       ("INPROGRESS" . "systemOrangeColor")
-       ("HOLD"  . "indianRed")
-       ("DONE" . "salmon1")
-       ("CANCELED" . "systemYellowColor")))
+    '(("TODO" :foreground "#17a2b8" :weight normal :underline t)
+       ("INPROGRESS" :foreground "#007bff" :weight normal :underline t)
+       ("HOLD" :foreground "#ffc107" :weight normal :underline t)
+       ("DONE" :foreground "#28a745" :weight normal :underline t)
+       ("CANCELED" :foreground "#dc3545" :weight normal :underline t)))
 
   (setq org-capture-templates
     '(
