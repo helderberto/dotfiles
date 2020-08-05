@@ -86,3 +86,14 @@
        ("j" "Journal" entry (file+olp+datetree +org-capture-journal-file)
          "* %U %?\n%i\n%a" :prepend t))
     ))
+
+(after! deft
+  :defer t
+  :config
+  (setq deft-directory org-directory)
+  (setq deft-extensions '("org" "md" "txt"))
+  (setq deft-default-extension "org")
+  (setq deft-recursive t)
+  (setq deft-use-filename-as-title nil)
+  (setq deft-use-filter-string-for-filename t)
+  (setq deft-file-naming-rules '((nospace . "-"))))
