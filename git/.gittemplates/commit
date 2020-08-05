@@ -3,8 +3,7 @@
 # the following sentence:
 #     * If applied, this commit <will your subject line here>
 #
-# [Add/Fix/Remove/Update/Refactor/Document/Style]: [issue #id] [summary]
-
+# [feat/refactor/fix/docs/chore/test/style/pref](scope): [issue #id] [summary]
 
 # The 7 rules of a great commit message
 #    1. Separate subject from body with a blank line
