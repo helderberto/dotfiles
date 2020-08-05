@@ -106,6 +106,8 @@
   (add-to-list 'ivy-sort-functions-alist
     '(read-file-name-internal . eh-ivy-sort-file-function)))
 
+;; Dracula color palette
+;; https://draculatheme.com/contribute#color-palette
 (after! org
   :config
   (setq org-log-done 'time)
