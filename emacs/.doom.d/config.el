@@ -65,13 +65,13 @@
   (setq org-log-into-drawer t)
 
   (setq org-todo-keywords
-    '((sequence "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELED(c@/!)"))
+    '((sequence "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
     org-todo-keyword-faces
     '(("TODO" :foreground "#8be9fd" :weight normal :underline t)
        ("INPROGRESS" :foreground "#bd93f9" :weight normal :underline t)
        ("HOLD" :foreground "#f1fa8c" :weight normal :underline t)
        ("DONE" :foreground "#50fa7b" :weight normal :underline t)
-       ("CANCELED" :foreground "#ff5555" :weight normal :underline t)))
+       ("CANCELLED" :foreground "#ff5555" :weight normal :underline t)))
 
   (setq org-capture-templates
     '(
