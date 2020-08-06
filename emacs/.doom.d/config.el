@@ -35,6 +35,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
+(setq org-directory "~/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -112,7 +113,6 @@
   :config
   (setq org-log-done 'time)
   (setq org-clock-persist 'history)
-  (setq org-directory "~/org/")
   (setq org-log-into-drawer t)
   (setq org-startup-folded 'overview)
 
