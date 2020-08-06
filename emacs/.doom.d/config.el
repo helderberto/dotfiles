@@ -114,6 +114,7 @@
   (setq org-clock-persist 'history)
   (setq org-directory "~/org/")
   (setq org-log-into-drawer t)
+  (setq org-startup-folded 'overview)
 
   (setq org-todo-keywords
     '((sequence "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
