@@ -133,6 +133,8 @@
          "* TODO %?\n  %i\n  %a")
        ("s" "Snippet" entry (file "snippets.org")
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
+       ("p" "Programming" entry (file "programming.org")
+         "* %U %?\n%i\n%a")
        ("c" "Changelog" entry (file+headline +org-capture-project-changelog-file "Unreleased")
          "* %U %?\n%i\n%a")
        ("j" "Journal" entry (file+olp+datetree +org-capture-journal-file)
