@@ -115,6 +115,7 @@
   (setq org-clock-persist 'history)
   (setq org-log-into-drawer t)
   (setq org-startup-folded 'overview)
+  (auto-fill-mode)
 
   (setq org-todo-keywords
     '((sequence "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
@@ -136,9 +137,7 @@
        ("p" "Programming" entry (file "programming.org")
          "* %U %?\n%i\n%a")
        ("c" "Changelog" entry (file+headline +org-capture-project-changelog-file "Unreleased")
-         "* %U %?\n%i\n%a")
-       ("j" "Journal" entry (file+olp+datetree +org-capture-journal-file)
-         "* %U %?\n%i\n%a" :prepend t))
+         "* %U %?\n%i\n%a"))
     ))
 
 (after! deft
@@ -151,3 +150,7 @@
   (setq deft-use-filename-as-title nil)
   (setq deft-use-filter-string-for-filename t)
   (setq deft-file-naming-rules '((nospace . "-"))))
+
+(after! org-journal
+  :config
+  (setq org-journal-file-format  "%Y%m%d.org"))
