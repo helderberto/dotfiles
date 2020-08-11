@@ -117,12 +117,21 @@
   (setq org-startup-folded 'overview)
   (auto-fill-mode)
 
+  (setq org-agenda-files
+    '("~/org/gtd/inbox.org"
+    "~/org/gtd/projects.org"
+    "~/org/gtd/tickler.org"))
+
+  (setq org-refile-targets '(("~/org/gtd/projects.org" :maxlevel . 3)
+    ("~/org/gtd/someday.org" :level . 1)
+    ("~/org/gtd/tickler.org" :maxlevel . 2)))
+
   (setq org-todo-keywords
-    '((sequence "TODO(t)" "INPROGRESS(i!)" "HOLD(h@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
+    '((sequence "TODO(t)" "INPROGRESS(i!)" "WAITING(w@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
     org-todo-keyword-faces
     '(("TODO" :foreground "#8be9fd" :weight normal :underline t)
        ("INPROGRESS" :foreground "#bd93f9" :weight normal :underline t)
-       ("HOLD" :foreground "#f1fa8c" :weight normal :underline t)
+       ("WAITING" :foreground "#f1fa8c" :weight normal :underline t)
        ("DONE" :foreground "#50fa7b" :weight normal :underline t)
        ("CANCELLED" :foreground "#ff5555" :weight normal :underline t)))
 
@@ -130,15 +139,16 @@
     '(
        ("n" "Note" entry (file +org-capture-notes-file)
          "* %^{DESCRIPTION} \nEntered on %U\n%? %i\n  %a")
-       ("t" "Todo" entry (file+olp+datetree +org-capture-todo-file "Inbox")
-         "* TODO %?\n  %i\n  %a")
+       ("t" "Todo [inbox]" entry (file+headline "~/org/gtd/inbox.org" "Tasks")
+         "* TODO %i%?")
+       ("T" "Tickler" entry (file+headline "~/org/gtd/tickler.org" "Tickler")
+         "* %i%? \n %U")
        ("s" "Snippet" entry (file "snippets.org")
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
        ("p" "Programming" entry (file "programming.org")
          "* %U %?\n%i\n%a")
-       ("c" "Changelog" entry (file+headline +org-capture-project-changelog-file "Unreleased")
-         "* %U %?\n%i\n%a"))
-    ))
+       ))
+  )
 
 (after! deft
   :defer t
