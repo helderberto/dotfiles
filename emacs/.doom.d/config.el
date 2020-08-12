@@ -130,6 +130,8 @@
          ((org-agenda-overriding-header "Home")))
        ("p" "At the Personal" tags-todo "@personal"
          ((org-agenda-overriding-header "Personal")))
+       ("e" "At the Education" tags-todo "@education"
+         ((org-agenda-overriding-header "Education")))
        ))
 
   (setq org-todo-keywords
