@@ -119,7 +119,7 @@
 
   (setq org-agenda-files (list org-directory (concat org-directory "gtd")))
 
-  (setq org-refile-targets '(("~/org/gtd/projects.org" :maxlevel . 3)
+  (setq org-refile-targets '(("~/org/gtd/main.org" :maxlevel . 3)
                               ("~/org/gtd/someday.org" :level . 1)
                               ("~/org/gtd/tickler.org" :maxlevel . 2)))
 
