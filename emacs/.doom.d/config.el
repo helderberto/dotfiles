@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Helder Burato Berto"
-      user-mail-address "helder.burato@gmail.com")
+  user-mail-address "helder.burato@gmail.com")
 
 (display-time-mode 1)
 (display-battery-mode 1)
@@ -66,9 +66,9 @@
   ;; enable this if you want `swiper' to use it
   (setq search-default-mode #'char-fold-to-regexp)
   (setq ivy-re-builders-alist
-        '((swiper . ivy--regex-plus)
-           (counsel-rg . ivy--regex-plus)
-          (t      . ivy--regex-fuzzy)))
+    '((swiper . ivy--regex-plus)
+       (counsel-rg . ivy--regex-plus)
+       (t      . ivy--regex-fuzzy)))
 
   (recentf-mode 1)
   (defun eh-ivy-return-recentf-index (dir)
@@ -117,14 +117,20 @@
   (setq org-startup-folded 'overview)
   (auto-fill-mode)
 
-  (setq org-agenda-files
-    '("~/org/gtd/inbox.org"
-    "~/org/gtd/projects.org"
-    "~/org/gtd/tickler.org"))
+  (setq org-agenda-files (list org-directory (concat org-directory "gtd")))
 
   (setq org-refile-targets '(("~/org/gtd/projects.org" :maxlevel . 3)
-    ("~/org/gtd/someday.org" :level . 1)
-    ("~/org/gtd/tickler.org" :maxlevel . 2)))
+                              ("~/org/gtd/someday.org" :level . 1)
+                              ("~/org/gtd/tickler.org" :maxlevel . 2)))
+
+  (setq org-agenda-custom-commands
+    '(("w" "At the Work" tags-todo "@work"
+        ((org-agenda-overriding-header "Work")))
+       ("h" "At the Home" tags-todo "@home"
+         ((org-agenda-overriding-header "Home")))
+       ("p" "At the Personal" tags-todo "@personal"
+         ((org-agenda-overriding-header "Personal")))
+       ))
 
   (setq org-todo-keywords
     '((sequence "TODO(t)" "INPROGRESS(i!)" "WAITING(w@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
