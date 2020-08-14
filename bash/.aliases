@@ -34,9 +34,6 @@ alias lsd='ls -l | grep "^d"' # only directories
 alias g="git"
 alias ungz="gunzip -k"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
 alias v="vim"
 
 # File size
