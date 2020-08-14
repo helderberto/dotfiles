@@ -12,7 +12,6 @@ brew cask install spotify
 
 # dev
 brew cask install alacritty
-brew cask install visual-studio-code
 brew cask install insomnia
 brew cask install imageoptim
 
