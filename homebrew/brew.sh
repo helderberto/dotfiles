@@ -29,7 +29,6 @@ brew install tree
 brew install node
 brew install yarn
 brew install mas
-brew install neovim
 brew install stow
 brew install tldr
 
