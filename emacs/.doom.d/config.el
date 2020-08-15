@@ -171,4 +171,4 @@
 
 (after! org-journal
   :config
-  (setq org-journal-file-format  "%Y%m%d.org"))
+  (setq org-journal-file-format  "%Y-%m-%d.org"))
