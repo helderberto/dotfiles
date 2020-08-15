@@ -146,15 +146,15 @@
   (setq org-capture-templates
     '(
        ("n" "Note" entry (file +org-capture-notes-file)
-         "* %^{DESCRIPTION} \nEntered on %U\n%? %i\n  %a")
+         "* %^{DESCRIPTION} \nEntered on %U\n%? %i\n %a")
        ("t" "Todo [inbox]" entry (file+headline "~/org/gtd/inbox.org" "Tasks")
          "* TODO %i%?")
        ("T" "Tickler" entry (file+headline "~/org/gtd/tickler.org" "Tickler")
          "* %i%? \n %U")
        ("s" "Snippet" entry (file "snippets.org")
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
-       ("p" "Programming" entry (file "programming.org")
-         "* %U %?\n%i\n%a")
+       ("S" "Study" entry (file "study.org")
+         "* %i%? \n %U")
        ))
   )
 
