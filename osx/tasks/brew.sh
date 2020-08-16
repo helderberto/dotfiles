@@ -15,6 +15,8 @@ brew install moreutils
 brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
 brew install gnu-sed
+# Pandoc a universal document converter
+brew install pandoc
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
