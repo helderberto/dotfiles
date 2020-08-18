@@ -153,6 +153,7 @@
          "* %i%? \n %U")
        ("s" "Snippet" entry (file "snippets.org")
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
+       ("e" "Education" entry (file "education.org")
          "* %i%? \n %U")
        ))
   )
