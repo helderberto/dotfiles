@@ -174,3 +174,8 @@
 (after! org-journal
   :config
   (setq org-journal-file-format  "%Y-%m-%d.org"))
+
+(after! doom-modeline
+  :config
+  (setq doom-modeline-continuous-word-count-modes
+    '(markdown-mode gfm-mod)))
