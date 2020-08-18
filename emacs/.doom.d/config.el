@@ -179,3 +179,29 @@
   :config
   (setq doom-modeline-continuous-word-count-modes
     '(markdown-mode gfm-mod)))
+
+(after! org-roam
+  :defer t
+  (setq org-roam-directory "~/org/roam")
+
+  (setq org-roam-capture-templates
+    '(("d" "default" plain (function org-roam-capture--get-point)
+        "%?"
+        :file-name "%(format-time-string \"%Y-%m-%d--%H-%M-%SZ--${slug}\" (current-time) t)"
+        :head "#+TITLE: ${title}
+#+DATE: %T
+#+FILETAGS: %^G
+#+SETUPFILE: %(concat (file-name-as-directory org-directory) \"hugo.setup.org\")
+#+HUGO_SLUG: %^{Slug}
+#+HUGO_CUSTOM_FRONT_MATTER: :category %^{Category}
+"
+        :unnarrowed t)
+       ("p" "private" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "private/%(format-time-string \"%Y-%m-%d--%H-%M-%SZ--${slug}\" (current-time) t)"
+         :head "#+TITLE: ${title}
+#+DATE: %T
+#+FILETAGS: :personal:%^G
+#+HUGO_SLUG: ${slug}
+"
+         :unnarrowed t))))
