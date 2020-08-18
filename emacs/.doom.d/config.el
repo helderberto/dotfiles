@@ -117,6 +117,8 @@
   (setq org-startup-folded 'overview)
   (auto-fill-mode)
 
+  (setq org-archive-location "archives/%s_archive::")
+
   (setq org-agenda-files (list org-directory (concat org-directory "gtd")))
 
   (setq org-refile-targets '(("~/org/gtd/main.org" :maxlevel . 3)
