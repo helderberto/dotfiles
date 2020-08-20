@@ -44,7 +44,7 @@ alias clearcache="rm -rf ~/Library/Caches/*"
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
 alias brew_update="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
 
-# Development directories
-export WS="$HOME/Workspace"
+# Workspace directory
+export WS="$HOME/workspace"
 alias ws="cd $WS"
 alias labs="cd $WS/labs"
