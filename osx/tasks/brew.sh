@@ -29,6 +29,7 @@ brew install nvm
 brew install yarn
 brew install mas
 brew install stow
+brew install tmux
 brew install tldr
 
 brew tap d12frosted/emacs-plus
