@@ -59,6 +59,10 @@ echo "🔗 Linking configuration files..."
 sh ./osx/tasks/symlink.sh
 echo "✅ Successful linked configuration files"
 
+echo "ℰ Installing Doom Emacs"
+sh ./common/doom_emacs_setup.sh
+echo "✅ Successful installed Doom Emacs"
+
 # Install configurations from zsh
 echo "🔧 Setting configuration to iTerm2 and zsh..."
 source $HOME/.zshrc
