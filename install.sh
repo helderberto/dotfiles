@@ -47,6 +47,10 @@ sh ./osx/tasks/brew_cask.sh
 sh ./osx/tasks/mas.sh
 echo "✅ Successful installed packages"
 
+echo "🔗 Creating and configuring NVM"
+sh ./osx/tasks/nvm_setup.sh
+echo "✅ Successful configured NVM"
+
 echo "📁 Creating workspaces directories..."
 sh ./osx/tasks/create_workspace.sh
 echo "✅ Successful created workspaces"
