@@ -6,7 +6,7 @@ source ~/.dotfiles/osx/dock/utils.sh
 clear_dock
 disable_recent_apps_from_dock
 
-add_app_to_dock "Firefox Developer Edition"
+add_app_to_dock "Google Chrome"
 add_app_to_dock "Emacs"
 add_app_to_dock "Alacritty"
 add_app_to_dock "Slack"
