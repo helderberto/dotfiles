@@ -5,10 +5,12 @@
 # @author Helder Burato Berto
 ###########################
 
+CONFIG_DIR=$(dirname "$0")
+
 echo "🔧 Setting up your Mac..."
 
 # Set macOS preferences
-sh ./osx/.default_config
+sh $CONFIG_DIR/osx/.default_config
 
 # Install non-brew various tools (PRE-BREW Installs)
 echo "Ensuring build/install tools are available"
@@ -37,30 +39,26 @@ if test ! $(which brew); then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if test ! $(which zsh); then
-    curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh
-fi
-
 echo "📲 Installing homebrew/app store packages..."
-sh ./osx/tasks/brew.sh
-sh ./osx/tasks/brew_cask.sh
-sh ./osx/tasks/mas.sh
+sh $CONFIG_DIR/osx/tasks/brew.sh
+sh $CONFIG_DIR/osx/tasks/brew_cask.sh
+sh $CONFIG_DIR/osx/tasks/mas.sh
 echo "✅ Successful installed packages"
 
 echo "🔗 Creating and configuring NVM"
-sh ./osx/tasks/nvm_setup.sh
+sh $CONFIG_DIR/osx/tasks/nvm_setup.sh
 echo "✅ Successful configured NVM"
 
 echo "📁 Creating workspace directory..."
-sh ./osx/tasks/create_workspace.sh
+sh $CONFIG_DIR/osx/tasks/create_workspace.sh
 echo "✅ Successful created workspace"
 
 echo "🔗 Linking configuration files..."
-sh ./osx/tasks/symlink.sh
+sh $CONFIG_DIR/osx/tasks/symlink.sh
 echo "✅ Successful linked configuration files"
 
 echo "ℰ Installing Doom Emacs"
-sh ./common/doom_emacs_setup.sh
+sh $CONFIG_DIR/common/doom_emacs_setup.sh
 echo "✅ Successful installed Doom Emacs"
 
 # Install configurations from zsh
@@ -70,7 +68,7 @@ echo "✅ Successful configured iTerm2 and zsh"
 
 # Add default apps to Dock
 echo "🖥 Setting apps to Mac dock..."
-sh ./osx/dock/setup.sh
+sh $CONFIG_DIR/osx/dock/setup.sh
 echo "✅ Successful set apps to Mac dock"
 
 echo "⚡️ All right! Restart your machine to complete the configuration."
