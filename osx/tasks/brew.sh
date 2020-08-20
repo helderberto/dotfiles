@@ -25,7 +25,7 @@ brew bundle
 brew install antigen
 brew install git
 brew install tree
-brew install node
+brew install nvm
 brew install yarn
 brew install mas
 brew install stow
