@@ -47,4 +47,3 @@ alias brew_update="brew -v update; brew upgrade --force-bottle; brew cleanup; br
 # Workspace directory
 export WS="$HOME/workspace"
 alias ws="cd $WS"
-alias labs="cd $WS/labs"
