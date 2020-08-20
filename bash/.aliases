@@ -33,7 +33,6 @@ alias lsd='ls -l | grep "^d"' # only directories
 # Shortcuts
 alias g="git"
 alias ungz="gunzip -k"
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias v="vim"
 
 # File size
