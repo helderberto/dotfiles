@@ -51,9 +51,9 @@ echo "🔗 Creating and configuring NVM"
 sh ./osx/tasks/nvm_setup.sh
 echo "✅ Successful configured NVM"
 
-echo "📁 Creating workspaces directories..."
+echo "📁 Creating workspace directory..."
 sh ./osx/tasks/create_workspace.sh
-echo "✅ Successful created workspaces"
+echo "✅ Successful created workspace"
 
 echo "🔗 Linking configuration files..."
 sh ./osx/tasks/symlink.sh
