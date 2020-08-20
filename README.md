@@ -14,9 +14,8 @@ sudo chsh -s $(which zsh)
 
 - Update macOS to the latest version with the App Store;
 - Install Xcode from the App Store, open it and accept the license agreement;
-- Copy your public and private SSH keys to `~/.ssh` and make sure they're set `chmod 700 ~/.ssh`;
 
-## Installation
+## Install
 
 - Clone onto your machine:
 
@@ -31,6 +30,13 @@ sh ~/.dotfiles/install.sh
 ```
 
 Restart your computer and enjoy your new configuration.! ✌🏻
+
+## Generate the SSH Keys
+
+It's required to generate in every machine you start.
+
+- Go to your $HOME with `cd ~`;
+- Generate the new key `ssh-keygen`;
 
 ## Guides
 
