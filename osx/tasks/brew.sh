@@ -22,9 +22,6 @@ brew install pandoc
 brew tap homebrew/bundle
 brew bundle
 
-# z hopping around folders
-brew install z
-
 brew install antigen
 brew install git
 brew install tree
