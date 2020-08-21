@@ -17,6 +17,8 @@ brew install findutils
 brew install gnu-sed
 # Pandoc a universal document converter
 brew install pandoc
+# Exa https://github.com/ogham/exa
+brew install exa
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
