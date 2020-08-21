@@ -19,6 +19,8 @@ brew install gnu-sed
 brew install pandoc
 # Exa https://github.com/ogham/exa
 brew install exa
+# Ripgrep a faster grep
+brew install ripgrep
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
