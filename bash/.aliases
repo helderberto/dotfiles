@@ -28,7 +28,6 @@ alias llfu='exa -bghHliS --git'
 
 # Shortcuts
 alias g="git"
-alias ungz="gunzip -k"
 alias v="vim"
 
 # File size
