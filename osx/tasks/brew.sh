@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Install command-line tools using Homebrew
+# Install command-line tools using Homebrew.
 
-# Make sure we’re using the latest Homebrew
+# Make sure we’re using the latest Homebrew.
 brew update
 
-# Upgrade any already-installed formulae
+# Upgrade any already-installed formulae.
 brew upgrade
 
 # GNU core utilities (those that come with OS X are outdated)
@@ -22,10 +22,7 @@ brew install exa
 # Ripgrep a faster grep
 brew install ripgrep
 
-# Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
-brew bundle
-
+# Install other useful binaries.
 brew install antigen
 brew install git
 brew install tree
