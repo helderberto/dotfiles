@@ -40,9 +40,7 @@ if test ! $(which brew); then
 fi
 
 echo "📲 Installing homebrew/app store packages..."
-sh $CONFIG_DIR/osx/tasks/brew.sh
-sh $CONFIG_DIR/osx/tasks/brew_cask.sh
-sh $CONFIG_DIR/osx/tasks/mas.sh
+sh $CONFIG_DIR/osx/tasks/brew_setup.sh
 echo "✅ Successful installed packages"
 
 echo "🔗 Creating and configuring NVM"
