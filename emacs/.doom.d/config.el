@@ -157,6 +157,8 @@
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
        ("e" "Education" entry (file "education.org")
          "* %i%? \n %U")
+       ("r" "Read Later" entry (file+headline "references/readlater.org" "misc")
+         "* TODO %i%? \n")
        ))
   )
 
