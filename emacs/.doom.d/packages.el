@@ -52,3 +52,4 @@
 ;; (package! indium)
 (package! prettier-js)
 (package! move-text)
+(package! js-doc)
