@@ -186,16 +186,3 @@
   :defer t
   :init
   (setq rmh-elfeed-org-files (list "~/org/references/readlater.org")))
-
-(use-package! js-doc
-  :defer t
-  :config
-
-  (setq js-doc-mail-address user-mail-address
-    js-doc-author (format "%s <%s>" user-full-name js-doc-mail-address))
-
-  (add-hook! 'js2-mode-hook
-    #'(lambda ()
-        (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc-snippet)
-        (define-key js2-mode-map "@" 'js-doc-insert-tag)
-        )))
