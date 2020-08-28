@@ -10,6 +10,7 @@ DOTFILES=(
 	"tmux"
 	"emacs"
     "vim"
+    "editorconfig"
 )
 
 cd $DOTFILE_DIR
