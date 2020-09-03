@@ -1,40 +1,69 @@
 [user]
-	name = Helder Burato Berto
-	email = helder.burato@gmail.com
-[alias]
-	c = commit -m
-	ca = !git add -A . && git commit -m
-	am  = commit --amend
-	an  = commit --amend --no-edit
-  ap  = !git add -A . -p
-	st  = status
-	pf = push --force
-	pu = push
-	l  = log --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
-	lc = log -1 --stat
-	lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
-	uc = reset HEAD~
-	rh = reset --hard
-	co = checkout
-	df = diff --color --color-words --abbrev
-	cp = cherry-pick
-	d  = difftool
-	br  = branch
-  pom = pull origin master
-  pod = pull origin dev
-  pos = pull origin staging
-  po = pull origin
+  name = Helder Burato Berto
+  email = helder.burato@gmail.com
+
 [core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
-	precomposeUnicode = true
-[rebase]
-	autosquash = true
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
+
 [push]
-	default = current
+  default = current
+
 [pull]
-	default = current
   rebase = true
+
 [commit]
   verbose = true
   template = ~/.gittemplates/commit
+
+[alias]
+  a = add --all
+  ap = add . -p
+  #############
+  b = branch
+  bd = branch -d
+  bdd = branch -D
+  br = branch -r
+  #############
+  cm = commit -m
+  ca = commit --amend
+  cma = !git add -A . && git commit -m
+  #############
+  cp = cherry-pick
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  #############
+  co = checkout
+  cob = checkout -b
+  #############
+  d = difftool
+  df = diff --color --color-words --abbrev
+  #############
+  l  = log --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
+  lc = log -1 --stat
+  lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
+  #############
+  m = merge
+  ma = merge --abort
+  mc = merge --continue
+  ms = merge --skip
+  #############
+  pr = prune -v
+  #############
+  ps = push
+  psf = push -f
+  psu = push -u
+  pst = push --tags
+  #############
+  plo = pull origin
+  plom = pull origin master
+  plod = pull origin dev
+  plos = pull origin staging
+  #############
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase --interactive
+  rbs = rebase --skip
+  #############
+  st = status
