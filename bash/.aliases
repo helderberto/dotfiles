@@ -1,22 +1,17 @@
-# Easier navigation: .., ..., ~ and -
+# Easier ways to navigate trough directories
 alias ..="cd .."
-alias cd..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
+alias ws="cd $HOME/workspace"
 
-# mv, rm, cp
-alias mv='mv -v'
-alias rm='rm -i -v'
-alias cp='cp -v'
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-alias chmox='chmod -x'
-
+# Brew
 alias cask='brew cask' # i <3 u cask
-
-alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 
 # ls substitute
 alias ls='exa'
@@ -30,15 +25,25 @@ alias llfu='exa -bghHliS --git'
 alias g="git"
 alias v="vim"
 
+# Git
+alias gpom="git pull origin master"
+alias gpod="git pull origin dev"
+alias gpos="git pull origin staging"
+alias gb="git branch"
+
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# Clear Mac caches
+# Clear OSX Caches
 alias clearcache="rm -rf ~/Library/Caches/*"
 
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
-alias brew_update="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
+alias brewupdate="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
 
-# Workspace directory
-export WS="$HOME/workspace"
-alias ws="cd $WS"
+# Turn on/off sound
+# http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume output volume 100'"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
