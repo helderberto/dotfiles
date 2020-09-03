@@ -37,6 +37,9 @@ alias fs="stat -f \"%z bytes\""
 # Clear OSX Caches
 alias clearcache="rm -rf ~/Library/Caches/*"
 
+# Clear current node_modules
+alias clearnodemodules="rm -rf node_modules"
+
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
 alias brewupdate="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
 
