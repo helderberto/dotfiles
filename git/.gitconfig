@@ -55,10 +55,10 @@
   psu = push -u
   pst = push --tags
   #############
-  plo = pull origin
-  plom = pull origin master
-  plod = pull origin dev
-  plos = pull origin staging
+  po = pull origin
+  pom = pull origin master
+  pod = pull origin dev
+  pos = pull origin staging
   #############
   rb = rebase
   rba = rebase --abort
