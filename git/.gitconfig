@@ -67,3 +67,5 @@
   rbs = rebase --skip
   #############
   st = status
+  #############
+  aliases = config --get-regexp alias
