@@ -38,10 +38,6 @@ It's required to generate in every machine you start.
 - Go to your $HOME with `cd ~`;
 - Generate the new key `ssh-keygen`;
 
-## Guides
-
-- [Git Aliases](git/README.md);
-
 ## Troubleshoot
 
 - If you get any problems with `antigen`, try `rm -rf ~/.antigen` after complete, close your terminal and open again to reinstall the packages from antigen.
