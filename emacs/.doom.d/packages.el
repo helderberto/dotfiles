@@ -52,3 +52,5 @@
 (package! prettier-js)
 (package! move-text)
 (package! js-doc)
+(package! reason-mode
+  :recipe (:host github :repo "reasonml-editor/reason-mode"))
