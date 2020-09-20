@@ -150,7 +150,8 @@
        ("n" "Note" entry (file +org-capture-notes-file)
          "* %^{DESCRIPTION} \nEntered on %U\n%? %i\n %a")
        ("t" "Todo [inbox]" entry (file+headline "~/org/gtd/inbox.org" "Tasks")
-         "* TODO %i%? %^g")
+         "* TODO [#A] %i%? %^g\nSCHEDULED: %(org-insert-time-stamp
+        (org-read-date nil t \"+0d\"))\n")
        ("T" "Tickler" entry (file+headline "~/org/gtd/tickler.org" "Tickler")
          "* %i%? \n%U")
        ("s" "Snippet" entry (file "snippets.org")
