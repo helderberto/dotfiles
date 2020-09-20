@@ -153,7 +153,7 @@
          "* TODO [#A] %i%? %^g\nSCHEDULED: %(org-insert-time-stamp
         (org-read-date nil t \"+0d\"))\n")
        ("T" "Tickler" entry (file+headline "~/org/gtd/tickler.org" "Tickler")
-         "* %i%? \n%U")
+         "* %i%?\nDEADLINE: %(org-insert-time-stamp (org-read-date nil t \"+0d\"\n))")
        ("s" "Snippet" entry (file "snippets.org")
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
        ("e" "Education" entry (file "education.org")
