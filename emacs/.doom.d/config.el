@@ -136,6 +136,8 @@
          ((org-agenda-overriding-header "Education")))
        ))
 
+  (setq org-agenda-skip-scheduled-if-done t)
+
   (setq org-todo-keywords
     '((sequence "TODO(t)" "INPROGRESS(i!)" "WAITING(w@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
     org-todo-keyword-faces
