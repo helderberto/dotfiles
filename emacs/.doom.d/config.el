@@ -138,6 +138,10 @@
 
   (setq org-agenda-skip-scheduled-if-done t)
 
+  (setq org-priority-faces '((65 :foreground "#ff5555")
+                             (66 :foreground "#f1fa8c")
+                             (67 :foreground "#8be9fd")))
+
   (setq org-todo-keywords
     '((sequence "TODO(t)" "INPROGRESS(i!)" "WAITING(w@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
     org-todo-keyword-faces
