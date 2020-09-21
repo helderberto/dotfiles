@@ -107,6 +107,11 @@
   (add-to-list 'ivy-sort-functions-alist
     '(read-file-name-internal . eh-ivy-sort-file-function)))
 
+(use-package! org-fancy-priorities
+  :hook (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("■" "■" "■")))
+
 ;; Dracula color palette
 ;; https://draculatheme.com/contribute#color-palette
 (after! org
