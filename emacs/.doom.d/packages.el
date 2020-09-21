@@ -53,3 +53,4 @@
 (package! move-text)
 (package! js-doc)
 (package! reason-mode)
+(package! org-fancy-priorities)
