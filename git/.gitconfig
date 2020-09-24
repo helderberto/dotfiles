@@ -2,6 +2,9 @@
   name = Helder Burato Berto
   email = helder.burato@gmail.com
 
+[github]
+  user = helderburato
+
 [core]
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
