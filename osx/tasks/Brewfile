@@ -40,6 +40,7 @@ cask "reactotron"
 cask "slack"
 cask "spotify"
 cask "transmission"
+mas "Todoist", id: 585829637
 mas "Amphetamine", id: 937984704
 mas "Flycut", id: 442160987
 mas "GIPHY CAPTURE", id: 668208984
