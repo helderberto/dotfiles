@@ -60,9 +60,6 @@
 
 (setq auth-sources '("~/.authinfo"))
 
-;; Enable reason-mode to .res, .resi, .rei extension
-(add-to-list 'auto-mode-alist '("\\.\\(resi?\\|rei?\\)$" . reason-mode))
-
 (after! ivy
   :config
   (setq ivy-use-virtual-buffers t)
