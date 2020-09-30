@@ -92,20 +92,16 @@
 
   (setq org-archive-location "archives/%s_archive::")
 
-  (setq org-agenda-files (list org-directory (concat org-directory "gtd")))
-
-  (setq org-refile-targets '(("~/org/gtd/main.org" :maxlevel . 3)
-                              ("~/org/gtd/someday.org" :level . 1)
-                              ("~/org/gtd/tickler.org" :maxlevel . 2)))
+  (setq org-agenda-files (list org-directory (concat org-directory)))
 
   (setq org-agenda-custom-commands
-    '(("w" "At the Work" tags-todo "@work"
+    '(("w" "At Work" tags-todo "@work"
         ((org-agenda-overriding-header "Work")))
-       ("h" "At the Home" tags-todo "@home"
+       ("h" "At Home" tags-todo "@home"
          ((org-agenda-overriding-header "Home")))
-       ("p" "At the Personal" tags-todo "@personal"
+       ("p" "At Personal" tags-todo "@personal"
          ((org-agenda-overriding-header "Personal")))
-       ("e" "At the Education" tags-todo "@education"
+       ("e" "At Education" tags-todo "@education"
          ((org-agenda-overriding-header "Education")))
        ))
 
@@ -128,11 +124,9 @@
     '(
        ("n" "Note" entry (file +org-capture-notes-file)
          "* %^{DESCRIPTION} \nEntered on %U\n%? %i\n %a")
-       ("t" "Todo [inbox]" entry (file+headline "~/org/gtd/inbox.org" "Tasks")
+       ("t" "Todo [inbox]" entry (file+headline "~/org/todo.org" "Tasks")
          "* TODO [#A] %i%? %^g\nSCHEDULED: %(org-insert-time-stamp
         (org-read-date nil t \"+0d\"))\n")
-       ("T" "Tickler" entry (file+headline "~/org/gtd/tickler.org" "Tickler")
-         "* %i%?\nDEADLINE: %(org-insert-time-stamp (org-read-date nil t \"+0d\"\n))")
        ("s" "Snippet" entry (file "snippets.org")
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
        ("e" "Education" entry (file "education.org")
