@@ -24,18 +24,10 @@ alias llfu='exa -bghHliS --git'
 # Shortcuts
 alias g="git"
 alias v="vim"
-
-# Git
-alias gpom="git pull origin master"
-alias gpod="git pull origin dev"
-alias gpos="git pull origin staging"
-alias gb="git branch"
+alias e='emacsclient -c -n -a ""'
 
 # File size
 alias fs="stat -f \"%z bytes\""
-
-# Clear OSX Caches
-alias clearcache="rm -rf ~/Library/Caches/*"
 
 # Clear current node_modules
 alias clearnodemodules="rm -rf node_modules"
