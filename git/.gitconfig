@@ -9,6 +9,9 @@
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
 
+[init]
+  defaultBranch = main
+
 [push]
   default = current
 
