@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: console.assert
+# key: cas
+# group: console
+# --
+
+console.assert(${1:expression}, ${2:object})
