@@ -21,4 +21,9 @@ then
   tmux attach -t "default" || tmux new -s "default"
 fi
 
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
+
 antigen apply
