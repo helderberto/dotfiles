@@ -1,0 +1,3 @@
+[submodule "emacs/.doom.d/snippets"]
+	path = emacs/.doom.d/snippets
+	url = git@github.com:helderburato/emacs-snippets.git
