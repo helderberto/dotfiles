@@ -158,16 +158,3 @@
   :init
   (setq rmh-elfeed-org-files (list "~/org/references/readlater.org")))
 
-(after! lsp-mode
-  (lsp-register-client
-    (make-lsp-client :new-connection (lsp-stdio-connection
-                                       (-const "reason-language-server"))
-      :major-modes '(reason-mode)
-      :notification-handlers (ht ("client/registerCapability" 'ignore))
-      :priority 1
-      :server-id 'reason-ls)))
-
-(after! reason-mode
-  (add-hook! reason-mode #'lsp)
-  (add-hook! reason-mode
-    (add-hook 'before-save-hook #'refmt-before-save nil t)))

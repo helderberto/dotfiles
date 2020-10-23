@@ -1,6 +1,6 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$PATH:/usr/local/bin";
-export PATH="$HOME/bin:$(yarn global bin):$HOME/.emacs.d/bin:$HOME/workspace/emacs-lsp/lsp-reason:$PATH";
+export PATH="$HOME/bin:$(yarn global bin):$HOME/.emacs.d/bin:$PATH";
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/sbin:$PATH"
 . /usr/local/etc/profile.d/z.sh
