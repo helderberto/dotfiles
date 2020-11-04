@@ -62,6 +62,7 @@
   pst = push --tags
   #############
   po = pull origin
+  poh = pull origin HEAD
   pomn = pull origin main
   pomr = pull origin master
   pod = pull origin dev
