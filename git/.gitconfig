@@ -76,7 +76,7 @@
   rbi = rebase --interactive
   rbs = rebase --skip
   #############
-  s = status
+  st = status
   #############
   sh = stash
   shl = stash list
