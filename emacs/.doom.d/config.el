@@ -159,12 +159,15 @@
   (setq rmh-elfeed-org-files (list "~/org/references/readlater.org")))
 
 (use-package! prettier-js)
-(add-hook! 'js2-mode-hook 'prettier-js-mode)
-(add-hook! 'rjsx-mode-hook 'prettier-js-mode)
-(add-hook! 'web-mode-hook 'prettier-js-mode)
-(add-hook! 'typescript-mode-hook 'prettier-js-mode)
-(add-hook! 'typescript-tsx-mode-hook 'prettier-js-mode)
-(setq prettier-js-args '(
-                          "--trailing-comma" "all"
-                          "--bracket-spacing" "true"
-                          ))
+(after! prettier-js
+  :config
+  (setq! prettier-js-args '(
+                             "--trailing-comma" "all"
+                             "--bracket-spacing" "true"
+                             )))
+(add-hook! '(
+              js2-mode-hook
+              rjsx-mode-hook
+              web-mode-hook
+              typescript-mode-hook
+              typescript-tsx-mode-hook) #'prettier-js-mode)
