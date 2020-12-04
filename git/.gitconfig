@@ -8,6 +8,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
+  ignorecase = false
 
 [init]
   defaultBranch = main
