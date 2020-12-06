@@ -77,6 +77,13 @@
   :config
   (setq org-fancy-priorities-list '("■" "■" "■")))
 
+(defun capture-create-post-file ()
+  "Create an org file in ~/org/posts/."
+  (interactive)
+  (let ((name (read-string "Filename: ")))
+    (expand-file-name (format "%s.org"
+                        name) "~/org/posts/")))
+
 ;; Dracula color palette
 ;; https://draculatheme.com/contribute#color-palette
 (after! org
