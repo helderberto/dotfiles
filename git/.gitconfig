@@ -86,6 +86,6 @@
   #############
   sm = submodule
   sma = submodule add
-  smu = submodule update --recursive
+  smu = submodule update --recursive --remote --merge
   #############
   aliases = config --get-regexp alias
