@@ -39,6 +39,9 @@ if test ! $(which brew); then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# Give required permissions to Homebrew
+sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
+
 echo "📲 Installing homebrew/app store packages..."
 sh $CONFIG_DIR/osx/tasks/brew_setup.sh
 echo "✅ Successful installed packages"
@@ -60,9 +63,9 @@ sh $CONFIG_DIR/common/doom_emacs_setup.sh
 echo "✅ Successful installed Doom Emacs"
 
 # Install configurations from zsh
-echo "🔧 Setting configuration to iTerm2 and zsh..."
+echo "🔧 Setting configuration to zsh..."
 source $HOME/.zshrc
-echo "✅ Successful configured iTerm2 and zsh"
+echo "✅ Successful configured zsh"
 
 # Add default apps to Dock
 echo "🖥 Setting apps to Mac dock..."
