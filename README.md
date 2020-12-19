@@ -49,6 +49,12 @@ If you get any permissions problems when trying to run `brew` scripts, try to gi
 $ sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
 ```
 
+## fzf
+
+To enable the FZF in command line you need to follow [this guide](https://github.com/junegunn/fzf#installation).
+
+_Note: It's already added to the .bashrc just need to install the package_
+
 ## Inspiration
 
 - [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles);
