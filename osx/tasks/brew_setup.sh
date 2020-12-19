@@ -2,9 +2,6 @@
 
 # Install command-line tools using Homebrew.
 
-# It will install all from Brewfile
-brew bundle 
-
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -13,3 +10,6 @@ brew upgrade
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+# It will install all from Brewfile
+brew bundle --file=~/.dotfiles/osx/tasks/Brewfile
