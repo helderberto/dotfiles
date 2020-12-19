@@ -40,7 +40,14 @@ It's required to generate in every machine you start.
 
 ## Troubleshoot
 
-- If you get any problems with `antigen`, try `rm -rf ~/.antigen` after complete, close your terminal and open again to reinstall the packages from antigen.
+### Antigen
+If you get any problems with `antigen`, try `rm -rf ~/.antigen` after complete, close your terminal and open again to reinstall the packages from antigen.
+
+### Homebrew
+If you get any permissions problems when trying to run `brew` scripts, try to give the following permissions to your current user:
+```bash
+$ sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
+```
 
 ## Inspiration
 
