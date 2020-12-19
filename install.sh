@@ -69,4 +69,6 @@ echo "🖥 Setting apps to Mac dock..."
 sh $CONFIG_DIR/osx/dock/setup.sh
 echo "✅ Successful set apps to Mac dock"
 
+sudo chsh -s $(which zsh)
+
 echo "⚡️ All right! Restart your machine to complete the configuration."
