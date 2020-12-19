@@ -38,9 +38,10 @@ brew install gnupg
 # Brew Tap (Third-Party Repositories)
 brew tap homebrew/bundle
 brew tap homebrew/core
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
 
 # Install font
-brew tap homebrew/cask-fonts
 brew install --cask font-hack
 
 # Install useful packages/binaries
@@ -65,18 +66,14 @@ brew install yarn
 brew install z
 
 # Install cask packages
-brew tap homebrew/cask
 brew install --cask 1password
 brew install --cask alacritty
 brew install --cask emacs
 brew install --cask figma
-brew install --cask font-hack
 brew install --cask google-chrome
 brew install --cask imageoptim
-brew install --cask insomnia
 brew install --cask slack
 brew install --cask spotify
-brew install --cask transmission
 
 # Remove outdated versions from the cellar.
 brew cleanup
