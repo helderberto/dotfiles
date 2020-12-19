@@ -39,9 +39,6 @@ if test ! $(which brew); then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Give required permissions to Homebrew
-sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
-
 echo "📲 Installing homebrew/app store packages..."
 sh $CONFIG_DIR/osx/tasks/brew_setup.sh
 echo "✅ Successful installed packages"
