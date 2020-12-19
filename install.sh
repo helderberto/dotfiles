@@ -40,15 +40,15 @@ if test ! $(which brew); then
 fi
 
 echo "📲 Installing Homebrew packages..."
-sh $CONFIG_DIR/osx/tasks/brew_setup.sh
+sh $CONFIG_DIR/osx/tasks/brew.sh
 echo "✅ Successful installed packages"
 
 echo "📲 Installing apps from App Store..."
-sh $CONFIG_DIR/osx/tasks/mas_setup.sh
+sh $CONFIG_DIR/osx/tasks/mas.sh
 echo "✅ Successful installed packages"
 
 echo "🔗 Creating and configuring NVM"
-sh $CONFIG_DIR/osx/tasks/nvm_setup.sh
+sh $CONFIG_DIR/osx/tasks/nvm.sh
 echo "✅ Successful configured NVM"
 
 echo "📁 Creating workspace directory..."
@@ -70,7 +70,7 @@ echo "✅ Successful configured zsh"
 
 # Add default apps to Dock
 echo "🖥 Setting apps to Mac dock..."
-sh $CONFIG_DIR/osx/dock/setup.sh
+sh $CONFIG_DIR/osx/tasks/dock.sh
 echo "✅ Successful set apps to Mac dock"
 
 echo "⚡️ All right! Restart your machine to complete the configuration."

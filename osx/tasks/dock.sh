@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/osx/dock/utils.sh
+source ~/.dotfiles/osx/tasks/dock_utils.sh
 
 # WARNING: permanently clears existing dock
 clear_dock
