@@ -29,7 +29,21 @@ git clone git://github.com/helderburato/dotfiles.git ~/.dotfiles
 sh ~/.dotfiles/install.sh
 ```
 
-Restart your computer and enjoy your new configuration.! ✌🏻
+### Doom Emacs
+
+Install with the following command:
+```bash
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+```
+
+## fzf
+
+To enable the FZF in command line you need to follow [this guide](https://github.com/junegunn/fzf#installation).
+
+_Note: It's already added to the .bashrc just need to install the package_
+
+After that, restart your computer and enjoy your new configuration.! ✌🏻
 
 ## Generate the SSH Keys
 
@@ -48,12 +62,6 @@ If you get any permissions problems when trying to run `brew` scripts, try to gi
 ```bash
 $ sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
 ```
-
-## fzf
-
-To enable the FZF in command line you need to follow [this guide](https://github.com/junegunn/fzf#installation).
-
-_Note: It's already added to the .bashrc just need to install the package_
 
 ## Inspiration
 
