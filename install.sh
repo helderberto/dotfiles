@@ -39,8 +39,12 @@ if test ! $(which brew); then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-echo "📲 Installing homebrew/app store packages..."
+echo "📲 Installing Homebrew packages..."
 sh $CONFIG_DIR/osx/tasks/brew_setup.sh
+echo "✅ Successful installed packages"
+
+echo "📲 Installing apps from App Store..."
+sh $CONFIG_DIR/osx/tasks/mas_setup.sh
 echo "✅ Successful installed packages"
 
 echo "🔗 Creating and configuring NVM"
@@ -68,7 +72,5 @@ echo "✅ Successful configured zsh"
 echo "🖥 Setting apps to Mac dock..."
 sh $CONFIG_DIR/osx/dock/setup.sh
 echo "✅ Successful set apps to Mac dock"
-
-sudo chsh -s $(which zsh)
 
 echo "⚡️ All right! Restart your machine to complete the configuration."
