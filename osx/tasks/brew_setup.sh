@@ -2,14 +2,84 @@
 
 # Install command-line tools using Homebrew.
 
-# Remove outdated versions from the cellar
-brew cleanup
-
 # Make sure we’re using the latest Homebrew.
 brew update
 
 # Upgrade any already-installed formulae.
 brew upgrade
 
-# It will install all from Brewfile
-brew bundle --file=~/.dotfiles/osx/tasks/Brewfile
+# Save Homebrew’s installed location.
+BREW_PREFIX=$(brew --prefix)
+
+# Install GNU core utilities (those that come with macOS are outdated).
+# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+brew install coreutils
+ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+
+# Install some other useful utilities like `sponge`.
+brew install moreutils
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+brew install findutils
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed --with-default-names
+# Install a modern version of Bash.
+brew install bash
+brew install bash-completion2
+
+# Switch to using brew-installed bash as default shell
+if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+  chsh -s "${BREW_PREFIX}/bin/bash";
+fi;
+
+# Install GnuPG to enable PGP-signing commits.
+brew install gnupg
+
+# Brew Tap (Third-Party Repositories)
+brew tap homebrew/bundle
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/core
+
+# Install font
+brew install --cask font-hack
+
+# Install useful packages/binaries
+brew install antigen
+brew install cmake
+brew install coreutils
+brew install exa
+brew install fd
+brew install findutils
+brew install fzf
+brew install git
+brew install gnu-sed
+brew install gpac
+brew install gpatch
+brew install mas
+brew install moreutils
+brew install pandoc
+brew install ripgrep
+brew install stow
+brew install tldr
+brew install tmux
+brew install tree
+brew install vim
+brew install yarn
+brew install z
+
+# Install cask packages
+brew install --cask 1password
+brew install --cask alacritty
+brew install --cask emacs
+brew install --cask figma
+brew install --cask font-hack
+brew install --cask google-chrome
+brew install --cask imageoptim
+brew install --cask insomnia
+brew install --cask slack
+brew install --cask spotify
+brew install --cask transmission
+
+# Remove outdated versions from the cellar.
+brew cleanup
