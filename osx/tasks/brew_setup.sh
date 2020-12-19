@@ -21,7 +21,7 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install a modern version of Bash.
 brew install bash
 brew install bash-completion2
@@ -37,27 +37,23 @@ brew install gnupg
 
 # Brew Tap (Third-Party Repositories)
 brew tap homebrew/bundle
-brew tap homebrew/cask
-brew tap homebrew/cask-fonts
 brew tap homebrew/core
 
 # Install font
+brew tap homebrew/cask-fonts
 brew install --cask font-hack
 
 # Install useful packages/binaries
 brew install antigen
 brew install cmake
-brew install coreutils
 brew install exa
 brew install fd
-brew install findutils
 brew install fzf
 brew install git
 brew install gnu-sed
 brew install gpac
 brew install gpatch
 brew install mas
-brew install moreutils
 brew install pandoc
 brew install ripgrep
 brew install stow
@@ -69,6 +65,7 @@ brew install yarn
 brew install z
 
 # Install cask packages
+brew tap homebrew/cask
 brew install --cask 1password
 brew install --cask alacritty
 brew install --cask emacs
