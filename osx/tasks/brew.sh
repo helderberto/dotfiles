@@ -67,7 +67,6 @@ brew install yarn
 brew install z
 
 # Install cask packages
-brew install --cask 1password
 brew install --cask alacritty
 brew install --cask emacs
 brew install --cask figma
