@@ -52,6 +52,7 @@ brew install fd
 brew install fzf
 brew install git
 brew install gnu-sed
+brew install git-crypt
 brew install gpac
 brew install gpatch
 brew install mas
