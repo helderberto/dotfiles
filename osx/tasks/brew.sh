@@ -52,7 +52,6 @@ brew install fd
 brew install fzf
 brew install git
 brew install gnu-sed
-brew install git-crypt
 brew install gpac
 brew install gpatch
 brew install mas
@@ -65,6 +64,7 @@ brew install tree
 brew install vim
 brew install yarn
 brew install z
+brew install bitwarden-cli
 
 # Install cask packages
 brew install --cask alacritty
@@ -74,6 +74,7 @@ brew install --cask google-chrome
 brew install --cask imageoptim
 brew install --cask slack
 brew install --cask spotify
+brew install --cask bitwarden
 
 # Remove outdated versions from the cellar.
 brew cleanup
