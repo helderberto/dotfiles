@@ -41,6 +41,10 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; Set CMD as META key OSX
+(setq mac-option-modifier nil
+      mac-command-modifier 'meta)
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
