@@ -75,6 +75,7 @@ brew install --cask imageoptim
 brew install --cask slack
 brew install --cask spotify
 brew install --cask bitwarden
+brew install --cask notion
 
 # Remove outdated versions from the cellar.
 brew cleanup
