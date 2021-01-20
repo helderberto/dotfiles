@@ -11,7 +11,7 @@
 
 (display-time-mode 1)
 (display-battery-mode 1)
-(toggle-frame-maximized)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
