@@ -52,7 +52,7 @@ sh $CONFIG_DIR/osx/tasks/nvm.sh
 echo "✅ Successful configured NVM"
 
 echo "📁 Creating workspace directory..."
-sh $CONFIG_DIR/osx/tasks/create_workspace.sh
+sh $CONFIG_DIR/osx/tasks/create_dirs.sh
 echo "✅ Successful created workspace"
 
 echo "🔗 Linking configuration files..."
