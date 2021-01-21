@@ -143,7 +143,13 @@
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;; ocaml             ; an objective camel
-       (org +pomodoro +journal +hugo)               ; organize your plain life in plain text
+        (org
+          +pretty
+          +journal
+          +roam
+          +dragndrop       ; Exporting org to whatever you want
+          +present         ; Emacs for Presentations
+          +hugo)
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
