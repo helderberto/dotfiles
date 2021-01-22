@@ -14,6 +14,7 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias cask='brew cask' # i <3 u cask
 
 # ls substitute
+alias l='exa'
 alias ls='exa'
 alias ll='exa -l'
 alias lll='exa -l | less'
