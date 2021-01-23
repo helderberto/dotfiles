@@ -9,7 +9,7 @@ antigen bundle mengelbrecht/slimline
 # Theme
 export SLIMLINE_PROMPT_VERSION=1 # Activate legacy option format
 
-zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
+zstyle ':completion:*' special-dirs true
 
 # here's LS_COLORS
 # github.com/trapd00r/LS_COLORS
