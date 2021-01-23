@@ -88,4 +88,8 @@
   sma = submodule add
   smu = submodule update --recursive --remote --merge
   #############
+  t = tag
+  ta = tag -a
+  td = tag -d
+  #############
   aliases = config --get-regexp alias
