@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/env bash
 
 ###########################
 # This script installs the dotfiles and runs macOS configurations
