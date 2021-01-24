@@ -39,6 +39,9 @@ if test ! $(which brew); then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# Install oh-my-zsh now
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "📲 Installing Homebrew packages..."
 sh $CONFIG_DIR/osx/tasks/brew.sh
 echo "✅ Successful installed packages"
@@ -63,14 +66,14 @@ echo "ℰ Installing Doom Emacs"
 sh $CONFIG_DIR/common/doom_emacs_setup.sh
 echo "✅ Successful installed Doom Emacs"
 
-# Install configurations from zsh
-echo "🔧 Setting configuration to zsh..."
-source $HOME/.zshrc
-echo "✅ Successful configured zsh"
-
 # Add default apps to Dock
 echo "🖥 Setting apps to Mac dock..."
 sh $CONFIG_DIR/osx/tasks/dock.sh
 echo "✅ Successful set apps to Mac dock"
+
+# Install configurations from zsh
+echo "🔧 Setting configuration to zsh..."
+source $HOME/.zshrc
+echo "✅ Successful configured zsh"
 
 echo "⚡️ All right! Restart your machine to complete the configuration."
