@@ -77,6 +77,7 @@ brew install --cask spotify
 brew install --cask bitwarden
 brew install --cask notion
 brew install --cask telegram
+brew install --cask dozer
 
 # Remove outdated versions from the cellar.
 brew cleanup
