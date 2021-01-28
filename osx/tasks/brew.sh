@@ -76,6 +76,7 @@ brew install --cask slack
 brew install --cask spotify
 brew install --cask bitwarden
 brew install --cask notion
+brew install --cask bluejeans
 brew install --cask telegram
 brew install --cask dozer
 
