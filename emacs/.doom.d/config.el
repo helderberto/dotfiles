@@ -75,18 +75,6 @@
        (counsel-rg . ivy--regex-plus)
        (t      . ivy--regex-fuzzy))))
 
-(use-package! org-fancy-priorities
-  :hook (org-mode . org-fancy-priorities-mode)
-  :config
-  (setq org-fancy-priorities-list '("■" "■" "■")))
-
-(defun capture-create-post-file ()
-  "Create an org file in ~/org/posts/."
-  (interactive)
-  (let ((name (read-string "Filename: ")))
-    (expand-file-name (format "%s.org"
-                        name) "~/org/posts/")))
-
 ;; Dracula color palette
 ;; https://draculatheme.com/contribute#color-palette
 (after! org
@@ -137,8 +125,6 @@
        ("s" "Snippet" entry (file "snippets.org")
          "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
        ("e" "Education" entry (file "education.org")
-         "* %i%? \n%U")
-       ("p" "Post" entry (file capture-create-post-file)
          "* %i%? \n%U")
        ("r" "Read Later" entry (file+headline "references/readlater.org" "Misc")
          "* TODO %i%? \n")
