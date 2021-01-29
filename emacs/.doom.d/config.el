@@ -42,9 +42,10 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-;; Set CMD as META key OSX
+;; Set CMD and right OPTION as META key OSX
 (setq mac-option-modifier nil
-      mac-command-modifier 'meta)
+  mac-command-modifier 'meta
+  mac-right-option-modifier 'meta)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
