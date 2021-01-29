@@ -151,11 +151,6 @@
   (setq doom-modeline-continuous-word-count-modes
     '(markdown-mode gfm-mod)))
 
-(after! elfeed-org
-  :defer t
-  :init
-  (setq rmh-elfeed-org-files (list "~/org/references/readlater.org")))
-
 (use-package! prettier-js)
 (after! prettier-js
   :config
