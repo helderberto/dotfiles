@@ -51,5 +51,4 @@
 (package! js-doc)
 (package! prettier-js)
 (package! move-text)
-(package! org-fancy-priorities)
 (package! google-translate)
