@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 ###########################
 # This script installs the dotfiles and runs macOS configurations
