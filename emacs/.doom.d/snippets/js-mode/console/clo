@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: console.log
+# key: clo
+# group: console
+# --
+
+console.log('${1:object}', ${1:object})

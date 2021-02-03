@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: testBlock
+# key: test
+# --
+
+test('should $1', () => {
+  $0
+})

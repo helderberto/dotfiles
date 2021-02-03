@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: itBlock
+# key: it
+# --
+
+it('should $1', () => {
+  $0
+})

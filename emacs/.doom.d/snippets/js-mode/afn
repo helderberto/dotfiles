@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: arrowFunction
+# key: afn
+# --
+
+const ${1:name} = (${2:params}) => {
+  ${3:body}
+}
