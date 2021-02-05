@@ -145,8 +145,7 @@
        ;; ocaml             ; an objective camel
         (org
           +pretty
-          +journal
-          +dragndrop)
+          +journal)
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
