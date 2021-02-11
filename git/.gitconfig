@@ -30,6 +30,7 @@
   b = branch
   bd = branch -d
   bdd = branch -D
+  br = branch -r
   bm = branch -m
   #############
   c = commit
