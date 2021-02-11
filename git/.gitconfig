@@ -82,6 +82,9 @@
   #############
   st = status
   #############
+  sw = switch
+  swc = switch -c
+  #############
   sm = submodule
   sma = submodule add
   smu = submodule update --recursive --remote --merge
