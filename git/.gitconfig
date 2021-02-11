@@ -73,12 +73,12 @@
   rbi = rebase --interactive
   rbs = rebase --skip
   #############
-  st = status
+  s = stash
+  sl = stash list
+  sa = stash apply
+  sc = stash clear
   #############
-  sh = stash
-  shl = stash list
-  sha = stash apply
-  shc = stash clear
+  st = status
   #############
   sm = submodule
   sma = submodule add
