@@ -60,6 +60,7 @@
   #############
   ps = push
   psf = push -f
+  pso = push origin
   psu = push -u
   pst = push --tags
   #############
