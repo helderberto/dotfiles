@@ -69,6 +69,10 @@
   pom = pull origin main
   por = pull origin master
   #############
+  re = restore
+  res = restore --staged
+  reu = restore --source
+  #############
   rb = rebase
   rba = rebase --abort
   rbc = rebase --continue
