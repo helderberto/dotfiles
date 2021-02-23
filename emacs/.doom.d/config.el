@@ -146,6 +146,12 @@
   (setq doom-modeline-continuous-word-count-modes
     '(markdown-mode gfm-mod)))
 
+(defun maybe-use-prettier ()
+  "Enable prettier-js-mode if .prettierrc or .prettierrc.json file is located."
+  (if (or (locate-dominating-file default-directory ".prettierrc")
+          (locate-dominating-file default-directory ".prettierrc.json"))
+        (prettier-js-mode +1)))
+
 (use-package! prettier-js)
 (after! prettier-js
   :config
@@ -158,7 +164,7 @@
               rjsx-mode-hook
               web-mode-hook
               typescript-mode-hook
-              typescript-tsx-mode-hook) #'prettier-js-mode)
+              typescript-tsx-mode-hook) 'maybe-use-prettier)
 
 (use-package! google-translate
   :custom
