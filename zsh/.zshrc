@@ -3,6 +3,8 @@ source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
+# Load bundles.
+antigen bundle zsh-users/zsh-syntax-highlighting
 # Load the theme.
 antigen theme romkatv/powerlevel10k
 
