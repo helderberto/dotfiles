@@ -5,6 +5,8 @@ antigen use oh-my-zsh
 
 # Load bundles.
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+
 # Load the theme.
 antigen theme romkatv/powerlevel10k
 
