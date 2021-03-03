@@ -148,18 +148,8 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: Hack
+    family: "MesloLGS NF"
     style: Regular
-
-  # The bold font face
-  bold:
-    family: Hack
-    style: Bold
-
-  # The italic font face
-  italic:
-    family: Hack
-    style: "Bold Italic"
 
   # Point size of the font
   size: 14.0

@@ -3,11 +3,8 @@ source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Plugins
-antigen bundle mengelbrecht/slimline
-
-# Theme
-export SLIMLINE_PROMPT_VERSION=1 # Activate legacy option format
+# Load the theme.
+antigen theme romkatv/powerlevel10k
 
 zstyle ':completion:*' special-dirs true
 
@@ -32,3 +29,6 @@ done
 unset file
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
