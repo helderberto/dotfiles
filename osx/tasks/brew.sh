@@ -78,6 +78,7 @@ brew install --cask bitwarden
 brew install --cask bluejeans
 brew install --cask dozer
 brew install --cask grammarly
+brew install --cask rectangle
 
 # Remove outdated versions from the cellar.
 brew cleanup
