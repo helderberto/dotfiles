@@ -69,6 +69,7 @@ brew install bitwarden-cli
 # Install cask packages
 brew install --cask alacritty
 brew install --cask emacs
+brew install --cask visual-studio-code
 brew install --cask figma
 brew install --cask google-chrome
 brew install --cask imageoptim
