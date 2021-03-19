@@ -13,6 +13,17 @@ set number
 """""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""
+
+" Default directory ~/.config/nvim/plugged
 call plug#begin()
+
+Plug 'dracula/vim'
+Plug 'preservim/nerdtree'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim'
+
+" Async FuzzyFind
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
