@@ -87,8 +87,8 @@
   #############
   st = status
   #############
-  sw = switch
-  swc = switch -c
+  s = switch
+  sc = switch -c
   #############
   sm = submodule
   sma = submodule add
