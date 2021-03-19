@@ -8,6 +8,7 @@ syntax on                   " Enable syntax highlight
 set ttyfast                 " Faster redrawing
 set lazyredraw              " Only redraw when necessary
 set cursorline              " Find the current line quickly.
+set number
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
