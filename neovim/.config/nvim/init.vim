@@ -2,14 +2,15 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""
 
-syntax on                   " Enable syntax highlight
-set encoding=utf-8          " The encoding displayed
-set fileencoding=utf-8      " The encoding written to file
-set ttyfast                 " Faster redrawing
-set lazyredraw              " Only redraw when necessary
-set cursorline              " Find the current line quickly.
-set number
-set clipboard=unnamedplus
+set clipboard=unnamed         " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+syntax on                     " Enable syntax highlight
+set encoding=utf-8            " The encoding displayed
+set fileencoding=utf-8        " The encoding written to file
+set ttyfast                   " Faster redrawing
+set lazyredraw                " Only redraw when necessary
+set cursorline                " Highlight current line
+set number                    " Enable line numbers
+let mapleader=","             " Change mapleader
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -18,7 +19,7 @@ set clipboard=unnamedplus
 " Default directory ~/.config/nvim/plugged
 call plug#begin()
 
-Plug 'dracula/vim'
+Plug 'dracula/vim'          " Dracula theme
 Plug 'preservim/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
