@@ -79,10 +79,11 @@
   rbi = rebase --interactive
   rbs = rebase --skip
   #############
-  s = stash
-  sl = stash list
-  sa = stash apply
-  sc = stash clear
+  sh = stash
+  shl = stash list
+  sha = stash apply
+  shc = stash clear
+  shp = stash pop
   #############
   st = status
   #############
