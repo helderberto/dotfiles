@@ -6,4 +6,3 @@ mkdir -p $HOME/workspace
 
 # Create org directory
 mkdir -p $HOME/org
-mkdir -p $HOME/org/roam
