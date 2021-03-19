@@ -1,0 +1,3 @@
+[submodule "y"]
+	path = neovim/.config/nvim/plugged/fzf
+	url = https://github.com/junegunn/fzf.git
