@@ -58,6 +58,9 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; It is used to Magit Forge
+(setq auth-sources '("~/.authinfo"))
+
 (after! ivy
   :config
   (setq ivy-use-virtual-buffers t)
