@@ -25,7 +25,8 @@ alias llfu='exa -bghHliS --git'
 
 # Shortcuts
 alias g="git"
-alias v="vim"
+alias vim="nvim"
+alias v="nvim"
 alias e='emacsclient -c -n -a ""'
 
 # File size

@@ -59,9 +59,9 @@ brew install pandoc
 brew install ripgrep
 brew install stow
 brew install tldr
+brew install neovim
 brew install tmux
 brew install tree
-brew install vim
 brew install yarn
 brew install z
 brew install bitwarden-cli

@@ -1,5 +1,5 @@
-# vim as default
-export EDITOR="vim"
+# neovim as default
+export EDITOR="nvim"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
