@@ -73,6 +73,7 @@ brew install --cask figma
 brew install --cask google-chrome
 brew install --cask imageoptim
 brew install --cask slack
+brew install --cask discord
 brew install --cask spotify
 brew install --cask bitwarden
 brew install --cask bluejeans
