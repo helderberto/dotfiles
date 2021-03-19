@@ -42,6 +42,10 @@ fi
 # Install oh-my-zsh now
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Neovim vim-plug - https://github.com/junegunn/vim-plug#neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 echo "📲 Installing Homebrew packages..."
 sh $CONFIG_DIR/osx/tasks/brew.sh
 echo "✅ Successful installed packages"
