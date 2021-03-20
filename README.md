@@ -67,6 +67,12 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 ```
 
+## Author
+
+| [![Helder B. Berto](https://avatars3.githubusercontent.com/u/862575?v=3&s=80)](https://github.com/helderburato) |
+| ----------------------------------------------------------------------------------------------------- |
+| [Helder B. Berto](https://helderburato.com)                                                              |
+
 ## Inspiration
 
 - [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles);
@@ -77,4 +83,4 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+[MIT License](LICENSE) © Helder Burato Berto
