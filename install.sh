@@ -46,29 +46,23 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-echo "📲 Installing Homebrew packages..."
-sh $CONFIG_DIR/osx/tasks/brew.sh
-echo "✅ Successful installed packages"
-
-echo "📲 Installing apps from App Store..."
-sh $CONFIG_DIR/osx/tasks/mas.sh
-echo "✅ Successful installed packages"
-
-echo "🔗 Creating and configuring NVM"
-sh $CONFIG_DIR/osx/tasks/nvm.sh
-echo "✅ Successful configured NVM"
-
-echo "📁 Creating workspace directory..."
+echo "📁 Creating workspace and org dirs..."
 sh $CONFIG_DIR/osx/tasks/create_dirs.sh
 echo "✅ Successful created workspace"
+
+echo "📲 Installing Homebrew, App Store, NVM..."
+sh $CONFIG_DIR/osx/install/brew.sh
+sh $CONFIG_DIR/osx/install/mas.sh
+sh $CONFIG_DIR/osx/install/nvm.sh
+echo "✅ Successful installed packages"
+
+echo "ℰ Installing Doom Emacs"
+sh $CONFIG_DIR/install/doom_emacs.sh
+echo "✅ Successful installed Doom Emacs"
 
 echo "🔗 Linking configuration files..."
 sh $CONFIG_DIR/osx/tasks/symlink.sh
 echo "✅ Successful linked configuration files"
-
-echo "ℰ Installing Doom Emacs"
-sh $CONFIG_DIR/common/doom_emacs_setup.sh
-echo "✅ Successful installed Doom Emacs"
 
 # Add default apps to Dock
 echo "🖥 Setting apps to Mac dock..."
