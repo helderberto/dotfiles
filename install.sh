@@ -10,7 +10,7 @@ CONFIG_DIR=$(dirname "$0")
 echo "🔧 Setting up your Mac..."
 
 # Set macOS preferences
-sh $CONFIG_DIR/osx/.default_config
+sh $CONFIG_DIR/osx/.macos
 
 # Install non-brew various tools (PRE-BREW Installs)
 echo "Ensuring build/install tools are available"
