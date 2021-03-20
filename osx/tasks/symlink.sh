@@ -5,7 +5,7 @@ DOTFILE_DIR=$HOME/.dotfiles
 DOTFILES=(
     "zsh"
     "git"
-    "neovim"
+    "nvim"
     "alacritty"
     "tmux"
     "emacs"
