@@ -13,11 +13,6 @@ zstyle ':completion:*' special-dirs true
 command -v gdircolors >/dev/null 2>&1 && alias dircolors="gdircolors"
 eval "$(dircolors -b ~/.dircolors)"
 
-if [ -z "$TMUX" ]
-then
-  tmux attach -t "default" || tmux new -s "default"
-fi
-
 antigen apply
 
 # Load our dotfiles like ~/.bash_prompt, etc…
