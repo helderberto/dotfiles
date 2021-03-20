@@ -29,21 +29,15 @@ git clone git://github.com/helderburato/dotfiles.git ~/.dotfiles
 sh ~/.dotfiles/install.sh
 ```
 
-### Doom Emacs
-
-Install with the following command:
-```bash
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-```
-
 ## fzf
 
 To enable the FZF in command line you need to follow [this guide](https://github.com/junegunn/fzf#installation).
 
 _Note: It's already added to the .bashrc just need to install the package_
 
-After that, restart your computer and enjoy your new configuration.! ✌🏻
+### After Install
+
+Restart your computer and enjoy your new configuration. ✌🏻
 
 ## Generate the SSH Keys
 
@@ -55,12 +49,22 @@ It's required to generate in every machine you start.
 ## Troubleshoot
 
 ### Antigen
+
 If you get any problems with `antigen`, try `rm -rf ~/.antigen` after complete, close your terminal and open again to reinstall the packages from antigen.
 
 ### Homebrew
+
 If you get any permissions problems when trying to run `brew` scripts, try to give the following permissions to your current user:
 ```bash
 $ sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
+```
+
+### Doom Emacs
+
+If Doom Emacs scripts fails, made it by yourself with the following commands:
+```bash
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
 ```
 
 ## Inspiration
