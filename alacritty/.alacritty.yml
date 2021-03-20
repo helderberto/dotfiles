@@ -216,4 +216,4 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - 'tmux attach -t "default" || tmux new -s "default"'
