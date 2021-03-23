@@ -9,7 +9,6 @@
 (setq user-full-name "Helder Burato Berto"
   user-mail-address "helder.burato@gmail.com")
 
-(display-battery-mode 1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
