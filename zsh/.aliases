@@ -1,4 +1,4 @@
-# Easier ways to navigate trough directories
+# Navigate
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -11,10 +11,17 @@ alias vs="cd $HOME/vaults"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Brew
-alias cask='brew cask' # i <3 u cask
+# Empty Trash
+# You have to give to your terminal Full Disk permissions in the security settings
+# Security & Privacy > Privacy > Full Disk Access > Your Terminal
+alias trash="rm -fr ~/.Trash"
 
-# ls substitute
+# Brew
+alias bupdate="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
+alias bcask='brew install --cask'
+
+# ls overwrite by exa
+# https://the.exa.website/
 alias l='exa'
 alias ls='exa'
 alias ll='exa -l'
@@ -22,6 +29,10 @@ alias lll='exa -l | less'
 alias lla='exa -la'
 alias llt='exa -T'
 alias llfu='exa -bghHliS --git'
+
+# Net
+alias iplocal="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
 # Shortcuts
 alias g="git"
@@ -32,16 +43,8 @@ alias e='emacsclient -c -n -a ""'
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# Clear current node_modules
-alias clearnodemodules="rm -rf node_modules"
-
-# Update installed Ruby gems, Homebrew, npm, and their installed packages
-alias brewupdate="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
-
-# Turn on/off sound
-# http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume output volume 100'"
+# Clear projects node_modules
+alias rmnm="rm -rf node_modules"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
