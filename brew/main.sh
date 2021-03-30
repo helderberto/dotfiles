@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source ~/.dotfiles/common/functions.sh
+
+msg_install "brew core"
+
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
@@ -66,8 +70,12 @@ brew install yarn
 brew install z
 brew install bitwarden-cli
 
+msg_ok "OK"
+
 # Install cask packages
-source ~/.dotfiles/osx/install/brew_casks.sh
+msg_install "brew casks"
+source ~/.dotfiles/brew/casks.sh
+msg_ok "OK"
 
 # Remove outdated versions from the cellar.
 brew cleanup

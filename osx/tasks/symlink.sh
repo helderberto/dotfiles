@@ -1,11 +1,13 @@
 #!/bin/bash
 
+source ~/.dotfiles/common/functions.sh
+
 DOTFILE_DIR=$HOME/.dotfiles
 
 DOTFILES=(
     "zsh"
     "git"
-    "nvim"
+    "neovim"
     "alacritty"
     "tmux"
     "emacs"
@@ -15,6 +17,6 @@ DOTFILES=(
 cd $DOTFILE_DIR
 
 for dotfile in "${DOTFILES[@]}";do
-    echo "🔗 Linking dotfile: $HOME/${dotfile}"
+    msg_checking "Linking file to $HOME/${dotfile}"
     stow $dotfile
 done

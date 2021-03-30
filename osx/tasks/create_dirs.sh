@@ -1,8 +1,15 @@
-#!/bin/sh
+#!/bin/env bash
+
+source ~/.dotfiles/common/functions.sh
 
 # Create a Workspace directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
-mkdir -p $HOME/workspace
+if [ ! -d "$HOME/workspace" ]; then
+    mkdir -p $HOME/workspace
+    msg_checking "created ~/workspace"
+fi
 
 # Create org directory
-mkdir -p $HOME/org
+if [ ! -d "$HOME/org" ]; then
+    mkdir -p $HOME/org
+    msg_checking "created ~/org"
+fi

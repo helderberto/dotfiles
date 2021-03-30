@@ -100,7 +100,7 @@ function clear_others_from_dock {
 }
 
 function clear_dock {
-  	clear_apps_from_dock
+    clear_apps_from_dock
     clear_others_from_dock
 }
 
@@ -113,6 +113,6 @@ function enable_recent_apps_from_dock {
 }
 
 function reset_dock {
-  	defaults delete com.apple.dock
+    defaults delete com.apple.dock
     killall Dock
 }
