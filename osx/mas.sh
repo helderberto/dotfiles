@@ -34,12 +34,11 @@ if ! has_app "GIPHY CAPTURE"; then
     msg_ok "OK"
 fi
 
-if ! has_app "Be Focused"; then
-    msg_install "Be Focused"
-    mas install 973134470
+if ! has_app "Flow"; then
+    msg_install "Flow"
+    mas install 1423210932
     msg_ok "OK"
 fi
-
 
 if ! has_app "Bear"; then
     msg_install "Bear"
