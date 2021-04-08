@@ -39,6 +39,8 @@ alias g="git"
 alias vim="nvim"
 alias v="nvim"
 alias e='emacsclient -c -n -a ""'
+alias d="docker"
+alias dc="docker-compose"
 
 # File size
 alias fs="stat -f \"%z bytes\""
