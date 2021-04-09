@@ -17,8 +17,12 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias trash="rm -fr ~/.Trash"
 
 # Brew
-alias bupdate="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
-alias bcask='brew install --cask'
+alias b="brew"
+alias bt="brew tap"
+alias bi="brew install"
+alias brm="brew uninstall"
+alias bu="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
+alias bc='brew install --cask'
 
 # ls overwrite by exa
 # https://the.exa.website/
