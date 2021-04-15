@@ -44,8 +44,25 @@ alias vim="nvim"
 alias v="nvim"
 alias e='emacsclient -c -n -a ""'
 alias nu="nvm use --lts"
+
+# Docker
 alias d="docker"
+alias dr="docker run"
+alias drd="docker run -d"
+alias di="docker images"
+alias dri="docker rmi"
+alias dp="docker ps"
+alias dpa="docker ps -a"
+alias dsp="docker system prune --all"
+alias drf='docker rm $(docker ps -a -q) -f'
+## Docker Compose
 alias dc="docker-compose"
+alias dcu="docker-compose up"
+alias dcud="docker-compose up -d"
+alias dcub="docker-compose up --force-recreate --build"
+alias dcd="docker-compose down"
+alias dcl="docker-compose logs --tail=all | grep"
+alias dcdri="docker-compose down --rmi all --remove-orphans"
 
 # File size
 alias fs="stat -f \"%z bytes\""
