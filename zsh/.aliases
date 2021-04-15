@@ -43,7 +43,14 @@ alias g="git"
 alias vim="nvim"
 alias v="nvim"
 alias e='emacsclient -c -n -a ""'
-alias nu="nvm use --lts"
+
+# NVM
+alias n="nvm"
+alias nu="nvm use"
+alias nus="nvm use --lts"
+alias nin="nvm install"
+alias nun="nvm uninstall"
+alias nl="nvm list"
 
 # Docker
 alias d="docker"
