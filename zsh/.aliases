@@ -43,6 +43,7 @@ alias g="git"
 alias vim="nvim"
 alias v="nvim"
 alias e='emacsclient -c -n -a ""'
+alias nu="nvm use --lts"
 alias d="docker"
 alias dc="docker-compose"
 
