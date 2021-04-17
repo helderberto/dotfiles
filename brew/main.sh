@@ -68,7 +68,6 @@ brew install tmux
 brew install tree
 brew install yarn
 brew install z
-brew install bitwarden-cli
 
 msg_ok "OK"
 
