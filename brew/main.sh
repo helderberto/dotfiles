@@ -66,7 +66,7 @@ brew install tldr
 brew install neovim
 brew install tmux
 brew install tree
-brew install yarn
+brew install yarn --ignore-dependencies
 brew install z
 
 msg_ok "OK"
