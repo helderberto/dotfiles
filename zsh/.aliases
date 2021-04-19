@@ -16,6 +16,9 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Security & Privacy > Privacy > Full Disk Access > Your Terminal
 alias trash="rm -fr ~/.Trash"
 
+# Empty Downloads on macOS
+alias dclean="cd ~/Downloads; rm -fr *;cd -"
+
 # Brew
 alias b="brew"
 alias bt="brew tap"
