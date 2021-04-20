@@ -46,6 +46,7 @@ alias g="git"
 alias vim="nvim"
 alias v="nvim"
 alias e='emacsclient -c -n -a ""'
+alias al="less ~/.aliases"
 
 # NVM
 alias n="nvm"
