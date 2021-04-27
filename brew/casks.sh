@@ -14,3 +14,4 @@ brew install --cask dozer
 brew install --cask grammarly
 brew install --cask rectangle
 brew install --cask drawio
+brew install --cask visual-studio-code
