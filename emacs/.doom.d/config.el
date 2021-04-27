@@ -60,9 +60,6 @@
 ;; It is used to Magit Forge
 (setq auth-sources '("~/.authinfo"))
 
-;; Path to discover projects with projectile
-(setq projectile-project-search-path '("~/workspace"))
-
 ;; Todoist API Token
 ;; use token (~/.todoist-token)
 (setq todoist-token
