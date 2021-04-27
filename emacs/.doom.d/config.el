@@ -79,62 +79,6 @@
        (counsel-rg . ivy--regex-plus)
        (t      . ivy--regex-fuzzy))))
 
-;; Dracula color palette
-;; https://draculatheme.com/contribute#color-palette
-(after! org
-  :config
-  (setq org-log-done 'time)
-  (setq org-clock-persist 'history)
-  (setq org-log-into-drawer t)
-  (setq org-startup-folded 'overview)
-  (auto-fill-mode)
-
-  (setq org-archive-location "archives/%s_archive::")
-
-  (setq org-agenda-files (list org-directory (concat org-directory)))
-
-  (setq org-agenda-custom-commands
-    '(("w" "At Work" tags-todo "@work"
-        ((org-agenda-overriding-header "Work")))
-       ("h" "At Home" tags-todo "@home"
-         ((org-agenda-overriding-header "Home")))
-       ("p" "At Personal" tags-todo "@personal"
-         ((org-agenda-overriding-header "Personal")))
-       ("e" "At Education" tags-todo "@education"
-         ((org-agenda-overriding-header "Education")))
-       ))
-
-  (setq org-agenda-skip-scheduled-if-done t)
-
-  (setq org-priority-faces '((65 :foreground "#ff5555")
-                             (66 :foreground "#f1fa8c")
-                             (67 :foreground "#8be9fd")))
-
-  (setq org-todo-keywords
-    '((sequence "TODO(t)" "INPROGRESS(i!)" "WAITING(w@/!)" "|" "DONE(d!)" "CANCELLED(c@/!)"))
-    org-todo-keyword-faces
-    '(("TODO" :foreground "#8be9fd" :weight normal :underline t)
-       ("INPROGRESS" :foreground "#bd93f9" :weight normal :underline t)
-       ("WAITING" :foreground "#f1fa8c" :weight normal :underline t)
-       ("DONE" :foreground "#50fa7b" :weight normal :underline t)
-       ("CANCELLED" :foreground "#ff5555" :weight normal :underline t)))
-
-  (setq org-capture-templates
-    '(
-       ("n" "Note" entry (file +org-capture-notes-file)
-         "* %^{DESCRIPTION} \nEntered on %U\n%? %i\n %a")
-       ("t" "Todo [inbox]" entry (file+headline "~/org/todo.org" "Tasks")
-         "* TODO [#A] %i%? %^g\nSCHEDULED: %(org-insert-time-stamp
-        (org-read-date nil t \"+0d\"))\n")
-       ("s" "Snippet" entry (file "snippets.org")
-         "* %^{DESCRIPTION} %^g \n#+begin_src %^{LANG}\n%?%i\n#+end_src")
-       ("e" "Education" entry (file "education.org")
-         "* %i%? \n%U")
-       ("r" "Read Later" entry (file+headline "references/readlater.org" "Misc")
-         "* TODO %i%? \n")
-       ))
-  )
-
 (after! deft
   :defer t
   :config
