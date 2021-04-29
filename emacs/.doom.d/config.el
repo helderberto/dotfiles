@@ -90,10 +90,6 @@
   (setq deft-use-filter-string-for-filename t)
   (setq deft-file-naming-rules '((nospace . "-"))))
 
-(after! org-journal
-  :config
-  (setq org-journal-file-format  "%Y-%m-%d.org"))
-
 (after! doom-modeline
   :config
   (setq doom-modeline-continuous-word-count-modes
