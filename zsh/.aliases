@@ -47,8 +47,8 @@ alias vim="nvim"
 alias v="nvim"
 alias e='emacsclient -c -n -a ""'
 alias al="less ~/.aliases"
-alias ga="git config --get-regexp alias"
-alias gag="git config --get-regexp alias | grep"
+alias gal="g al"
+alias gaf="g al | grep"
 
 # NVM
 alias n="nvm"
