@@ -104,4 +104,5 @@
   ta = tag -a
   td = tag -d
   #############
-  aliases = config --get-regexp alias
+  al = config --get-regexp alias
+  alf = config --get-regexp alias | grep
