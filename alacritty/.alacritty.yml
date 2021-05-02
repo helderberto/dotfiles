@@ -18,9 +18,9 @@ alt_send_esc: false
 
 # Load Dracula Theme from ~/.dotfiles
 import:
-  - ~/.dotfiles/alacritty/dracula.yml
-  - ~/.dotfiles/alacritty/font.yml
-  - ~/.dotfiles/alacritty/shell.yml
+  - ~/.alacritty.theme.yml
+  - ~/.alacritty.font.yml
+  - ~/.alacritty.shell.yml
 
 window:
   # Window dimensions (changes require restart)
