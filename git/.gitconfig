@@ -48,6 +48,8 @@
   d = difftool
   df = diff --color --color-words --abbrev
   #############
+  f = fetch
+  #############
   l  = log --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
   lc = log -1 --stat
   lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
