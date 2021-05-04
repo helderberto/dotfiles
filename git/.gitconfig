@@ -67,9 +67,9 @@
   psu = push -u
   pst = push --tags
   #############
-  pl = pull origin
-  plm = pull origin main
-  plr = pull origin master
+  po = pull origin
+  pom = pull origin main
+  por = pull origin master
   #############
   rt = restore
   rts = restore --staged
