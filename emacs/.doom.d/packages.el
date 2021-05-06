@@ -51,6 +51,3 @@
 (package! js-doc)
 (package! prettier-js)
 (package! move-text)
-(package! google-translate)
-(package! emacs-todoist
-  :recipe (:host github :repo "abrochard/emacs-todoist"))
