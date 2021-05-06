@@ -60,13 +60,6 @@
 ;; It is used to Magit Forge
 (setq auth-sources '("~/.authinfo"))
 
-;; Todoist API Token
-;; use token (~/.todoist-token)
-(setq todoist-token
-  (with-temp-buffer
-    (insert-file-contents "~/.todoist-token")
-    (buffer-string)))
-
 (after! ivy
   :config
   (setq ivy-use-virtual-buffers t)
