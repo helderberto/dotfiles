@@ -110,3 +110,18 @@
               typescript-mode-hook
               typescript-tsx-mode-hook) 'maybe-use-prettier)
 
+
+(after! lsp-mode
+  "It disables the 'File is a CommonJS module' warning"
+  (lsp-defun my/filter-typescript ((params &as &PublishDiagnosticsParams :diagnostics)
+                                 _workspace)
+  (lsp:set-publish-diagnostics-params-diagnostics
+   params
+   (or (seq-filter (-lambda ((&Diagnostic :message))
+                     (not (s-contains? "File is a CommonJS module" message)))
+
+                   diagnostics)
+       []))
+    params)
+
+  (setq lsp-diagnostic-filter 'my/filter-typescript))
