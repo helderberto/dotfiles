@@ -89,9 +89,10 @@
     '(markdown-mode gfm-mod)))
 
 (defun maybe-use-prettier ()
-  "Enable prettier-js-mode if .prettierrc or .prettierrc.json or .prettierrc.js file is located."
+  "Enable prettier-js-mode when find a prettier configuration file at project"
   (if (or (locate-dominating-file default-directory ".prettierrc")
        (or (locate-dominating-file default-directory ".prettierrc.json"))
+       (or (locate-dominating-file default-directory "prettier.config.js"))
        (or (locate-dominating-file default-directory ".prettierrc.js")))
         (prettier-js-mode +1)))
 
