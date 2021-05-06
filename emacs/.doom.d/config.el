@@ -109,11 +109,3 @@
               typescript-mode-hook
               typescript-tsx-mode-hook) 'maybe-use-prettier)
 
-(use-package! google-translate
-  :custom
-  (google-translate-backend-method 'curl)
-  :config
-  (defun google-translate--search-tkk () "Search TKK." (list 430675 2721866130))
-  (setq google-translate-translation-directions-alist
-    '(("en" . "pt") ("pt" . "en") ))
-  )
