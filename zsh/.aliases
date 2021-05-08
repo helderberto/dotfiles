@@ -50,6 +50,10 @@ alias al="less ~/.aliases"
 alias gal="g al"
 alias gaf="g al | grep"
 
+# Yarn
+alias yr="yarn"
+alias yrul="yarn upgrade-interactive --latest"
+
 # NVM
 alias n="nvm"
 alias nu="nvm use"
