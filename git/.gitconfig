@@ -32,6 +32,7 @@
   bdd = branch -D
   br = branch -r
   bm = branch -m
+  bv = branch -vv
   #############
   c = commit
   cm = commit -m
