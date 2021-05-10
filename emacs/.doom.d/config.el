@@ -14,6 +14,9 @@
   lsp-enable-symbol-highlighting nil
   +lsp-prompt-to-install-server 'quiet
 
+  ;; https://github.com/hlissner/doom-emacs-private/blob/master/config.el#L14
+  company-idle-delay nil
+
   ;; Disable exit confirmation
   confirm-kill-emacs nil
 
@@ -74,14 +77,6 @@
 ;; Enable rjsx major mode to .js files
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
-(defun maybe-use-prettier ()
-  "Enable prettier-js-mode when find a prettier configuration file at project"
-  (if (or (locate-dominating-file default-directory ".prettierrc")
-       (or (locate-dominating-file default-directory ".prettierrc.json"))
-       (or (locate-dominating-file default-directory "prettier.config.js"))
-       (or (locate-dominating-file default-directory ".prettierrc.js")))
-        (prettier-js-mode +1)))
-
 (use-package! prettier-js)
 (after! prettier-js
   :config
@@ -89,6 +84,15 @@
                              "--trailing-comma" "all"
                              "--bracket-spacing" "true"
                              )))
+
+(defun maybe-use-prettier ()
+  "Enable prettier-js-mode when find a prettier configuration file at project"
+  (if (or (locate-dominating-file default-directory ".prettierrc")
+        (or (locate-dominating-file default-directory ".prettierrc.json"))
+        (or (locate-dominating-file default-directory "prettier.config.js"))
+        (or (locate-dominating-file default-directory ".prettierrc.js")))
+    (prettier-js-mode +1)))
+
 (add-hook! '(
               js2-mode-hook
               rjsx-mode-hook
@@ -100,14 +104,18 @@
 (after! lsp-mode
   "It disables the 'File is a CommonJS module' warning"
   (lsp-defun my/filter-typescript ((params &as &PublishDiagnosticsParams :diagnostics)
-                                 _workspace)
-  (lsp:set-publish-diagnostics-params-diagnostics
-   params
-   (or (seq-filter (-lambda ((&Diagnostic :message))
-                     (not (s-contains? "File is a CommonJS module" message)))
+                                    _workspace)
+    (lsp:set-publish-diagnostics-params-diagnostics
+      params
+      (or (seq-filter (-lambda ((&Diagnostic :message))
+                        (not (s-contains? "File is a CommonJS module" message)))
 
-                   diagnostics)
-       []))
+            diagnostics)
+        []))
     params)
 
   (setq lsp-diagnostic-filter 'my/filter-typescript))
+
+(after! ivy
+  ;; I prefer search matching to be ordered; it's more precise
+  (add-to-list 'ivy-re-builders-alist '(counsel-projectile-find-file . ivy--regex-plus)))
