@@ -3,11 +3,22 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Helder Burato Berto"
-  user-mail-address "helder.burato@gmail.com")
+  user-mail-address "helder.burato@gmail.com"
+
+  ;; lsp-ui-sideline is redundant with eldoc and much more invasive, so
+  ;; disable it by default.
+  lsp-ui-sideline-enable nil
+  lsp-enable-symbol-highlighting nil
+  +lsp-prompt-to-install-server 'quiet
+
+  ;; Disable exit confirmation
+  confirm-kill-emacs nil
+
+  ;; More common use-case
+  evil-ex-substitute-global t)
 
 ;; Set default to maximize frame when starts
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -60,33 +71,8 @@
 ;; It is used to Magit Forge
 (setq auth-sources '("~/.authinfo"))
 
-(after! ivy
-  :config
-  (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t)
-
-  ;; enable this if you want `swiper' to use it
-  (setq search-default-mode #'char-fold-to-regexp)
-  (setq ivy-re-builders-alist
-    '((swiper . ivy--regex-plus)
-       (counsel-rg . ivy--regex-plus)
-       (t      . ivy--regex-fuzzy))))
-
-(after! deft
-  :defer t
-  :config
-  (setq deft-directory org-directory)
-  (setq deft-extensions '("org" "md" "txt"))
-  (setq deft-default-extension "org")
-  (setq deft-recursive t)
-  (setq deft-use-filename-as-title nil)
-  (setq deft-use-filter-string-for-filename t)
-  (setq deft-file-naming-rules '((nospace . "-"))))
-
-(after! doom-modeline
-  :config
-  (setq doom-modeline-continuous-word-count-modes
-    '(markdown-mode gfm-mod)))
+;; Enable rjsx major mode to .js files
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
 (defun maybe-use-prettier ()
   "Enable prettier-js-mode when find a prettier configuration file at project"
@@ -111,7 +97,6 @@
               json-mode-hook
               typescript-tsx-mode-hook) 'maybe-use-prettier)
 
-
 (after! lsp-mode
   "It disables the 'File is a CommonJS module' warning"
   (lsp-defun my/filter-typescript ((params &as &PublishDiagnosticsParams :diagnostics)
@@ -126,6 +111,3 @@
     params)
 
   (setq lsp-diagnostic-filter 'my/filter-typescript))
-
-;; Enable rjsx major mode to .js files
-(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
