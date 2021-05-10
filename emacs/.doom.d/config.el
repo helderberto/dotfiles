@@ -108,6 +108,7 @@
               rjsx-mode-hook
               web-mode-hook
               typescript-mode-hook
+              json-mode-hook
               typescript-tsx-mode-hook) 'maybe-use-prettier)
 
 
