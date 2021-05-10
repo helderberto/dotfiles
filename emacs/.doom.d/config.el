@@ -126,3 +126,6 @@
     params)
 
   (setq lsp-diagnostic-filter 'my/filter-typescript))
+
+;; Enable rjsx major mode to .js files
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
