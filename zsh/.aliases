@@ -81,6 +81,12 @@ alias dcd="docker-compose down"
 alias dcl="docker-compose logs --tail=all | grep"
 alias dcdri="docker-compose down --rmi all --remove-orphans"
 
+# DOOM Emacs
+# https://github.com/hlissner/doom-emacs
+alias dos="doom sync"
+alias dou="doom upgrade"
+alias dod="doom doctor"
+
 # File size
 alias fs="stat -f \"%z bytes\""
 
