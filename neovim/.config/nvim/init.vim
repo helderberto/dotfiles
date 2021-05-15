@@ -10,6 +10,7 @@ set ttyfast                   " Faster redrawing
 set lazyredraw                " Only redraw when necessary
 set cursorline                " Highlight current line
 set number                    " Enable line numbers
+set relativenumber            " Enable relative line numbers
 let mapleader=","             " Change mapleader
 
 """""""""""""""""""""""""""""""""""""""""""""""
