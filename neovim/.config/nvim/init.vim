@@ -1,30 +1,26 @@
-"""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""
+set scrolloff=8                         " Scroll screen after 8 lines
+set number                              " Enable line numbers
+set relativenumber                      " Show relative numbers to the current line
+set clipboard=unnamed                   " Use the OS default clipboard 
+set tabstop=4 softtabstop=4 
+set shiftwidth=4
+set expandtab
+set smartindent
 
-set clipboard=unnamed         " Use the OS clipboard by default (on versions compiled with `+clipboard`)
-syntax on                     " Enable syntax highlight
-set encoding=utf-8            " The encoding displayed
-set fileencoding=utf-8        " The encoding written to file
-set ttyfast                   " Faster redrawing
-set lazyredraw                " Only redraw when necessary
-set cursorline                " Highlight current line
-set number                    " Enable line numbers
-set relativenumber            " Enable relative line numbers
-let mapleader=","             " Change mapleader
-
-"""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""
-
-" Default directory ~/.config/nvim/plugged
+" Load and install Plugins with vim Plug
 call plug#begin()
-
-Plug 'dracula/vim'          " Dracula theme
-Plug 'preservim/nerdtree'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
+Plug 'dracula/vim'
 call plug#end()
+
+" Update colorscheme
+set termguicolors     " enable true colors support
+colorscheme dracula
+
+" Our remaps
+let mapleader = " "
+nnoremap <leader>pv :Vex<CR>
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
