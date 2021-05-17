@@ -2,8 +2,8 @@ set scrolloff=8                         " Scroll screen after 8 lines
 set number                              " Enable line numbers
 set relativenumber                      " Show relative numbers to the current line
 set clipboard=unnamed                   " Use the OS default clipboard 
-set tabstop=4 softtabstop=4 
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 
