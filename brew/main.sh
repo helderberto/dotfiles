@@ -68,6 +68,7 @@ brew install tmux
 brew install tree
 brew install yarn --ignore-dependencies
 brew install z
+brew install openjdk
 
 msg_ok "OK"
 
