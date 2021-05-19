@@ -50,6 +50,7 @@
   df = diff --color --color-words --abbrev
   #############
   f = fetch
+  fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"'
   #############
   l  = log --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset'
   lc = log -1 --stat
