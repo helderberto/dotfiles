@@ -78,9 +78,8 @@ set clipboard=unnamed
 nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>pe :Ex<CR>
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <C-p> :Files<CR>
 nnoremap <leader><space> :Files<CR>
-nnoremap <C-f> :BLines<CR>
+nnoremap <leader>f :BLines<CR>
 
 " disable arrows
 noremap <Up> <NOP>
