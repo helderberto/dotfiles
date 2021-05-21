@@ -27,7 +27,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-
 " .editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
@@ -45,6 +44,9 @@ if (executable('ag'))
     let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
 
+" set FZF layout to bottom window
+let g:fzf_layout = { "window": "silent botright 16split enew" }
+
 """""""""""""""""""""""""
 " => Visual
 """""""""""""""""""""""""
@@ -55,7 +57,7 @@ set scrolloff=8
 set number
 
 " show relative numbers to the current line
-set relativenumber                      
+set relativenumber
 
 " 256 colors
 set t_Co=256
@@ -74,10 +76,11 @@ let mapleader = " "
 set clipboard=unnamed
 
 nnoremap <leader>pv :Vex<CR>
+nnoremap <leader>pe :Ex<CR>
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <C-p> :Files<CR>
-nnoremap <C-j> :cnext<CR>
-nnoremap <C-k> :cprev<CR>
+nnoremap <leader><space> :Files<CR>
+nnoremap <C-f> :BLines<CR>
 
 " disable arrows
 noremap <Up> <NOP>
