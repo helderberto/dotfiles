@@ -36,6 +36,12 @@ Plug 'mattn/emmet-vim'
 " fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
 
+" file tree
+Plug 'preservim/nerdtree'
+
+" prettier
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 
@@ -101,6 +107,12 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader><space> :Files<CR>
 nnoremap <leader>f :BLines<CR>
+
+" NERDTree remap
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " disable arrows
 noremap <Up> <NOP>
