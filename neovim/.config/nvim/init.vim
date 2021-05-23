@@ -75,14 +75,26 @@ let mapleader = " "
 " access system clipboard
 set clipboard=unnamed
 
-" navigate between directories
+" copy/paste
+vnoremap <leader>p "_dP
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
+" navigation
 nnoremap <leader>pe :Ex<CR>
 nnoremap <leader>pv :Vex<CR>
+nnoremap <leader>ph :Sex<CR>
+
+" select and movement
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " source neovim configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " fuzzy search files and text
+nnoremap <C-p> :GFiles<CR>
 nnoremap <leader><space> :Files<CR>
 nnoremap <leader>f :BLines<CR>
 
