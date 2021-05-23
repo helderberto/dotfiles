@@ -50,6 +50,7 @@ endif
 " set FZF layout to bottom window
 let g:fzf_layout = { "window": "silent botright 16split enew" }
 
+
 """""""""""""""""""""""""
 " => Visual
 """""""""""""""""""""""""
@@ -111,6 +112,8 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
+" git
+nnoremap <leader>g :Git<CR>
 
 """""""""""""""""""""""""
 " => Indentation
