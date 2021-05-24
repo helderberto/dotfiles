@@ -145,10 +145,9 @@ nnoremap <leader>Y gg"+yG
 " manipulate window
 nnoremap <leader>. :Ex<CR>
 nnoremap <leader>we :Ex<CR>
+nnoremap <leader>w <C-w>
 nnoremap <leader>wv :Vex<CR>
 nnoremap <leader>ws :Sex<CR>
-nnoremap <leader>wc <C-w>c
-nnoremap <leader>wo <C-w>o
 
 " select and movement
 vnoremap J :m '>+1<CR>gv=gv
