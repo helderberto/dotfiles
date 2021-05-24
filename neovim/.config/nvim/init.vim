@@ -14,7 +14,7 @@ set lazyredraw
 """""""""""""""""""""""""
 call plug#begin()
 
-" theme dracula
+" dracula theme
 Plug 'dracula/vim'
 
 " JavaScript Highlight & Improved Indentation
@@ -36,8 +36,11 @@ Plug 'mattn/emmet-vim'
 " fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
 
-" file tree
+" NERDTree
 Plug 'preservim/nerdtree'
+
+" linting engine
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -45,6 +48,30 @@ call plug#end()
 """""""""""""""""""""""""
 " => Plugins Configs
 """""""""""""""""""""""""
+
+" fix files on save
+let g:ale_fix_on_save = 1
+
+" lint after 1000ms after changes are made both on insert and normal modes
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_delay = 1000
+
+" use emojis for errors and warnings
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+
+" fixer configurations
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier']
+\}
+
+" linter configurations
+let g:ale_linters = {
+\   'javascript': ['eslint']
+\}
+
 " make FZF respect .gitignore if `ag` is installed
 if (executable('ag'))
     let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
