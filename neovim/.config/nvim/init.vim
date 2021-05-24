@@ -20,6 +20,9 @@ call plug#begin()
 " dracula theme
 Plug 'dracula/vim'
 
+" neomake
+Plug 'neomake/neomake'
+
 " JavaScript Highlight & Improved Indentation
 Plug 'pangloss/vim-javascript'
 
@@ -54,6 +57,10 @@ call plug#end()
 """""""""""""""""""""""""
 " => Plugins Configs
 """""""""""""""""""""""""
+
+" When writing a buffer (no delay).
+" https://github.com/neomake/neomake#setup
+call neomake#configure#automake('w')
 
 " fix files on save
 let g:ale_fix_on_save = 1
