@@ -90,7 +90,7 @@ let g:fzf_layout = { "window": "silent botright 16split enew" }
 
 " fzf configurations
 nnoremap <silent><C-p> :GFiles<CR>
-nnoremap <silent><leader>sf :Rg<CR>
+nnoremap <leader>sf :Rg<CR>
 nnoremap <silent><leader>sb :BLines<CR>
 nnoremap <silent><leader><space> :Files<CR>
 
