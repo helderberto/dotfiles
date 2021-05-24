@@ -142,11 +142,13 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
-" split window
+" manipulate window
 nnoremap <leader>. :Ex<CR>
 nnoremap <leader>we :Ex<CR>
 nnoremap <leader>wv :Vex<CR>
 nnoremap <leader>ws :Sex<CR>
+nnoremap <leader>wc <C-w>c
+nnoremap <leader>wo <C-w>o
 
 " select and movement
 vnoremap J :m '>+1<CR>gv=gv
