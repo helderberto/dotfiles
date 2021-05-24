@@ -1,6 +1,7 @@
 """""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""
+
 set encoding=utf-8
 set fileencoding=utf-8
 syntax on
@@ -12,6 +13,7 @@ set lazyredraw
 " => Plugins
 " => vim-plug - https://github.com/junegunn/vim-plug
 """""""""""""""""""""""""
+
 call plug#begin()
 
 " dracula theme
@@ -84,6 +86,7 @@ let g:fzf_layout = { "window": "silent botright 16split enew" }
 """""""""""""""""""""""""
 " => Visual
 """""""""""""""""""""""""
+
 " scroll screen after 8 lines
 set scrolloff=8
 
@@ -103,6 +106,17 @@ colorscheme dracula
 """""""""""""""""""""""""
 " => Keymappings
 """""""""""""""""""""""""
+
+" disable arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+
 " set leader key to spacebar
 let mapleader = " "
 
@@ -138,22 +152,13 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" disable arrows
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-
 " git
 nnoremap <leader>g :Git<CR>
 
 """""""""""""""""""""""""
 " => Indentation
 """""""""""""""""""""""""
+
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
