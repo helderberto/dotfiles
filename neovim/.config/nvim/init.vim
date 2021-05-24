@@ -39,9 +39,6 @@ Plug 'tpope/vim-fugitive'
 " file tree
 Plug 'preservim/nerdtree'
 
-" prettier
-Plug 'sbdchd/neoformat'
-
 call plug#end()
 
 
