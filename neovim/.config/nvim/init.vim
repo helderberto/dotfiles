@@ -88,11 +88,6 @@ endif
 " set FZF layout to bottom window
 let g:fzf_layout = { "window": "silent botright 16split enew" }
 
-" fzf configurations
-nnoremap <silent><C-p> :GFiles<CR>
-nnoremap <leader>sf :Rg<CR>
-nnoremap <silent><leader>sb :BLines<CR>
-nnoremap <silent><leader><space> :Files<CR>
 
 
 """""""""""""""""""""""""
@@ -152,6 +147,22 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" fzf configurations
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>sf :Rg<CR>
+nnoremap <leader>sb :BLines<CR>
+nnoremap <leader><space> :Files<CR>
+
+" disable arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
 
 
 """""""""""""""""""""""""
@@ -249,18 +260,3 @@ endfunction
 """""""""""""""""""""""""
 
 nmap <leader>g :G<CR>
-
-
-"""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""
-
-" disable arrows
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
