@@ -17,45 +17,24 @@ set cursorline                  " Find the current line quickly.
 
 call plug#begin()
 
-" dracula theme
 Plug 'dracula/vim'
-
-" neomake
 Plug 'neomake/neomake'
-
-" JavaScript Highlight & Improved Indentation
 Plug 'pangloss/vim-javascript'
-
-" Typescript Syntax Highlight
 Plug 'leafgarland/typescript-vim'
-
-" fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-" .editorconfig
 Plug 'editorconfig/editorconfig-vim'
-
-" emmet
 Plug 'mattn/emmet-vim'
-
-" fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
-
-" NERDTree
 Plug 'preservim/nerdtree'
-
-" semantic-based completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" linting engine
 Plug 'w0rp/ale'
 
 call plug#end()
 
 
 """""""""""""""""""""""""
-" => Plugins Configs
+" => Configuring Plugins
 """""""""""""""""""""""""
 
 " When writing a buffer (no delay).
@@ -106,10 +85,22 @@ endif
 " set FZF layout to bottom window
 let g:fzf_layout = { "window": "silent botright 16split enew" }
 
+" fzf configurations
+nnoremap <silent><C-p> :GFiles<CR>
+nnoremap <silent><leader>sf :Rg<CR>
+nnoremap <silent><leader>sb :BFiles<CR>
+nnoremap <silent><leader><space> :Files<CR>
+
 
 """""""""""""""""""""""""
 " => Visual
 """""""""""""""""""""""""
+
+" 256 colors
+set t_Co=256
+
+" enable theme Dracula
+colorscheme dracula
 
 " scroll screen after 8 lines
 set scrolloff=8
@@ -119,12 +110,6 @@ set number
 
 " show relative numbers to the current line
 set relativenumber
-
-" 256 colors
-set t_Co=256
-
-" enable theme Dracula
-colorscheme dracula
 
 
 """""""""""""""""""""""""
@@ -154,9 +139,10 @@ nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
 " split window
-nnoremap <leader>pe :Ex<CR>
-nnoremap <leader>pv :Vex<CR>
-nnoremap <leader>ph :Sex<CR>
+nnoremap <leader>. :Ex<CR>
+nnoremap <leader>we :Ex<CR>
+nnoremap <leader>wv :Vex<CR>
+nnoremap <leader>ws :Sex<CR>
 
 " select and movement
 vnoremap J :m '>+1<CR>gv=gv
@@ -164,11 +150,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " source neovim configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-
-" fuzzy search files and text
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader><space> :Files<CR>
-nnoremap <leader>f :BLines<CR>
 
 " NERDTree remap
 nnoremap <leader>n :NERDTreeFocus<CR>
