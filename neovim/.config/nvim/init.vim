@@ -121,16 +121,6 @@ hi Normal ctermbg=none
 " => Keymappings
 """""""""""""""""""""""""
 
-" disable arrows
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-
 " set leader key to spacebar
 let mapleader = " "
 
@@ -154,8 +144,8 @@ nnoremap <leader>ws :Sex<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" source neovim configuration
-nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+" source current configuration
+nnoremap <leader><CR> :so %<CR>
 
 " NERDTree remap
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -258,4 +248,19 @@ endfunction
 " => Git
 """""""""""""""""""""""""
 
-nmap <silent><leader>g :G<CR>
+nmap <leader>g :G<CR>
+
+
+"""""""""""""""""""""""""
+" => Misc
+"""""""""""""""""""""""""
+
+" disable arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
