@@ -7,7 +7,9 @@ set fileencoding=utf-8          " The encoding written to file
 syntax on                       " Enable syntax highlight
 set ttyfast                     " Faster redrawing
 set lazyredraw                  " Only redraw when necessary
-set cursorline                  " Find the current line quickly.
+set cursorline                  " Find the current line quickly
+set laststatus=2                " Always show status line
+set ai                          " AutoIndent
 
 
 """""""""""""""""""""""""
@@ -110,6 +112,8 @@ set number
 
 " show relative numbers to the current line
 set relativenumber
+
+hi Normal ctermbg=none
 
 
 """""""""""""""""""""""""
