@@ -88,10 +88,10 @@ endif
 let g:fzf_layout = { "window": "silent botright 16split enew" }
 
 " fzf configurations
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>sf :Rg<CR>
-nnoremap <leader>sb :BLines<CR>
-nnoremap <leader><space> :Files<CR>
+nnoremap <silent><C-p> :GFiles<CR>
+nnoremap <silent><leader>sf :Rg<CR>
+nnoremap <silent><leader>sb :BLines<CR>
+nnoremap <silent><leader><space> :Files<CR>
 
 
 """""""""""""""""""""""""
@@ -257,4 +257,4 @@ endfunction
 " => Git
 """""""""""""""""""""""""
 
-nmap <silent> <leader>g :G<CR>
+nmap <silent><leader>g :G<CR>
