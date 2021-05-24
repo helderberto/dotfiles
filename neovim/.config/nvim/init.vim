@@ -62,6 +62,9 @@ call plug#end()
 " https://github.com/neomake/neomake#setup
 call neomake#configure#automake('w')
 
+" enable highlight for JSDocs
+let g:javascript_plugin_jsdoc = 1
+
 " fix files on save
 let g:ale_fix_on_save = 1
 
@@ -150,7 +153,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
-" navigation
+" split window
 nnoremap <leader>pe :Ex<CR>
 nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>ph :Sex<CR>
@@ -344,4 +347,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>lp  :<C-u>CocListResume<CR>
