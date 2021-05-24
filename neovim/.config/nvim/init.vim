@@ -119,7 +119,7 @@ hi Normal ctermbg=none
 """""""""""""""""""""""""
 
 " set leader key to spacebar
-let mapleader = " "
+let mapleader = "\<space>"
 
 " access system clipboard
 set clipboard=unnamed
