@@ -17,22 +17,36 @@ set ai                          " AutoIndent
 " => vim-plug - https://github.com/junegunn/vim-plug
 """""""""""""""""""""""""
 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 
+" Dracula theme
 Plug 'dracula/vim'
 Plug 'neomake/neomake'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+
+" JavaScript Highlight & Improved Indentation
+Plug 'pangloss/vim-javascript'
+
+" Typescript Syntax Highlight
+Plug 'leafgarland/typescript-vim'
+
+" ReactJS JSX syntax highlighting
+Plug 'mxw/vim-jsx'
+
+" Auto-close pairs
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" linting engine
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -88,7 +102,6 @@ endif
 
 " set FZF layout to bottom window
 let g:fzf_layout = { "window": "silent botright 16split enew" }
-
 
 
 """""""""""""""""""""""""
@@ -168,6 +181,7 @@ inoremap <Right> <NOP>
 
 " buffers/files history
 nnoremap <leader>h :History<CR>
+
 
 """""""""""""""""""""""""
 " => Indentation
