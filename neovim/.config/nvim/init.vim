@@ -173,12 +173,6 @@ nnoremap <leader>ae :ALEEnableFixers<CR>
 command! ALEDisableFixers       let g:ale_fix_on_save=0
 command! ALEEnableFixers        let g:ale_fix_on_save=1
 
-" fast saves
-nnoremap <leader>w :w!<CR>
-
-" exit quickly
-nnoremap <leader>q :q!<CR>
-
 " Git
 nmap <leader>g :G<CR>
 
