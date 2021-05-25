@@ -2,14 +2,12 @@
 " => General
 """""""""""""""""""""""""
 
-set encoding=utf-8              " The encoding displayed
-set fileencoding=utf-8          " The encoding written to file
-syntax on                       " Enable syntax highlight
-set ttyfast                     " Faster redrawing
-set lazyredraw                  " Only redraw when necessary
-set cursorline                  " Find the current line quickly
-set laststatus=2                " Always show status line
-set ai                          " AutoIndent
+set encoding=utf-8          " The encoding displayed
+set fileencoding=utf-8      " The encoding written to file
+syntax on                   " Enable syntax highlight
+set ttyfast                 " Faster redrawing
+set lazyredraw              " Only redraw when necessary
+set cursorline              " Find the current line quickly.
 
 
 """""""""""""""""""""""""
@@ -21,6 +19,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Dracula theme
 Plug 'dracula/vim'
+
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -65,7 +64,7 @@ let g:javascript_plugin_jsdoc = 1
 " fix files on save
 let g:ale_fix_on_save = 1
 
-" lint after 1000ms after changes are made both on insert and normal modes
+" lint after 1000ms after changes are made both on insert mode and normal mode
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_lint_delay = 1000
 
@@ -117,11 +116,12 @@ colorscheme dracula
 " scroll screen after 8 lines
 set scrolloff=8
 
-" enable line numbers
+" line numbers
+set relativenumber
 set number
 
-" show relative numbers to the current line
-set relativenumber
+" show the status line all the time
+set laststatus=2
 
 " follow terminal background
 hi Normal ctermbg=none
@@ -190,8 +190,15 @@ nnoremap <leader>h :History<CR>
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
 set smarttab
+
+" Auto indent
+" Copy the indentation from the previous line when starting a new line
+set ai
+
+" Smart indent
+" Automatically inserts one extra level of indentation in some cases, and works for C-like files
+set si
 
 
 """""""""""""""""""""""""
@@ -208,9 +215,8 @@ set nowritebackup
 " Give more space for displaying messages.
 set cmdheight=2
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
+" default updatetime 4000ms is not good for async update
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -221,7 +227,7 @@ set signcolumn=yes
 let g:coc_global_extensions = [
 \ 'coc-emoji', 'coc-eslint', 'coc-prettier',
 \ 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin',
-\ 'coc-css', 'coc-json', 'coc-rls', 'coc-yaml'
+\ 'coc-css', 'coc-json', 'coc-yaml'
 \ ]
 
 " Use `[g` and `]g` to navigate diagnostics
