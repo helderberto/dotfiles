@@ -8,6 +8,7 @@ syntax on                   " Enable syntax highlight
 set ttyfast                 " Faster redrawing
 set lazyredraw              " Only redraw when necessary
 set cursorline              " Find the current line quickly.
+filetype plugin on
 
 
 """""""""""""""""""""""""
@@ -24,6 +25,7 @@ Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
 
 " JavaScript Highlight & Improved Indentation
 Plug 'pangloss/vim-javascript'
@@ -101,6 +103,10 @@ endif
 
 " set FZF layout to bottom window
 let g:fzf_layout = { "window": "silent botright 16split enew" }
+
+" Nerd Commenter
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 
 """""""""""""""""""""""""
@@ -187,6 +193,12 @@ nnoremap <leader>ad :ALEDisableFixers<CR>
 nnoremap <leader>ae :ALEEnableFixers<CR>
 command! ALEDisableFixers       let g:ale_fix_on_save=0
 command! ALEEnableFixers        let g:ale_fix_on_save=1
+
+" fast saves
+nnoremap <leader>w :w!<CR>
+
+" exit quickly
+nnoremap <leader>q :q!<CR>
 
 
 """""""""""""""""""""""""
