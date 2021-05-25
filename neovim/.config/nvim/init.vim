@@ -10,56 +10,36 @@ set lazyredraw              " Only redraw when necessary
 set cursorline              " Find the current line quickly.
 filetype plugin on
 
-
 """""""""""""""""""""""""
 " => Plugins
-" => vim-plug - https://github.com/junegunn/vim-plug
 """""""""""""""""""""""""
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Dracula theme
 Plug 'dracula/vim'
-
-Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
-
-" JavaScript Highlight & Improved Indentation
 Plug 'pangloss/vim-javascript'
-
-" Typescript Syntax Highlight
 Plug 'leafgarland/typescript-vim'
-
-" ReactJS JSX syntax highlighting
 Plug 'mxw/vim-jsx'
-
-" Auto-close pairs
 Plug 'jiangmiao/auto-pairs'
-
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" linting engine
 Plug 'w0rp/ale'
 
 call plug#end()
 
 
 """""""""""""""""""""""""
-" => Configuring Plugins
+" => Plugins Configurations
 """""""""""""""""""""""""
-
-" When writing a buffer (no delay).
-" https://github.com/neomake/neomake#setup
-call neomake#configure#automake('w')
 
 " enable highlight for JSDocs
 let g:javascript_plugin_jsdoc = 1
@@ -198,6 +178,9 @@ nnoremap <leader>w :w!<CR>
 " exit quickly
 nnoremap <leader>q :q!<CR>
 
+" Git
+nmap <leader>g :G<CR>
+
 
 """""""""""""""""""""""""
 " => Indentation
@@ -293,10 +276,3 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-
-
-"""""""""""""""""""""""""
-" => Git
-"""""""""""""""""""""""""
-
-nmap <leader>g :G<CR>
