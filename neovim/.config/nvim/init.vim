@@ -182,6 +182,12 @@ inoremap <Right> <NOP>
 " buffers/files history
 nnoremap <leader>h :History<CR>
 
+" toggle ale fixers
+nnoremap <leader>ad :ALEDisableFixers<CR>
+nnoremap <leader>ae :ALEEnableFixers<CR>
+command! ALEDisableFixers       let g:ale_fix_on_save=0
+command! ALEEnableFixers        let g:ale_fix_on_save=1
+
 
 """""""""""""""""""""""""
 " => Indentation
