@@ -39,6 +39,7 @@ Plug 'mxw/vim-jsx'
 " Auto-close pairs
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
@@ -164,10 +165,7 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <leader><CR> :so %<CR>
 
 " NERDTree remap
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 
 " fzf configurations
 nnoremap <C-p> :GFiles<CR>
