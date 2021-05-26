@@ -24,7 +24,8 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
@@ -89,6 +90,10 @@ let g:fzf_layout = { "window": "silent botright 16split enew" }
 " Nerd Commenter
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+" When enter a JavaScript or TypeScript buffer, and disable when leave
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 
 """""""""""""""""""""""""
