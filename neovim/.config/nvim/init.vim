@@ -18,8 +18,6 @@ filetype plugin on
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dracula/vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'pangloss/vim-javascript'
