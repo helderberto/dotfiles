@@ -31,10 +31,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
+
+" CoC - Conquer of Completion
+" Base of my CoC configs - https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -45,29 +47,6 @@ call plug#end()
 
 " enable highlight for JSDocs
 let g:javascript_plugin_jsdoc = 1
-
-" fix files on save
-let g:ale_fix_on_save = 1
-
-" lint after 1000ms after changes are made both on insert mode and normal mode
-let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_delay = 1000
-
-" use emojis for errors and warnings
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
-
-" fixer configurations
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier']
-\}
-
-" linter configurations
-let g:ale_linters = {
-\   'javascript': ['eslint']
-\}
 
 " make emmet behave well with JSX in JS and TS files
 let g:user_emmet_settings = {
@@ -172,14 +151,12 @@ inoremap <Right> <NOP>
 " buffers/files history
 nnoremap <leader>h :History<CR>
 
-" toggle ale fixers
-nnoremap <leader>ad :ALEDisableFixers<CR>
-nnoremap <leader>ae :ALEEnableFixers<CR>
-command! ALEDisableFixers       let g:ale_fix_on_save=0
-command! ALEEnableFixers        let g:ale_fix_on_save=1
-
 " Git
 nmap <leader>g :G<CR>
+
+" CoC toggle
+nnoremap <leader>cd :CocDisable<CR>
+nnoremap <leader>ce :CocEnable<CR>
 
 
 """""""""""""""""""""""""
@@ -200,10 +177,17 @@ set smartindent
 
 " enable global extensions
 let g:coc_global_extensions = [
-\ 'coc-emoji', 'coc-eslint', 'coc-prettier',
 \ 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin',
-\ 'coc-css', 'coc-json', 'coc-yaml'
+\ 'coc-css', 'coc-json', 'coc-yaml', 'coc-emoji'
 \ ]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
 " TextEdit might fail if hidden is not set.
 set hidden
