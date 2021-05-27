@@ -8,7 +8,9 @@ syntax on                   " Enable syntax highlight
 set ttyfast                 " Faster redrawing
 set lazyredraw              " Only redraw when necessary
 set cursorline              " Find the current line quickly.
-filetype plugin on
+set relativenumber          " Show relative line numbers
+set number                  " Show line numbers
+filetype plugin on          " Enable loading the plugin files for specific file types
 
 
 """""""""""""""""""""""""
@@ -29,7 +31,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -89,10 +91,6 @@ colorscheme dracula
 " scroll screen after 8 lines
 set scrolloff=8
 
-" line numbers
-set relativenumber
-set number
-
 " show the status line all the time
 set laststatus=2
 
@@ -116,6 +114,10 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
+" map C-s to save files in normal and insert modes
+nnoremap <silent> <C-s> <esc>:w<CR>
+inoremap <silent> <C-s> <esc>:w<CR>a
+
 " manipulate window
 nnoremap <leader>. :Ex<CR>
 nnoremap <leader>we :Ex<CR>
@@ -137,7 +139,8 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>sg :GFiles<CR>
 nnoremap <leader>sf :Rg<CR>
 nnoremap <leader>sb :BLines<CR>
-nnoremap <leader><space> :Files<CR>
+nnoremap <leader><space> :FZF<CR>
+nnoremap <C-p> :FZF<CR>
 
 " disable arrows
 noremap <Up> <NOP>
@@ -298,8 +301,8 @@ omap ac <Plug>(coc-classobj-a)
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
