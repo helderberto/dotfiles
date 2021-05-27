@@ -131,10 +131,10 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <leader><CR> :so %<CR>
 
 " NERDTree remap
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " fzf configurations
-nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>sg :GFiles<CR>
 nnoremap <leader>sf :Rg<CR>
 nnoremap <leader>sb :BLines<CR>
 nnoremap <leader><space> :Files<CR>
