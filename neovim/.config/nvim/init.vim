@@ -20,7 +20,6 @@ filetype plugin on          " Enable loading the plugin files for specific file 
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dracula/vim'
-Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -131,9 +130,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " source current configuration
 nnoremap <leader><CR> :so %<CR>
-
-" NERDTree remap
-nnoremap <leader>t :NERDTreeToggle<CR>
 
 " fzf configurations
 nnoremap <leader>sg :GFiles<CR>
