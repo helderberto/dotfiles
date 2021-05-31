@@ -157,6 +157,9 @@ nmap <leader>g :G<CR>
 nnoremap <leader>cd :CocDisable<CR>
 nnoremap <leader>ce :CocEnable<CR>
 
+" quit
+nmap <leader>q :q!<CR>
+
 
 """""""""""""""""""""""""
 " => Indentation
