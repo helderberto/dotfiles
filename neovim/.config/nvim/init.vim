@@ -131,9 +131,9 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <leader><CR> :so %<CR>
 
 " fzf configurations
-nnoremap <leader>fg :GFiles<CR>
-nnoremap <leader>fr :Rg<CR>
-nnoremap <leader>fb :BLines<CR>
+nnoremap <leader>sg :GFiles<CR>
+nnoremap <leader>sr :Rg<CR>
+nnoremap <leader>sb :BLines<CR>
 nnoremap <leader><space> :FZF<CR>
 nnoremap <C-p> :FZF<CR>
 
