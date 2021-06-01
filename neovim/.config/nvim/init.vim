@@ -95,6 +95,12 @@ set laststatus=2
 " follow terminal background
 hi Normal ctermbg=none
 
+" Folding:
+set foldmethod=syntax       " syntax highlighting items specify folds
+set foldcolumn=1            " defines 1 col at window left, to indicate folding
+let javaScript_fold=1       " activate folding by JS syntax
+set foldlevelstart=99       " start file with all folds opened
+
 
 """""""""""""""""""""""""
 " => Keymappings
