@@ -10,6 +10,7 @@ set lazyredraw              " Only redraw when necessary
 set cursorline              " Find the current line quickly.
 set relativenumber          " Show relative line numbers
 set number                  " Show line numbers
+set hlsearch                " Highlight when searching
 filetype plugin on          " Enable loading the plugin files for specific file types
 
 
