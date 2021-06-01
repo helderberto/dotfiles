@@ -125,7 +125,6 @@ inoremap <silent> <C-s> <esc>:w<CR>a
 
 " manipulate window
 nnoremap <leader>. :Ex<CR>
-nnoremap <leader>we :Ex<CR>
 nnoremap <leader>w <C-w>
 nnoremap <leader>wv :Vex<CR>
 nnoremap <leader>ws :Sex<CR>
@@ -142,7 +141,6 @@ nnoremap <leader>sg :GFiles<CR>
 nnoremap <leader>sr :Rg<CR>
 nnoremap <leader>sb :BLines<CR>
 nnoremap <leader><space> :FZF<CR>
-nnoremap <C-p> :FZF<CR>
 
 " disable arrows
 noremap <Up> <NOP>
