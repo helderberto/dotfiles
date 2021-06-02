@@ -12,3 +12,4 @@ set relativenumber          " Show relative line numbers
 set number                  " Show line numbers
 set hlsearch                " Highlight when searching
 filetype plugin on          " Enable loading the plugin files for specific file types
+set clipboard=unnamed       " Access system clipboard
