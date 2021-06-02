@@ -5,9 +5,6 @@
 " set leader key to spacebar
 let mapleader = "\<space>"
 
-" access system clipboard
-set clipboard=unnamed
-
 " copy/paste
 vnoremap <leader>p "_dP
 vnoremap <leader>y "+y
