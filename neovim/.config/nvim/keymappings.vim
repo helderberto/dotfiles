@@ -16,23 +16,23 @@ nnoremap <silent> <C-s> <esc>:w<CR>
 inoremap <silent> <C-s> <esc>:w<CR>a
 
 " manipulate window
-nnoremap <leader>. :Ex<CR>
-nnoremap <leader>w <C-w>
-nnoremap <leader>wv :Vex<CR>
-nnoremap <leader>ws :Sex<CR>
+nnoremap <silent> <leader>. :Ex<CR>
+nnoremap <silent> <leader>w <C-w>
+nnoremap <silent> <leader>wv :Vex<CR>
+nnoremap <silent> <leader>ws :Sex<CR>
 
 " select and movement
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " source current configuration
-nnoremap <leader><CR> :so %<CR>
+nnoremap <silent><leader><CR> :so %<CR>
 
 " fzf configurations
-nnoremap <leader>sg :GFiles<CR>
-nnoremap <leader>sr :Rg<CR>
-nnoremap <leader>sb :BLines<CR>
-nnoremap <leader><space> :FZF<CR>
+nnoremap <silent> <leader>sg :GFiles<CR>
+nnoremap <silent> <leader>sr :Rg<CR>
+nnoremap <silent> <leader>sb :BLines<CR>
+nnoremap <silent> <leader><space> :FZF<CR>
 
 " disable arrows
 noremap <Up> <NOP>
@@ -45,10 +45,10 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
 " buffers/files history
-nnoremap <leader>h :History<CR>
+nnoremap <silent> <leader>h :History<CR>
 
 " Git
-nmap <leader>g :G<CR>
+nmap <silent> <leader>g :G<CR>
 
 " CoC toggle
 nnoremap <leader>cd :CocDisable<CR>
