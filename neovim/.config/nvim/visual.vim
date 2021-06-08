@@ -21,3 +21,6 @@ hi Normal ctermbg=none
 set foldmethod=syntax       " syntax highlighting items specify folds
 set foldcolumn=1            " defines 1 col at window left, to indicate folding
 set foldlevelstart=99       " start file with all folds opened
+
+" Syntax Jenkins
+au BufNewFile,BufRead Jenkinsfile setf groovy
