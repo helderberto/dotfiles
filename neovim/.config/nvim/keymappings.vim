@@ -14,6 +14,8 @@ nnoremap <leader>Y gg"+yG
 " map C-s to save files in normal and insert modes
 nnoremap <silent> <C-s> <esc>:w<CR>
 inoremap <silent> <C-s> <esc>:w<CR>a
+nnoremap <silent> <leader>fs <esc>:w<CR>
+inoremap <silent> <leader>fs <esc>:w<CR>a
 
 " manipulate window
 nnoremap <silent> <leader>. :Ex<CR>
