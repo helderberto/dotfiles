@@ -99,4 +99,4 @@ set smartindent
 source ~/.config/nvim/custom/keymappings.vim
 
 " CoC Configuration:
-source ~/.config/nvim/custom/coc-configuration.vim
+source ~/.config/nvim/custom/coc-config.vim
