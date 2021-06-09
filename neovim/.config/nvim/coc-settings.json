@@ -6,5 +6,6 @@
         "typescriptreact"
     ],
     "tsserver.formatOnType": true,
-    "coc.preferences.formatOnType": true
+    "coc.preferences.formatOnType": true,
+    "javascript.suggestionActions.enabled": false
 }
