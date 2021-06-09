@@ -4,8 +4,8 @@
 
 " enable global extensions
 let g:coc_global_extensions = [
-\ 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin',
-\ 'coc-css', 'coc-json', 'coc-yaml', 'coc-emoji'
+\ 'coc-tsserver', 'coc-json',
+\ 'coc-yaml',
 \ ]
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -13,8 +13,9 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
 endif
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
+  let g:coc_global_extensions += ['coc-eslint', 'coc-tslint', 'coc-tslint-plugin']
 endif
+
 
 " TextEdit might fail if hidden is not set.
 set hidden
