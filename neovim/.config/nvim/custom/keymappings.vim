@@ -30,11 +30,12 @@ vnoremap K :m '<-2<CR>gv=gv
 " source current configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
-" fzf configurations
+" fzf & search
 nnoremap <silent> <leader>sg :GFiles<CR>
 nnoremap <silent> <leader>sr :Rg<CR>
 nnoremap <silent> <leader>sb :BLines<CR>
 nnoremap <silent> <leader><space> :FZF<CR>
+nnoremap <silent> <leader>/ :noh<CR>
 
 " disable arrows
 noremap <Up> <NOP>
