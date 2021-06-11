@@ -1,50 +1,28 @@
 " General:
-set encoding=utf-8          " The encoding displayed
-set fileencoding=utf-8      " The encoding written to file
-syntax on                   " Enable syntax highlight
-set ttyfast                 " Faster redrawing
-set lazyredraw              " Only redraw when necessary
-set cursorline              " Find the current line quickly.
-set relativenumber          " Show relative line numbers
-set number                  " Show line numbers
-set hlsearch                " Highlight when searching
-filetype plugin on          " Enable loading the plugin files for specific file types
-set clipboard=unnamed       " Access system clipboard
+set encoding=utf-8                 " The encoding displayed
+set fileencoding=utf-8             " The encoding written to file
+syntax on                          " Enable syntax highlight
+set ttyfast                        " Faster redrawing
+set lazyredraw                     " Only redraw when necessary
+set cursorline                     " Find the current line quickly.
+set relativenumber                 " Show relative line numbers
+set number                         " Show line numbers
+set hlsearch                       " Highlight when searching
+set title                          " Show title at top of the terminal
+filetype plugin indent on          " Enable loading the plugin files for specific file types
+set clipboard=unnamed              " Access system clipboard
 
 " Plugins:
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'dracula/vim'
-Plug 'preservim/nerdcommenter'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'jiangmiao/auto-pairs'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-call plug#end()
+source ~/.config/nvim/my-configs/vim-plug.vim
 
 " Plugins Configurations:
-
-source ~/.config/nvim/third/emmet-vim.vim
-source ~/.config/nvim/third/fzf.vim
-source ~/.config/nvim/third/nerdcommenter.vim
-source ~/.config/nvim/third/coc.vim
-source ~/.config/nvim/third/ultisnips.vim
+source ~/.config/nvim/my-configs/emmet-vim.vim
+source ~/.config/nvim/my-configs/fzf.vim
+source ~/.config/nvim/my-configs/nerdcommenter.vim
+source ~/.config/nvim/my-configs/ultisnips.vim
+source ~/.config/nvim/my-configs/coc.vim
 
 " Visual:
-
-" 256 colors
-set t_Co=256
 
 " enable theme Dracula
 colorscheme dracula
@@ -71,8 +49,8 @@ set smarttab
 set autoindent
 set smartindent
 
-" Keymappings:
-source ~/.config/nvim/keymappings.vim
+" Custom Mappings:
+source ~/.config/nvim/keys.vim
 
 " CoC Configuration:
 
@@ -84,5 +62,5 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " Jenkins
 autocmd BufNewFile,BufRead Jenkinsfile setf groovy
 
-" enable highlight for JSDocs
+"  Enable Highlight JSDocs
 let g:javascript_plugin_jsdoc = 1

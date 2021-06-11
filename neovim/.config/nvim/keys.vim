@@ -17,6 +17,10 @@ inoremap <silent> <C-s> <esc>:w<CR>a
 nnoremap <silent> <leader>fs <esc>:w<CR>
 inoremap <silent> <leader>fs <esc>:w<CR>a
 
+" save without format with prettier
+nnoremap <silent> <leader>fd <esc>:noa w<CR>
+inoremap <silent> <leader>fd <esc>:noa w<CR>a
+
 " manipulate window
 nnoremap <silent> <leader>. :Ex<CR>
 nnoremap <silent> <leader>w <C-w>
