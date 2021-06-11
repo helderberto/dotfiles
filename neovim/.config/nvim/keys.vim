@@ -54,11 +54,6 @@ inoremap <Right> <NOP>
 " buffers/files history
 nnoremap <silent> <leader>h :History<CR>
 
-" Git
-nmap <silent> <leader>g :G<CR>
-nmap <leader>gl :diffget //3<CR>
-nmap <leader>gh :diffget //2<CR>
-
 " CoC toggle
 nnoremap <leader>cd :CocDisable<CR>
 nnoremap <leader>ce :CocEnable<CR>

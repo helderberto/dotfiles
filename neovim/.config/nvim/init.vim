@@ -20,6 +20,7 @@ source ~/.config/nvim/my-configs/vim-plug.vim
 
 " Plugins Configurations:
 source ~/.config/nvim/my-configs/emmet-vim.vim
+source ~/.config/nvim/my-configs/git.vim
 source ~/.config/nvim/my-configs/fzf.vim
 source ~/.config/nvim/my-configs/nerdcommenter.vim
 source ~/.config/nvim/my-configs/ultisnips.vim
