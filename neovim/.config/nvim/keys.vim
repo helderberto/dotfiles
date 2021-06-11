@@ -58,5 +58,11 @@ nnoremap <silent> <leader>h :History<CR>
 nnoremap <leader>cd :CocDisable<CR>
 nnoremap <leader>ce :CocEnable<CR>
 
-" quit
+" force quit
 nmap <leader>q :q!<CR>
+
+" buffers
+command! ChooseBuffer call ChooseBuffer()
+nnoremap <silent> <leader>b :call ChooseBuffer()<CR>
+nnoremap <silent> <leader>hh :bprevious<CR>
+nnoremap <silent> <leader>ll :bnext<CR>
