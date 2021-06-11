@@ -28,42 +28,18 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
 " Plugins Configurations:
 
-" enable highlight for JSDocs
-let g:javascript_plugin_jsdoc = 1
-
-" make emmet behave well with JSX in JS and TS files
-let g:user_emmet_settings = {
-\  'javascript' : {
-\      'extends' : 'jsx',
-\  },
-\  'typescript' : {
-\      'extends' : 'tsx',
-\  },
-\}
-
-" make FZF respect .gitignore if `ag` is installed
-if (executable('ag'))
-    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-endif
-
-" set FZF layout to bottom window
-let g:fzf_layout = { "window": "silent botright 16split enew" }
-
-" Nerd Commenter
-let g:NERDSpaceDelims = 1
-let g:NERDTrimTrailingWhitespace = 1
-
-" When enter a JavaScript or TypeScript buffer, and disable when leave
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-" Syntax Jenkins
-autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+source ~/.config/nvim/third/emmet-vim.vim
+source ~/.config/nvim/third/fzf.vim
+source ~/.config/nvim/third/nerdcommenter.vim
+source ~/.config/nvim/third/coc.vim
+source ~/.config/nvim/third/ultisnips.vim
 
 " Visual:
 
@@ -96,7 +72,17 @@ set autoindent
 set smartindent
 
 " Keymappings:
-source ~/.config/nvim/custom/keymappings.vim
+source ~/.config/nvim/keymappings.vim
 
 " CoC Configuration:
-source ~/.config/nvim/custom/coc-config.vim
+
+"  Syntax:
+" When enter a JavaScript or TypeScript buffer, and disable when leave
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+" Jenkins
+autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+
+" enable highlight for JSDocs
+let g:javascript_plugin_jsdoc = 1
