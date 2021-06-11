@@ -9,5 +9,7 @@
   "coc.preferences.formatOnType": true,
   "javascript.suggestionActions.enabled": false,
   "prettier.trailingComma": "all",
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "prettier.requireConfig": true,
+  "prettier.onlyUseLocalVersion": true
 }
