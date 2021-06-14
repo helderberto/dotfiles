@@ -18,6 +18,9 @@ source ~/.config/nvim/my-configs/functions.vim
 " Plugins:
 source ~/.config/nvim/my-configs/vim-plug.vim
 
+" Custom Mappings:
+source ~/.config/nvim/keys.vim
+
 " Plugins Configurations:
 source ~/.config/nvim/my-configs/emmet-vim.vim
 source ~/.config/nvim/my-configs/git.vim
@@ -53,8 +56,6 @@ set smarttab
 set autoindent
 set smartindent
 
-" Custom Mappings:
-source ~/.config/nvim/keys.vim
 
 " CoC Configuration:
 
