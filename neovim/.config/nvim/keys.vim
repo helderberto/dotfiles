@@ -59,7 +59,7 @@ nnoremap <leader>cd :CocDisable<CR>
 nnoremap <leader>ce :CocEnable<CR>
 
 " force quit
-nmap <leader>q :q!<CR>
+nmap <leader>qq :q!<CR>
 
 " buffers
 command! ChooseBuffer call ChooseBuffer()
