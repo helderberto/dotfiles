@@ -13,7 +13,7 @@ filetype plugin indent on          " Enable loading the plugin files for specifi
 set clipboard=unnamed              " Access system clipboard
 
 " Custom Functions:
-source ~/.config/nvim/my-configs/functions.vim
+" source ~/.config/nvim/my-configs/functions.vim
 
 " Plugins:
 source ~/.config/nvim/my-configs/vim-plug.vim
