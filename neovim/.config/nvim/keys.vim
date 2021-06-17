@@ -62,7 +62,6 @@ nnoremap <leader>ce :CocEnable<CR>
 nmap <leader>qq :q!<CR>
 
 " buffers
-command! ChooseBuffer call ChooseBuffer()
-nnoremap <silent> <leader>b :call ChooseBuffer()<CR>
-nnoremap <silent> <leader>hh :bprevious<CR>
-nnoremap <silent> <leader>ll :bnext<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-n> :execute ":buffer ".(bufnr("%") + 1)<CR>
+nnoremap <C-p> :execute ":buffer ".(bufnr("%") - 1)<CR>
