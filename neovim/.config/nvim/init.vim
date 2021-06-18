@@ -40,9 +40,6 @@ colorscheme nord
 " scroll screen after 8 lines
 set scrolloff=8
 
-" show the status line all the time
-set laststatus=2
-
 " follow terminal background
 hi Normal ctermbg=none
 
