@@ -31,8 +31,11 @@ source ~/.config/nvim/my-configs/coc.vim
 
 " Visual:
 
-" enable theme Dracula
-colorscheme dracula
+" 256 colors
+set t_Co=256
+
+" set colorscheme
+colorscheme nord
 
 " scroll screen after 8 lines
 set scrolloff=8
