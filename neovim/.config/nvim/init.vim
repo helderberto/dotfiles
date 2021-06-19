@@ -35,8 +35,8 @@ source ~/.config/nvim/my-configs/coc.vim
 set t_Co=256
 
 " set colorscheme
-"colorscheme nord
-colorscheme dracula
+colorscheme nord
+"colorscheme dracula
 
 " scroll screen after 8 lines
 set scrolloff=8
