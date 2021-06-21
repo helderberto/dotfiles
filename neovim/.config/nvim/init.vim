@@ -16,7 +16,7 @@ set clipboard=unnamed              " Access system clipboard
 " source ~/.config/nvim/my-configs/functions.vim
 
 " Plugins:
-source ~/.config/nvim/my-configs/vim-plug.vim
+source ~/.config/nvim/my-configs/plugins.vim
 
 " Custom Mappings:
 source ~/.config/nvim/keys.vim
