@@ -4,4 +4,4 @@ if (executable('ag'))
 endif
 
 " set FZF layout to bottom window
-let g:fzf_layout = { "window": "silent botright 16split enew" }
+"let g:fzf_layout = { "window": "silent botright 16split enew" }
