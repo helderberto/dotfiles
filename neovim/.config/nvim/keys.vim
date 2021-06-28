@@ -66,3 +66,6 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-n> :execute ":buffer ".(bufnr("%") + 1)<CR>
 nnoremap <C-p> :execute ":buffer ".(bufnr("%") - 1)<CR>
 nnoremap <leader>bk :bdelete<CR>
+
+" search & replace
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/
