@@ -59,14 +59,6 @@ If you get any permissions problems when trying to run `brew` scripts, try to gi
 $ sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
 ```
 
-### Doom Emacs
-
-If Doom Emacs scripts fails, made it by yourself with the following commands:
-```bash
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-```
-
 ## Author
 
 | [![Helder B. Berto](https://avatars3.githubusercontent.com/u/862575?v=3&s=80)](https://github.com/helderburato) |

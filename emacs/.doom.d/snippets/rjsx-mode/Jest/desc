@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: describeBlock
-# key: desc
-# --
-
-describe('$1', () => {
-  $0
-})

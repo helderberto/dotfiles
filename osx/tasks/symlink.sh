@@ -10,7 +10,6 @@ DOTFILES=(
     "neovim"
     "alacritty"
     "tmux"
-    "emacs"
     "editorconfig"
 )
 

@@ -9,7 +9,6 @@ disable_recent_apps_from_dock
 
 msg_install "Dock"
 add_app_to_dock "Google Chrome"
-add_app_to_dock "Emacs"
 add_app_to_dock "Alacritty"
 add_app_to_dock "Todoist"
 add_app_to_dock "Bear"

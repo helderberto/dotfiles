@@ -44,16 +44,6 @@ else
     msg_ok "OK"
 fi
 
-# DOOM Emacs
-if which doom &> /dev/null; then
-    msg_checking "Doom Emacs"
-else
-    msg_install "Doom Emacs" "git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d"
-    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-    ~/.emacs.d/bin/doom install
-    msg_ok "OK"
-fi
-
 # Neovim vim-plug - https://github.com/junegunn/vim-plug#neovim
 if [[ -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]]; then
     msg_checking "Neovim vim-plug"

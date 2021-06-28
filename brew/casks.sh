@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 brew install --cask alacritty
-brew install --cask emacs
 brew install --cask figma
 brew install --cask google-chrome
 brew install --cask imageoptim
