@@ -65,3 +65,4 @@ nmap <leader>qq :q!<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-n> :execute ":buffer ".(bufnr("%") + 1)<CR>
 nnoremap <C-p> :execute ":buffer ".(bufnr("%") - 1)<CR>
+nnoremap <leader>bk :bdelete<CR>
