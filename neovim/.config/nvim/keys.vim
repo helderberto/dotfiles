@@ -34,13 +34,6 @@ vnoremap K :m '<-2<CR>gv=gv
 " source current configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
-" fzf & search
-nnoremap <silent> <leader>sg :GFiles<CR>
-nnoremap <silent> <leader>sr :Rg<CR>
-nnoremap <silent> <leader>sb :BLines<CR>
-nnoremap <silent> <leader><space> :FZF<CR>
-nnoremap <silent> <leader>/ :noh<CR>
-
 " disable arrows
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -67,5 +60,9 @@ nnoremap <C-n> :execute ":buffer ".(bufnr("%") + 1)<CR>
 nnoremap <C-p> :execute ":buffer ".(bufnr("%") - 1)<CR>
 nnoremap <leader>bk :bdelete<CR>
 
-" search & replace
-nnoremap <leader>s :%s/\<<C-r><C-w>\>/
+" search & replace (fzf)
+nnoremap <silent> <leader>sg :GFiles<CR>
+nnoremap <silent> <leader>sr :Rg<CR>
+nnoremap <silent> <leader>sb :BLines<CR>
+nnoremap <silent> <leader><space> :FZF<CR>
+nnoremap <leader>st :%s/\<<C-r><C-w>\>/
