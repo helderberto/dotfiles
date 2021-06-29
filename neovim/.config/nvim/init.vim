@@ -73,3 +73,6 @@ autocmd BufNewFile,BufRead .*rc setf json
 
 "  Enable Highlight JSDocs
 let g:javascript_plugin_jsdoc = 1
+
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
