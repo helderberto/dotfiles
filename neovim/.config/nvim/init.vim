@@ -12,9 +12,6 @@ set title                          " Show title at top of the terminal
 filetype plugin indent on          " Enable loading the plugin files for specific file types
 set clipboard=unnamed              " Access system clipboard
 
-" Custom Functions:
-" source ~/.config/nvim/my-configs/functions.vim
-
 " Plugins:
 source ~/.config/nvim/my-configs/plugins.vim
 
