@@ -11,13 +11,13 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
-" map C-s to save files in normal and insert modes
+" save
 nnoremap <silent> <C-s> <esc>:w<CR>
 inoremap <silent> <C-s> <esc>:w<CR>a
 nnoremap <silent> <leader>fs <esc>:w<CR>
 inoremap <silent> <leader>fs <esc>:w<CR>a
 
-" save without format with prettier
+" save without formatting
 nnoremap <silent> <leader>fd <esc>:noa w<CR>
 inoremap <silent> <leader>fd <esc>:noa w<CR>a
 
@@ -60,9 +60,11 @@ nnoremap <C-n> :execute ":buffer ".(bufnr("%") + 1)<CR>
 nnoremap <C-p> :execute ":buffer ".(bufnr("%") - 1)<CR>
 nnoremap <leader>bk :bdelete<CR>
 
-" search & replace (fzf)
+" search
 nnoremap <silent> <leader>sg :GFiles<CR>
 nnoremap <silent> <leader>sr :Rg<CR>
 nnoremap <silent> <leader>sb :BLines<CR>
 nnoremap <silent> <leader><space> :FZF<CR>
+
+" replace
 nnoremap <leader>st :%s/\<<C-r><C-w>\>/
