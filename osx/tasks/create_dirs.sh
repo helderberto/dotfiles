@@ -8,8 +8,8 @@ if [ ! -d "$HOME/workspace" ]; then
     msg_checking "created ~/workspace"
 fi
 
-# Create org directory
-if [ ! -d "$HOME/org" ]; then
-    mkdir -p $HOME/org
-    msg_checking "created ~/org"
+# Create a labs directory inside of workspace
+if [ ! -d "$HOME/workspace/labs" ]; then
+    mkdir -p $HOME/workspace/labs
+    msg_checking "created ~/workspace/labs"
 fi
