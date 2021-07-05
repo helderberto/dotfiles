@@ -6,7 +6,7 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias ws="cd $HOME/workspace"
-alias vs="cd $HOME/vaults"
+alias labs="cd $HOME/workspace/labs"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
