@@ -15,6 +15,3 @@ Thumbs.db
 
 # Neovim
 .netrwhist
-
-# Tmux
-tmux/.tmux/plugins/*
