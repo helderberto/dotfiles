@@ -5,12 +5,6 @@
 " set leader key to spacebar
 let mapleader = "\<space>"
 
-" copy/paste
-vnoremap <leader>p "_dP
-vnoremap <leader>y "+y
-nnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG
-
 " save
 nnoremap <silent> <C-s> <esc>:w<CR>
 inoremap <silent> <C-s> <esc>:w<CR>a
