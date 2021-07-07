@@ -56,9 +56,10 @@ nmap <leader>qq :q!<CR>
 
 " buffers
 nnoremap <C-b> :Buffers<CR>
-nnoremap <C-n> :execute ":buffer ".(bufnr("%") + 1)<CR>
-nnoremap <C-p> :execute ":buffer ".(bufnr("%") - 1)<CR>
-nnoremap <leader>bk :bdelete<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>bd :bdelete<CR>
 
 " search
 nnoremap <silent> <leader>sg :GFiles<CR>
