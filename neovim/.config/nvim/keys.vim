@@ -61,7 +61,7 @@ nnoremap <silent> <leader>sr :Rg<CR>
 nnoremap <silent> <leader>sb :BLines<CR>
 nnoremap <silent> <leader><space> :FZF<CR>
 nnoremap <silent> <leader>sd :Files %:p:h<CR>
-nnoremap <CR> :noh<CR><CR>
+nnoremap <silent> <leader>/ :noh<CR><CR>
 
 " replace
 nnoremap <leader>st :%s/\<<C-r><C-w>\>/
