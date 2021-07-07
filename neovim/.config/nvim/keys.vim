@@ -53,7 +53,7 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>bd :bdelete!<CR>
 
 " search
 nnoremap <silent> <leader>sg :GFiles<CR>
