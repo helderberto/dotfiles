@@ -53,7 +53,6 @@ set smarttab
 set autoindent
 set smartindent
 
-
 " CoC Configuration:
 
 "  Syntax:
