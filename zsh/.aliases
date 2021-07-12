@@ -45,23 +45,15 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+
 alias g="git"
 alias vim="nvim"
 alias v="nvim"
-alias e='emacsclient -c -n -a ""'
 alias al="less ~/.aliases"
 alias alf="less ~/.aliases | grep"
 alias gal="g al"
 alias gaf="g al | grep"
 
 # Yarn
-alias yr="yarn"
-alias yrul="yarn upgrade-interactive --latest"
-
-# NVM
-alias n="nvm"
-alias nu="nvm use"
-alias nus="nvm use --lts"
-alias nin="nvm install"
-alias nun="nvm uninstall"
-alias nl="nvm list"
+alias y="yarn"
+alias yui="yarn upgrade-interactive"
+alias yuil="yarn upgrade-interactive --latest"
 
 # Docker
 alias d="docker"
@@ -73,6 +65,7 @@ alias dp="docker ps"
 alias dpa="docker ps -a"
 alias dsp="docker system prune --all"
 alias drf='docker rm $(docker ps -a -q) -f'
+
 ## Docker Compose
 alias dc="docker-compose"
 alias dcu="docker-compose up"
@@ -82,17 +75,11 @@ alias dcd="docker-compose down"
 alias dcl="docker-compose logs --tail=all | grep"
 alias dcdri="docker-compose down --rmi all --remove-orphans"
 
-# DOOM Emacs
-# https://github.com/hlissner/doom-emacs
-alias dos="doom sync"
-alias dou="doom upgrade"
-alias dod="doom doctor"
-
 # File size
 alias fs="stat -f \"%z bytes\""
 
 # Clear projects node_modules
-alias rmnm="rm -rf node_modules"
+alias rnm="rm -rf node_modules"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
