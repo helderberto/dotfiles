@@ -7,4 +7,4 @@ shell:
   args:
     - -l
     - -c
-    - tmux
+    - 'tmux attach -t "main" || tmux new -s "main"'
