@@ -1,12 +1,12 @@
-# Navigate
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
+# Navigate faster
 alias ws="cd $HOME/workspace"
 alias labs="cd $HOME/workspace/labs"
+
+# Find Aliases
+alias al="less ~/.aliases"
+alias alf="less ~/.aliases | grep"
+alias gal="g al"
+alias gaf="g al | grep"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -41,14 +41,12 @@ alias llfu='exa -bghHliS --git'
 alias iplocal="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
-# Shortcuts
+# Git
 alias g="git"
-alias vim="nvim"
+
+# {n}vim
 alias v="nvim"
-alias al="less ~/.aliases"
-alias alf="less ~/.aliases | grep"
-alias gal="g al"
-alias gaf="g al | grep"
+alias vim="nvim"
 
 # Yarn
 alias y="yarn"
@@ -70,7 +68,7 @@ alias drf='docker rm $(docker ps -a -q) -f'
 alias dc="docker-compose"
 alias dcu="docker-compose up"
 alias dcud="docker-compose up -d"
-alias dcub="docker-compose up --force-recreate --build"
+alias dcufb="docker-compose up --force-recreate --build"
 alias dcd="docker-compose down"
 alias dcl="docker-compose logs --tail=all | grep"
 alias dcdri="docker-compose down --rmi all --remove-orphans"
