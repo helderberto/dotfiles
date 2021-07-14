@@ -11,6 +11,7 @@ set hlsearch                       " Highlight when searching
 set title                          " Show title at top of the terminal
 filetype plugin indent on          " Enable loading the plugin files for specific file types
 set clipboard=unnamed              " Access system clipboard
+set timeoutlen=500                 " VIM hold up 500ms after key press
 
 " Plugins:
 source ~/.config/nvim/my-configs/plugins.vim
