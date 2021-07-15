@@ -20,6 +20,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 " Initialize plugin system
 call plug#end()

@@ -26,6 +26,7 @@ source ~/.config/nvim/my-configs/fzf.vim
 source ~/.config/nvim/my-configs/nerdcommenter.vim
 source ~/.config/nvim/my-configs/ultisnips.vim
 source ~/.config/nvim/my-configs/coc.vim
+source ~/.config/nvim/my-configs/vim-markdown-preview.vim
 
 " Visual:
 

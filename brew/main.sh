@@ -69,6 +69,7 @@ brew install tree
 brew install yarn --ignore-dependencies
 brew install z
 brew install openjdk
+brew install grip
 
 # This is needed for fzf to know how to ignore files listed in .gitignore
 # and know how to show hidden files
