@@ -34,3 +34,4 @@ unset file
 
 # Add `~/bin` to the `$PATH`
 export PATH="$PATH:/usr/local/bin";
+. /usr/local/etc/profile.d/z.sh
