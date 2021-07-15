@@ -11,11 +11,6 @@ alias gaf="g al | grep"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Empty Trash
-# You have to give to your terminal Full Disk permissions in the security settings
-# Security & Privacy > Privacy > Full Disk Access > Your Terminal
-alias trash="rm -fr ~/.Trash"
-
 # Empty Downloads on macOS
 alias dclean="cd ~/Downloads; rm -fr *;cd -"
 
