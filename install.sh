@@ -12,16 +12,17 @@ echo "🔧 Setting up your Mac..."
 # Set zsh as your default shell
 sudo chsh -s $(which zsh)
 
-sh $CONFIG_DIR/common/install.sh
-sh $CONFIG_DIR/brew/main.sh
-sh $CONFIG_DIR/node/main.sh
+# Set macOS preferences
+sh $CONFIG_DIR/osx/.default_config
 
-# macOS
-sh $CONFIG_DIR/osx/.macos
+sh $CONFIG_DIR/common/install.sh
+sh $CONFIG_DIR/osx/tasks/brew.sh
+sh $CONFIG_DIR/osx/tasks/mas.sh
+sh $CONFIG_DIR/osx/tasks/nvm.sh
+sh $CONFIG_DIR/osx/tasks/create_workspace.sh
 sh $CONFIG_DIR/osx/tasks/symlink.sh
+sh $CONFIG_DIR/osx/tasks/nvim.sh
 sh $CONFIG_DIR/osx/tasks/dock.sh
-sh $CONFIG_DIR/osx/tasks/create_dirs.sh
-sh $CONFIG_DIR/osx/mas.sh
 
 echo "⚡️All right! Restart your machine to complete the configuration."
 

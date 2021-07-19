@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/common/functions.sh
-
-msg_install "brew core"
-
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
@@ -76,12 +72,21 @@ brew install grip
 # It is also a good CLI tool
 brew install ag
 
-msg_ok "OK"
-
 # Install cask packages
-msg_install "brew casks"
-source ~/.dotfiles/brew/casks.sh
-msg_ok "OK"
+brew install --cask alacritty
+brew install --cask figma
+brew install --cask google-chrome
+brew install --cask imageoptim
+brew install --cask slack
+brew install --cask discord
+brew install --cask spotify
+brew install --cask bitwarden
+brew install --cask bluejeans
+brew install --cask dozer
+brew install --cask grammarly
+brew install --cask rectangle
+brew install --cask drawio
+brew install --cask visual-studio-code
 
 # Remove outdated versions from the cellar.
 brew cleanup
