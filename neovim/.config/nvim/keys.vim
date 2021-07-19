@@ -55,4 +55,4 @@ nnoremap <leader>sd :Files %:p:h<CR>
 nnoremap <leader>/ :noh<CR><CR>
 
 " replace
-nnoremap <leader>st :%s/\<<C-r><C-w>\>/
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
