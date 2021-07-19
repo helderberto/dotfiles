@@ -7,6 +7,11 @@
 # Set current directory ~/dotfiles to CONFIG_DIR
 CONFIG_DIR=$(dirname "$0")
 
+echo "🔧 Setting up your Mac..."
+
+# Set zsh as your default shell
+sudo chsh -s $(which zsh)
+
 sh $CONFIG_DIR/common/install.sh
 sh $CONFIG_DIR/brew/main.sh
 sh $CONFIG_DIR/node/main.sh
