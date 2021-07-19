@@ -1,27 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty it self.
-env:
-  # TERM env customization.
-  #
-  # If this property is not set, alacritty will set it to xterm-256color.
-  #
-  # Note that some xterm terminfo databases don't declare support for italics.
-  # You can verify this by checking for the presence of `smso` and `sitm` in
-  # `infocmp xterm-256color`.
-  TERM: xterm-256color
-
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: false
-
-# Load Dracula Theme from ~/.dotfiles
-import:
-  - ~/.alacritty.theme.yml
-  - ~/.alacritty.font.yml
-  - ~/.alacritty.shell.yml
-
 window:
   # Window dimensions (changes require restart)
   #
@@ -62,6 +40,8 @@ window:
   #   - SimpleFullscreen
   startup_mode: Windowed
 
+  dynamic_title: true
+
 scrolling:
   # maximum number of lines in the scrollback buffer. Specifying '0' will
   # disable scrolling.
@@ -70,6 +50,48 @@ scrolling:
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
   multiplier: 3
+
+# Font Customization
+font:
+# The normal (roman) font face to use.
+  normal:
+    family: 'Hack' # should be "Menlo" or something on macOS.
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: 'Hack' # should be "Menlo" or something on macOS.
+    # Style can be specified to pick a specific face.
+    style: Bold
+
+  # The italic font face
+  italic:
+    family: 'Hack' # should be "Menlo" or something on macOS.
+    # Style can be specified to pick a specific face.
+    style: Italic
+
+  # Point size of the font
+  size: 14.0
+
+  # Offset is the extra space around each character. offset.y can be thought of
+  # as modifying the linespacing, and offset.x as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increase the x offset to move the glyph to
+  # the right, increase the y offset to move the glyph upward.
+  glyph_offset:
+    x: 0
+    y: 0
+
+  # OS X only: use thin stroke font rendering. Thin strokes are suitable
+  # for retina displays, but for non-retina you probably want this set to
+  # false.
+  use_thin_strokes: false
+
 
 cursor:
   # Cursor style
@@ -84,7 +106,72 @@ cursor:
   # window is not focused.
   unfocused_hollow: true
 
-# dynamic_title: false
 
 # Live config reload (changes require restart)
 live_config_reload: true
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+colors:
+  primary:
+    background: '#2e3440'
+    foreground: '#d8dee9'
+    dim_foreground: '#a5abb6'
+  cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  vi_mode_cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  selection:
+    text: CellForeground
+    background: '#4c566a'
+  search:
+    matches:
+      foreground: CellBackground
+      background: '#88c0d0'
+    bar:
+      background: '#434c5e'
+      foreground: '#d8dee9'
+  normal:
+    black: '#3b4252'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#88c0d0'
+    white: '#e5e9f0'
+  bright:
+    black: '#4c566a'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#8fbcbb'
+    white: '#eceff4'
+  dim:
+    black: '#373e4d'
+    red: '#94545d'
+    green: '#809575'
+    yellow: '#b29e75'
+    blue: '#68809a'
+    magenta: '#8c738c'
+    cyan: '#6d96a5'
+    white: '#aeb3bb'
+
+# Shell
+#
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - 'tmux attach -t "main" || tmux new -s "main"'
