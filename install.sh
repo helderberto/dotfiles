@@ -15,7 +15,7 @@ sudo chsh -s $(which zsh)
 # Set macOS preferences
 sh $CONFIG_DIR/osx/.default_config
 
-sh $CONFIG_DIR/common/install.sh
+sh $CONFIG_DIR/osx/tasks/install_packages.sh
 sh $CONFIG_DIR/osx/tasks/brew.sh
 sh $CONFIG_DIR/osx/tasks/mas.sh
 sh $CONFIG_DIR/osx/tasks/nvm.sh
