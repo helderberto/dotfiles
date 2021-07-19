@@ -23,5 +23,9 @@ sh $CONFIG_DIR/osx/tasks/dock.sh
 sh $CONFIG_DIR/osx/tasks/create_dirs.sh
 sh $CONFIG_DIR/osx/mas.sh
 
-# load zsh configs
-source ~/.zshrc
+echo "⚡️All right! Restart your machine to complete the configuration."
+
+# Restart macOS immediately
+echo "🖥  Rebooting macOS immediately"
+sudo reboot
+echo "✅ Successful Reboot macOS command"
