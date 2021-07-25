@@ -55,7 +55,7 @@ nnoremap <leader>sr :Rg<CR>
 nnoremap <leader>sb :BLines<CR>
 nnoremap <leader><space> :FZF<CR>
 nnoremap <leader>sd :Files %:p:h<CR>
-nnoremap <leader>/ :noh<CR><CR>
+nnoremap <CR> :noh<CR><CR>
 
 " replace
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
