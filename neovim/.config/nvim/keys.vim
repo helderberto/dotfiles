@@ -5,6 +5,9 @@
 " set leader key to spacebar
 let mapleader = "\<space>"
 
+" misc
+inoremap <C-c> <esc>
+
 " save & save without format
 nnoremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>a
