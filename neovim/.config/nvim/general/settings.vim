@@ -7,6 +7,7 @@ set cursorline                     " Find the current line quickly.
 set relativenumber                 " Show relative line numbers
 set number                         " Show line numbers
 set hlsearch                       " Highlight when searching
+set is                             " Highlight on search
 set title                          " Show title at top of the terminal
 filetype plugin indent on          " Enable loading the plugin files for specific file types
 set clipboard=unnamed              " Access system clipboard
