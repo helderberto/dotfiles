@@ -1,6 +1,5 @@
-" General Settings
-source ~/.config/nvim/vim-plug/plugins.vim
-source ~/.config/nvim/general/settings.vim
+source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/main.vim
 source ~/.config/nvim/keys.vim
 
 " Themes

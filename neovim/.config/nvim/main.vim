@@ -12,9 +12,17 @@ set title                          " Show title at top of the terminal
 filetype plugin indent on          " Enable loading the plugin files for specific file types
 set clipboard=unnamed              " Access system clipboard
 set timeoutlen=200                 " VIM hold up 500ms after key press
+set hidden                         " TextEdit might fail if hidden is not set
+set shortmess+=c                   " Don't pass messages to |ins-completion-menu|
+
+" Some servers have issues with backup files, see #649.
 set nowritebackup
 set noswapfile
 set nobackup
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=100
 
 " Indentation
 set tabstop=4 softtabstop=4
