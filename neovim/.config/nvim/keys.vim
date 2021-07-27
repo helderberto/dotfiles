@@ -43,11 +43,10 @@ nnoremap <leader>ce :CocEnable<CR>
 
 " buffers & history
 nnoremap <C-b> :Buffers<CR>
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bd :bdelete!<CR>
-nnoremap <leader>h :History<CR>
+nnoremap <C-h> :History<CR>
 
 " search
 nnoremap <leader>sg :GFiles<CR>
