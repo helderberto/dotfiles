@@ -49,11 +49,11 @@ nnoremap <leader>bd :bdelete!<CR>
 nnoremap <C-h> :History<CR>
 
 " search
-nnoremap <leader>sg :GFiles<CR>
-nnoremap <leader>sr :Rg<CR>
-nnoremap <leader>sb :BLines<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>ps :Rg<CR>
+nnoremap <leader>pw :BLines<CR>
 nnoremap <leader><space> :FZF<CR>
-nnoremap <leader>sd :Files %:p:h<CR>
+nnoremap <leader>pf :Files %:p:h<CR>
 nnoremap <CR> :noh<CR><CR>
 
 " replace
