@@ -11,16 +11,16 @@ inoremap <C-c> <esc>
 " save & save without format
 nnoremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>a
-nnoremap <leader>fs <esc>:w<CR>
-inoremap <leader>fs <esc>:w<CR>a
-nnoremap <leader>fd <esc>:noa w<CR>
-inoremap <leader>fd <esc>:noa w<CR>a
+nnoremap <leader>w <esc>:w<CR>
+inoremap <leader>w <esc>:w<CR>a
+nnoremap <leader>wn <esc>:noa w<CR>
+inoremap <leader>wn <esc>:noa w<CR>a
 
 " window manipulate
+nnoremap <leader>e <C-w>
 nnoremap <leader>. :Ex<CR>
-nnoremap <leader>w <C-w>
-nnoremap <leader>wv :Vex<CR>
-nnoremap <leader>ws :Sex<CR>
+nnoremap <leader>ev :Vex<CR>
+nnoremap <leader>es :Sex<CR>
 
 " select & movement
 
@@ -35,7 +35,7 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " source current configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <leader>ev :e! ~/.config/nvim/init.vim<CR>
+nnoremap <leader>ov :e! ~/.config/nvim/init.vim<CR>
 
 " CoC toggle
 nnoremap <leader>cd :CocDisable<CR>
@@ -54,6 +54,7 @@ nnoremap <leader>ps :Rg<CR>
 nnoremap <leader>pw :BLines<CR>
 nnoremap <leader><space> :FZF<CR>
 nnoremap <leader>pf :Files %:p:h<CR>
+nnoremap <leader>pp :Files ~/workspace<CR>
 nnoremap <CR> :noh<CR><CR>
 
 " replace
