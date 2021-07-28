@@ -19,7 +19,7 @@ inoremap <leader>wn <esc>:noa w<CR>a
 " window manipulate
 nnoremap <leader>e <C-w>
 nnoremap <leader>. :Ex<CR>
-nnoremap <leader>ev :Vex<CR>
+nnoremap <leader>ev :Vex!<CR>
 nnoremap <leader>es :Sex<CR>
 
 " select & movement
