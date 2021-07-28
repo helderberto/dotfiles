@@ -7,3 +7,6 @@ let g:user_emmet_settings = {
 \      'extends' : 'tsx',
 \  },
 \}
+
+" https://github.com/mattn/emmet-vim#redefine-trigger-key
+let g:user_emmet_leader_key='<tab>'
