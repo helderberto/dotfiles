@@ -6,7 +6,6 @@ source ~/.config/nvim/keys.vim
 source ~/.config/nvim/plug-config/emmet-vim.vim
 source ~/.config/nvim/plug-config/git.vim
 source ~/.config/nvim/plug-config/fzf.vim
-source ~/.config/nvim/plug-config/nerdcommenter.vim
 source ~/.config/nvim/plug-config/ultisnips.vim
 source ~/.config/nvim/plug-config/coc.vim
 source ~/.config/nvim/plug-config/vim-markdown-preview.vim
