@@ -12,7 +12,7 @@ set is                             " Highlight on search
 set title                          " Show title at top of the terminal
 filetype plugin indent on          " Enable loading the plugin files for specific file types
 set clipboard=unnamed              " Access system clipboard
-set timeoutlen=300                 " VIM hold up 300ms after key press
+set timeoutlen=500                 " VIM hold up 500ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=8                    " Scroll screen after 8 lines
 
