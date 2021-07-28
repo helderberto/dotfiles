@@ -14,7 +14,6 @@ filetype plugin indent on          " Enable loading the plugin files for specifi
 set clipboard=unnamed              " Access system clipboard
 set timeoutlen=300                 " VIM hold up 300ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
-set shortmess+=c                   " Don't pass messages to |ins-completion-menu|
 set scrolloff=8                    " Scroll screen after 8 lines
 
 " Some servers have issues with backup files, see #649.
@@ -39,15 +38,19 @@ set foldmethod=syntax       " syntax highlighting items specify folds
 set foldlevelstart=99       " start file with all folds opened
 
 " Theme
-set background=dark
 set termguicolors
+set background=dark
 colorscheme gruvbox
+
+" Ensure signcolumn folow theme colors
+hi ColorColumn ctermbg=0 guibg=grey
+hi SignColumn guibg=none
+hi CursorLineNR guibg=None
+hi Normal guibg=none
 
 " When enter a JavaScript or TypeScript buffer, and disable when leave
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-autocmd vimenter * ++nested colorscheme gruvbox
 
 " Jenkins
 autocmd BufNewFile,BufRead Jenkinsfile setf groovy
