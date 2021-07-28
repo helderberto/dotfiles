@@ -2,10 +2,6 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/main.vim
 source ~/.config/nvim/keys.vim
 
-" Themes
-source ~/.config/nvim/themes/syntax.vim
-source ~/.config/nvim/themes/settings.vim
-
 " Plugin Configuration
 source ~/.config/nvim/plug-config/emmet-vim.vim
 source ~/.config/nvim/plug-config/git.vim
