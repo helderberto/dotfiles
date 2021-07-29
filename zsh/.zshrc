@@ -27,12 +27,6 @@ for file in ~/.{extra,exports,aliases,functions}; do
 done
 unset file
 
-# Gruvbox Dark color scheme for fzf
-# https://github.com/junegunn/fzf/wiki/Color-schemes#gruvbox-dark
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
-  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -42,3 +36,9 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 export PATH="$PATH:/usr/local/bin";
 export PATH="/usr/local/sbin:$PATH"
 . /usr/local/etc/profile.d/z.sh
+
+# Gruvbox Dark color scheme for fzf
+# https://github.com/junegunn/fzf/wiki/Color-schemes#gruvbox-dark
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
+  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54'
