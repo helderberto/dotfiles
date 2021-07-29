@@ -11,10 +11,10 @@ inoremap <C-c> <esc>
 " save & save without format
 nnoremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>a
-nnoremap <leader>w <esc>:w<CR>
-inoremap <leader>w <esc>:w<CR>a
-nnoremap <leader>wn <esc>:noa w<CR>
-inoremap <leader>wn <esc>:noa w<CR>a
+nnoremap <leader>fs <esc>:w<CR>
+inoremap <leader>fs <esc>:w<CR>a
+nnoremap <leader>fd <esc>:noa w<CR>
+inoremap <leader>fd <esc>:noa w<CR>a
 
 " window manipulate
 nnoremap <leader>e <C-w>
