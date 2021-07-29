@@ -15,6 +15,7 @@ set clipboard=unnamed              " Access system clipboard
 set timeoutlen=500                 " VIM hold up 500ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=8                    " Scroll screen after 8 lines
+set signcolumn=no                  " Remove signcolumn
 
 " Some servers have issues with backup files, see #649.
 set nowritebackup
@@ -41,12 +42,6 @@ set foldlevelstart=99       " start file with all folds opened
 set termguicolors
 set background=dark
 colorscheme gruvbox
-
-" Ensure signcolumn folow theme colors
-hi ColorColumn ctermbg=0 guibg=grey
-hi SignColumn guibg=none
-hi CursorLineNR guibg=None
-hi Normal guibg=none
 
 " When enter a JavaScript or TypeScript buffer, and disable when leave
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
