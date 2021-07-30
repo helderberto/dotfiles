@@ -39,9 +39,11 @@ set foldmethod=syntax       " syntax highlighting items specify folds
 set foldlevelstart=99       " start file with all folds opened
 
 " Theme
-set termguicolors
-set background=dark
-colorscheme gruvbox
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+colorscheme nord
 
 " When enter a JavaScript or TypeScript buffer, and disable when leave
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
