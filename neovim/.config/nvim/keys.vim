@@ -56,8 +56,8 @@ nnoremap <leader>hh :History<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>ps :Rg<CR>
 nnoremap <leader>pb :BLines<CR>
-nnoremap <leader><space> :FZF<CR>
-nnoremap <leader>pf :Files %:p:h<CR>
+nnoremap <leader>pf :FZF<CR>
+nnoremap <leader>pc :Files %:p:h<CR>
 
 " Switch between the last two files
 nnoremap <leader>t <C-^>
