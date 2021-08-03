@@ -2,9 +2,6 @@
 " => Custom Keys
 """""""""""""""""""""""""
 
-" set leader key to spacebar
-let mapleader = "\<space>"
-
 " misc
 inoremap <C-c> <esc>
 
