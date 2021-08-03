@@ -4,6 +4,7 @@
 
 " misc
 inoremap <C-c> <esc>
+nnoremap <esc> :noh<CR><CR>
 
 " save & save without format
 nnoremap <C-s> <esc>:w<CR>
@@ -14,10 +15,16 @@ nnoremap <leader>fd <esc>:noa w<CR>
 inoremap <leader>fd <esc>:noa w<CR>a
 
 " window manipulate
-nnoremap <leader>e <C-w>
+nnoremap <leader>w <C-w>
 nnoremap <leader>. :Ex<CR>
-nnoremap <leader>ev :Vex!<CR>
-nnoremap <leader>es :Sex<CR>
+nnoremap <leader>wv :Vex!<CR>
+nnoremap <leader>ws :Sex<CR>
+
+" quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " select & movement
 
@@ -32,7 +39,7 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " source current configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <leader>ov :e! ~/.config/nvim/init.vim<CR>
+nnoremap <leader>ec :e! ~/.config/nvim/init.vim<CR>
 
 " CoC toggle
 nnoremap <leader>cd :CocDisable<CR>
@@ -43,16 +50,20 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bd :bdelete!<CR>
-nnoremap <C-h> :History<CR>
+nnoremap <leader>hh :History<CR>
 
 " search
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>ps :Rg<CR>
-nnoremap <leader>pw :BLines<CR>
+nnoremap <leader>pb :BLines<CR>
 nnoremap <leader><space> :FZF<CR>
 nnoremap <leader>pf :Files %:p:h<CR>
-nnoremap <leader>pp :Files ~/workspace<CR>
-nnoremap <CR> :noh<CR><CR>
 
 " replace
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" Disable arrows
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
