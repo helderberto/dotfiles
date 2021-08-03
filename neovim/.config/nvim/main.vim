@@ -30,12 +30,17 @@ set nobackup
 set updatetime=100
 
 " Indentation
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set shiftround
 set expandtab
-set smarttab
 set autoindent
 set smartindent
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+
+set textwidth=80
 
 " Folding
 set foldmethod=syntax       " syntax highlighting items specify folds
@@ -63,3 +68,6 @@ let g:javascript_plugin_jsdoc = 1
 
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Apply textwidth to *.md files
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
