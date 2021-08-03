@@ -58,9 +58,10 @@ nnoremap <leader>ps :Rg<CR>
 nnoremap <leader>pb :BLines<CR>
 nnoremap <leader>pf :FZF<CR>
 nnoremap <leader>pc :Files %:p:h<CR>
+nnoremap <leader><leader> :FZF<CR>
 
 " Switch between the last two files
-nnoremap <leader><leader> <C-^>
+nnoremap <leader>t <C-^>
 
 " replace
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
