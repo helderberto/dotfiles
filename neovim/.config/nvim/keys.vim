@@ -48,7 +48,7 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bd :bdelete!<CR>
-nnoremap <C-h> :History<CR>
+nnoremap <leader>hh :History<CR>
 
 " search
 nnoremap <C-p> :GFiles<CR>
