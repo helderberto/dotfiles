@@ -52,9 +52,9 @@ nnoremap <C-h> :History<CR>
 
 " search
 nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>ss :Rg<CR>
-nnoremap <leader>sl :BLines<CR>
-nnoremap <leader>sd :Files %:p:h<CR>
+nnoremap <leader>fr :Rg<CR>
+nnoremap <leader>fs :BLines<CR>
+nnoremap <leader>fd :Files %:p:h<CR>
 nnoremap <leader><leader> :FZF<CR>
 
 " Switch between the last two files
