@@ -9,8 +9,12 @@ nnoremap <esc> :noh<CR><CR>
 " save & save without format
 nnoremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>a
-nnoremap <C-s>n <esc>:noa w<CR>
-inoremap <C-s>n <esc>:noa w<CR>a
+nnoremap <C-s>d <esc>:noa w<CR>
+inoremap <C-s>d <esc>:noa w<CR>a
+nnoremap <leader>s <esc>:w<CR>
+inoremap <leader>s <esc>:w<CR>a
+nnoremap <leader>sd <esc>:noa w<CR>
+inoremap <leader>sd <esc>:noa w<CR>a
 
 " window manipulate
 nnoremap <leader>w <C-w>
