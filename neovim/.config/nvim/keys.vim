@@ -52,7 +52,7 @@ nnoremap <leader>hh :History<CR>
 
 " search
 nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>fr :Rg<CR>
+nnoremap <leader>ff :Rg<CR>
 nnoremap <leader>fs :BLines<CR>
 nnoremap <leader>fd :Files %:p:h<CR>
 nnoremap <leader><leader> :FZF<CR>
