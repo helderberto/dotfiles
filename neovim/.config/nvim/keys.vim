@@ -11,8 +11,8 @@ nnoremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>a
 nnoremap <C-s>d <esc>:noa w<CR>
 inoremap <C-s>d <esc>:noa w<CR>a
-nnoremap <leader>s <esc>:w<CR>
-inoremap <leader>s <esc>:w<CR>a
+nnoremap <leader>ss <esc>:w<CR>
+inoremap <leader>ss <esc>:w<CR>a
 nnoremap <leader>sd <esc>:noa w<CR>
 inoremap <leader>sd <esc>:noa w<CR>a
 
@@ -27,6 +27,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+
 
 " select & movement
 
