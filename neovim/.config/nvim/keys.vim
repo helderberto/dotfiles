@@ -11,12 +11,16 @@ nnoremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>a
 nnoremap <C-s>d <esc>:noa w<CR>
 inoremap <C-s>d <esc>:noa w<CR>a
+nnoremap <leader>w <esc>:w<CR>
+inoremap <leader>w <esc>:w<CR>a
+nnoremap <leader>we <esc>:noa w<CR>
+inoremap <leader>we <esc>:noa w<CR>a
 
 " window manipulate
-nnoremap <leader>w <C-w>
 nnoremap <leader>. :Ex<CR>
-nnoremap <leader>wv :Vex!<CR>
-nnoremap <leader>ws :Sex<CR>
+nnoremap <leader>e <C-w>
+nnoremap <leader>ev :Vex!<CR>
+nnoremap <leader>es :Sex<CR>
 
 " quicker window movement
 nnoremap <C-j> <C-w>j
@@ -37,7 +41,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " source current configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <leader>ec :e! ~/.config/nvim/init.vim<CR>
 
 " CoC toggle
 nnoremap <leader>cd :CocDisable<CR>
