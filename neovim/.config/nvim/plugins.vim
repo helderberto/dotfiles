@@ -14,7 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
-Plug 'helderburato/vim-snippets'
+Plug 'helderburato/aragorn-vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'JamshedVesuna/vim-markdown-preview'
 
