@@ -2,13 +2,6 @@
 
 source ~/.dotfiles/common/functions.sh
 
-if ! has_app "Todoist"; then
-    msg_install "Todoist"
-    mas install 585829637
-    msg_ok "OK"
-fi
-
-
 if ! has_app "The Unarchiver"; then
     msg_install "The Unarchiver"
     mas install 425424353
