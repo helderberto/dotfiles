@@ -18,7 +18,7 @@ set clipboard=unnamed              " Access system clipboard
 set timeoutlen=500                 " VIM hold up 500ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=8                    " Scroll screen after 8 lines
-set signcolumn=no                  " Remove signcolumn
+set signcolumn=yes                 " Add signcolumn
 
 " Some servers have issues with backup files, see #649.
 set nowritebackup
