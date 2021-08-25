@@ -71,3 +71,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Apply textwidth to *.md files
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')

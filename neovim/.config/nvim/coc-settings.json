@@ -3,7 +3,10 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "css",
+    "markdown",
+    "json"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
