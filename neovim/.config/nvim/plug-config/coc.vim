@@ -3,10 +3,7 @@
 """""""""""""""""""""""""
 
 " enable global extensions
-let g:coc_global_extensions = [
-\ 'coc-tsserver', 'coc-json',
-\ 'coc-yaml',
-\ ]
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-yaml', 'coc-css']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
