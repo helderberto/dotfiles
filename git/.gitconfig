@@ -24,12 +24,13 @@
   template = ~/.gittemplates/commit
 
 [alias]
-  a = add --all
+  a = add
+  aa = add --all
   ap = add . -p
   #############
   b = branch
   bd = branch -d
-  bdd = branch -D
+  bD = branch -D
   br = branch -r
   bm = branch -m
   bv = branch -vv
@@ -42,6 +43,8 @@
   cp = cherry-pick
   cpa = cherry-pick --abort
   cpc = cherry-pick --continue
+  #############
+  cl = clone --recurse-submodules
   #############
   co = checkout
   cob = checkout -b
@@ -64,11 +67,13 @@
   pr = prune -v
   #############
   ps = push
-  psf = push -f
+  pf = push --force
+  pfl = push --force-with-lease
   pso = push origin
   psu = push -u
   pst = push --tags
   #############
+  pl = pull
   po = pull origin
   pom = pull origin main
   por = pull origin master
