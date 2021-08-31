@@ -3,6 +3,10 @@ source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
+# Load the oh-my-zsh's library.
+antigen bundle npm
+antigen bundle yarn
+
 # Load the theme.
 antigen theme romkatv/powerlevel10k
 
