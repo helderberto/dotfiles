@@ -6,6 +6,7 @@
 inoremap <C-c> <esc>
 nnoremap <esc> :noh<CR><CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>qq :qa!<CR>
 
 " save & save without format
 nnoremap <C-s> <esc>:w<CR>
@@ -68,3 +69,23 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" Tab navigation like Firefox: only 'open new tab' works in terminal
+" http://vim.wikia.com/wiki/Alternative_tab_navigation
+" tab navigation: Alt or Ctrl+Shift may not work in terminal:
+nnoremap <leader>t     :tabnew<CR>
+inoremap <leader>t     <Esc>:tabnew<CR>
+nnoremap <leader>te :tabedit<space>
+nnoremap H gT
+nnoremap L gt
+" tabs by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
