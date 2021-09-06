@@ -5,6 +5,7 @@
 " misc
 inoremap <C-c> <esc>
 nnoremap <esc> :noh<CR><CR>
+nnoremap <leader>q :q<CR>
 
 " save & save without format
 nnoremap <C-s> <esc>:w<CR>
