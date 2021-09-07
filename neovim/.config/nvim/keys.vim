@@ -73,9 +73,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Tab navigation like Firefox: only 'open new tab' works in terminal
 " http://vim.wikia.com/wiki/Alternative_tab_navigation
 " tab navigation: Alt or Ctrl+Shift may not work in terminal:
-nnoremap <leader>t     :tabnew<CR>
-inoremap <leader>t     <Esc>:tabnew<CR>
-nnoremap <leader>te :tabedit<space>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
+nnoremap <C-t>e :tabedit<space>
 nnoremap H gT
 nnoremap L gt
 " tabs by number
