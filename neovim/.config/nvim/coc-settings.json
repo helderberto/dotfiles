@@ -7,6 +7,9 @@
     "javascriptreact",
     "typescriptreact"
   ],
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
   "prettier.trailingComma": "all",
