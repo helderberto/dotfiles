@@ -1,18 +1,14 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
-    "javascriptreact",
     "typescript",
-    "typescriptreact",
+    "json",
     "css",
-    "markdown",
-    "json"
+    "javascriptreact",
+    "typescriptreact"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
-  "javascript.suggestionActions.enabled": false,
   "prettier.trailingComma": "all",
-  "prettier.singleQuote": true,
-  "prettier.requireConfig": true,
-  "prettier.onlyUseLocalVersion": true
+  "prettier.singleQuote": true
 }
