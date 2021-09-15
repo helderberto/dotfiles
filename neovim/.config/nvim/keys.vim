@@ -89,3 +89,8 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
+
+" netrw
+"
+" allow `-` to open the parent directory in netrw
+nnoremap <silent> - :e %:h<cr>
