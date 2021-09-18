@@ -19,6 +19,9 @@ nnoremap <leader>. :Ex<CR>
 nnoremap <leader>e <C-w>
 nnoremap <leader>ev :Vex!<CR>
 nnoremap <leader>es :Sex<CR>
+nnoremap <leader>+ :vertical resize +5<CR>
+nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>rp :resize 100<CR>
 
 " quicker window movement
 nnoremap <C-j> <C-w>j
