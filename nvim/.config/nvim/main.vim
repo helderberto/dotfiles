@@ -13,7 +13,7 @@ set hlsearch                       " Highlight when searching
 set is                             " Highlight on search
 set title                          " Show title at top of the terminal
 filetype plugin indent on          " Enable loading the plugin files for specific file types
-set clipboard=unnamed              " Access system clipboard
+set clipboard+=unnamedplus         " Access system clipboard
 set timeoutlen=500                 " VIM hold up 500ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=8                    " Scroll screen after 8 lines
@@ -44,13 +44,6 @@ set textwidth=80
 " Folding
 set foldmethod=syntax       " syntax highlighting items specify folds
 set foldlevelstart=99       " start file with all folds opened
-
-" Theme
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-colorscheme nord
 
 " When enter a JavaScript or TypeScript buffer, and disable when leave
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
