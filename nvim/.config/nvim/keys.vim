@@ -21,7 +21,7 @@ nnoremap <leader>ev :Vex!<CR>
 nnoremap <leader>es :Sex<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-nnoremap <leader>rp :resize 100<CR>
+nnoremap <leader>= <C-w>=<CR>
 
 " quicker window movement
 nnoremap <C-j> <C-w>j
