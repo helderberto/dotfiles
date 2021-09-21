@@ -8,7 +8,6 @@ syntax on                          " Enable syntax highlight
 set ttyfast                        " Faster redrawing
 set lazyredraw                     " Only redraw when necessary
 set cursorline                     " Find the current line quickly.
-set relativenumber                 " Show relative line numbers
 set number                         " Show line numbers
 set hlsearch                       " Highlight when searching
 set is                             " Highlight on search
