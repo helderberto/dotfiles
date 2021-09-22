@@ -92,3 +92,10 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
+" allow `-` to open the parent directory in netrw
+nnoremap <silent> - :e %:h<cr>
+
+" vim-fugitive
+nmap <leader>gg :G<CR>
+nmap <leader>gl :diffget //3<CR>
+nmap <leader>gh :diffget //2<CR>
