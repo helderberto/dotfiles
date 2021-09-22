@@ -5,14 +5,13 @@
 " misc
 inoremap <C-c> <esc>
 nnoremap <esc> :noh<CR><CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>qq :qa!<CR>
 
-" save & save without format
+" Faster saving and exiting
 nnoremap <C-s> <esc>:w<CR>
 nnoremap <C-s>d <esc>:noa w<CR>
-nnoremap <leader>w <esc>:w<CR>
-nnoremap <leader>we <esc>:noa w<CR>
+nnoremap <silent><leader>w :w!<CR>
+nnoremap <silent><leader>we :noa w<CR>
+nnoremap <silent><leader>q :q!<CR>
 
 " window manipulate
 nnoremap <leader>. :Ex<CR>
