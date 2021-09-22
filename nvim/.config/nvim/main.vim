@@ -63,6 +63,3 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Apply textwidth to *.md files
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-" netrw
-let g:netrw_banner = 0
