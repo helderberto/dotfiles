@@ -5,12 +5,20 @@
 " enable global extensions
 let g:coc_global_extensions = [
       \'coc-tsserver',
-      \'coc-eslint',
-      \'coc-prettier',
       \'coc-json',
       \'coc-yaml',
       \'coc-css'
       \]
+
+" Add CoC Prettier if prettier is installed
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+" Add CoC ESLint if ESLint is installed
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -114,4 +122,13 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Add Prettier usage into current buffer
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Fix syntax highlight for Coc plugin floating errors
+hi CocErrorFloat guifg=White guibg=Black
