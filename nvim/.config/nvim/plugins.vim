@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }  " We recommend updating the parsers on update
+Plug 'hoob3rt/lualine.nvim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
