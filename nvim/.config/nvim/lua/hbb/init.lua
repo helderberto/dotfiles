@@ -1,2 +1,2 @@
-require("hbb.nvim-treesiter")
+require("hbb.treesiter")
 require("hbb.lualine")
