@@ -21,11 +21,4 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 " Initialize plugin system
 call plug#end()
 
-" Theme
-let g:dracula_italic = 0
-if (has("termguicolors"))
-  set termguicolors
-endif
-colorscheme dracula
-
 " Reload .vimrc or init.vim and :PlugInstall to install plugins.
