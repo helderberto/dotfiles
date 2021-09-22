@@ -1,0 +1,1 @@
+require("hbb.nvim-treesiter")
