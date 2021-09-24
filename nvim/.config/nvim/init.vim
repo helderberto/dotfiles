@@ -1,33 +1,18 @@
-" Plugins
-call plug#begin('~/.config/nvim/plugged')
+" Initialization
+set encoding=utf-8
+filetype plugin indent on
 
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }  " We recommend updating the parsers on update
-Plug 'hoob3rt/lualine.nvim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'SirVer/ultisnips'
-Plug 'helderburato/aragorn-vim-snippets'
-Plug 'jiangmiao/auto-pairs'
-Plug 'JamshedVesuna/vim-markdown-preview'
+augroup hbb
+  autocmd!
+augroup
 
-" Initialize plugin system
-call plug#end()
+runtime plugins.vim
 
 lua require("hbb")
 
-" set leader key to spacebar
-let mapleader = "\<space>"
-
 " General
-set encoding=utf-8                 " The encoding displayed
 set fileencoding=utf-8             " The encoding written to file
-syntax on                          " Enable syntax highlight
+set clipboard=unnamedplus          " Use system clipboard
 set ttyfast                        " Faster redrawing
 set lazyredraw                     " Only redraw when necessary
 set cursorline                     " Find the current line quickly.
@@ -35,61 +20,32 @@ set number                         " Show line numbers
 set hlsearch                       " Highlight when searching
 set is                             " Highlight on search
 set title                          " Show title at top of the terminal
-filetype plugin indent on          " Enable loading the plugin files for specific file types
-set clipboard+=unnamedplus         " Access system clipboard
 set timeoutlen=500                 " VIM hold up 500ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
-set scrolloff=8                    " Scroll screen after 8 lines
+set scrolloff=6                    " Scroll screen after 8 lines
 set signcolumn=yes                 " Add signcolumn
+set termguicolors                  " Force GUI colors in terminals
+set foldmethod=syntax              " Syntax highlighting items specify folds
+set foldlevelstart=99              " Start file with all folds opened
+set updatetime=100                 " Update delay to 100ms
 
-" Some servers have issues with backup files, see #649.
 set nowritebackup
 set noswapfile
 set nobackup
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=100
-
 " Indentation
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-set autoindent
 set smartindent
+set autoindent                     " open lines at same indentation
+set expandtab                      " turn tabs into tabstop spaces
+set tabstop=2                      " 1 tab = 2 spaces
+set shiftwidth=2                   " shift 2 spaces
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
-set textwidth=80
-
-" Folding
-set foldmethod=syntax       " syntax highlighting items specify folds
-set foldlevelstart=99       " start file with all folds opened
-
-" When enter a JavaScript or TypeScript buffer, and disable when leave
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-" Jenkins
-autocmd BufNewFile,BufRead Jenkinsfile setf groovy
-
-" JSON
-autocmd BufNewFile,BufRead .*rc setf json
-
-"  Enable Highlight JSDocs
-let g:javascript_plugin_jsdoc = 1
-
-" Automatically removing all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Apply textwidth to *.md files
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-"""""""""""""""""""""""""
-" => Mappings
-"""""""""""""""""""""""""
+" Mappings
+" set leader key to spacebar
+let mapleader = "\<space>"
 
 " misc
 inoremap <C-c> <esc>
@@ -188,3 +144,21 @@ nnoremap <silent> - :e %:h<cr>
 nmap <leader>gg :G<CR>
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>gh :diffget //2<CR>
+
+augroup hbb
+  " Enable Groovy syntax into Jenkinsfile
+  autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+
+  " Enable JSON syntax into rc files
+  autocmd BufNewFile,BufRead .*rc setf json
+
+  " Automatically removing all trailing whitespace
+  autocmd BufWritePre * :%s/\s\+$//e
+
+  " Apply textwidth to *.md files
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+  " Enable JavaScript / TypeScript syntax when open file
+  autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+  autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+augroup END
