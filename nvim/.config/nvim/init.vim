@@ -1,17 +1,15 @@
 " Initialization
-set encoding=utf-8
-filetype plugin indent on
-
 augroup hbb
   autocmd!
 augroup
 
+" Load plugins
 runtime plugins.vim
 
+" load configs from ./lua/hbb
 lua require("hbb")
 
 " General
-set fileencoding=utf-8             " The encoding written to file
 set clipboard=unnamedplus          " Use system clipboard
 set ttyfast                        " Faster redrawing
 set lazyredraw                     " Only redraw when necessary
@@ -20,7 +18,7 @@ set number                         " Show line numbers
 set hlsearch                       " Highlight when searching
 set is                             " Highlight on search
 set title                          " Show title at top of the terminal
-set timeoutlen=500                 " VIM hold up 500ms after key press
+set timeoutlen=250                 " VIM hold up 250ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=6                    " Scroll screen after 8 lines
 set signcolumn=yes                 " Add signcolumn
@@ -34,14 +32,9 @@ set noswapfile
 set nobackup
 
 " Indentation
-set smartindent
-set autoindent                     " open lines at same indentation
 set expandtab                      " turn tabs into tabstop spaces
 set tabstop=2                      " 1 tab = 2 spaces
 set shiftwidth=2                   " shift 2 spaces
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
 
 " Mappings
 " set leader key to spacebar
@@ -125,6 +118,7 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap <C-t>e :tabedit<space>
 nnoremap H gT
 nnoremap L gt
+
 " tabs by number
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -140,7 +134,7 @@ noremap <leader>0 :tablast<cr>
 " allow `-` to open the parent directory in netrw
 nnoremap <silent> - :e %:h<cr>
 
-" vim-fugitive
+" Git
 nmap <leader>gg :G<CR>
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>gh :diffget //2<CR>
