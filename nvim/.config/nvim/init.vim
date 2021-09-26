@@ -23,9 +23,12 @@ set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=6                    " Scroll screen after 8 lines
 set signcolumn=yes                 " Add signcolumn
 set termguicolors                  " Force GUI colors in terminals
-set foldmethod=syntax              " Syntax highlighting items specify folds
-set foldlevelstart=99              " Start file with all folds opened
 set updatetime=100                 " Update delay to 100ms
+
+" Fold
+set foldmethod=expr
+set foldlevelstart=99              " Start file with all folds opened
+set foldexpr=nvim_treesitter#foldexpr()
 
 set nowritebackup
 set noswapfile
