@@ -15,6 +15,7 @@ set ttyfast                        " Faster redrawing
 set lazyredraw                     " Only redraw when necessary
 set cursorline                     " Find the current line quickly.
 set number                         " Show line numbers
+set relativenumber                 " Show the line number relative to the current line
 set hlsearch                       " Highlight when searching
 set is                             " Highlight on search
 set title                          " Show title at top of the terminal
@@ -46,6 +47,10 @@ let mapleader = "\<space>"
 " misc
 inoremap <C-c> <esc>
 nnoremap <esc> :noh<CR><CR>
+
+" enable/disable relative number
+nnoremap <leader>n :set norelativenumber<CR>
+nnoremap <leader>nn :set relativenumber<CR>
 
 " Faster saving and exiting
 nnoremap <C-s> <esc>:w<CR>
