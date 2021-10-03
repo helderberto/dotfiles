@@ -88,6 +88,7 @@ brew install --cask grammarly
 brew install --cask rectangle
 brew install --cask drawio
 brew install --cask visual-studio-code
+brew install --cask obsidian
 
 # Remove outdated versions from the cellar.
 brew cleanup
