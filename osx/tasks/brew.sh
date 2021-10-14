@@ -43,6 +43,7 @@ brew tap homebrew/cask-fonts
 
 # Install font
 brew install --cask font-hack
+brew install --cask font-hack-nerd-font
 
 # Install useful packages/binaries
 brew install antigen
