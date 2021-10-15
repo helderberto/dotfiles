@@ -19,7 +19,7 @@ set relativenumber                 " Show the line number relative to the curren
 set hlsearch                       " Highlight when searching
 set is                             " Highlight on search
 set title                          " Show title at top of the terminal
-set timeoutlen=250                 " VIM hold up 250ms after key press
+set timeoutlen=350                 " VIM hold up 350ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=6                    " Scroll screen after 8 lines
 set signcolumn=yes                 " Add signcolumn
@@ -48,10 +48,6 @@ let mapleader = "\<space>"
 inoremap <C-c> <esc>
 nnoremap <esc> :noh<CR><CR>
 
-" enable/disable relative number
-nnoremap <leader>n :set norelativenumber<CR>
-nnoremap <leader>nn :set relativenumber<CR>
-
 " Faster saving and exiting
 nnoremap <C-s> <esc>:w<CR>
 nnoremap <C-s>d <esc>:noa w<CR>
@@ -60,10 +56,11 @@ nnoremap <silent><leader>we :noa w<CR>
 nnoremap <silent><leader>q :q!<CR>
 
 " window manipulate
-nnoremap <leader>. :Ex<CR>
+nnoremap <silent> <leader>. :Fern . -reveal=%<CR><C-w>=
+nnoremap <silent> <leader>n :Fern . -drawer -reveal=% -toggle<CR><C-w>=
 nnoremap <leader>e <C-w>
-nnoremap <leader>ev :Vex!<CR>
-nnoremap <leader>es :Sex<CR>
+nnoremap <leader>ev :vsplit<CR>
+nnoremap <leader>es :split<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>= <C-w>=<CR>

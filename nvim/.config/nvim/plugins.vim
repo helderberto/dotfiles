@@ -15,6 +15,7 @@ Plug 'SirVer/ultisnips'
 Plug 'helderburato/aragorn-vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'lambdalisue/fern.vim'
 
 " Initialize plugin system
 call plug#end()
