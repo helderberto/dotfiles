@@ -134,7 +134,7 @@ noremap <leader>0 :tablast<cr>
 nnoremap <silent> - :e %:h<cr>
 
 " Git
-nmap <leader>gg :G<CR>
+nmap <leader>g :G<CR>
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>gh :diffget //2<CR>
 
