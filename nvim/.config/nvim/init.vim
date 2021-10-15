@@ -87,8 +87,6 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " buffers & history
 nnoremap <C-b> :Buffers<CR>
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bd :bdelete!<CR>
 nnoremap <leader>hh :History<CR>
 
