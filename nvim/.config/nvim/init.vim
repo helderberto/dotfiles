@@ -85,10 +85,6 @@ vnoremap K :m '<-2<CR>gv=gv
 " source current configuration
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
-" CoC toggle
-nnoremap <leader>cd :CocDisable<CR>
-nnoremap <leader>ce :CocEnable<CR>
-
 " buffers & history
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>bn :bnext<CR>
