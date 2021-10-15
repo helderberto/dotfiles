@@ -1,13 +1,11 @@
-" Initialization
-augroup hbb
-  autocmd!
-augroup
-
 " Load plugins
 runtime plugins.vim
 
 " load configs from ./lua/hbb
 lua require("hbb")
+
+" load syntax configs
+runtime syntax.vim
 
 " General
 set clipboard=unnamedplus          " Use system clipboard
@@ -137,21 +135,3 @@ nnoremap <silent> - :e %:h<cr>
 nmap <leader>g :G<CR>
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>gh :diffget //2<CR>
-
-augroup hbb
-  " Enable Groovy syntax into Jenkinsfile
-  autocmd BufNewFile,BufRead Jenkinsfile setf groovy
-
-  " Enable JSON syntax into rc files
-  autocmd BufNewFile,BufRead .*rc setf json
-
-  " Automatically removing all trailing whitespace
-  autocmd BufWritePre * :%s/\s\+$//e
-
-  " Apply textwidth to *.md files
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-  " Enable JavaScript / TypeScript syntax when open file
-  autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-  autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-augroup END
