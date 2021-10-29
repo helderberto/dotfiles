@@ -47,8 +47,6 @@ inoremap <C-c> <esc>
 nnoremap <esc> :noh<CR><CR>
 
 " Faster saving and exiting
-nnoremap <C-s> <esc>:w<CR>
-nnoremap <C-s>d <esc>:noa w<CR>
 nnoremap <silent><leader>w :w!<CR>
 nnoremap <silent><leader>we :noa w<CR>
 nnoremap <silent><leader>q :q!<CR>
