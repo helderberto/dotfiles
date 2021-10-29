@@ -71,9 +71,6 @@ nnoremap <C-l> <C-w>l
 
 " select & movement
 
-" easy access to the start of the line
-nmap 0 ^
-
 " move line up
 vnoremap J :m '>+1<CR>gv=gv
 
