@@ -81,7 +81,7 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 " buffers & history
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>bd :bdelete!<CR>
-nnoremap <leader>hh :History<CR>
+nnoremap <leader>h :History<CR>
 
 " search
 nnoremap <C-p> :GFiles<CR>
