@@ -24,6 +24,10 @@ set signcolumn=yes                 " Add signcolumn
 set termguicolors                  " Force GUI colors in terminals
 set updatetime=100                 " Update delay to 100ms
 
+" More natural split directions
+set splitbelow
+set splitright
+
 " Fold
 set foldmethod=expr
 set foldlevelstart=99              " Start file with all folds opened
