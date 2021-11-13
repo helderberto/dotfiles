@@ -20,7 +20,16 @@ set title                          " Show title at top of the terminal
 set timeoutlen=350                 " VIM hold up 350ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=6                    " Scroll screen after 8 lines
-set signcolumn=yes                 " Add signcolumn
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
 set termguicolors                  " Force GUI colors in terminals
 set updatetime=100                 " Update delay to 100ms
 
