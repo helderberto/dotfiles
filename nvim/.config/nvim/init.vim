@@ -66,7 +66,7 @@ nnoremap <silent><leader>q :q!<CR>
 
 " window manipulate
 nnoremap <silent> <leader>. :Fern . -reveal=%<CR><C-w>=
-nnoremap <silent> <leader>n :Fern . -drawer -reveal=% -toggle<CR><C-w>=
+nnoremap <silent> <leader>n :Fern . -drawer -width=40 -reveal=% -toggle<CR><C-w>=
 nnoremap <leader>e <C-w>
 nnoremap <leader>ev :vsplit<CR>
 nnoremap <leader>es :split<CR>
