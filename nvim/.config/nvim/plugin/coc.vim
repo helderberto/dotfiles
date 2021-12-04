@@ -7,7 +7,8 @@ let g:coc_global_extensions = [
       \'coc-tsserver',
       \'coc-json',
       \'coc-yaml',
-      \'coc-css'
+      \'coc-css',
+      \'coc-styled-components'
       \]
 
 " Add CoC Prettier if prettier is installed
