@@ -18,7 +18,6 @@ sh $CONFIG_DIR/osx/.default_config
 sh $CONFIG_DIR/osx/tasks/install_packages.sh
 sh $CONFIG_DIR/osx/tasks/brew.sh
 sh $CONFIG_DIR/osx/tasks/mas.sh
-sh $CONFIG_DIR/osx/tasks/nvm.sh
 sh $CONFIG_DIR/osx/tasks/create_workspace.sh
 sh $CONFIG_DIR/osx/tasks/symlink.sh
 sh $CONFIG_DIR/osx/tasks/nvim.sh
