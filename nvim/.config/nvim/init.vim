@@ -20,6 +20,7 @@ set title                          " Show title at top of the terminal
 set timeoutlen=350                 " VIM hold up 350ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=6                    " Scroll screen after 8 lines
+set mouse=a                        " Enable mouse support
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
