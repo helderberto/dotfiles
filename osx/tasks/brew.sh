@@ -87,6 +87,7 @@ brew install --cask grammarly
 brew install --cask rectangle
 brew install --cask visual-studio-code
 brew install --cask obsidian
+brew install --cask dozer # Hide menu Mac - https://github.com/Mortennn/Dozer
 
 # Remove outdated versions from the cellar.
 brew cleanup
