@@ -1,11 +1,30 @@
-" Load plugins
-runtime plugins.vim
+" Plugins
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'hoob3rt/lualine.nvim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
+Plug 'helderburato/aragorn-vim-snippets'
+Plug 'jiangmiao/auto-pairs'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'lambdalisue/fern.vim'
+Plug 'folke/zen-mode.nvim'
+
+" Initialize plugin system
+call plug#end()
 
 " load configs from ./lua/hbb
 lua require("hbb")
-
-" load syntax configs
-runtime syntax.vim
 
 " General
 set clipboard=unnamedplus          " Use system clipboard
@@ -21,16 +40,7 @@ set timeoutlen=350                 " VIM hold up 350ms after key press
 set hidden                         " TextEdit might fail if hidden is not set
 set scrolloff=6                    " Scroll screen after 8 lines
 set mouse=a                        " Enable mouse support
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
+set signcolumn=yes
 set termguicolors                  " Force GUI colors in terminals
 set updatetime=100                 " Update delay to 100ms
 
@@ -123,3 +133,18 @@ nmap <leader>dl :diffget //3<CR>
 
 " Zen Mode
 nnoremap <leader>zm :ZenMode<cr>
+
+" Custom Syntax
+
+" Enable Groovy syntax into Jenkinsfile
+autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+
+" Enable JSON syntax into rc files
+autocmd BufNewFile,BufRead .*rc setf json
+
+" Apply textwidth to *.md files
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Enable JavaScript / TypeScript syntax when open file
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
