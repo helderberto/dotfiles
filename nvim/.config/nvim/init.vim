@@ -116,26 +116,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Tab navigation like Firefox: only 'open new tab' works in terminal
-" http://vim.wikia.com/wiki/Alternative_tab_navigation
-" tab navigation: Alt or Ctrl+Shift may not work in terminal:
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-t>     <Esc>:tabnew<CR>
-nnoremap <C-t>e :tabedit<space>
-nnoremap H gT
-nnoremap L gt
-
-" tabs by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
 
 " allow `-` to open the parent directory in netrw
 nnoremap <silent> - :e %:h<cr>
