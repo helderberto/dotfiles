@@ -116,10 +116,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-
-" allow `-` to open the parent directory in netrw
-nnoremap <silent> - :e %:h<cr>
-
 " Git
 nmap <leader>g :G<CR>
 nmap <leader>dh :diffget //2<CR>
