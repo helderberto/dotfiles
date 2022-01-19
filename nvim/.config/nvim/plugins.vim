@@ -16,6 +16,7 @@ Plug 'helderburato/aragorn-vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'lambdalisue/fern.vim'
+Plug 'folke/zen-mode.nvim'
 
 " Initialize plugin system
 call plug#end()

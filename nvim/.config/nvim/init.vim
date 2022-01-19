@@ -144,3 +144,6 @@ nnoremap <silent> - :e %:h<cr>
 nmap <leader>g :G<CR>
 nmap <leader>dh :diffget //2<CR>
 nmap <leader>dl :diffget //3<CR>
+
+" Zen Mode
+nnoremap <leader>zm :ZenMode<cr>
