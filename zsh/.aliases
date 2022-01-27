@@ -1,6 +1,10 @@
 # Navigate faster
 alias ws="cd $HOME/workspace"
 alias labs="cd $HOME/workspace/labs"
+alias fps="cd $HOME/workspace/fps"
+alias storm="cd $HOME/workspace/storm"
+alias core="cd $HOME/workspace/core"
+alias me="cd $HOME/workspace/personal"
 
 # Find Aliases
 alias al="less ~/.aliases"
