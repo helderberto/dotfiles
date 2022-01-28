@@ -9,7 +9,7 @@ let g:coc_global_extensions = [
       \'coc-yaml',
       \'coc-html',
       \'coc-css',
-      \'coc-styled-components'
+      \'coc-diagnostic'
       \]
 
 " Add CoC Prettier if prettier is installed
