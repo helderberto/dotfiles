@@ -27,9 +27,9 @@ if ! has_app "GIPHY CAPTURE"; then
     msg_ok "OK"
 fi
 
-if ! has_app "Flow"; then
-    msg_install "Flow"
-    mas install 1423210932
+if ! has_app "Be Focused - Pomodoro Timer"; then
+    msg_install "Be Focused - Pomodoro Timer"
+    mas install 973134470
     msg_ok "OK"
 fi
 
