@@ -68,6 +68,7 @@ brew install z
 brew install openjdk
 brew install grip
 brew install http-server
+brew install bitwarden-cli # Password manager CLI
 
 # This is needed for fzf to know how to ignore files listed in .gitignore
 # and know how to show hidden files
@@ -82,7 +83,7 @@ brew install --cask imageoptim
 brew install --cask slack
 brew install --cask discord
 brew install --cask spotify
-brew install --cask bitwarden
+brew install --cask bitwarden # Password manager - https://bitwarden.com/
 brew install --cask grammarly
 brew install --cask rectangle
 brew install --cask visual-studio-code
