@@ -35,6 +35,10 @@ To enable the FZF in command line you need to follow [this guide](https://github
 
 _Note: It's already added to the .bashrc just need to install the package_
 
+## Neovim
+
+[Read more](./nvim/.config/nvim/README.md) about my Neovim configuration project structure.
+
 ### After Install
 
 Restart your computer and enjoy your new configuration. ✌🏻
