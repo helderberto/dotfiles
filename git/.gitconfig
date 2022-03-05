@@ -102,6 +102,8 @@
   #############
   sw = switch
   swc = switch -c
+  swm = switch main
+  swr = switch master
   #############
   sm = submodule
   sma = submodule add
