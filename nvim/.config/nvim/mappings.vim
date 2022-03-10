@@ -51,8 +51,15 @@ nnoremap <leader><leader> :FZF<CR>
 " Switch between the last two files
 nnoremap <leader>l <C-^>
 
-" replace
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" Replace
+
+" Replace current selected word
+vnoremap <leader>r "hy:%s/<C-r>h//gc<left><left><left>
+
+" Press * to search for the term under the cursor or a visual selection and
+" then press a key below to replace all instances of it in the current file.
+nnoremap <leader>r :%s//g<Left><Left>
+nnoremap <leader>rr :%s//gc<Left><Left><Left>
 
 " Disable arrows
 nnoremap <Left> :echoe "Use h"<CR>
