@@ -51,6 +51,20 @@ nnoremap <leader><leader> :FZF<CR>
 " Switch between the last two files
 nnoremap <leader>l <C-^>
 
+" Quickfix
+function! ToggleQuickFix()
+  if empty(filter(getwininfo(), 'v:val.quickfix'))
+    copen
+  else
+    cclose
+  endif
+endfunction
+
+nnoremap <leader>co :call ToggleQuickFix()<CR>
+nnoremap <leader>cn :cnext<CR>
+nnoremap <leader>cp :cprev<CR>
+nnoremap <leader>cr :cfdo %s/
+
 " Replace
 
 " Replace current selected word
