@@ -186,4 +186,4 @@ shell:
   args:
     - -l
     - -c
-    - 'tmux attach -t "main" || tmux new -s "main"'
+    - "tmux attach || tmux"
