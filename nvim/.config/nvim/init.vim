@@ -90,6 +90,15 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""
 lua require("hbb")
 
+"""""""""""""""""""""""""""""""""""""""""""""""
+" => Visual Related Configs
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+" toggle invisible characters
+set invlist
+set list
+set listchars=tab:¦\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " => Keymappings
