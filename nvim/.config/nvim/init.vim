@@ -110,7 +110,7 @@ nnoremap <esc> :noh<CR><CR>
 " Faster saving and exiting
 nnoremap <silent><leader>w :w!<CR>
 nnoremap <silent><leader>we :noa w<CR>
-nnoremap <silent><leader>q :q!<CR>
+nmap qq :q!<CR>
 
 " window manipulate
 nnoremap <silent> <leader>. :Fern . -reveal=%<CR><C-w>=
@@ -189,9 +189,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 nmap <leader>g :G<CR>
 nmap <leader>dh :diffget //2<CR>
 nmap <leader>dl :diffget //3<CR>
-
-" Zen Mode
-nnoremap <leader>zm :ZenMode<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
