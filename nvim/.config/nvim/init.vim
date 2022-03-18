@@ -2,6 +2,9 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""
 
+" set leader key to spacebar
+let mapleader = "\<space>"
+
 set clipboard=unnamedplus          " Use system clipboard
 set ttyfast                        " Faster redrawing
 set lazyredraw                     " Only redraw when necessary
@@ -36,9 +39,6 @@ set nobackup
 set expandtab                      " turn tabs into tabstop spaces
 set tabstop=2                      " 1 tab = 2 spaces
 set shiftwidth=2                   " shift 2 spaces
-
-" set leader key to spacebar
-let mapleader = "\<space>"
 
 " Custom Syntax
 
@@ -77,8 +77,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'helderburato/aragorn-vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -110,7 +110,7 @@ nnoremap <esc> :noh<CR><CR>
 " Faster saving and exiting
 nnoremap <silent><leader>w :w!<CR>
 nnoremap <silent><leader>we :noa w<CR>
-nmap qq :q!<CR>
+nnoremap <silent><leader>q :q!<CR>
 
 " window manipulate
 nnoremap <silent> <leader>. :Fern . -reveal=%<CR><C-w>=
@@ -214,31 +214,7 @@ let g:user_emmet_leader_key='<tab>'
 " https://github.com/lambdalisue/fern.vim
 """""""""""""""""""""""""""""""""""""""""""""""
 
-" Disable netrw.
-let g:loaded_netrw  = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
-
-augroup my-fern-hijack
-  autocmd!
-  autocmd BufEnter * ++nested call s:hijack_directory()
-augroup END
-
-function! s:hijack_directory() abort
-  let path = expand('%:p')
-  if !isdirectory(path)
-    return
-  endif
-  bwipeout %
-  execute printf('Fern %s', fnameescape(path))
-endfunction
-
 " Custom settings and mappings.
-
-" Show hidden files and directories
-let g:fern#default_hidden = 1
-
 function! FernInit() abort
   nmap <buffer><expr>
         \ <Plug>(fern-my-open-expand-collapse)
@@ -259,6 +235,10 @@ augroup FernGroup
   autocmd FileType fern call FernInit()
 augroup END
 
+" Show hidden files and directories
+let g:fern#default_hidden = 1
+
+
 """""""""""""""""""""""""""""""""""""""""""""""
 " => FZF
 " https://github.com/junegunn/fzf.vim
@@ -271,22 +251,12 @@ if executable('ag')
 
   " Use ag in fzf for listing files. Lightning fast and respects .gitignore
   let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
-
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
 endif
 
 " => UltiSnips - https://github.com/SirVer/ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-" => Markdown Preview - https://github.com/JamshedVesuna/vim-markdown-preview
-let vim_markdown_preview_github=1
-let vim_markdown_preview_browser='Google Chrome'
-let vim_markdown_preview_hotkey='<C-m>'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -314,31 +284,6 @@ endif
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `dk` and `dj` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -391,22 +336,6 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-" nmap <silent> <C-s> <Plug>(coc-range-select)
-" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
