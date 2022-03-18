@@ -118,7 +118,9 @@ nnoremap <silent> <leader>. :Fern . -reveal=%<CR><C-w>=
 nnoremap <silent> <leader>n :Fern . -drawer -width=40 -reveal=% -toggle<CR><C-w>=
 nnoremap <leader>e <C-w>
 nnoremap <leader>ev :vsplit<CR>
+nmap ee :vsplit<CR>
 nnoremap <leader>es :split<CR>
+nmap ss :split<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>= <C-w>=<CR>
