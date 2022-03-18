@@ -147,11 +147,11 @@ nnoremap <leader>bd :bdelete!<CR>
 nnoremap <leader>h :History<CR>
 
 " search
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>fr :Rg<CR>
-nnoremap <leader>fs :BLines<CR>
-nnoremap <leader>fd :Files %:p:h<CR>
 nnoremap <leader><leader> :FZF<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fg :Rg<CR>
+nnoremap <leader>fb :BLines<CR>
+nnoremap <leader>fh :Helptags<CR>
 
 " Switch between the last two files
 nnoremap <leader>l <C-^>
