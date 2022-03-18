@@ -13,5 +13,7 @@
     "css",
     "javascriptreact",
     "typescriptreact"
-  ]
+  ],
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.telemetry.enable": false
 }

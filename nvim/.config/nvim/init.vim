@@ -302,7 +302,8 @@ let g:coc_global_extensions = [
       \'coc-yaml',
       \'coc-html',
       \'coc-css',
-      \'coc-diagnostic'
+      \'coc-diagnostic',
+      \'coc-sumneko-lua'
       \]
 
 " Add CoC Prettier if prettier is installed
