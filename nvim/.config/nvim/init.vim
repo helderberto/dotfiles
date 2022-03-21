@@ -21,21 +21,14 @@ set mouse=a                        " Enable mouse support
 set signcolumn=yes
 set termguicolors                  " Force GUI colors in terminals
 set updatetime=100                 " Update delay to 10ms
-
-" More natural split directions
 set splitbelow
 set splitright
-
-" Fold
 set foldmethod=expr
 set foldlevelstart=99              " Start file with all folds opened
 set foldexpr=nvim_treesitter#foldexpr()
-
 set nowritebackup
 set noswapfile
 set nobackup
-
-" Indentation
 set expandtab                      " turn tabs into tabstop spaces
 set tabstop=2                      " 1 tab = 2 spaces
 set shiftwidth=2                   " shift 2 spaces
@@ -77,8 +70,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'helderburato/aragorn-vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-hijack.vim'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Initialize plugin system
 call plug#end()
@@ -113,13 +105,12 @@ nnoremap <silent><leader>we :noa w<CR>
 nnoremap <silent><leader>q :q!<CR>
 
 " window manipulate
-nnoremap <silent> <leader>. :Fern . -reveal=%<CR><C-w>=
-nnoremap <silent> <leader>n :Fern . -drawer -width=40 -reveal=% -toggle<CR><C-w>=
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>re :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
 nnoremap <leader>e <C-w>
 nnoremap <leader>ev :vsplit<CR>
-nmap ee :vsplit<CR>
 nnoremap <leader>es :split<CR>
-nmap ss :split<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>= <C-w>=<CR>
@@ -208,35 +199,6 @@ let g:user_emmet_settings = {
 
 " https://github.com/mattn/emmet-vim#redefine-trigger-key
 let g:user_emmet_leader_key='<tab>'
-
-"""""""""""""""""""""""""""""""""""""""""""""""
-" => Fern
-" https://github.com/lambdalisue/fern.vim
-"""""""""""""""""""""""""""""""""""""""""""""""
-
-" Custom settings and mappings.
-function! FernInit() abort
-  nmap <buffer><expr>
-        \ <Plug>(fern-my-open-expand-collapse)
-        \ fern#smart#leaf(
-        \   "\<Plug>(fern-action-open:select)",
-        \   "\<Plug>(fern-action-expand)",
-        \   "\<Plug>(fern-action-collapse)",
-        \ )
-  nmap <buffer> n <Plug>(fern-action-new-path)
-  nmap <buffer> d <Plug>(fern-action-remove)
-  nmap <buffer> m <Plug>(fern-action-move)
-  nmap <buffer> M <Plug>(fern-action-rename)
-  nmap <buffer> r <Plug>(fern-action-reload)
-endfunction
-
-augroup FernGroup
-  autocmd!
-  autocmd FileType fern call FernInit()
-augroup END
-
-" Show hidden files and directories
-let g:fern#default_hidden = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
