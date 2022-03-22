@@ -107,7 +107,7 @@ nnoremap <silent><leader>q :q!<CR>
 " window manipulate
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>re :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+nnoremap <leader>. :NvimTreeFindFile<CR>
 nnoremap <leader>e <C-w>
 nnoremap <leader>ev :vsplit<CR>
 nnoremap <leader>es :split<CR>
