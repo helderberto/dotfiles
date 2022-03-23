@@ -11,18 +11,33 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
-  disable_netrw = true,
-  hijack_netrw = true,
-  open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
-  auto_close = true,
-  open_on_tab = false,
+  auto_close = false,
+  auto_reload_on_write = true,
+  disable_netrw = false,
+  hide_root_folder = false,
   hijack_cursor = false,
-  update_cwd = true,
+  hijack_netrw = true,
+  hijack_unnamed_buffer_when_opening = false,
+  ignore_buffer_on_setup = false,
+  open_on_setup = false,
+  open_on_tab = false,
+  sort_by = "name",
+  update_cwd = false,
+  view = {
+    width = 30,
+    height = 30,
+    side = "left",
+    preserve_window_proportions = false,
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes",
+    mappings = {
+      custom_only = false,
+      list = {
+        -- user mappings go here
+      },
+    },
+  },
   update_to_buf_dir = {
     enable = true,
     auto_open = true,
@@ -54,22 +69,15 @@ nvim_tree.setup {
     ignore = true,
     timeout = 500,
   },
-  view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
-    side = "left",
-    auto_resize = true,
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
+  actions = {
+    change_dir = {
+      enable = true,
+      global = false,
     },
-    number = false,
-    relativenumber = false,
+    open_file = {
+      quit_on_open = false,
+      resize_window = true,
+    },
   },
   trash = {
     cmd = "trash",
@@ -79,11 +87,4 @@ nvim_tree.setup {
   git_hl = 1,
   disable_window_picker = 0,
   root_folder_modifier = ":t",
-  show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
-    tree_width = 30,
-  },
 }
