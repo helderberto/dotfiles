@@ -234,18 +234,10 @@ let g:coc_global_extensions = [
       \'coc-html',
       \'coc-css',
       \'coc-diagnostic',
-      \'coc-sumneko-lua'
+      \'coc-sumneko-lua',
+      \'coc-eslint',
+      \'coc-prettier'
       \]
-
-" Add CoC Prettier if prettier is installed
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-" Add CoC ESLint if ESLint is installed
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
