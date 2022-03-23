@@ -72,6 +72,7 @@ Plug 'helderburato/aragorn-vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/bufferline.nvim'
+Plug 'moll/vim-bbye'
 
 " Initialize plugin system
 call plug#end()
@@ -101,9 +102,11 @@ inoremap <C-c> <esc>
 nnoremap <esc> :noh<CR><CR>
 
 " Faster saving and exiting
-nnoremap <silent><leader>w :w!<CR>
-nnoremap <silent><leader>we :noa w<CR>
-nnoremap <silent><leader>q :q!<CR>
+nnoremap <leader>w :w!<CR>
+nnoremap <leader>we :noa w<CR>
+nnoremap <leader>we :noa w<CR>
+inoremap <leader>qq <esc>:qa!<cr>
+nnoremap <leader>qq :qa!<cr>
 
 " window manipulate
 nnoremap <C-n> :NvimTreeToggle<CR>
@@ -136,8 +139,7 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 " buffers & history
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>bd :bdelete!<CR>
-nnoremap <leader>h :History<CR>
+nnoremap <leader>q :Bdelete<CR>
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 nnoremap <silent>L :BufferLineCycleNext<CR>
@@ -145,11 +147,6 @@ nnoremap <silent>H :BufferLineCyclePrev<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
-
-" These commands will sort buffers by directory, language, or a custom criteria
-nnoremap <silent>be :BufferLineSortByExtension<CR>
-nnoremap <silent>bd :BufferLineSortByDirectory<CR>
-nnoremap <silent>bs :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 
 " search
 nnoremap <leader><leader> :FZF<CR>
