@@ -1,4 +1,4 @@
-require("hbb.colors")
+require("hbb.settings")
 require("hbb.treesiter")
 require("hbb.lualine")
 require("hbb.nvim-tree")
