@@ -1,5 +1,6 @@
 require("hbb.settings")
 require("hbb.treesiter")
+require("hbb.telescope")
 require("hbb.lualine")
 require("hbb.nvim-tree")
 require("hbb.bufferline")
