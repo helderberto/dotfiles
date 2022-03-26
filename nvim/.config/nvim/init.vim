@@ -20,6 +20,7 @@ set scrolloff=6                    " Scroll screen after 8 lines
 set mouse=a                        " Enable mouse support
 set signcolumn=yes
 set updatetime=100                 " Update delay to 10ms
+set termguicolors                  " Force GUI colors in terminals
 set splitbelow
 set splitright
 set foldmethod=expr
@@ -55,8 +56,6 @@ Plug 'SirVer/ultisnips'
 Plug 'helderburato/aragorn-vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'akinsho/bufferline.nvim'
-Plug 'moll/vim-bbye'
 
 " Initialize plugin system
 call plug#end()
@@ -91,6 +90,8 @@ nnoremap <leader>we :noa w<CR>
 nnoremap <leader>we :noa w<CR>
 inoremap <leader>qq <esc>:qa!<cr>
 nnoremap <leader>qq :qa!<cr>
+inoremap <leader>q <esc>:q!<cr>
+nnoremap <leader>q :q!<cr>
 
 " window manipulate
 nnoremap <C-n> :NvimTreeToggle<CR>
@@ -129,7 +130,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
 nnoremap <C-b> <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>q :Bdelete<CR>
+nnoremap <leader>bd :bdelete<CR>
 
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
