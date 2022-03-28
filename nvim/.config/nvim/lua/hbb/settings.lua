@@ -50,11 +50,6 @@ vim.o.swapfile = false -- don"t use swap file
 vim.o.termguicolors = true                     -- force GUI colors in terminals
 vim.cmd [[colorscheme dracula]]
 
--- Snippets
-vim.g["UltiSnipsExpandTrigger"] = "<tab>"
-vim.g["UltiSnipsJumpForwardTrigger"] = "<tab>"
-vim.g["UltiSnipsJumpBackwardTrigger"] = "<c-b>"
-
 -- Emmet
 vim.g.user_emmet_leader_key = '<tab>'
 vim.g.user_emmet_settings = {

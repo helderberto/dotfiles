@@ -37,8 +37,19 @@ return packer.startup(function(use)
     'lambdalisue/fern.vim',
     requires = {
       'lambdalisue/fern-hijack.vim',
-      'antoinemadec/FixCursorHold.nvim' -- Fix CursorHold Performance
-    }
+      {
+        'antoinemadec/FixCursorHold.nvim',
+        run = function()
+          -- https://github.com/antoinemadec/FixCursorHold.nvim#configuration
+          -- in millisecond, used for both CursorHold and CursorHoldI,
+          -- use updatetime instead if not defined
+          vim.g.cursorhold_updatetime = 100
+        end
+      }
+    },
+    config = function()
+      vim.g['fern#default_hidden'] = true
+    end
   }
   use {
     'nvim-telescope/telescope.nvim',

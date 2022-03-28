@@ -110,6 +110,7 @@ _G.packer_plugins = {
     url = "https://github.com/lambdalisue/fern-hijack.vim"
   },
   ["fern.vim"] = {
+    config = { "\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24fern#default_hidden\6g\bvim\0" },
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/fern.vim",
     url = "https://github.com/lambdalisue/fern.vim"
@@ -177,6 +178,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: fern.vim
+time([[Config for fern.vim]], true)
+try_loadstring("\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24fern#default_hidden\6g\bvim\0", "config", "fern.vim")
+time([[Config for fern.vim]], false)
 if should_profile then save_profiles() end
 
 end)

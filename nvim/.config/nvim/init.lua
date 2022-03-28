@@ -33,6 +33,9 @@ end
 -- leader.
 vim.g.mapleader = " "
 
+-- Turn off builtin plugins I do not use
+require "hbb.disable_builtin"
+
 -- Base settings
 require "hbb.settings"
 
