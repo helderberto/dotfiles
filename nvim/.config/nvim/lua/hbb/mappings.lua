@@ -43,8 +43,8 @@ map("n", "<C-l>", "<C-w>l")
 -- Select & movement
 
 -- move line up
-map("v", "J", ":m .+1<CR>==")
-map("v", "K", ":m .-2<CR>==")
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
 map("v", "p", '"_dP')
 
 
