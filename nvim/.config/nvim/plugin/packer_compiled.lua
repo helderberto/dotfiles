@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   ["aragorn-vim-snippets"] = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/aragorn-vim-snippets",
@@ -99,6 +104,16 @@ _G.packer_plugins = {
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  ["fern-hijack.vim"] = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/fern-hijack.vim",
+    url = "https://github.com/lambdalisue/fern-hijack.vim"
+  },
+  ["fern.vim"] = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/fern.vim",
+    url = "https://github.com/lambdalisue/fern.vim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -108,11 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,

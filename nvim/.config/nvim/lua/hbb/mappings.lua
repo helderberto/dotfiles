@@ -27,8 +27,6 @@ map("i", "<leader>q", "<esc>:q!<cr>")
 map("n", "<leader>q", ":q!<cr>")
 
 -- Window explorer
-map("n", "<C-n>", ":NvimTreeToggle<cr>")
-map("n", "<leader>.", ":NvimTreeFindFile<cr>")
 map("n", "<leader>e", "<C-w>")
 map("n", "<leader>ev", ":vsplit<cr>")
 map("n", "<leader>es", ":split<cr>")
