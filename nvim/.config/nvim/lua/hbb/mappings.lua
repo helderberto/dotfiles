@@ -60,7 +60,7 @@ map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 map("n", "<leader>fq", "<cmd>lua require('telescope.builtin').quickfix()<cr>")
 map("n", "<C-b>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 map("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-map("n", "<leader>bd", ":bdelete")
+map("n", "<leader>bd", ":bdelete %<cr>")
 
 -- Switch between the last two files
 map("n", "<leader>l", "<C-^>")
