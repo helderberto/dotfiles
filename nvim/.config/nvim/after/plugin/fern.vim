@@ -26,4 +26,4 @@ augroup END
 
 " Key mappings
 nnoremap <silent> <leader>. :Fern . -reveal=%<CR><C-w>=
-nnoremap <silent> <leader>n :Fern %:h -drawer -width=35<CR><C-w>=
+nnoremap <silent> <leader>n :Fern . -drawer -width=35<CR><C-w>=
