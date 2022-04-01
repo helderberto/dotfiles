@@ -24,7 +24,7 @@ return packer.startup(function(use)
   use 'hoob3rt/lualine.nvim'
   use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
-  use 'jiangmiao/auto-pairs'
+  use 'windwp/nvim-autopairs'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'lewis6991/gitsigns.nvim'

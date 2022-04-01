@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/coc.nvim",
@@ -124,6 +119,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-treesitter"] = {
     loaded = true,
