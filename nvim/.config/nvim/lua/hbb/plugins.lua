@@ -17,7 +17,6 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules to improve startup time
   use 'nvim-lua/plenary.nvim' -- Lua utils methods shared with plugins
-  use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
@@ -25,9 +24,20 @@ return packer.startup(function(use)
   use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
   use 'windwp/nvim-autopairs'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'neoclide/coc.nvim', branch = 'release'}
-  use 'lewis6991/gitsigns.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   use {
     'antoinemadec/FixCursorHold.nvim', -- Fix CursorHold Performance.
     run = function()
