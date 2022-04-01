@@ -30,6 +30,12 @@ return packer.startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'neoclide/coc.nvim', branch = 'release'}
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   use 'jiangmiao/auto-pairs'
   use {
     'lambdalisue/fern.vim',
