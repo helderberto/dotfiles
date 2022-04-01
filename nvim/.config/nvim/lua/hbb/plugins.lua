@@ -14,53 +14,37 @@ packer.init {
 }
 
 return packer.startup(function(use)
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
-  -- Speed up loading Lua modules in Neovim to improve startup time.
-  use 'lewis6991/impatient.nvim'
-
-  -- Load plugins
+  use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules to improve startup time
+  use 'nvim-lua/plenary.nvim' -- Lua utils methods shared with plugins
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'hoob3rt/lualine.nvim'
-  use 'mattn/emmet-vim'
+  use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
+  use 'jiangmiao/auto-pairs'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'neoclide/coc.nvim', branch = 'release'}
+  use 'lewis6991/gitsigns.nvim'
   use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
+    'antoinemadec/FixCursorHold.nvim', -- Fix CursorHold Performance.
+    run = function()
+      -- https://github.com/antoinemadec/FixCursorHold.nvim
+      vim.g.cursorhold_updatetime = 100
     end
   }
-  use 'jiangmiao/auto-pairs'
   use {
     'lambdalisue/fern.vim',
-    requires = {
-      'lambdalisue/fern-hijack.vim',
-      {
-        'antoinemadec/FixCursorHold.nvim',
-        run = function()
-          -- https://github.com/antoinemadec/FixCursorHold.nvim#configuration
-          -- in millisecond, used for both CursorHold and CursorHoldI,
-          -- use updatetime instead if not defined
-          vim.g.cursorhold_updatetime = 100
-        end
-      }
-    },
+    requires = {'lambdalisue/fern-hijack.vim'},
     config = function()
       vim.g['fern#default_hidden'] = true
     end
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {
-      {'nvim-lua/plenary.nvim'},
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
-    }
+    requires = {{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}}
   }
-  use {'dracula/vim', as = 'dracula'} -- theme
+  use {'dracula/vim', as = 'dracula'}
 end)
