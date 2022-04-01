@@ -32,6 +32,7 @@ end
 -- if you have any mappings you set BEFORE doing this, they will be set to the OLD
 -- leader.
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Turn off builtin plugins I do not use
 require "hbb.disable_builtin"
