@@ -13,7 +13,7 @@ end
 
 -- Misc
 map("i", "<C-c>", "<esc>")
-map("n", "<C-c>", ":noh<cr><cr>")
+map("n", "<esc>", ":noh<cr><cr>")
 
 -- Saving
 map("n", "<leader>w", ":w!<cr>")
