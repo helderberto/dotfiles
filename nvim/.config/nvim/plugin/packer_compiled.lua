@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
-  ["aragorn-vim-snippets"] = {
-    loaded = true,
-    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/aragorn-vim-snippets",
-    url = "https://github.com/helderburato/aragorn-vim-snippets"
-  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -149,11 +144,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ultisnips = {
-    loaded = true,
-    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/ultisnips",
-    url = "https://github.com/SirVer/ultisnips"
   },
   ["vim-commentary"] = {
     loaded = true,
