@@ -30,8 +30,16 @@ return packer.startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'neoclide/coc.nvim', branch = 'release' }
-  use 'SirVer/ultisnips'
-  use 'helderburato/aragorn-vim-snippets'
+  -- use {
+  --   "SirVer/ultisnips",
+  --   requires = {"helderburato/aragorn-vim-snippets"},
+  --   config = function()
+  --     vim.g.UltiSnipsExpandTrigger='<Tab>'
+  --     vim.g.UltiSnipsJumpForwardTrigger='<Tab>'
+  --     vim.g.UltiSnipsJumpBackwardTrigger='<S-Tab>'
+  --     vim.g.UltiSnipsListSnippets = "<c-x><c-s>"
+  --   end
+  -- }
   use 'jiangmiao/auto-pairs'
   use {
     'lambdalisue/fern.vim',
