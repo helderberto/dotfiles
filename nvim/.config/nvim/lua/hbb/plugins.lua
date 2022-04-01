@@ -28,18 +28,8 @@ return packer.startup(function(use)
   use 'hoob3rt/lualine.nvim'
   use 'mattn/emmet-vim'
   use 'editorconfig/editorconfig-vim'
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { 'neoclide/coc.nvim', branch = 'release' }
-  -- use {
-  --   "SirVer/ultisnips",
-  --   requires = {"helderburato/aragorn-vim-snippets"},
-  --   config = function()
-  --     vim.g.UltiSnipsExpandTrigger='<Tab>'
-  --     vim.g.UltiSnipsJumpForwardTrigger='<Tab>'
-  --     vim.g.UltiSnipsJumpBackwardTrigger='<S-Tab>'
-  --     vim.g.UltiSnipsListSnippets = "<c-x><c-s>"
-  --   end
-  -- }
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'neoclide/coc.nvim', branch = 'release'}
   use 'jiangmiao/auto-pairs'
   use {
     'lambdalisue/fern.vim',
