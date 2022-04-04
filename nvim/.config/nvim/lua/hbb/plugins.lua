@@ -33,12 +33,6 @@ return packer.startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'neoclide/coc.nvim', branch = 'release'}
   use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
-  }
-  use {
     'antoinemadec/FixCursorHold.nvim', -- Fix CursorHold Performance.
     run = function()
       -- https://github.com/antoinemadec/FixCursorHold.nvim
