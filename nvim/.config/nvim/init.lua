@@ -40,5 +40,8 @@ require "hbb.disable_builtin"
 -- Base settings
 require "hbb.settings"
 
+-- Load plugins
+require "hbb.plugins"
+
 -- Custom key mappings
 require "hbb.mappings"
