@@ -28,6 +28,12 @@ require('nvim-treesitter.configs').setup {
   indent = {
     enable = true
   },
+  pickers = {
+    buffers = {
+      ignore_current_buffer = true,
+      sort_lastused = true,
+    },
+  },
 }
 
 vim.wo.foldmethod = 'expr'
