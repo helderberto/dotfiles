@@ -31,7 +31,6 @@ return packer.startup(function(use)
     end
   }
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use {'neoclide/coc.nvim', branch = 'release'}
   use {
     'antoinemadec/FixCursorHold.nvim', -- Fix CursorHold Performance.
     run = function()
