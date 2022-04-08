@@ -45,3 +45,6 @@ require "hbb.plugins"
 
 -- Custom key mappings
 require "hbb.mappings"
+
+-- Neovim built-in LSP
+require "hbb.lsp"

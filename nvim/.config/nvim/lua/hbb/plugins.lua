@@ -45,6 +45,19 @@ return packer.startup(function(use)
       vim.g['fern#default_hidden'] = true
     end
   }
+
+  -- LSP
+  use {
+    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer',
+  }
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-nvim-lsp"
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}}
