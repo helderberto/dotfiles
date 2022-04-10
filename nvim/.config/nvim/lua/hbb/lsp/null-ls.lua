@@ -19,14 +19,7 @@ null_ls.setup {
       prefer_local = 'node_modules/.bin',
     },
     code_actions.eslint, -- eslint or eslint_d
-    formatting.prettier.with { -- prettier, eslint, eslint_d, or prettierd
-      extra_args = {
-        '--single-quote',
-        '--jsx-single-quote',
-        '--trailing-comma=all',
-      },
-      prefer_local = 'node_modules/.bin',
-    },
+    formatting.prettier,
     formatting.stylua,
     completion.spell,
   },
