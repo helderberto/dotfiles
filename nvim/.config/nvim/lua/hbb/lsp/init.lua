@@ -5,3 +5,4 @@ end
 
 require "hbb.lsp.lsp-installer"
 require("hbb.lsp.handlers").setup()
+require "hbb.lsp.null-ls"
