@@ -1,45 +1,45 @@
-local status_ok, telescope = pcall(require, "telescope")
+local status_ok, telescope = pcall(require, 'telescope')
 if not status_ok then
   return
 end
 
-local actions = require("telescope.actions")
+local actions = require 'telescope.actions'
 
-telescope.setup{
+telescope.setup {
   defaults = {
-    path_display = { "smart" },
+    path_display = { 'smart' },
     vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--hidden",
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--hidden',
     },
-    sorting_strategy = "descending",
+    sorting_strategy = 'descending',
     file_ignore_patterns = {
-      "dist/.*",
-      "%.git/.*",
-      "%.vim/.*",
-      "node_modules/.*",
-      "%.idea/.*",
-      "%.vscode/.*",
-      "%.history/.*"
+      'dist/.*',
+      '%.git/.*',
+      '%.vim/.*',
+      'node_modules/.*',
+      '%.idea/.*',
+      '%.vscode/.*',
+      '%.history/.*',
     },
     mappings = {
       i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
+        ['<C-n>'] = actions.cycle_history_next,
+        ['<C-p>'] = actions.cycle_history_prev,
       },
 
       n = {
-        ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_default,
-        ["?"] = actions.which_key
-      }
-    }
+        ['<esc>'] = actions.close,
+        ['<CR>'] = actions.select_default,
+        ['?'] = actions.which_key,
+      },
+    },
   },
   pickers = {
     find_files = {
@@ -52,11 +52,11 @@ telescope.setup{
         '--hidden',
         '--exclude',
         '.git',
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
+require('telescope').load_extension 'fzf'

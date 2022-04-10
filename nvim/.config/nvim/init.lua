@@ -20,9 +20,9 @@
 -- in "./lua/treesitter.lua" because then it will override the plugin version of "treesitter.lua"
 -- ]]
 
-pcall(require, "impatient")
+pcall(require, 'impatient')
 
-if require "hbb.first_load"() then
+if require 'hbb.first_load'() then
   return
 end
 
@@ -31,23 +31,23 @@ end
 -- In general, it's a good idea to set this early in your config, because otherwise
 -- if you have any mappings you set BEFORE doing this, they will be set to the OLD
 -- leader.
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Turn off builtin plugins I do not use
-require "hbb.disable_builtin"
+require 'hbb.disable_builtin'
 
 -- Base settings
-require "hbb.settings"
+require 'hbb.settings'
 
 -- Load plugins
-require "hbb.plugins"
+require 'hbb.plugins'
 
 -- Custom key mappings
-require "hbb.mappings"
+require 'hbb.mappings'
 
 -- Neovim built-in LSP
-require "hbb.lsp"
+require 'hbb.lsp'
 
 -- Autocomplete
-require "hbb.cmp"
+require 'hbb.cmp'
