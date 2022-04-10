@@ -20,16 +20,11 @@ return packer.startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
+  use 'tpope/vim-commentary'
   use 'hoob3rt/lualine.nvim'
   use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
   use 'windwp/nvim-autopairs'
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end,
-  }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {
     'antoinemadec/FixCursorHold.nvim', -- Fix CursorHold Performance.
