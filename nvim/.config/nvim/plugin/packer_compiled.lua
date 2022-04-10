@@ -80,6 +80,11 @@ _G.packer_plugins = {
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -99,6 +104,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   dracula = {
     loaded = true,
@@ -125,6 +135,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/fern.vim",
     url = "https://github.com/lambdalisue/fern.vim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["impatient.nvim"] = {
     loaded = true,
