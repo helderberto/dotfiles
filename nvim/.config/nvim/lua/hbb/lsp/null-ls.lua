@@ -9,20 +9,26 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/completion
 local completion = null_ls.builtins.completion
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/code_actions
+local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup {
   debug = false,
   sources = {
-    completion.spell,
-    formatting.prettier.with {
+    diagnostics.eslint.with { -- eslint or eslint_d
+      prefer_local = 'node_modules/.bin',
+    },
+    code_actions.eslint, -- eslint or eslint_d
+    formatting.prettier.with { -- prettier, eslint, eslint_d, or prettierd
       extra_args = {
         '--single-quote',
         '--jsx-single-quote',
         '--trailing-comma=all',
       },
+      prefer_local = 'node_modules/.bin',
     },
     formatting.stylua,
-    diagnostics.eslint,
+    completion.spell,
   },
   -- you can reuse a shared lspconfig on_attach callback here
   on_attach = function(client)
