@@ -17,6 +17,7 @@ telescope.setup {
       '--column',
       '--smart-case',
       '--hidden',
+      '--trim',
     },
     sorting_strategy = 'descending',
     file_ignore_patterns = {
@@ -57,6 +58,4 @@ telescope.setup {
   },
 }
 
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-require('telescope').load_extension 'fzf'
+_ = require('telescope').load_extension 'fzf'
