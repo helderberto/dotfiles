@@ -9,7 +9,9 @@ local M = {}
 --  command_mode = "c"
 M.map = function(mode, shortcut, command, opts)
   local options = { noremap = true }
-  if opts then options = vim.tbl_extend('force', options, opts) end
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
   vim.api.nvim_set_keymap(mode, shortcut, command, options)
 end
 
