@@ -23,6 +23,11 @@ map('n', '<leader>+', ':vertical resize +5<cr>')
 map('n', '<leader>-', ':vertical resize -5<cr>')
 map('n', '<leader>=', '<C-w>=<cr>')
 
+-- Nvim Tree
+map('n', '<leader>n', ':NvimTreeToggle<cr>')
+map('n', '<leader>tr', ':NvimTreeRefresh<cr>')
+map('n', '<leader>.', ':NvimTreeFindFile<cr>')
+
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')

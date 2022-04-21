@@ -119,17 +119,6 @@ _G.packer_plugins = {
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
-  ["fern-hijack.vim"] = {
-    loaded = true,
-    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/fern-hijack.vim",
-    url = "https://github.com/lambdalisue/fern-hijack.vim"
-  },
-  ["fern.vim"] = {
-    config = { "\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24fern#default_hidden\6g\bvim\0" },
-    loaded = true,
-    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/fern.vim",
-    url = "https://github.com/lambdalisue/fern.vim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -174,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/helder.berto/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -223,10 +217,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: fern.vim
-time([[Config for fern.vim]], true)
-try_loadstring("\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24fern#default_hidden\6g\bvim\0", "config", "fern.vim")
-time([[Config for fern.vim]], false)
 if should_profile then save_profiles() end
 
 end)

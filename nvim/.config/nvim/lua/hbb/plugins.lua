@@ -33,13 +33,7 @@ return packer.startup(function(use)
       vim.g.cursorhold_updatetime = 100
     end,
   }
-  use {
-    'lambdalisue/fern.vim',
-    requires = { 'lambdalisue/fern-hijack.vim' },
-    config = function()
-      vim.g['fern#default_hidden'] = true
-    end,
-  }
+  use { 'kyazdani42/nvim-tree.lua' }
 
   -- LSP
   use {
