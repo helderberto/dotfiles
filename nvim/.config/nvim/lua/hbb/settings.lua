@@ -53,7 +53,7 @@ vim.cmd [[colorscheme dracula]]
 -- Emmet
 -- https://github.com/mattn/emmet-vim#quick-tutorial
 -- Default key mapping: <c-y>,
-vim.g.user_emmet_leader_key = '<c-e>,'
+-- vim.g.user_emmet_leader_key = '<c-e>,'
 vim.g.user_emmet_settings = {
   javascript = {
     extends = 'jsx',
