@@ -43,6 +43,9 @@ telescope.setup {
     },
   },
   pickers = {
+    buffers = {
+      sort_lastused = true,
+    },
     find_files = {
       find_command = {
         'fd',
