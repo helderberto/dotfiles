@@ -33,17 +33,6 @@ map('v', 'p', '"_dP')
 -- Source current configuration
 map('n', '<leader><cr>', ':so ~/.config/nvim/init.lua<cr>')
 
--- search (history, buffers)
-map('n', '<leader><leader>', "<cmd>lua require('telescope.builtin').find_files()<cr>")
-map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>")
-map('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-map('n', '<leader>fb', "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>")
-map('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>")
-map('n', '<leader>fq', "<cmd>lua require('telescope.builtin').quickfix()<cr>")
-map('n', '<C-b>', "<cmd>lua require('telescope.builtin').buffers()<cr>")
-map('n', '<leader>b', "<cmd>lua require('telescope.builtin').buffers()<cr>")
-map('n', '<leader>bd', ':bdelete %<cr>')
-
 -- Switch between the last two files
 map('n', '<leader>l', '<C-^>')
 
