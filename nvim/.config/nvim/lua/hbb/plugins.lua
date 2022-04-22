@@ -25,6 +25,7 @@ return packer.startup(function(use)
   use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
   use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {
     'antoinemadec/FixCursorHold.nvim', -- Fix CursorHold Performance.
