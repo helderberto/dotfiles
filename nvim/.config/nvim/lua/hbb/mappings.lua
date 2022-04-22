@@ -9,6 +9,10 @@ map('n', '<leader>w', ':w!<cr>')
 map('n', '<leader>we', ':noa w<cr>')
 map('i', '<leader>we', ':noa w<cr>')
 
+-- Exiting
+map('n', '<leader>q', ':q!<cr>')
+map('n', '<leader>qq', ':qa!<cr>')
+
 -- Window explorer
 map('n', '<leader>e', '<C-w>')
 map('n', '<leader>ev', ':vsplit<cr>')
