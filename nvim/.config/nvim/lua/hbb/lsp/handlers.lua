@@ -61,20 +61,29 @@ local function lsp_highlight_document(client)
 end
 
 local function lsp_keymaps(bufnr)
-  buf_map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-  buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-  buf_map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-  buf_map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-  buf_map(bufnr, 'n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-  buf_map(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-  buf_map(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-  buf_map(bufnr, 'n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-  buf_map(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
-  buf_map(bufnr, 'n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>')
-  buf_map(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
+  -- define LSP commands
+  vim.cmd 'command! LspDef lua vim.lsp.buf.definition()'
+  vim.cmd 'command! LspFormatting lua vim.lsp.buf.formatting()'
+  vim.cmd 'command! LspCodeAction lua vim.lsp.buf.code_action()'
+  vim.cmd 'command! LspHover lua vim.lsp.buf.hover()'
+  vim.cmd 'command! LspRename lua vim.lsp.buf.rename()'
+  vim.cmd 'command! LspRefs lua vim.lsp.buf.references()'
+  vim.cmd 'command! LspTypeDef lua vim.lsp.buf.type_definition()'
+  vim.cmd 'command! LspImplementation lua vim.lsp.buf.implementation()'
+  vim.cmd 'command! LspDiagPrev lua vim.diagnostic.goto_prev()'
+  vim.cmd 'command! LspDiagNext lua vim.diagnostic.goto_next()'
+  vim.cmd 'command! LspDiagLine lua vim.diagnostic.open_float()'
+  vim.cmd 'command! LspSignatureHelp lua vim.lsp.buf.signature_help()'
 
-  -- When execute :Format will trigger lsp buffer formatting
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  -- use created LSP commands
+  buf_map(bufnr, 'n', 'gd', ':LspDef<CR>')
+  buf_map(bufnr, 'n', 'gr', ':LspRename<CR>')
+  buf_map(bufnr, 'n', 'gi', ':LspImplementation<CR>')
+  buf_map(bufnr, 'n', 'K', ':LspHover<CR>')
+  buf_map(bufnr, 'n', 'ga', ':LspCodeAction<CR>')
+  buf_map(bufnr, 'n', '[a', ':LspDiagPrev<CR>')
+  buf_map(bufnr, 'n', ']a', ':LspDiagNext<CR>')
+  buf_map(bufnr, 'n', '<C-x><C-x>', ':LspSignatureHelp<CR>')
 end
 
 M.on_attach = function(client, bufnr)
