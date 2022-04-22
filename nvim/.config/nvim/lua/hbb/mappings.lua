@@ -9,12 +9,6 @@ map('n', '<leader>w', ':w!<cr>')
 map('n', '<leader>we', ':noa w<cr>')
 map('i', '<leader>we', ':noa w<cr>')
 
--- Exiting
-map('i', '<leader>qq', '<esc>:qa!<cr>')
-map('n', '<leader>qq', '<esc>:qa!<cr>')
-map('i', '<leader>q', '<esc>:q!<cr>')
-map('n', '<leader>q', ':q!<cr>')
-
 -- Window explorer
 map('n', '<leader>e', '<C-w>')
 map('n', '<leader>ev', ':vsplit<cr>')
@@ -22,11 +16,6 @@ map('n', '<leader>es', ':split<cr>')
 map('n', '<leader>+', ':vertical resize +5<cr>')
 map('n', '<leader>-', ':vertical resize -5<cr>')
 map('n', '<leader>=', '<C-w>=<cr>')
-
--- Nvim Tree
-map('n', '<leader>n', ':NvimTreeToggle<cr>')
-map('n', '<leader>tr', ':NvimTreeRefresh<cr>')
-map('n', '<leader>.', ':NvimTreeFindFile<cr>')
 
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
@@ -71,12 +60,6 @@ end
 map('n', '<leader>cn', ':cnext<CR>')
 map('n', '<leader>cp', ':cprev<CR>')
 map('n', '<leader>cr', ':cfdo %s/')
-
--- Replace
-map('v', '<C-r>', 'hy:%s/<C-r><C-w>//gc<left><left><left>')
-map('v', '<leader>r', 'hy:%s/<C-r><C-w>//gc<left><left><left>')
-map('n', '<leader>r', ':%s/<C-r><C-w>//gc<Left><Left><Left>')
-map('n', '<leader>rr', ':%s//gc<Left><Left><Left>')
 
 -- Disable arrows
 map('n', '<Left>', ':echoe "Use h"')

@@ -1,3 +1,5 @@
+local map = require('hbb.keymap').map
+
 require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
@@ -108,4 +110,9 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
       profile = false,
     },
   },
-} -- END_DEFAULT_OPTS
+}
+
+-- bindings
+map('n', '<leader>n', ':NvimTreeToggle<cr>')
+map('n', '<leader>r', ':NvimTreeRefresh<cr>')
+map('n', '<leader>.', ':NvimTreeFindFile<cr>')
