@@ -33,7 +33,7 @@ return packer.startup(function(use)
       vim.g.cursorhold_updatetime = 100
     end,
   }
-  use { 'kyazdani42/nvim-tree.lua' }
+  use 'kyazdani42/nvim-tree.lua'
 
   -- LSP
   use {
@@ -41,7 +41,6 @@ return packer.startup(function(use)
     'williamboman/nvim-lsp-installer',
   }
   use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
-  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   -- cmp plugins
   use 'hrsh7th/nvim-cmp' -- The completion plugin
   use 'hrsh7th/cmp-buffer' -- buffer completions
