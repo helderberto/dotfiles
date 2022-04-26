@@ -87,8 +87,9 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  if client.name == 'tsserver' or client.name == 'html' then
+    client.resolved_capabilities.document_formatting = false
+  end
 
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
