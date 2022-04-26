@@ -3,14 +3,16 @@ if not null_ls_status_ok then
   return
 end
 
+local b = null_ls.builtins
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-local formatting = null_ls.builtins.formatting
+local formatting = b.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = b.diagnostics
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/completion
-local completion = null_ls.builtins.completion
+local completion = b.completion
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/code_actions
-local code_actions = null_ls.builtins.code_actions
+local code_actions = b.code_actions
 
 null_ls.setup {
   debug = false,
@@ -25,7 +27,7 @@ null_ls.setup {
   },
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
-      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
     end
   end,
 }
