@@ -21,6 +21,10 @@ map('n', '<leader>+', ':vertical resize +5<cr>')
 map('n', '<leader>-', ':vertical resize -5<cr>')
 map('n', '<leader>=', '<C-w>=<cr>')
 
+-- Buffers
+map('n', '<leader>bd', ':bd<cr>')
+map('n', '<leader>bdd', ':bufdo bd<cr>')
+
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
