@@ -63,6 +63,7 @@ end
 local function lsp_keymaps(bufnr)
   -- define LSP commands
   vim.cmd 'command! LspDef lua vim.lsp.buf.definition()'
+  vim.cmd 'command! LspDeclaration lua vim.lsp.buf.declaration()'
   vim.cmd 'command! LspFormatting lua vim.lsp.buf.formatting()'
   vim.cmd 'command! LspCodeAction lua vim.lsp.buf.code_action()'
   vim.cmd 'command! LspHover lua vim.lsp.buf.hover()'
@@ -76,6 +77,7 @@ local function lsp_keymaps(bufnr)
   vim.cmd 'command! LspSignatureHelp lua vim.lsp.buf.signature_help()'
 
   -- use created LSP commands
+  buf_map(bufnr, 'n', 'gD', ':LspDeclaration<CR>')
   buf_map(bufnr, 'n', 'gd', ':LspDef<CR>')
   buf_map(bufnr, 'n', 'gr', ':LspRename<CR>')
   buf_map(bufnr, 'n', 'gi', ':LspImplementation<CR>')
