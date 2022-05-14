@@ -68,3 +68,8 @@ map('n', '<Down>', ':echoe "Use j"')
 map('n', '<leader>g', ':G<cr>')
 map('n', '<leader>dh', ':diffget //2')
 map('n', '<leader>dl', ':diffget //3')
+
+-- Search & Replace
+map('n', '<leader>r', ':%s/<C-r><C-w>//g<left><left>')
+map('n', '<leader>rc', ':%s/<C-r><C-w>//gc<left><left><left>')
+map('n', '<leader>rl', ':s/<C-r><C-w>//gc<left><left><left>') -- replace line
