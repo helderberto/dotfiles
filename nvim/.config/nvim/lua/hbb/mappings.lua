@@ -59,10 +59,10 @@ map('n', '<leader>cp', ':cprev<CR>')
 map('n', '<leader>cr', ':cfdo %s/')
 
 -- Disable arrows
-map('n', '<Left>', ':echoe "Use h"')
-map('n', '<Right>', ':echoe "Use l"')
-map('n', '<Up>', ':echoe "Use k"')
-map('n', '<Down>', ':echoe "Use j"')
+map('n', '<Left>', ':lua print("Use h")<cr>')
+map('n', '<Right>', ':lua print("Use l")<cr>')
+map('n', '<Up>', ':lua print("Use k")<cr>')
+map('n', '<Down>', ':lua print("Use j")<cr>')
 
 -- Git
 map('n', '<leader>g', ':G<cr>')
