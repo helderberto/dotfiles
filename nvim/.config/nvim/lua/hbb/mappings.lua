@@ -24,6 +24,7 @@ map('n', '<leader>=', '<C-w>=<cr>')
 -- Buffers
 map('n', '<leader>bd', ':bd<cr>')
 map('n', '<leader>bdd', ':bufdo bd<cr>')
+map('n', '<leader>;', '<C-^>') -- toggle last buffers
 
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
@@ -40,9 +41,6 @@ map('v', 'p', '"_dP')
 
 -- Source current configuration
 map('n', '<leader><cr>', ':so ~/.config/nvim/init.lua<cr>')
-
--- Switch between the last two files
-map('n', '<leader>l', '<C-^>')
 
 -- Quickfix
 map('n', '<leader>co', ':call ToggleQuickFix()<CR>')
