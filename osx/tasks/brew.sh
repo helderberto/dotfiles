@@ -87,7 +87,6 @@ brew install --cask bitwarden # Password manager - https://bitwarden.com/
 brew install --cask grammarly
 brew install --cask rectangle
 brew install --cask visual-studio-code
-brew install --cask obsidian
 brew install --cask dozer # Hide menu Mac - https://github.com/Mortennn/Dozer
 brew install --cask raycast # Override native Spotlight from MacOS
 
