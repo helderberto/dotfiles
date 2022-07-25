@@ -1,4 +1,4 @@
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -39,7 +39,7 @@ unset file
 # Add `~/bin` to the `$PATH`
 export PATH="$PATH:/usr/local/bin";
 export PATH="/usr/local/sbin:$PATH"
-. /usr/local/etc/profile.d/z.sh
+. $(brew --prefix)/etc/profile.d/z.sh
 
 # Load Dracula theme
 # https://draculatheme.com/fzf
