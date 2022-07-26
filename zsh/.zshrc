@@ -40,6 +40,7 @@ unset file
 export PATH="$PATH:/usr/local/bin";
 export PATH="/usr/local/sbin:$PATH"
 . $(brew --prefix)/etc/profile.d/z.sh
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
 
 # Load Dracula theme
 # https://draculatheme.com/fzf
