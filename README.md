@@ -31,9 +31,16 @@ sh ~/.dotfiles/install.sh
 
 ## fzf
 
-To enable the FZF in command line you need to follow [this guide](https://github.com/junegunn/fzf#installation).
+```
+brew install fzf
+```
 
-_Note: It's already added to the .bashrc just need to install the package_
+# To install useful key bindings and fuzzy completion:
+```
+$(brew --prefix)/opt/fzf/install
+```
+
+Read more on the [official guide](https://github.com/junegunn/fzf#installation).
 
 ## Neovim/Vim
 
