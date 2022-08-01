@@ -20,10 +20,12 @@ null_ls.setup {
     diagnostics.eslint.with {
       prefer_local = 'node_modules/.bin',
     }, -- eslint or eslint_d
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#credo
+    -- diagnostics.credo,
     code_actions.eslint, -- eslint or eslint_d
     formatting.prettier, -- prettier, eslint, eslint_d, or prettierd
     formatting.stylua,
-    completion.spell,
+    completion.spell
   },
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
