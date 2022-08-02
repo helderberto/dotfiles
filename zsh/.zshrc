@@ -12,10 +12,6 @@ antigen theme romkatv/powerlevel10k
 
 zstyle ':completion:*' special-dirs true
 
-# Lazy loading NVM scripts
-export NVM_LAZY_LOAD=true
-antigen bundle lukechilds/zsh-nvm
-
 # here's LS_COLORS
 # github.com/trapd00r/LS_COLORS
 command -v gdircolors >/dev/null 2>&1 && alias dircolors="gdircolors"
