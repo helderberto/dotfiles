@@ -115,3 +115,5 @@
   #############
   al = config --get-regexp alias
   alf = config --get-regexp alias | grep
+[url "git@github.com:"]
+	insteadOf = https://github.com/
