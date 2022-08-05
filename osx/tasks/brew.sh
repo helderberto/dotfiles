@@ -89,6 +89,7 @@ brew install --cask rectangle
 brew install --cask visual-studio-code
 brew install --cask dozer # Hide menu Mac - https://github.com/Mortennn/Dozer
 brew install --cask raycast # Override native Spotlight from MacOS
+brew install --cask postman
 
 # Remove outdated versions from the cellar.
 brew cleanup
