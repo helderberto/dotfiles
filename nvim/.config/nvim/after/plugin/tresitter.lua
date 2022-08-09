@@ -16,6 +16,7 @@ require('nvim-treesitter.configs').setup {
     'yaml',
     'go',
     'vim',
+    'elixir'
   },
   autotag = {
     enable = true,
