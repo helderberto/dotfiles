@@ -6,6 +6,8 @@ antigen use oh-my-zsh
 # Load the oh-my-zsh's library.
 antigen bundle npm
 antigen bundle yarn
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
 # Load the theme.
 antigen theme romkatv/powerlevel10k
@@ -31,6 +33,8 @@ unset file
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Add `~/bin` to the `$PATH`
 export PATH="$PATH:/usr/local/bin";
