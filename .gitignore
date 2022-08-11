@@ -15,6 +15,5 @@ Thumbs.db
 
 # Neovim
 .netrwhist
-
-# Raycast
-raycast
+nvim/.config/*
+!nvim/.config/nvim
