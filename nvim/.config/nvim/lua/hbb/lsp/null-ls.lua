@@ -20,7 +20,7 @@ null_ls.setup {
     diagnostics.eslint.with {
       prefer_local = 'node_modules/.bin',
     }, -- eslint or eslint_d
-    diagnostics.credo, -- Elixir
+    -- diagnostics.credo, -- Elixir
     code_actions.eslint, -- eslint or eslint_d
     formatting.prettier, -- prettier, eslint, eslint_d, or prettierd
     formatting.stylua,
