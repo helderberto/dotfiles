@@ -64,8 +64,8 @@ map('n', '<Down>', ':lua print("Use j")<cr>')
 
 -- Git
 map('n', '<leader>g', ':G<cr>')
-map('n', '<leader>dh', ':diffget //2')
-map('n', '<leader>dl', ':diffget //3')
+map('n', '<leader>dh', ':diffget //2<cr>')
+map('n', '<leader>dl', ':diffget //3<cr>')
 
 -- Search & Replace
 map('n', '<leader>r', ':%s/<C-r><C-w>//g<left><left>')
