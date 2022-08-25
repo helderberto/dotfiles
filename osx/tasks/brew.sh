@@ -92,6 +92,7 @@ brew install --cask raycast # Override native Spotlight from MacOS
 brew install --cask postman
 brew install --cask insomnia
 brew install --cask karabiner-elements # A powerful and stable keyboard customizer for macOS - https://karabiner-elements.pqrs.org/
+brew install --cask logseq # Note-taking - PKM
 
 # Remove outdated versions from the cellar.
 brew cleanup
