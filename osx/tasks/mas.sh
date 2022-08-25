@@ -33,8 +33,3 @@ if ! has_app "Be Focused Pro: Pomodoro Timer"; then
     msg_ok "OK"
 fi
 
-if ! has_app "Bear"; then
-    msg_install "Bear"
-    mas install 1091189122
-    msg_ok "OK"
-fi
