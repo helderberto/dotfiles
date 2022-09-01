@@ -21,6 +21,7 @@ null_ls.setup {
       prefer_local = 'node_modules/.bin',
     }, -- eslint or eslint_d
     -- diagnostics.credo, -- Elixir
+    diagnostics.rubocop,
     code_actions.eslint, -- eslint or eslint_d
     formatting.prettier, -- prettier, eslint, eslint_d, or prettierd
     formatting.stylua,
