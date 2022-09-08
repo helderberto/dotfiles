@@ -1,5 +1,12 @@
--- [[
+-- Helder Berto
+-- https://helderberto.com
+-- https://github.com/helderberto
+--
+--
+-- [[ Notes to people reading my configuration!
+--
 -- Much of the configuration of individual plugins you can find in either:
+--
 -- ./plugin/*.lua
 -- This is where many of the new plugin configurations live.
 --
@@ -34,13 +41,19 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Base settings
+-- Turn off builtin plugins I do not use.
+require 'hbb.disable_builtin'
+
+-- Settings.lua contains all global options that are set. Most of these will
+-- should have a description. This has to come first, since it defines the
+-- mapleader, and many many other keymappings require that to be set.
 require 'hbb.settings'
 
--- Load plugins
+-- Defines a list of plugins to pull down and use, as well as their
+-- configurations.
 require 'hbb.plugins'
 
--- Custom key mappings
+-- Defines global keymaps. `:h vim.keymap` and `:h map` to learn more!
 require 'hbb.mappings'
 
 -- Neovim built-in LSP
@@ -52,3 +65,4 @@ require 'hbb.cmp'
 -- Telescope
 require 'hbb.telescope.setup'
 require 'hbb.telescope.mappings'
+
