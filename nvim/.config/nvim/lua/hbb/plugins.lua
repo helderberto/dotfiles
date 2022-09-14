@@ -25,6 +25,7 @@ return packer.startup(function(use)
   use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
   use 'windwp/nvim-autopairs'
+  use {'github/copilot.vim', branch = 'release' }
   use {
     'windwp/nvim-ts-autotag',
     config = function()
