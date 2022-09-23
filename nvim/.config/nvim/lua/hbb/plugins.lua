@@ -41,6 +41,11 @@ return packer.startup(function(use)
     end,
   }
   use 'kyazdani42/nvim-tree.lua'
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
+  })
 
   -- LSP
   use {
