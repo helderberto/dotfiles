@@ -40,8 +40,19 @@ unset file
 # Add `~/bin` to the `$PATH`
 export PATH="$PATH:/usr/local/bin";
 export PATH="/usr/local/sbin:$PATH"
-. /opt/homebrew/etc/profile.d/z.sh
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# For Homebrew
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+export HOMEBREW_SHELLENV_PREFIX="/opt/homebrew"
+
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+
+. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
+. $HOMEBREW_PREFIX/etc/profile.d/z.sh
 
 # Load Dracula theme
 # https://draculatheme.com/fzf
