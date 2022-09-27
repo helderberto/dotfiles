@@ -69,6 +69,7 @@ brew install openjdk
 brew install grip
 brew install http-server
 brew install asdf # package manager for multiple languages
+brew install stylua # lua formatter
 
 # This is needed for fzf to know how to ignore files listed in .gitignore
 # and know how to show hidden files
