@@ -73,7 +73,8 @@ return packer.startup(function(use)
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       { 'nvim-telescope/telescope-github.nvim' },
       { 'nvim-telescope/telescope-file-browser.nvim' },
-      {'kyazdani42/nvim-web-devicons'}
+      { 'nvim-telescope/telescope-project.nvim' },
+      { 'kyazdani42/nvim-web-devicons' },
     },
   }
   use { 'dracula/vim', as = 'dracula' }

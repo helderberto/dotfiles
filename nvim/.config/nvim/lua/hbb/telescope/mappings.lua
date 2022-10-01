@@ -20,3 +20,6 @@ map('n', '<leader>gl', ':Telescope git_commits<cr>')
 map('n', '<leader>fh', ':Telescope help_tags<cr>')
 map('n', '<leader>bo', ':Telescope vim_options<cr>')
 map('n', '<C-b>', ':Telescope buffers<cr>')
+
+-- Project
+map('n', '<C-p>', ':Telescope project<CR>')
