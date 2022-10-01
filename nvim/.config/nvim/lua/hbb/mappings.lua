@@ -10,7 +10,7 @@ map('n', '<leader>we', ':noa w<cr>')
 map('i', '<leader>we', ':noa w<cr>')
 
 -- Exiting
-map('n', '<leader>q', ':q!<cr>')
+map('n', '<leader>q', ':q<cr>')
 map('n', '<leader>qq', ':qa!<cr>')
 
 -- Window explorer
@@ -71,4 +71,3 @@ map('n', '<leader>dl', ':diffget //3<cr>')
 map('n', '<leader>r', ':%s/<C-r><C-w>//g<left><left>')
 map('n', '<leader>rc', ':%s/<C-r><C-w>//gc<left><left><left>')
 map('n', '<leader>rl', ':s/<C-r><C-w>//gc<left><left><left>') -- replace line
-

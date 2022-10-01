@@ -16,7 +16,6 @@ packer.init {
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules to improve startup time
-  use 'nvim-lua/plenary.nvim' -- Lua utils methods shared with plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
@@ -25,7 +24,7 @@ return packer.startup(function(use)
   use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
   use 'windwp/nvim-autopairs'
-  use {'github/copilot.vim', branch = 'release' }
+  use { 'github/copilot.vim', branch = 'release' }
   use {
     'windwp/nvim-ts-autotag',
     config = function()
@@ -40,12 +39,14 @@ return packer.startup(function(use)
       vim.g.cursorhold_updatetime = 100
     end,
   }
-  use 'kyazdani42/nvim-tree.lua'
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
-  })
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && npm install',
+    setup = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+    end,
+    ft = { 'markdown' },
+  }
 
   -- LSP
   use {
@@ -67,7 +68,12 @@ return packer.startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } },
+    requires = {
+      { 'nvim-lua/plenary.nvim' }, -- Lua utils methods shared with plugins
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'nvim-telescope/telescope-github.nvim' },
+      { 'nvim-telescope/telescope-file-browser.nvim' },
+    },
   }
   use { 'dracula/vim', as = 'dracula' }
 end)
