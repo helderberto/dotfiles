@@ -1,9 +1,3 @@
--- Nvim recently introduced entirely-in-lua filetype detection to do away with
--- the slower `filetype.vim` which is the default.
--- https://neovim.discourse.group/t/introducing-filetype-lua-and-a-call-for-help/1806
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
-
 vim.o.clipboard = 'unnamedplus' -- Use system clipboard
 vim.o.ttyfast = true -- Faster redrawing
 vim.o.lazyredraw = true -- Only redraw when necessary
