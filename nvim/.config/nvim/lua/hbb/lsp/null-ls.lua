@@ -25,11 +25,11 @@ null_ls.setup {
     code_actions.eslint, -- eslint or eslint_d
     formatting.prettier, -- prettier, eslint, eslint_d, or prettierd
     formatting.stylua,
-    completion.spell
+    completion.spell,
   },
   on_attach = function(client)
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
+    if client.server_capabilities.documentFormattingProvider then
+      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     end
   end,
 }
