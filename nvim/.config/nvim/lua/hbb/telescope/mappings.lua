@@ -6,8 +6,8 @@ local map = require('hbb.keymap').map
 
 -- Files
 map('n', '<leader><leader>', ':Telescope find_files<cr>')
-map('n', '<leader>.', ':Telescope file_browser path=%:p:h<cr>')
-map('n', '<leader>ff', ':Telescope file_browser<cr>')
+-- map('n', '<leader>.', ':Telescope file_browser path=%:p:h<cr>')
+-- map('n', '<leader>ff', ':Telescope file_browser<cr>')
 map('n', '<leader>fg', ':Telescope live_grep<cr>')
 map('n', '<leader>fb', ':Telescope current_buffer_fuzzy_find<cr>')
 map('n', '<leader>fq', ':Telescope quickfix<cr>')
