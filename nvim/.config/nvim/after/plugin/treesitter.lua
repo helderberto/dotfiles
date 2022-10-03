@@ -19,6 +19,7 @@ require('nvim-treesitter.configs').setup {
     'elixir',
     'ruby'
   },
+  ignore_install = { 'php', 'phpdoc' },
   autotag = {
     enable = true,
   },
