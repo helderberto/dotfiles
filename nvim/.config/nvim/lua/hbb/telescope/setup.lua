@@ -76,6 +76,7 @@ telescope.setup {
     project = {
       base_dirs = {
         '~/workspace/',
+        '~/.dotfiles/',
       },
       hidden_files = true, -- default: false
       theme = 'dropdown',
