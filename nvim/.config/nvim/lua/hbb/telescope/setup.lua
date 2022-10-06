@@ -33,10 +33,13 @@ telescope.setup {
       i = {
         ['<C-n>'] = actions.cycle_history_next,
         ['<C-p>'] = actions.cycle_history_prev,
+        ['<C-d>'] = require('telescope.actions').delete_buffer,
+        ['<C-h>'] = 'which_key',
       },
 
       n = {
         ['<esc>'] = actions.close,
+        ['<C-d>'] = require('telescope.actions').delete_buffer,
         ['<CR>'] = actions.select_default,
         ['?'] = actions.which_key,
       },
