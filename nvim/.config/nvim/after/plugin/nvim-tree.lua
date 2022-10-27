@@ -1,6 +1,4 @@
-local map = require('hbb.keymap').map
-
-require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
+require('nvim-tree').setup {
   auto_reload_on_write = true,
   disable_netrw = true,
   hijack_cursor = false,
@@ -44,7 +42,7 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
+    enable = true,
     update_cwd = false,
     ignore_list = {},
   },
@@ -80,7 +78,7 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
       global = false,
     },
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
       resize_window = true,
       window_picker = {
         enable = true,
@@ -109,7 +107,3 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
     },
   },
 }
-
--- bindings
-map('n', '<leader>n', ':NvimTreeToggle<cr>')
-map('n', '<leader>.', ':NvimTreeFindFile<cr>')

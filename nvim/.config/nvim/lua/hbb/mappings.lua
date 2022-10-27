@@ -71,3 +71,17 @@ map('n', '<leader>dl', ':diffget //3<cr>')
 map('n', '<leader>r', ':%s/<C-r><C-w>//g<left><left>')
 map('n', '<leader>rc', ':%s/<C-r><C-w>//gc<left><left><left>')
 map('n', '<leader>rl', ':s/<C-r><C-w>//gc<left><left><left>') -- replace line
+
+-- NvimTree
+map('n', '<leader>n', ':NvimTreeToggle<cr>')
+map('n', '<leader>.', ':NvimTreeFindFile<cr>')
+
+-- Copilot
+map('i', '<C-h>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+map('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
+map('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
+
+-- MarkdownPreview
+-- map('n', '<C-s>', '<Plug>MarkdownPreview')
+-- map('n', '<M-s>', '<Plug>MarkdownPreviewStop')
+map('n', '<leader>pp', '<Plug>MarkdownPreviewToggle')
