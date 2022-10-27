@@ -175,6 +175,53 @@ colors:
     cyan: "0x59dffc"
     white: "0xe6e6d1"
 
+# C-a   = x01x63
+# Ctrl  = x01
+# a     = x63
+key_bindings:
+  # Create a new tmux window
+  - { key: T, mods: Command, chars: "\x01\x63" }
+  # Rename the current tmux window
+  - { key: Comma, mods: Command, chars: "\x01\x2c" }
+  # Select a new tmux session for the attached client interactively
+  # - { key: K, mods: Command, chars: "\x01\x73" }
+  # Select window 1-9
+  - { key: Key1, mods: Command, chars: "\x01\x31" }
+  - { key: Key2, mods: Command, chars: "\x01\x32" }
+  - { key: Key3, mods: Command, chars: "\x01\x33" }
+  - { key: Key4, mods: Command, chars: "\x01\x34" }
+  - { key: Key5, mods: Command, chars: "\x01\x35" }
+  - { key: Key6, mods: Command, chars: "\x01\x36" }
+  - { key: Key7, mods: Command, chars: "\x01\x37" }
+  - { key: Key8, mods: Command, chars: "\x01\x38" }
+  - { key: Key9, mods: Command, chars: "\x01\x39" }
+  # Navigate panes
+  # - { key: H, mods: Command|Shift, chars: "\x01\x68" }
+  # - { key: J, mods: Command|Shift, chars: "\x01\x6a" }
+  # - { key: K, mods: Command|Shift, chars: "\x01\x6b" }
+  # - { key: L, mods: Command|Shift, chars: "\x02\x6c" }
+  # Switch to last tmux session
+  # - { key: L, mods: Command, chars: "\x01\x4c" }
+  # - { key: LBracket, mods: Command, chars: "\x01\x5b" }
+  # Change to the previous tmux window
+  # - { key: LBracket, mods: Command|Shift, chars: "\x02\x70" }
+  # Split the current pane into two, left and right
+  - { key: N, mods: Command|Shift, chars: "\x01\x25" }
+  # Split the current pane into two, top and bottom.
+  - { key: N, mods: Command, chars: "\x01\x22" }
+  # Detach the current tmux client
+  # - { key: Q, mods: Command, chars: "\x01\x64" }
+  # Change to the next tmux window
+  # - { key: RBracket, mods: Command|Shift, chars: "\x01\x6e" }
+  # Type <escape>:w<enter> to save neovim
+  - { key: S, mods: Command, chars: "\x1b\x3a\x77\x0a" }
+  # Break the current tmux pane out of the tmux window
+  # - { key: T, mods: Command|Shift, chars: "\x02\x21" }
+  # Kill the current tmux pane (and window if last pane)
+  - { key: W, mods: Command, chars: "\x01\x78" }
+  # Toggle the zoom state of the current tmux pane
+  # - { key: Z, mods: Command, chars: "\x01\x7a" }
+
 # Shell
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
