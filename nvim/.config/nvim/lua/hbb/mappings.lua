@@ -84,4 +84,4 @@ map('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
 -- MarkdownPreview
 -- map('n', '<C-s>', '<Plug>MarkdownPreview')
 -- map('n', '<M-s>', '<Plug>MarkdownPreviewStop')
-map('n', '<leader>pp', '<Plug>MarkdownPreviewToggle')
+map('n', '<leader>mm', '<Plug>MarkdownPreviewToggle')
