@@ -22,7 +22,7 @@ null_ls.setup {
     }, -- eslint or eslint_d
     -- diagnostics.credo, -- Elixir
     diagnostics.rubocop,
-    code_actions.eslint, -- eslint or eslint_d
+    code_actions.eslint_d, -- using eslint_d because it's faster than eslint
     formatting.prettier, -- prettier, eslint, eslint_d, or prettierd
     formatting.stylua,
     completion.spell,
