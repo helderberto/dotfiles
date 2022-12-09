@@ -19,6 +19,3 @@ map('n', '<leader>fh', ':Telescope help_tags<cr>')
 map('n', '<leader>fo', ':Telescope vim_options<cr>')
 map('n', '<leader>fb', ':Telescope buffers<cr>')
 map('n', '<C-b>', ':Telescope buffers<cr>')
-
--- Project
-map('n', '<C-p>', ':Telescope project<CR>')

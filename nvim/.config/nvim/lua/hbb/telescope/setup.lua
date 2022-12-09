@@ -76,19 +76,19 @@ telescope.setup {
     --     },
     --   },
     -- },
-    project = {
-      base_dirs = {
-        '~/workspace/',
-        '~/.dotfiles/',
-      },
-      hidden_files = true, -- default: false
-      theme = 'dropdown',
-      order_by = 'asc',
-    },
+    -- project = {
+    --   base_dirs = {
+    --     '~/workspace/',
+    --     '~/.dotfiles/',
+    --   },
+    --   hidden_files = true, -- default: false
+    --   theme = 'dropdown',
+    --   order_by = 'asc',
+    -- },
   },
 }
 
 -- require('telescope').load_extension 'file_browser'
 require('telescope').load_extension 'fzf'
 require('telescope').load_extension 'gh'
-require('telescope').load_extension 'project'
+-- require('telescope').load_extension 'project'
