@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
     url = "https://github.com/editorconfig/editorconfig-vim"
   },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/friendly-snippets",

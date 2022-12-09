@@ -21,7 +21,6 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use 'hoob3rt/lualine.nvim'
-  use 'mattn/emmet-vim' -- autocomplete html tags
   use 'editorconfig/editorconfig-vim'
   use 'windwp/nvim-autopairs'
   use { 'github/copilot.vim', branch = 'release' }
