@@ -15,9 +15,7 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
-    virtual_text = false,
-    -- show signs
+    virtual_text = true,
     signs = {
       active = signs,
     },
@@ -26,10 +24,18 @@ M.setup = function()
     severity_sort = true,
     float = {
       style = 'minimal',
-      border = 'rounded',
       source = 'always',
       header = '',
       prefix = '',
+      border = 'rounded',
+      format = function(diagnostic)
+        return string.format(
+          '%s (%s) [%s]',
+          diagnostic.message,
+          diagnostic.source,
+          diagnostic.code or diagnostic.user_data.lsp.code
+        )
+      end,
     },
   }
 
