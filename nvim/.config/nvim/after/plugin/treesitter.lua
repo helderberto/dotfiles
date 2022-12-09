@@ -17,14 +17,14 @@ require('nvim-treesitter.configs').setup {
     'go',
     'vim',
     'elixir',
-    'ruby'
+    'ruby',
   },
-  ignore_install = { 'php', 'phpdoc' },
+  autopairs = { enable = true },
   autotag = {
     enable = true,
   },
   highlight = {
-    enable = true,
+    enable = true, -- false will disable the whole extension
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -34,7 +34,7 @@ require('nvim-treesitter.configs').setup {
   indent = {
     enable = true,
   },
-  pickers = {
+  pickers = { -- choose window to pick when opening a file
     buffers = {
       ignore_current_buffer = true,
       sort_lastused = true,
