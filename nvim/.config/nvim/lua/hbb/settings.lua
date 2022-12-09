@@ -6,6 +6,7 @@ vim.o.lazyredraw = true -- Only redraw when necessary
 vim.o.cursorline = true -- Find the current line quickly.
 vim.o.scrolloff = 8 -- Scroll screen after 8 lines
 vim.o.mouse = 'a' -- Enable mouse support
+vim.o.colorcolumn = '80' -- Highlight column 80
 
 -- Sidebar
 vim.o.number = true -- show line numbers
