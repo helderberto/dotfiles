@@ -68,3 +68,6 @@ vim.g.user_emmet_settings = {
 -- note: this setting is global and should be set only once
 vim.o.updatetime = 250
 vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+-- Syntax Highlight
+vim.cmd [[autocmd BufEnter * :syntax sync fromstart]] -- It can be slow, but will ensure syntax highlight always works
