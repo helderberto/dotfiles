@@ -78,7 +78,7 @@ require('nvim-tree').setup {
       global = false,
     },
     open_file = {
-      quit_on_open = false,
+      quit_on_open = true,
       resize_window = true,
       window_picker = {
         enable = true,
