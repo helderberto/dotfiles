@@ -8,7 +8,7 @@ local b = null_ls.builtins
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = b.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = b.diagnostics
+-- local diagnostics = b.diagnostics
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/completion
 local completion = b.completion
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/code_actions
@@ -17,11 +17,11 @@ local code_actions = b.code_actions
 null_ls.setup {
   debug = false,
   sources = {
-    diagnostics.eslint.with {
-      prefer_local = 'node_modules/.bin',
-    }, -- eslint or eslint_d
+    -- diagnostics.eslint.with {
+    --   prefer_local = 'node_modules/.bin',
+    -- }, -- eslint or eslint_d
     -- diagnostics.credo, -- Elixir
-    diagnostics.rubocop,
+    -- diagnostics.rubocop,
     code_actions.eslint_d, -- using eslint_d because it's faster than eslint
     formatting.prettier, -- prettier, eslint, eslint_d, or prettierd
     formatting.stylua,
