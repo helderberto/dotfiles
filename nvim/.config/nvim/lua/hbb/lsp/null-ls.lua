@@ -17,15 +17,18 @@ local code_actions = b.code_actions
 null_ls.setup {
   debug = false,
   sources = {
+    code_actions.eslint_d, -- using eslint_d because it's faster than eslint
+    formatting.prettier.with {
+      extra_args = { '--single-quote' },
+    },
+    formatting.stylua,
+    completion.spell,
+
     -- diagnostics.eslint.with {
     --   prefer_local = 'node_modules/.bin',
     -- }, -- eslint or eslint_d
     -- diagnostics.credo, -- Elixir
     -- diagnostics.rubocop,
-    code_actions.eslint_d, -- using eslint_d because it's faster than eslint
-    formatting.prettier, -- prettier, eslint, eslint_d, or prettierd
-    formatting.stylua,
-    completion.spell,
   },
   on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
