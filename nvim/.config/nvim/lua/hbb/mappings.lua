@@ -68,9 +68,7 @@ map('n', '<leader>dh', ':diffget //2<cr>')
 map('n', '<leader>dl', ':diffget //3<cr>')
 
 -- Search & Replace
-map('n', '<leader>r', ':%s/<C-r><C-w>//g<left><left>')
-map('n', '<leader>rc', ':%s/<C-r><C-w>//gc<left><left><left>')
-map('n', '<leader>rl', ':s/<C-r><C-w>//gc<left><left><left>') -- replace line
+map('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
 -- NvimTree
 map('n', '<leader>n', ':NvimTreeToggle<cr>')
