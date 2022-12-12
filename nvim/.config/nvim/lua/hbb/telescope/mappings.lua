@@ -15,6 +15,6 @@ map('n', '<leader>fs', ':Telescope git_status<cr>')
 map('n', '<leader>fc', ':Telescope git_commits<cr>')
 
 -- Neovim
-map('n', '<leader>fh', ':Telescope help_tags<cr>')
+map('n', '<leader>fh', ":lua require'telescope.builtin'.help_tags({ layout_strategy = 'vertical' })<cr>")
 map('n', '<leader>fo', ':Telescope vim_options<cr>')
 map('n', '<leader>fb', ':Telescope buffers<cr>')
