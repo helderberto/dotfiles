@@ -7,18 +7,8 @@ local actions = require 'telescope.actions'
 
 telescope.setup {
   defaults = {
+    dynamic_preview_title = true,
     path_display = { 'smart' },
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-      '--hidden',
-      '--trim',
-    },
     sorting_strategy = 'descending',
     file_ignore_patterns = {
       'dist/.*',
@@ -33,13 +23,13 @@ telescope.setup {
       i = {
         ['<C-n>'] = actions.cycle_history_next,
         ['<C-p>'] = actions.cycle_history_prev,
-        ['<C-d>'] = require('telescope.actions').delete_buffer,
+        -- ['<leader>x'] = actions.delete_buffer,
         ['<C-h>'] = 'which_key',
       },
 
       n = {
         ['<esc>'] = actions.close,
-        ['<C-d>'] = require('telescope.actions').delete_buffer,
+        ['<leader>d'] = actions.delete_buffer,
         ['<CR>'] = actions.select_default,
         ['?'] = actions.which_key,
       },
@@ -50,45 +40,20 @@ telescope.setup {
       sort_lastused = true,
     },
     find_files = {
-      find_command = {
-        'fd',
-        '--type',
-        'file',
-        '--type',
-        'symlink',
-        '--hidden',
-        '--exclude',
-        '.git',
-      },
+      follow = true, -- this makes the command to follow symlinks
+      hidden = true, -- show hidden files
+      no_ignore = true, -- show ignored files
     },
   },
   extensions = {
-    -- file_browser = {
-    --   hidden = true,
-    --   -- disables netrw and use telescope-file-browser in its place
-    --   hijack_netrw = true,
-    --   mappings = {
-    --     ['i'] = {
-    --       -- your custom insert mode mappings
-    --     },
-    --     ['n'] = {
-    --       -- your custom normal mode mappings
-    --     },
-    --   },
-    -- },
-    -- project = {
-    --   base_dirs = {
-    --     '~/workspace/',
-    --     '~/.dotfiles/',
-    --   },
-    --   hidden_files = true, -- default: false
-    --   theme = 'dropdown',
-    --   order_by = 'asc',
-    -- },
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = 'smart_case', -- "ignore_case" or "respect_case" or "smart_case"
+    },
   },
 }
 
--- require('telescope').load_extension 'file_browser'
 require('telescope').load_extension 'fzf'
 require('telescope').load_extension 'gh'
--- require('telescope').load_extension 'project'
