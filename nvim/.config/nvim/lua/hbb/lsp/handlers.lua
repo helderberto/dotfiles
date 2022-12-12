@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local buf_map = require('hbb.keymap').buf_map
+local buf_map = require('hbb.utils').buf_map
 
 local M = {}
 

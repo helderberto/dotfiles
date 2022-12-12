@@ -2,7 +2,7 @@ if not pcall(require, 'telescope') then
   return
 end
 
-local map = require('hbb.keymap').map
+local map = require('hbb.utils').map
 
 -- Files
 map('n', '<leader><leader>', ':Telescope find_files<cr>')

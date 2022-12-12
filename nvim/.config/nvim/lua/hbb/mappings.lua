@@ -1,4 +1,4 @@
-local map = require('hbb.keymap').map
+local map = require('hbb.utils').map
 
 -- Misc
 map('i', '<C-c>', '<esc>')
@@ -7,7 +7,6 @@ map('n', '<esc>', ':noh<cr><cr>')
 -- Saving
 map('n', '<leader>w', ':w!<cr>')
 map('n', '<leader>we', ':noa w<cr>')
-map('i', '<leader>we', ':noa w<cr>')
 
 -- Exiting
 map('n', '<leader>q', ':q<cr>')
