@@ -10,6 +10,17 @@ telescope.setup {
     dynamic_preview_title = true,
     path_display = { 'smart' },
     sorting_strategy = 'descending',
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--hidden',
+      '--trim',
+    },
     file_ignore_patterns = {
       'dist/.*',
       '%.git/.*',
@@ -40,9 +51,16 @@ telescope.setup {
       sort_lastused = true,
     },
     find_files = {
-      follow = true, -- this makes the command to follow symlinks
-      hidden = true, -- show hidden files
-      no_ignore = true, -- show ignored files
+      find_command = {
+        'fd',
+        '--type',
+        'file',
+        '--type',
+        'symlink',
+        '--hidden',
+        '--exclude',
+        '.git',
+      },
     },
   },
   extensions = {
