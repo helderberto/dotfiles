@@ -74,9 +74,9 @@ map('n', '<leader>n', ':NvimTreeToggle<cr>')
 map('n', '<leader>.', ':NvimTreeFindFile<cr>')
 
 -- Copilot
-map('i', '<C-h>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
-map('i', '<C-k>', 'copilot#Previous()', { silent = true, expr = true })
-map('i', '<C-j>', 'copilot#Next()', { silent = true, expr = true })
+map('i', '<C-h>', "copilot#Accept('<CR>')", { expr = true, replace_keycodes = false })
+map('i', '<C-k>', 'copilot#Previous()', { expr = true })
+map('i', '<C-j>', 'copilot#Next()', { expr = true })
 
 -- MarkdownPreview
 -- map('n', '<C-s>', '<Plug>MarkdownPreview')
