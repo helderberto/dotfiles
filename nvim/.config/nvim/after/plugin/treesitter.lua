@@ -19,6 +19,9 @@ require('nvim-treesitter.configs').setup {
     'elixir',
     'ruby',
   },
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if don't have `tree-sitter` CLI instally locally
+  auto_install = true,
   autopairs = { enable = true },
   autotag = {
     enable = true,
