@@ -34,6 +34,7 @@ vim.o.backup = false -- don"t use backup files
 vim.o.writebackup = false
 vim.o.swapfile = false -- don"t use swap file
 vim.o.termguicolors = true -- force GUI colors in terminals
+vim.cmd 'colorscheme dracula' -- Set colorscheme
 
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
