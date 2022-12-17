@@ -32,13 +32,6 @@ return packer.startup(function(use)
   }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {
-    'antoinemadec/FixCursorHold.nvim', -- Fix CursorHold Performance.
-    run = function()
-      -- https://github.com/antoinemadec/FixCursorHold.nvim
-      vim.g.cursorhold_updatetime = 100
-    end,
-  }
-  use {
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
     setup = function()
