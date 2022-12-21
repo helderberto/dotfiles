@@ -61,8 +61,3 @@ require 'hbb.lsp'
 
 -- Autocomplete
 require 'hbb.cmp'
-
--- Telescope
-require 'hbb.telescope.setup'
-require 'hbb.telescope.mappings'
-
