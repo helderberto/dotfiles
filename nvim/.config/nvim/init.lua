@@ -41,9 +41,6 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Turn off builtin plugins I do not use.
-require 'hbb.disable_builtin'
-
 -- Settings.lua contains all global options that are set. Most of these will
 -- should have a description. This has to come first, since it defines the
 -- mapleader, and many many other keymappings require that to be set.
