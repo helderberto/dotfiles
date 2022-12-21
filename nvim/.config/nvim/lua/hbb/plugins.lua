@@ -16,21 +16,16 @@ packer.init {
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules to improve startup time
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
-  use 'hoob3rt/lualine.nvim'
-  use 'editorconfig/editorconfig-vim'
-  use 'windwp/nvim-autopairs'
+  use 'tpope/vim-fugitive' -- Git commands in nvim
+  use 'tpope/vim-repeat' -- Enable repeating supported plugin maps with "."
+  use 'tpope/vim-surround' -- Easily delete/change/add surroundings in pairs
+  use 'tpope/vim-commentary' -- Comment stuff out
+  use 'hoob3rt/lualine.nvim' -- Status line
+  use 'editorconfig/editorconfig-vim' -- EditorConfig support
+  use 'windwp/nvim-autopairs' -- Insert or delete brackets, parens, quotes in pair
   use { 'github/copilot.vim', branch = 'release' }
-  use {
-    'windwp/nvim-ts-autotag',
-    config = function()
-      require('nvim-ts-autotag').setup()
-    end,
-  }
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  -- Markdown Preview
   use {
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
@@ -39,6 +34,7 @@ return packer.startup(function(use)
     end,
     ft = { 'markdown' },
   }
+
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -46,24 +42,45 @@ return packer.startup(function(use)
     },
   }
 
-  -- LSP
+  -- Treesitter Syntax Highlighting
   use {
-    'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    requires = {
+      {
+        'windwp/nvim-ts-autotag',
+        config = function()
+          require('nvim-ts-autotag').setup()
+        end,
+      },
+    },
   }
-  use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
-  -- cmp plugins
-  use 'hrsh7th/nvim-cmp' -- The completion plugin
-  use 'hrsh7th/cmp-buffer' -- buffer completions
-  use 'hrsh7th/cmp-path' -- path completions
-  use 'hrsh7th/cmp-cmdline' -- cmdline completions
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'saadparwaiz1/cmp_luasnip' -- snippet completions
 
-  -- snippets
-  use 'L3MON4D3/LuaSnip' --snippet engine
-  use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
+  -- LSP - Language Server Protocol
+  use {
+    'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
+    requires = {
+      -- LSP
+      { 'williamboman/nvim-lsp-installer' },
 
+      -- Formatting, Linting
+      { 'jose-elias-alvarez/null-ls.nvim' },
+
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' }, -- The completion plugin
+      { 'hrsh7th/cmp-buffer' }, -- buffer completion
+      { 'hrsh7th/cmp-path' }, -- path completions
+      { 'hrsh7th/cmp-cmdline' }, -- cmdline completions
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'saadparwaiz1/cmp_luasnip' }, -- snippet completions
+
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
+    },
+  }
+
+  -- Telescope - Fuzzy Finder
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
@@ -73,5 +90,7 @@ return packer.startup(function(use)
       { 'kyazdani42/nvim-web-devicons' },
     },
   }
+
+  -- Theme
   use { 'dracula/vim', as = 'dracula' }
 end)
