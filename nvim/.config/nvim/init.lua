@@ -55,6 +55,3 @@ require 'hbb.mappings'
 
 -- Neovim built-in LSP
 require 'hbb.lsp'
-
--- Autocomplete
-require 'hbb.cmp'
