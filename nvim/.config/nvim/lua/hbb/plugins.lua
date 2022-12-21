@@ -70,8 +70,6 @@ return packer.startup(function(use)
       { 'nvim-lua/plenary.nvim' }, -- Lua utils methods shared with plugins
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       { 'nvim-telescope/telescope-github.nvim' },
-      -- { 'nvim-telescope/telescope-file-browser.nvim' },
-      { 'nvim-telescope/telescope-project.nvim' },
       { 'kyazdani42/nvim-web-devicons' },
     },
   }

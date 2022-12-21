@@ -207,11 +207,6 @@ _G.packer_plugins = {
     path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/telescope-github.nvim",
     url = "https://github.com/nvim-telescope/telescope-github.nvim"
   },
-  ["telescope-project.nvim"] = {
-    loaded = true,
-    path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/telescope-project.nvim",
-    url = "https://github.com/nvim-telescope/telescope-project.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/telescope.nvim",
