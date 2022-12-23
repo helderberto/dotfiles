@@ -30,15 +30,6 @@ map('v', 'K', ":m '<-2<CR>gv=gv")
 map('v', 'p', '"_dP')
 
 -- Quickfix
-map('n', '<leader>co', ':call ToggleQuickFix()<CR>')
-function ToggleQuickFix()
-  if vim.fn.empty(vim.fn.filter(vim.fn.getwininfo(), 'v:val.quickfix')) == 1 then
-    vim.cmd [[copen]]
-  else
-    vim.cmd [[cclose]]
-  end
-end
-
 map('n', '<leader>cn', ':cnext<CR>')
 map('n', '<leader>cp', ':cprev<CR>')
 map('n', '<leader>cr', ':cfdo %s/')
