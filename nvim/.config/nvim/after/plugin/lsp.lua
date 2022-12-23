@@ -161,6 +161,18 @@ cmp.setup {
     ['<Tab>'] = nil,
     ['<S-Tab>'] = nil,
   },
+  formatting = {
+    fields = { 'kind', 'abbr', 'menu' },
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        nvim_lsp = '[LSP]',
+        luasnip = '[Snippet]',
+        buffer = '[Buffer]',
+        path = '[Path]',
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
   sources = {
     { name = 'luasnip', priority = 9999 },
     { name = 'nvim_lsp' },
