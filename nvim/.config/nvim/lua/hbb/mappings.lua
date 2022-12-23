@@ -48,10 +48,6 @@ map('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 map('n', '<leader>n', ':NvimTreeToggle<cr>')
 map('n', '<leader>.', ':NvimTreeFindFile<cr>')
 
-map('i', '<C-h>', "copilot#Accept('<CR>')", { expr = true, replace_keycodes = false })
-map('i', '<C-k>', 'copilot#Previous()', { expr = true })
-map('i', '<C-j>', 'copilot#Next()', { expr = true })
-
 -- MarkdownPreview
 -- map('n', '<C-s>', '<Plug>MarkdownPreview')
 -- map('n', '<M-s>', '<Plug>MarkdownPreviewStop')
