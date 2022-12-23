@@ -49,17 +49,12 @@ lsp_installer.on_server_ready(function(server)
   }
 
   if server.name == 'sumneko_lua' then
+    -- Fix Undefined global 'vim'
     local sumneko_opts = {
       settings = {
         Lua = {
           diagnostics = {
             globals = { 'vim' },
-          },
-          workspace = {
-            library = {
-              [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-              [vim.fn.stdpath 'config' .. '/lua'] = true,
-            },
           },
         },
       },
@@ -75,7 +70,6 @@ end)
 local config = {
   virtual_text = false, -- disable virtual text
   signs_icons = {
-
     error = 'E',
     warn = 'W',
     hint = 'H',
