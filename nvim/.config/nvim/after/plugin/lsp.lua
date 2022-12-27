@@ -1,16 +1,12 @@
-local status_ok, _ = pcall(require, 'lspconfig')
-if not status_ok then
-  return
-end
-
 local lsp_installer = require 'nvim-lsp-installer'
 local cmp_nvim_lsp = require 'cmp_nvim_lsp'
-local buf_map = require('hbb.utils').buf_map
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local cmp_capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
-local function lsp_keymaps(bufnr)
+local buf_map = require('hbb.utils').buf_map
+local function on_attach(client, bufnr)
+  -- Mappings
   buf_map(bufnr, 'n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
   buf_map(bufnr, 'n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
   buf_map(bufnr, 'n', 'gI', ':lua vim.lsp.buf.implementation()<CR>')
@@ -24,29 +20,22 @@ local function lsp_keymaps(bufnr)
   buf_map(bufnr, 'n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>')
   buf_map(bufnr, 'n', '<leader>li', ':LspInfo<CR>')
   buf_map(bufnr, 'n', '<leader>lI', ':LspInstallInfo<CR>')
-end
 
-local function lsp_highlight_document(client, bufnr)
+  -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_create_augroup('lsp_document_highlight', {
-      clear = false,
-    })
-
-    vim.api.nvim_clear_autocmds {
-      buffer = bufnr,
-      group = 'lsp_document_highlight',
-    }
-
+    vim.api.nvim_create_augroup('lsp_document_highlight', { clear = false })
+    vim.api.nvim_clear_autocmds { buffer = bufnr, group = 'lsp_document_highlight' }
     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = 'lsp_document_highlight',
       buffer = bufnr,
       callback = vim.lsp.buf.document_highlight,
+      desc = 'Highlight the word under the cursor',
     })
-
     vim.api.nvim_create_autocmd('CursorMoved', {
       group = 'lsp_document_highlight',
       buffer = bufnr,
       callback = vim.lsp.buf.clear_references,
+      desc = 'Clear all references',
     })
   end
 end
@@ -55,10 +44,7 @@ end
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
   local opts = {
-    on_attach = function(client, bufnr)
-      lsp_keymaps(bufnr)
-      lsp_highlight_document(client, bufnr)
-    end,
+    on_attach = on_attach,
     capabilities = cmp_capabilities,
   }
 
@@ -89,21 +75,17 @@ local float_config = {
   border = 'rounded',
 }
 
-local config = {
+vim.diagnostic.config {
   virtual_text = false, -- disable virtual text
+  severity_sort = true,
   signs_icons = {
     error = 'E',
     warn = 'W',
     hint = 'H',
     info = 'I',
   },
-  update_in_insert = true,
-  underline = true,
-  severity_sort = true,
   float = float_config,
 }
-
-vim.diagnostic.config(config)
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, float_config)
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, float_config)
