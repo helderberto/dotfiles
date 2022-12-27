@@ -56,23 +56,24 @@ return packer.startup(function(use)
     },
   })
 
-  -- LSP - Language Server Protocol
   use({
-    'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
+    'VonHeikemen/lsp-zero.nvim',
     requires = {
-      -- LSP
-      { 'williamboman/nvim-lsp-installer' },
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
       -- Formatting, Linting
       { 'jose-elias-alvarez/null-ls.nvim' },
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' }, -- The completion plugin
-      { 'hrsh7th/cmp-buffer' }, -- buffer completion
-      { 'hrsh7th/cmp-path' }, -- path completions
-      { 'hrsh7th/cmp-cmdline' }, -- cmdline completions
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
       { 'hrsh7th/cmp-nvim-lsp' },
-      { 'saadparwaiz1/cmp_luasnip' }, -- snippet completions
+      { 'hrsh7th/cmp-nvim-lua' },
 
       -- Snippets
       { 'L3MON4D3/LuaSnip' },
