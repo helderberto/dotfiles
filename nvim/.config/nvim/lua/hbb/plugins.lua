@@ -5,45 +5,45 @@ if not status_ok then
 end
 
 -- Have packer use a popup window
-packer.init {
+packer.init({
   display = {
     open_fn = function()
-      return require('packer.util').float { border = 'rounded' }
+      return require('packer.util').float({ border = 'rounded' })
     end,
   },
-}
+})
 
 return packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules to improve startup time
-  use 'tpope/vim-fugitive' -- Git commands in nvim
-  use 'tpope/vim-repeat' -- Enable repeating supported plugin maps with "."
-  use 'tpope/vim-surround' -- Easily delete/change/add surroundings in pairs
-  use 'tpope/vim-commentary' -- Comment stuff out
-  use 'hoob3rt/lualine.nvim' -- Status line
-  use 'editorconfig/editorconfig-vim' -- EditorConfig support
-  use 'windwp/nvim-autopairs' -- Insert or delete brackets, parens, quotes in pair
-  use { 'github/copilot.vim', branch = 'release' }
+  use('wbthomason/packer.nvim')
+  use('lewis6991/impatient.nvim') -- Speed up loading Lua modules to improve startup time
+  use('tpope/vim-fugitive') -- Git commands in nvim
+  use('tpope/vim-repeat') -- Enable repeating supported plugin maps with "."
+  use('tpope/vim-surround') -- Easily delete/change/add surroundings in pairs
+  use('tpope/vim-commentary') -- Comment stuff out
+  use('hoob3rt/lualine.nvim') -- Status line
+  use('editorconfig/editorconfig-vim') -- EditorConfig support
+  use('windwp/nvim-autopairs') -- Insert or delete brackets, parens, quotes in pair
+  use({ 'github/copilot.vim', branch = 'release' })
 
   -- Markdown Preview
-  use {
+  use({
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
     setup = function()
       vim.g.mkdp_filetypes = { 'markdown' }
     end,
     ft = { 'markdown' },
-  }
+  })
 
-  use {
+  use({
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     },
-  }
+  })
 
   -- Treesitter Syntax Highlighting
-  use {
+  use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     requires = {
@@ -54,10 +54,10 @@ return packer.startup(function(use)
         end,
       },
     },
-  }
+  })
 
   -- LSP - Language Server Protocol
-  use {
+  use({
     'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
     requires = {
       -- LSP
@@ -78,10 +78,10 @@ return packer.startup(function(use)
       { 'L3MON4D3/LuaSnip' },
       { 'rafamadriz/friendly-snippets' },
     },
-  }
+  })
 
   -- Telescope - Fuzzy Finder
-  use {
+  use({
     'nvim-telescope/telescope.nvim',
     requires = {
       { 'nvim-lua/plenary.nvim' }, -- Lua utils methods shared with plugins
@@ -89,8 +89,8 @@ return packer.startup(function(use)
       { 'nvim-telescope/telescope-github.nvim' },
       { 'kyazdani42/nvim-web-devicons' },
     },
-  }
+  })
 
   -- Theme
-  use { 'dracula/vim', as = 'dracula' }
+  use({ 'dracula/vim', as = 'dracula' })
 end)

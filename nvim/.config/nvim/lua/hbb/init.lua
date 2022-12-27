@@ -29,7 +29,7 @@
 
 pcall(require, 'impatient')
 
-if require 'hbb.first_load'() then
+if require('hbb.first_load')() then
   return
 end
 
@@ -44,11 +44,11 @@ vim.g.maplocalleader = ' '
 -- Settings.lua contains all global options that are set. Most of these will
 -- should have a description. This has to come first, since it defines the
 -- mapleader, and many many other keymappings require that to be set.
-require 'hbb.settings'
+require('hbb.settings')
 
 -- Defines a list of plugins to pull down and use, as well as their
 -- configurations.
-require 'hbb.plugins'
+require('hbb.plugins')
 
 -- Defines global keymaps. `:h vim.keymap` and `:h map` to learn more!
-require 'hbb.mappings'
+require('hbb.mappings')

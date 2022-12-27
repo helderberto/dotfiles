@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
   ensure_installed = {
     'bash',
     'comment',
@@ -43,4 +43,4 @@ require('nvim-treesitter.configs').setup {
       sort_lastused = true,
     },
   },
-}
+})

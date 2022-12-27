@@ -3,10 +3,10 @@ if not status_ok then
   return
 end
 
-local actions = require 'telescope.actions'
+local actions = require('telescope.actions')
 local map = require('hbb.utils').map
 
-telescope.setup {
+telescope.setup({
   defaults = {
     dynamic_preview_title = true,
     path_display = { 'smart' },
@@ -72,10 +72,10 @@ telescope.setup {
       case_mode = 'smart_case', -- "ignore_case" or "respect_case" or "smart_case"
     },
   },
-}
+})
 
-require('telescope').load_extension 'fzf'
-require('telescope').load_extension 'gh'
+require('telescope').load_extension('fzf')
+require('telescope').load_extension('gh')
 
 -- Files
 map('n', '<leader><leader>', ':Telescope find_files<cr>')

@@ -1,5 +1,5 @@
-local lsp_installer = require 'nvim-lsp-installer'
-local cmp_nvim_lsp = require 'cmp_nvim_lsp'
+local lsp_installer = require('nvim-lsp-installer')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local cmp_capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
@@ -24,7 +24,7 @@ local function on_attach(client, bufnr)
   -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_create_augroup('lsp_document_highlight', { clear = false })
-    vim.api.nvim_clear_autocmds { buffer = bufnr, group = 'lsp_document_highlight' }
+    vim.api.nvim_clear_autocmds({ buffer = bufnr, group = 'lsp_document_highlight' })
     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = 'lsp_document_highlight',
       buffer = bufnr,
@@ -75,7 +75,7 @@ local float_config = {
   border = 'rounded',
 }
 
-vim.diagnostic.config {
+vim.diagnostic.config({
   virtual_text = false, -- disable virtual text
   severity_sort = true,
   signs_icons = {
@@ -85,12 +85,12 @@ vim.diagnostic.config {
     info = 'I',
   },
   float = float_config,
-}
+})
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, float_config)
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, float_config)
 
-local null_ls = require 'null-ls'
+local null_ls = require('null-ls')
 
 -- Null-ls - Formatters and Linters
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/
@@ -98,13 +98,13 @@ local formatting = null_ls.builtins.formatting
 local completion = null_ls.builtins.completion
 local code_actions = null_ls.builtins.code_actions
 
-null_ls.setup {
+null_ls.setup({
   debug = false,
   sources = {
     code_actions.eslint_d, -- using eslint_d because it's faster than eslint
-    formatting.prettier.with {
+    formatting.prettier.with({
       extra_args = { '--single-quote' },
-    },
+    }),
     formatting.stylua,
     completion.spell,
 
@@ -116,27 +116,27 @@ null_ls.setup {
   },
   on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
-      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+      vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
     end
   end,
-}
+})
 
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 require('luasnip/loaders/from_vscode').lazy_load()
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-    ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm { select = true },
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
     -- disable completion with tab
     -- this helps with copilot setup
@@ -165,4 +165,4 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-}
+})
