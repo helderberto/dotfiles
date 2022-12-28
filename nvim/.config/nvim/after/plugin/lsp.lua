@@ -8,6 +8,7 @@ lsp.ensure_installed({
   'cssls',
   'html',
   'jsonls',
+  'elixirls',
 })
 
 -- Fix Undefined global 'vim'
@@ -49,7 +50,6 @@ lsp.set_preferences({
 
 local buf_map = require('hbb.utils').buf_map
 lsp.on_attach(function(_, bufnr)
-  -- Mappings
   buf_map(bufnr, 'n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
   buf_map(bufnr, 'n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
   buf_map(bufnr, 'n', 'gI', ':lua vim.lsp.buf.implementation()<CR>')
@@ -65,40 +65,45 @@ lsp.on_attach(function(_, bufnr)
   buf_map(bufnr, 'n', '<leader>lI', ':LspInstallInfo<CR>')
 end)
 
+local null_ls = require('null-ls')
+
+local null_opts = lsp.build_options('null-ls', {
+  on_attach = function(client)
+    if client.server_capabilities.documentFormattingProvider then
+      vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format()')
+    end
+  end,
+})
+
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+local action = null_ls.builtins.code_actions
+local completion = null_ls.builtins.completion
+
+null_ls.setup({
+  on_attach = null_opts.on_attach,
+  sources = {
+    -- formatting
+    formatting.prettier,
+    formatting.stylua, -- Lua
+
+    -- diagnostics
+    diagnostics.eslint,
+    diagnostics.credo, -- Elixir
+    diagnostics.rubocop, -- Ruby
+
+    -- code actions
+    action.eslint,
+    action.refactoring,
+
+    -- completion
+    completion.spell,
+  },
+})
+
 lsp.setup()
 
 vim.diagnostic.config({
   virtual_text = false, -- disable virtual text
-  severity_sort = true,
-})
-
-local null_ls = require('null-ls')
-
--- Null-ls - Formatters and Linters
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/
-local formatting = null_ls.builtins.formatting
-local completion = null_ls.builtins.completion
-local code_actions = null_ls.builtins.code_actions
-
-null_ls.setup({
-  debug = false,
-  sources = {
-    code_actions.eslint_d, -- using eslint_d because it's faster than eslint
-    formatting.prettier.with({
-      extra_args = { '--single-quote' },
-    }),
-    formatting.stylua,
-    completion.spell,
-
-    -- diagnostics.eslint.with {
-    --   prefer_local = 'node_modules/.bin',
-    -- }, -- eslint or eslint_d
-    -- diagnostics.credo, -- Elixir
-    -- diagnostics.rubocop,
-  },
-  on_attach = function(client)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-    end
-  end,
+  sort_severity = true,
 })
