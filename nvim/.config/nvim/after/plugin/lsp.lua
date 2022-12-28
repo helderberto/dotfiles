@@ -48,21 +48,22 @@ lsp.set_preferences({
   },
 })
 
-local buf_map = require('hbb.utils').buf_map
 lsp.on_attach(function(_, bufnr)
-  buf_map(bufnr, 'n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
-  buf_map(bufnr, 'n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
-  buf_map(bufnr, 'n', 'gI', ':lua vim.lsp.buf.implementation()<CR>')
-  buf_map(bufnr, 'n', 'gr', ':lua vim.lsp.buf.references()<CR>')
-  buf_map(bufnr, 'n', 'K', ':lua vim.lsp.buf.hover()<CR>')
-  buf_map(bufnr, 'n', '<leader>lf', ':lua vim.lsp.buf.format { async = true }<CR>')
-  buf_map(bufnr, 'n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>')
-  buf_map(bufnr, 'n', '<leader>lk', ':lua vim.diagnostic.goto_prev()<CR>')
-  buf_map(bufnr, 'n', '<leader>lj', ':lua vim.diagnostic.goto_next()<CR>')
-  buf_map(bufnr, 'n', '<leader>la', ':lua vim.lsp.buf.code_action()<CR>')
-  buf_map(bufnr, 'n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>')
-  buf_map(bufnr, 'n', '<leader>li', ':LspInfo<CR>')
-  buf_map(bufnr, 'n', '<leader>lI', ':LspInstallInfo<CR>')
+  local opts = { buffer = bufnr, remap = false }
+
+  vim.keymap.set('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
+  vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
+  vim.keymap.set('n', 'gI', ':lua vim.lsp.buf.implementation()<CR>', opts)
+  vim.keymap.set('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
+  vim.keymap.set('n', 'K', ':lua vim.lsp.buf.hover()<CR>', opts)
+  vim.keymap.set('n', '<leader>lf', ':lua vim.lsp.buf.format { async = true }<CR>', opts)
+  vim.keymap.set('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>', opts)
+  vim.keymap.set('n', '<leader>lk', ':lua vim.diagnostic.goto_prev()<CR>', opts)
+  vim.keymap.set('n', '<leader>lj', ':lua vim.diagnostic.goto_next()<CR>', opts)
+  vim.keymap.set('n', '<leader>la', ':lua vim.lsp.buf.code_action()<CR>', opts)
+  vim.keymap.set('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>', opts)
+  vim.keymap.set('n', '<leader>li', ':LspInfo<CR>', opts)
+  vim.keymap.set('n', '<leader>lI', ':LspInstallInfo<CR>', opts)
 end)
 
 local null_ls = require('null-ls')

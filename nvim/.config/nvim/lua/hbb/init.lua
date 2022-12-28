@@ -51,4 +51,4 @@ require('hbb.settings')
 require('hbb.plugins')
 
 -- Defines global keymaps. `:h vim.keymap` and `:h map` to learn more!
-require('hbb.mappings')
+require('hbb.keymaps')

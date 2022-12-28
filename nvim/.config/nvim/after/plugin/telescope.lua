@@ -4,7 +4,6 @@ if not status_ok then
 end
 
 local actions = require('telescope.actions')
-local map = require('hbb.utils').map
 
 telescope.setup({
   defaults = {
@@ -78,16 +77,16 @@ require('telescope').load_extension('fzf')
 require('telescope').load_extension('gh')
 
 -- Files
-map('n', '<leader><leader>', ':Telescope find_files<cr>')
-map('n', '<leader>fg', ':Telescope live_grep<cr>')
-map('n', '<leader>ff', ':Telescope current_buffer_fuzzy_find<cr>')
-map('n', '<leader>fq', ':Telescope quickfix<cr>')
+vim.keymap.set('n', '<leader><leader>', ':Telescope find_files<cr>')
+vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>ff', ':Telescope current_buffer_fuzzy_find<cr>')
+vim.keymap.set('n', '<leader>fq', ':Telescope quickfix<cr>')
 
 -- Git
-map('n', '<leader>fs', ':Telescope git_status<cr>')
-map('n', '<leader>fc', ':Telescope git_commits<cr>')
+vim.keymap.set('n', '<leader>fs', ':Telescope git_status<cr>')
+vim.keymap.set('n', '<leader>fc', ':Telescope git_commits<cr>')
 
 -- Neovim
-map('n', '<leader>fh', ":lua require'telescope.builtin'.help_tags({ layout_strategy = 'vertical' })<cr>")
-map('n', '<leader>fo', ':Telescope vim_options<cr>')
-map('n', '<leader>fb', ':Telescope buffers<cr>')
+vim.keymap.set('n', '<leader>fh', ":lua require'telescope.builtin'.help_tags({ layout_strategy = 'vertical' })<cr>")
+vim.keymap.set('n', '<leader>fo', ':Telescope vim_options<cr>')
+vim.keymap.set('n', '<leader>fb', ':Telescope buffers<cr>')
