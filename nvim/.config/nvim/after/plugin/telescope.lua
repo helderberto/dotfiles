@@ -87,6 +87,6 @@ vim.keymap.set('n', '<leader>fs', ':Telescope git_status<cr>')
 vim.keymap.set('n', '<leader>fc', ':Telescope git_commits<cr>')
 
 -- Neovim
-vim.keymap.set('n', '<leader>fh', ":lua require'telescope.builtin'.help_tags({ layout_strategy = 'vertical' })<cr>")
+vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<cr>')
 vim.keymap.set('n', '<leader>fo', ':Telescope vim_options<cr>')
 vim.keymap.set('n', '<leader>fb', ':Telescope buffers<cr>')

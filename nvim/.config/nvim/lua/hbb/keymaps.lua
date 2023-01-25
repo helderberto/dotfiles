@@ -29,11 +29,13 @@ vim.keymap.set('n', '<leader>cn', ':cnext<CR>')
 vim.keymap.set('n', '<leader>cp', ':cprev<CR>')
 vim.keymap.set('n', '<leader>cr', ':cfdo %s/')
 
+-- Disable arrows
 vim.keymap.set('n', '<Left>', ':lua print("Use h")<cr>')
 vim.keymap.set('n', '<Right>', ':lua print("Use l")<cr>')
 vim.keymap.set('n', '<Up>', ':lua print("Use k")<cr>')
 vim.keymap.set('n', '<Down>', ':lua print("Use j")<cr>')
 
+-- Git (Fugitive)
 vim.keymap.set('n', '<leader>g', ':G<cr>')
 vim.keymap.set('n', '<leader>dh', ':diffget //2<cr>')
 vim.keymap.set('n', '<leader>dl', ':diffget //3<cr>')
@@ -44,6 +46,4 @@ vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>.', ':NvimTreeFindFile<cr>')
 
 -- MarkdownPreview
--- vim.keymap.set('n', '<C-s>', '<Plug>MarkdownPreview')
--- vim.keymap.set('n', '<M-s>', '<Plug>MarkdownPreviewStop')
 vim.keymap.set('n', '<leader>mm', '<Plug>MarkdownPreviewToggle')
