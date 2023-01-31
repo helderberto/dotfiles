@@ -81,9 +81,9 @@ vim.keymap.set('n', '<leader><leader>', ':Telescope find_files<cr>', { desc = '[
 vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>', { desc = '[F]ind [G]rep' })
 vim.keymap.set(
   'n',
-  '<leader>/',
+  '<leader>ff',
   ':Telescope current_buffer_fuzzy_find<cr>',
-  { desc = '[/] Fuzzily search in current buffer' }
+  { desc = '[F]ind [F]uzzy current buffer' }
 )
 vim.keymap.set('n', '<leader>fq', ':Telescope quickfix<cr>', { desc = '[F]ind [Q]uickfix' })
 
