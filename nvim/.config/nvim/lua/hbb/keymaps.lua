@@ -12,13 +12,6 @@ vim.keymap.set('n', '<leader>S', ':noa w<cr>', { desc = '[S]ave file without for
 vim.keymap.set('n', '<leader>q', ':q<cr>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>qq', ':qa!<CR>', { desc = '[Q]uit all windows and close' })
 
--- Window navigation & resizing
-vim.keymap.set('n', '<leader>wl', ':vsplit<cr>', { desc = '[W]indow vertical' })
-vim.keymap.set('n', '<leader>wk', ':split<cr>', { desc = '[W]indow horizontal' })
-vim.keymap.set('n', '<leader>+', ':vertical resize +5<cr>', { desc = '[+] resize' })
-vim.keymap.set('n', '<leader>-', ':vertical resize -5<cr>', { desc = '[-] resize' })
-vim.keymap.set('n', '<leader>=', '<C-w>=<cr>', { desc = '[=] resize' })
-
 -- Buffer navigation
 vim.keymap.set('n', '<leader>bd', ':bd<cr>', { desc = '[B]uffer [D]elete' })
 vim.keymap.set('n', '<leader>bD', ':bufdo bd<cr>', { desc = '[B]uffer [D]elete all' })
