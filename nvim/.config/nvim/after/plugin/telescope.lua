@@ -36,7 +36,6 @@ telescope.setup({
       i = {
         ['<C-n>'] = actions.cycle_history_next,
         ['<C-p>'] = actions.cycle_history_prev,
-        -- ['<C-x>'] = actions.delete_buffer,
         ['<C-h>'] = 'which_key',
       },
 
@@ -87,6 +86,7 @@ map('n', '<leader>fq', ':Telescope quickfix<cr>', { desc = '[F]ind [Q]uickfix' }
 -- Git
 map('n', '<leader>fs', ':Telescope git_status<cr>', { desc = '[F]ind [S]tatus' })
 map('n', '<leader>fc', ':Telescope git_commits<cr>', { desc = '[F]ind [C]ommits' })
+map('n', '<C-p>', ':Telescope git_files<cr>')
 
 -- Neovim
 map('n', '<leader>fh', ':Telescope help_tags<cr>', { desc = '[F]ind [H]elp' })

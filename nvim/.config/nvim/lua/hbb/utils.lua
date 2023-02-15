@@ -14,7 +14,7 @@ local M = {}
 -- @param rhs string: the right hand side of the mapping
 -- @param opts table: options for the mapping e.g. {noremap = true, silent = true}
 M.map = function(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
+  local options = { noremap = true }
   if opts then
     options = vim.tbl_extend('force', options, opts)
   end

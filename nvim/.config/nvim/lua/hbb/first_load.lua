@@ -1,4 +1,14 @@
-local cmd = vim.cmd
+-----------------------------------------------------------
+-- General Neovim settings and configuration
+-----------------------------------------------------------
+
+-- Default options are not included
+-- See: https://neovim.io/doc/user/vim_diff.html
+-- [2] Defaults - *nvim-defaults*
+
+local g = vim.g -- Global variables
+local opt = vim.opt -- Set options (global/buffer/windows-scoped)
+local cmd = vim.cmd -- Execute Vim commands
 
 local download_packer = function()
   if vim.fn.input('Download Packer? (y for yes)') ~= 'y' then
@@ -32,6 +42,42 @@ cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup END
 ]])
+
+-- Disable nvim intro
+opt.shortmess:append('sI')
+
+-- Disable builtin plugins
+local disabled_built_ins = {
+  '2html_plugin',
+  'getscript',
+  'getscriptPlugin',
+  'gzip',
+  'logipat',
+  'netrw',
+  'netrwPlugin',
+  'netrwSettings',
+  'netrwFileHandlers',
+  'matchit',
+  'tar',
+  'tarPlugin',
+  'rrhelper',
+  'spellfile_plugin',
+  'vimball',
+  'vimballPlugin',
+  'zip',
+  'zipPlugin',
+  'tutor',
+  'rplugin',
+  'synmenu',
+  'optwin',
+  'compiler',
+  'bugreport',
+  'ftplugin',
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  g['loaded_' .. plugin] = 1
+end
 
 return function()
   if not pcall(require, 'packer') then

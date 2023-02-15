@@ -1,5 +1,3 @@
-vim.g.loaded_netrw = 1 -- Disable netrw
-vim.g.loaded_netrwPlugin = 1 -- Disable netrw
 vim.o.clipboard = 'unnamedplus' -- Use system clipboard
 vim.o.cursorline = true -- Find the current line quickly.
 vim.o.scrolloff = 8 -- Scroll screen after 8 lines
