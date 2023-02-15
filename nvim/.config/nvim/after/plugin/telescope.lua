@@ -85,6 +85,7 @@ vim.keymap.set(
   ':Telescope current_buffer_fuzzy_find<cr>',
   { desc = '[F]ind [F]uzzy current buffer' }
 )
+vim.keymap.set('n', '/', ':Telescope current_buffer_fuzzy_find<cr>')
 vim.keymap.set('n', '<leader>fq', ':Telescope quickfix<cr>', { desc = '[F]ind [Q]uickfix' })
 
 -- Git
