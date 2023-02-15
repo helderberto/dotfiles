@@ -1,4 +1,6 @@
 local lsp = require('lsp-zero')
+local map = require('hbb.utils').map
+
 lsp.preset('recommended')
 
 lsp.ensure_installed({
@@ -51,19 +53,19 @@ lsp.set_preferences({
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
-  vim.keymap.set('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
-  vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
-  vim.keymap.set('n', 'gI', ':lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.keymap.set('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
-  vim.keymap.set('n', 'K', ':lua vim.lsp.buf.hover()<CR>', opts)
-  vim.keymap.set('n', '<leader>lf', ':lua vim.lsp.buf.format { async = true }<CR>', opts)
-  vim.keymap.set('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>', opts)
-  vim.keymap.set('n', '<leader>lk', ':lua vim.diagnostic.goto_prev()<CR>', opts)
-  vim.keymap.set('n', '<leader>lj', ':lua vim.diagnostic.goto_next()<CR>', opts)
-  vim.keymap.set('n', '<leader>la', ':lua vim.lsp.buf.code_action()<CR>', opts)
-  vim.keymap.set('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>', opts)
-  vim.keymap.set('n', '<leader>li', ':LspInfo<CR>', opts)
-  vim.keymap.set('n', '<leader>lI', ':LspInstallInfo<CR>', opts)
+  map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
+  map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
+  map('n', 'gI', ':lua vim.lsp.buf.implementation()<CR>', opts)
+  map('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
+  map('n', 'K', ':lua vim.lsp.buf.hover()<CR>', opts)
+  map('n', '<leader>lf', ':lua vim.lsp.buf.format { async = true }<CR>', opts)
+  map('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>', opts)
+  map('n', '<leader>lk', ':lua vim.diagnostic.goto_prev()<CR>', opts)
+  map('n', '<leader>lj', ':lua vim.diagnostic.goto_next()<CR>', opts)
+  map('n', '<leader>la', ':lua vim.lsp.buf.code_action()<CR>', opts)
+  map('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>', opts)
+  map('n', '<leader>li', ':LspInfo<CR>', opts)
+  map('n', '<leader>lI', ':LspInstallInfo<CR>', opts)
 end)
 
 local null_ls = require('null-ls')

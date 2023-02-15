@@ -1,4 +1,6 @@
-vim.keymap.set('n', '<leader>zz', function()
+local map = require('hbb.utils').map
+
+map('n', '<leader>zz', function()
   require('zen-mode').setup({
     window = {
       width = 120,
@@ -9,9 +11,9 @@ vim.keymap.set('n', '<leader>zz', function()
   vim.wo.wrap = false
   vim.wo.number = true
   vim.wo.rnu = true
-end)
+end, { desc = 'Zen mode with line numbers' })
 
-vim.keymap.set('n', '<leader>zZ', function()
+map('n', '<leader>zZ', function()
   require('zen-mode').setup({
     window = {
       width = 120,
@@ -23,4 +25,4 @@ vim.keymap.set('n', '<leader>zZ', function()
   vim.wo.number = false
   vim.wo.rnu = false
   vim.opt.colorcolumn = '0'
-end)
+end, { desc = 'Zen mode without line numbers' })
