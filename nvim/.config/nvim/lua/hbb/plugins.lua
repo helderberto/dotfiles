@@ -106,4 +106,6 @@ return packer.startup(function(use)
 
   -- Theme
   use({ 'dracula/vim', as = 'dracula' })
+
+  use('folke/zen-mode.nvim')
 end)
