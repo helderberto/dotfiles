@@ -38,6 +38,9 @@ end
 -- mapleader, and many many other keymappings require that to be set.
 require('hbb.settings')
 
+-- Defines all the autocommands that are used. `:h vim.autocmd` to learn more!
+require('hbb.autocommands')
+
 -- Defines global keymaps. `:h vim.keymap` and `:h map` to learn more!
 require('hbb.keymaps')
 
