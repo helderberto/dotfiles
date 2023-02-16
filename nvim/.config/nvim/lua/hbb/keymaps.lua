@@ -18,8 +18,8 @@ map('n', '<leader>rl', ':so %<CR>', { desc = '[R]eload current lua file' })
 
 -- Saving & Quitting
 map('n', '<C-s>', ':w!<cr>')
-map('n', '<leader>s', ':w!<cr>', { desc = '[S]ave file' })
-map('n', '<leader>S', ':noa w<cr>', { desc = '[S]ave file without formatting' })
+map('n', '<leader>w', ':w!<cr>', { desc = '[W]rite file' })
+map('n', '<leader>ww', ':noa w<cr>', { desc = '[W]rite file without formatting' })
 map('n', '<leader>q', ':q<cr>', { desc = '[Q]uit' })
 map('n', '<leader>qq', ':qa!<CR>', { desc = '[Q]uit all windows and close' })
 
