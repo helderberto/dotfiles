@@ -20,6 +20,7 @@ map('n', '<leader>rl', ':so %<CR>', { desc = '[R]eload current lua file' })
 map('n', '<C-s>', ':w!<cr>')
 map('n', '<leader>w', ':w!<cr>', { desc = '[W]rite file' })
 map('n', '<leader>ww', ':noa w<cr>', { desc = '[W]rite file without formatting' })
+map('n', '<leader>wq', ':wqa<cr>', { desc = '[W]rite [Q]uit all' })
 map('n', '<leader>q', ':q<cr>', { desc = '[Q]uit' })
 map('n', '<leader>qq', ':qa!<CR>', { desc = '[Q]uit all windows and close' })
 
@@ -62,10 +63,6 @@ map('n', '<leader>dl', ':diffget //3<cr>', { desc = '[D]iff [L]eft' })
 
 -- Search & Replace
 map('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace current word' })
-
--- NvimTree
-map('n', '<leader>n', ':NvimTreeToggle<cr>', { desc = '[N]vim tree toggle' })
-map('n', '<leader>.', ':NvimTreeFindFile<cr>', { desc = '[N]vim tree find file' })
 
 -- Markdown
 map('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', { desc = '[M]arkdown [P]review' })
