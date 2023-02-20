@@ -29,6 +29,9 @@
 
 pcall(require, 'impatient')
 
+-- Disable builtin plugins and other things that I don't want.
+require('hbb.disable_builtin')
+
 if require('hbb.first_load')() then
   return
 end
