@@ -1,8 +1,5 @@
 local map = require('hbb.utils').map
 
--- Unless you are still migrating, remove the deprecated commands from v1.x
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
 -- If you want icons for diagnostic errors, you'll need to define them somewhere:
 vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
 vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
@@ -54,25 +51,10 @@ require('neo-tree').setup({
       use_git_status_colors = true,
       highlight = 'NeoTreeFileName',
     },
-    git_status = {
-      symbols = {
-        -- Change type
-        added = '', -- or "✚", but this is redundant info if you use git_status_colors on the name
-        modified = '', -- or "", but this is redundant info if you use git_status_colors on the name
-        deleted = '✖', -- this can only be used in the git_status source
-        renamed = '', -- this can only be used in the git_status source
-        -- Status type
-        untracked = '',
-        ignored = '',
-        unstaged = '',
-        staged = '',
-        conflict = '',
-      },
-    },
   },
   window = {
     position = 'left',
-    width = 40,
+    width = 45,
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -207,5 +189,6 @@ require('neo-tree').setup({
 })
 
 -- Keymaps
-map('n', '<leader>n', ':NeoTreeShowToggle<CR>', { desc = 'Neotree Toggle' })
+map('n', '<leader>n', ':Neotree toggle<CR>', { desc = 'Neotree Toggle' })
+map('n', '<leader>.', ':Neotree float<CR>', { desc = 'Neotree Float' })
 map('n', '<leader>ng', ':Neotree git_status<CR>', { desc = 'Neotree Git Status' })
