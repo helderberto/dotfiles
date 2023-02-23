@@ -15,6 +15,7 @@ vim.g.maplocalleader = ' '
 
 -- Misc
 map('n', '<leader>rl', ':so %<CR>', { desc = '[R]eload current lua file' })
+map('n', '<leader>e', '<C-w>')
 
 -- Saving & Quitting
 map('n', '<C-s>', ':w!<cr>')
