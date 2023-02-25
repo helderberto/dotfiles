@@ -1,29 +1,31 @@
 local map = require('hbb.utils').map
 
--- Set leader key as space
-map('', '<Space>', '<Nop>')
+-- Leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
--- Misc
 map('n', '<leader>rl', ':so %<CR>', { desc = '[R]eload current lua file' })
 map('n', '<leader>e', '<C-w>')
+map('n', '<leader>ln', ':set number! norelativenumber<cr>')
 
--- Saving & Quitting
-map('n', '<C-s>', ':w!<cr>')
-map('n', '<leader>w', ':w!<cr>', { desc = '[W]rite file' })
-map('n', '<leader>ww', ':noa w<cr>', { desc = '[W]rite file without formatting' })
-map('n', '<leader>wq', ':wqa<cr>', { desc = '[W]rite [Q]uit all' })
-map('n', '<leader>q', ':q<cr>', { desc = '[Q]uit' })
-map('n', '<leader>qq', ':qa!<CR>', { desc = '[Q]uit all windows and close' })
+-- Clear search with <esc>
+map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
+
+--- Saving
+map({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr>')
+map('n', '<leader>w', '<cmd>w<cr>')
+map('n', '<leader>ww', '<cmd>noa w<cr>')
+
+-- Quitting
+map('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
+map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit all' })
+
+-- better indenting
+map('v', '<', '<gv')
+map('v', '>', '>gv')
+
+-- new file
+map('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
 
 -- Buffer navigation
 map('n', '<S-l>', ':bnext<CR>', { desc = 'Next buffer' })
@@ -33,14 +35,14 @@ map('n', '<leader>bD', ':bufdo bd<cr>', { desc = '[B]uffer [D]elete all' })
 map('n', '<leader>;', '<C-^>', { desc = 'Toggle last buffers' }) -- toggle last buffers
 
 -- Better window navigation
-map('n', '<C-h>', '<C-w>h', { desc = '[C-h] window left' })
-map('n', '<C-j>', '<C-w>j', { desc = '[C-j] window down' })
-map('n', '<C-k>', '<C-w>k', { desc = '[C-k] window up' })
-map('n', '<C-l>', '<C-w>l', { desc = '[C-l] window right' })
+map('n', '<C-h>', '<C-w>h', { desc = 'Go to left window' })
+map('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
+map('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
+map('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
 
--- Move text up & down
-map('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move line up' })
-map('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move line down' })
+-- better up/down
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map('v', 'p', '"_dP', { desc = 'Paste over selection' })
 
 -- Disable arrows
@@ -67,3 +69,6 @@ map('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 
 -- Markdown
 map('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', { desc = '[M]arkdown [P]review' })
+
+-- Toggle relative number
+map('n', '<leader>rn', ':set relativenumber!<cr>', { desc = '[R]elative [N]umber' })
