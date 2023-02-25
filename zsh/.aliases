@@ -76,3 +76,6 @@ alias rnm="rm -rf node_modules"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# tldr with fzf
+alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,60% | xargs tldr'
