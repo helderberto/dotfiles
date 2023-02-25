@@ -78,19 +78,19 @@ require('telescope').load_extension('fzf')
 require('telescope').load_extension('gh')
 
 -- Files
-map('n', '<leader><leader>', ':Telescope find_files<cr>', { desc = '[F]ind [F]iles' })
-map('n', '<leader>fg', ':Telescope live_grep<cr>', { desc = '[F]ind [G]rep' })
-map('n', '<leader>ff', ':Telescope current_buffer_fuzzy_find<cr>', { desc = '[F]ind [F]uzzy current buffer' })
-map('n', '<leader>fq', ':Telescope quickfix<cr>', { desc = '[F]ind [Q]uickfix' })
+map('n', '<leader><leader>', ':Telescope find_files<cr>', { desc = 'Find Files' })
+map('n', '<leader>fg', ':Telescope live_grep<cr>', { desc = 'Find Grep' })
+map('n', '<leader>ff', ':Telescope current_buffer_fuzzy_find<cr>', { desc = 'Find Fuzzy current buffer' })
+map('n', '<leader>fq', ':Telescope quickfix<cr>', { desc = 'Find Quickfix' })
 
 -- Git
-map('n', '<leader>fs', ':Telescope git_status<cr>', { desc = '[F]ind [S]tatus' })
-map('n', '<leader>fc', ':Telescope git_commits<cr>', { desc = '[F]ind [C]ommits' })
-map('n', '<C-p>', ':Telescope git_files<cr>')
+map('n', '<leader>fs', ':Telescope git_status<cr>', { desc = 'Find Status' })
+map('n', '<leader>fc', ':Telescope git_commits<cr>', { desc = 'Find Commits' })
+map('n', '<C-p>', ':Telescope git_files<cr>', { desc = 'Find Git files' })
 
 -- Neovim
-map('n', '<leader>fh', ':Telescope help_tags<cr>', { desc = '[F]ind [H]elp' })
-map('n', '<leader>fo', ':Telescope vim_options<cr>', { desc = '[F]ind [O]ptions' })
-map('n', '<leader>fb', ':Telescope buffers<cr>', { desc = '[F]ind [B]uffers' })
-map('n', '<leader>fk', ':Telescope keymaps<cr>', { desc = '[F]ind [K]eymaps' })
-map('n', '<leader>fd', ':Telescope diagnostics<cr>', { desc = '[F]ind [D]iagnostics' })
+map('n', '<leader>fh', ':Telescope help_tags<cr>', { desc = 'Find Help' })
+map('n', '<leader>fo', ':Telescope vim_options<cr>', { desc = 'Find Options' })
+map('n', '<leader>fb', ':Telescope buffers<cr>', { desc = 'Find Buffers' })
+map('n', '<leader>fk', ':Telescope keymaps<cr>', { desc = 'Find Keymaps' })
+map('n', '<leader>fd', ':Telescope diagnostics<cr>', { desc = 'Find Diagnostics' })

@@ -4,21 +4,20 @@ local map = require('hbb.utils').map
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-map('n', '<leader>rl', ':so %<CR>', { desc = '[R]eload current lua file' })
-map('n', '<leader>e', '<C-w>')
-map('n', '<leader>ln', ':set number! norelativenumber<cr>')
+-- Source current file
+map('n', '<leader>rl', ':so %<CR>', { desc = 'Reload current lua file' })
 
 -- Clear search with <esc>
 map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 
 --- Saving
-map({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr>')
-map('n', '<leader>w', '<cmd>w<cr>')
-map('n', '<leader>ww', '<cmd>noa w<cr>')
+map({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr>', { desc = 'Save buffer' })
+map('n', '<leader>w', '<cmd>w<cr>', { desc = 'Save buffer' })
+map('n', '<leader>ww', '<cmd>noa w<cr>', { desc = 'Save all buffers' })
 
 -- Quitting
-map('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
-map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit all' })
+map('n', '<leader>q', ':q!<cr>', { desc = 'Quit buffer' })
+map('n', '<leader>qq', ':qa!<cr>', { desc = 'Quit all buffers' })
 
 -- better indenting
 map('v', '<', '<gv')
@@ -30,8 +29,8 @@ map('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
 -- Buffer navigation
 map('n', '<S-l>', ':bnext<CR>', { desc = 'Next buffer' })
 map('n', '<S-h>', ':bprevious<CR>', { desc = 'Previous buffer' })
-map('n', '<leader>bd', ':bdelete<cr>', { desc = '[B]uffer [D]elete' })
-map('n', '<leader>bD', ':bufdo bd<cr>', { desc = '[B]uffer [D]elete all' })
+map('n', '<leader>bd', ':bdelete<cr>', { desc = 'Buffer Delete' })
+map('n', '<leader>bD', ':bufdo bd<cr>', { desc = 'Buffer Delete all' })
 map('n', '<leader>;', '<C-^>', { desc = 'Toggle last buffers' }) -- toggle last buffers
 
 -- Better window navigation
@@ -45,12 +44,6 @@ map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map('v', 'p', '"_dP', { desc = 'Paste over selection' })
 
--- Disable arrows
-map('n', '<Left>', ':lua print("Use h")<cr>', { desc = 'Disable arrow left' })
-map('n', '<Right>', ':lua print("Use l")<cr>', { desc = 'Disable arrow right' })
-map('n', '<Up>', ':lua print("Use k")<cr>', { desc = 'Disable arrow up' })
-map('n', '<Down>', ':lua print("Use j")<cr>', { desc = 'Disable arrow down' })
-
 -- Quickfix
 map('n', '<leader>ck', ':cexpr []<cr>', { desc = 'Clear list' })
 map('n', '<leader>cc', ':cclose <cr>', { desc = 'Close list' })
@@ -60,15 +53,15 @@ map('n', '<leader>cp', ':cprev<cr>zz', { desc = 'Prev Item' })
 map('n', '<leader>cn', ':cnext<cr>zz', { desc = 'Next Item' })
 
 -- Git (Fugitive)
-map('n', '<leader>g', ':G<cr>', { desc = '[G]it fugitive' })
-map('n', '<leader>dh', ':diffget //2<cr>', { desc = '[D]iff [H]unk' })
-map('n', '<leader>dl', ':diffget //3<cr>', { desc = '[D]iff [L]eft' })
+map('n', '<leader>g', ':G<cr>', { desc = 'Git fugitive' })
+map('n', '<leader>dh', ':diffget //2<cr>', { desc = 'Diff Hunk' })
+map('n', '<leader>dl', ':diffget //3<cr>', { desc = 'Diff Left' })
 
 -- Search & Replace
-map('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace current word' })
+map('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word' })
 
 -- Markdown
-map('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', { desc = '[M]arkdown [P]review' })
+map('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', { desc = 'Markdown Preview' })
 
 -- Toggle relative number
-map('n', '<leader>rn', ':set relativenumber!<cr>', { desc = '[R]elative [N]umber' })
+map('n', '<leader>rn', ':set relativenumber!<cr>', { desc = 'Relative Number' })
