@@ -40,9 +40,9 @@ map('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
 map('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
 
 -- better up/down
-map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-map('v', 'p', '"_dP', { desc = 'Paste over selection' })
+map('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move line up' })
+map('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move line down' })
+map('v', 'p', '"_dP', { desc = '[P] paste' })
 
 -- Quickfix
 map('n', '<leader>ck', ':cexpr []<cr>', { desc = 'Clear list' })
