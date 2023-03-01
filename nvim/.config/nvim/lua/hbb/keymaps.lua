@@ -52,11 +52,6 @@ map('n', '<leader>cf', ':cfdo %s/', { desc = 'Search & Replace' })
 map('n', '<leader>cp', ':cprev<cr>zz', { desc = 'Prev Item' })
 map('n', '<leader>cn', ':cnext<cr>zz', { desc = 'Next Item' })
 
--- Git (Fugitive)
-map('n', '<leader>g', ':G<cr>', { desc = 'Git fugitive' })
-map('n', '<leader>dh', ':diffget //2<cr>', { desc = 'Diff Hunk' })
-map('n', '<leader>dl', ':diffget //3<cr>', { desc = 'Diff Left' })
-
 -- Search & Replace
 map('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word' })
 
