@@ -36,6 +36,7 @@ return packer.startup(function(use)
       })
     end,
   })
+  use('prisma/vim-prisma')
 
   -- Markdown Preview
   use({

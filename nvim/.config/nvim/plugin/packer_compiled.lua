@@ -237,6 +237,11 @@ _G.packer_plugins = {
     path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-prisma"] = {
+    loaded = true,
+    path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/vim-prisma",
+    url = "https://github.com/prisma/vim-prisma"
+  },
   ["vim-repeat"] = {
     loaded = true,
     path = "/Users/hberto/.local/share/nvim/site/pack/packer/start/vim-repeat",
