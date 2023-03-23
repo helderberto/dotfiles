@@ -1,3 +1,4 @@
+-- https://github.com/VonHeikemen/lsp-zero.nvim/blob/main/advance-usage.md
 local lsp = require('lsp-zero')
 local map = require('hbb.utils').map
 
@@ -43,15 +44,44 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<CR>'] = cmp.mapping.confirm({ select = true }),
 })
 
+-- Mason
+map('n', '<leader>lI', ':Mason<cr>', { desc = 'Mason' })
+
 -- disable completion with tab
 -- this helps with copilot setup
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({ mapping = cmp_mappings })
+lsp.setup_nvim_cmp({
+  mapping = cmp_mappings,
+  sources = {
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer',  keyword_length = 3 },
+    { name = 'luasnip', keyword_length = 2 },
+    { name = 'nvim_lua' },
+  },
+  formatting = {
+    -- changing the order of fields so the icon is the first
+    fields = { 'menu', 'abbr', 'kind' },
+    -- here is where the change happens
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = 'λ',
+        luasnip = '⋗',
+        buffer = 'Ω',
+        path = '🖫',
+        nvim_lua = 'Π',
+      }
+
+      item.menu = menu_icon[entry.source.name]
+      return item
+    end,
+  },
+})
 
 lsp.set_preferences({
-  suggest_lsp_servers = true,
+  suggest_lsp_servers = false,
   sign_icons = {
     error = 'E',
     warn = 'W',
@@ -128,11 +158,6 @@ lsp.on_attach(function(_, bufnr)
     noremap = true,
     desc = 'LSP Info',
   })
-  map('n', '<leader>lI', ':LspInstallInfo<CR>', {
-    buffer = bufnr,
-    noremap = true,
-    desc = 'LSP Install Info',
-  })
 end)
 
 local null_ls = require('null-ls')
@@ -146,28 +171,24 @@ local null_opts = lsp.build_options('null-ls', {
 })
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
+local lint = null_ls.builtins.diagnostics
 local action = null_ls.builtins.code_actions
-local completion = null_ls.builtins.completion
 
 null_ls.setup({
+  debug = true,
   on_attach = null_opts.on_attach,
   sources = {
     -- formatting
     formatting.prettier,
     formatting.stylua, -- Lua
 
-    -- diagnostics
-    diagnostics.eslint,
-    diagnostics.credo,   -- Elixir
-    diagnostics.rubocop, -- Ruby
+    -- linting
+    lint.eslint,
+    lint.credo,   -- Elixir
+    lint.rubocop, -- Ruby
 
     -- code actions
     action.eslint,
-    action.refactoring,
-
-    -- completion
-    completion.spell,
   },
 })
 
@@ -175,5 +196,5 @@ lsp.setup()
 
 vim.diagnostic.config({
   virtual_text = true,
-  sort_severity = true,
+  underline = true,
 })
