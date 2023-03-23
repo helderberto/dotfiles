@@ -19,7 +19,6 @@ return packer.startup(function(use)
   use('tpope/vim-fugitive')            -- Git commands in nvim
   use('tpope/vim-repeat')              -- Enable repeating supported plugin maps with "."
   use('tpope/vim-surround')            -- Easily delete/change/add surroundings in pairs
-  use('tpope/vim-commentary')          -- Comment stuff out
   use('hoob3rt/lualine.nvim')          -- Status line
   use('editorconfig/editorconfig-vim') -- EditorConfig support
   use('windwp/nvim-autopairs')         -- Insert or delete brackets, parens, quotes in pair
@@ -41,6 +40,12 @@ return packer.startup(function(use)
     'RRethy/vim-illuminate', -- Highlight all instances of the word under the cursor
     config = function()
       vim.g.Illuminate_delay = 100
+    end,
+  })
+  use({
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
     end,
   })
 
