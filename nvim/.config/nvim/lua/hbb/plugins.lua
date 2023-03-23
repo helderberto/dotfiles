@@ -48,6 +48,12 @@ return packer.startup(function(use)
       require('Comment').setup()
     end,
   })
+  use({
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end,
+  })
 
   -- Markdown Preview
   use({
