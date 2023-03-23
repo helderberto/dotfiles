@@ -149,7 +149,7 @@ null_ls.setup({
 
     -- diagnostics
     diagnostics.eslint,
-    diagnostics.credo, -- Elixir
+    diagnostics.credo,   -- Elixir
     diagnostics.rubocop, -- Ruby
 
     -- code actions
@@ -164,6 +164,6 @@ null_ls.setup({
 lsp.setup()
 
 vim.diagnostic.config({
-  virtual_text = false, -- disable virtual text
+  virtual_text = true,
   sort_severity = true,
 })
