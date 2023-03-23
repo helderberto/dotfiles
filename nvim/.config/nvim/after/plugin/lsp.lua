@@ -6,7 +6,6 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'lua_ls',
   'cssls',
   'html',
   'jsonls',
@@ -15,10 +14,21 @@ lsp.ensure_installed({
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
+  cmd = { 'lua-language-server' },
   settings = {
     Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = vim.split(package.path, ';'),
+      },
       diagnostics = {
         globals = { 'vim' },
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        },
       },
     },
   },
@@ -41,7 +51,7 @@ cmp_mappings['<S-Tab>'] = nil
 lsp.setup_nvim_cmp({ mapping = cmp_mappings })
 
 lsp.set_preferences({
-  suggest_lsp_servers = false,
+  suggest_lsp_servers = true,
   sign_icons = {
     error = 'E',
     warn = 'W',
