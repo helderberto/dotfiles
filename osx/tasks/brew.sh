@@ -93,7 +93,7 @@ brew install --cask raycast # Override native Spotlight from MacOS
 brew install --cask postman
 brew install --cask insomnia
 brew install --cask logseq # Note-taking - PKM
-brew install --cask arc # Arc browser chromium based
+brew install --cask brave-browser # Privacy browser
 
 # Remove outdated versions from the cellar.
 brew cleanup
