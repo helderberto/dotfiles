@@ -32,10 +32,6 @@ pcall(require, 'impatient')
 -- Disable builtin plugins and other things that I don't want.
 require('hbb.disable_builtin')
 
-if require('hbb.first_load')() then
-  return
-end
-
 -- Settings.lua contains all global options that are set. Most of these will
 -- should have a description. This has to come first, since it defines the
 -- mapleader, and many many other keymappings require that to be set.

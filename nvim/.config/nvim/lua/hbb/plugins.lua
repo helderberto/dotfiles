@@ -1,8 +1,11 @@
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, 'packer')
-if not status_ok then
-  return
+local fn = vim.fn
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap =
+      fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
+
+local _, packer = pcall(require, 'packer')
 
 -- Have packer use a popup window
 packer.init({
@@ -118,4 +121,10 @@ return packer.startup(function(use)
   use({ 'dracula/vim', as = 'dracula' })
 
   use('folke/zen-mode.nvim')
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
