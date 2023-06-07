@@ -66,6 +66,13 @@ return packer.startup(function(use)
       'MunifTanjim/nui.nvim',
     },
   })
+  use({
+    's1n7ax/nvim-window-picker',
+    tag = 'v2.*',
+    config = function()
+      require('window-picker').setup()
+    end,
+  })
 
   -- Treesitter Syntax Highlighting
   use({
