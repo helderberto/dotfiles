@@ -33,12 +33,11 @@ return packer.startup(function(use)
       vim.g.Illuminate_delay = 100
     end,
   })
-  use({
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end,
-  })
+
+  -- Comments
+  use('numToStr/Comment.nvim')
+  use('JoosepAlviste/nvim-ts-context-commentstring') -- make comments work on JSX
+
   use({
     'lewis6991/gitsigns.nvim',
     config = function()
