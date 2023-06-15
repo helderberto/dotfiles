@@ -36,12 +36,44 @@ lsp.configure('lua_ls', {
 })
 
 local cmp = require('cmp')
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-Space>'] = cmp.mapping.complete(),
   ['<CR>'] = cmp.mapping.confirm({ select = true }),
+})
+
+cmp.setup({
+  mapping = cmp_mappings,
+  sources = {
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer',  keyword_length = 3 },
+    { name = 'luasnip', keyword_length = 2 },
+    { name = 'nvim_lua' },
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.kind = lsp.symbols[vim_item.kind]
+      vim_item.menu = ({
+        nvim_lsp = '[LSP]',
+        luasnip = '[LuaSnip]',
+        buffer = '[Buffer]',
+        path = '[Path]',
+        nvim_lua = '[Lua]',
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
 })
 
 -- Mason
@@ -52,33 +84,7 @@ map('n', '<leader>lI', ':Mason<cr>', { desc = 'Mason' })
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings,
-  sources = {
-    { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'buffer',  keyword_length = 3 },
-    { name = 'luasnip', keyword_length = 2 },
-    { name = 'nvim_lua' },
-  },
-  formatting = {
-    -- changing the order of fields so the icon is the first
-    fields = { 'menu', 'abbr', 'kind' },
-    -- here is where the change happens
-    format = function(entry, item)
-      local menu_icon = {
-        nvim_lsp = 'λ',
-        luasnip = '⋗',
-        buffer = 'Ω',
-        path = '🖫',
-        nvim_lua = 'Π',
-      }
-
-      item.menu = menu_icon[entry.source.name]
-      return item
-    end,
-  },
-})
+lsp.setup_nvim_cmp({})
 
 lsp.set_preferences({
   suggest_lsp_servers = false,
