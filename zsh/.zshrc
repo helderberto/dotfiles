@@ -37,6 +37,9 @@ unset file
 
 [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Bind autocomplete to tab
+bindkey '\t' autosuggest-accept
+
 # Add `~/bin` to the `$PATH`
 export PATH="$PATH:/usr/local/bin";
 export PATH="/usr/local/sbin:$PATH"
