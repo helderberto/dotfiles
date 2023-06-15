@@ -72,25 +72,13 @@ return packer.startup(function(use)
       'MunifTanjim/nui.nvim',
     },
   })
-  use({
-    's1n7ax/nvim-window-picker',
-    tag = 'v2.*',
-    config = function()
-      require('window-picker').setup()
-    end,
-  })
 
   -- Treesitter Syntax Highlighting
   use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     requires = {
-      {
-        'windwp/nvim-ts-autotag',
-        config = function()
-          require('nvim-ts-autotag').setup()
-        end,
-      },
+      'windwp/nvim-ts-autotag',
     },
   })
 

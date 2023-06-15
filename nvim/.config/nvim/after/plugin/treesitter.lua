@@ -32,3 +32,5 @@ require('nvim-treesitter.configs').setup({
     enable_autocmd = false,
   },
 })
+
+require('nvim-ts-autotag').setup()

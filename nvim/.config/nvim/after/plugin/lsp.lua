@@ -175,7 +175,6 @@ local lint = null_ls.builtins.diagnostics
 local action = null_ls.builtins.code_actions
 
 null_ls.setup({
-  debug = true,
   on_attach = null_opts.on_attach,
   sources = {
     -- formatting
