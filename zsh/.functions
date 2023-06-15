@@ -2,11 +2,11 @@
 
 # Create a new directory and enter it
 function md() {
-	mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd "$@"
 }
 
 # Find shorthand
 function f() {
-	find . -name "$1" 2>&1 | grep -v 'Permission denied'
+  find . -name "$1" 2>&1 | grep -v 'Permission denied'
 }
 
