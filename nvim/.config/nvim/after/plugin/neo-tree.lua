@@ -36,11 +36,8 @@ require('neo-tree').setup({
     icon = {
       folder_closed = '',
       folder_open = '',
-      folder_empty = 'ﰊ',
-      -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
-      -- then these will never be used.
-      default = '*',
-      highlight = 'NeoTreeFileIcon',
+      folder_empty = '󰜌',
+      folder_empty_open = '󰜌',
     },
     modified = {
       symbol = '[+]',
@@ -50,6 +47,33 @@ require('neo-tree').setup({
       trailing_slash = false,
       use_git_status_colors = true,
       highlight = 'NeoTreeFileName',
+    },
+    git_status = {
+      symbols = {
+        renamed = '󰁕',
+        unstaged = '󰄱',
+        staged = '󰅫',
+      },
+    },
+  },
+  document_symbols = {
+    kinds = {
+      File = { icon = '󰈙', hl = 'Tag' },
+      Namespace = { icon = '󰌗', hl = 'Include' },
+      Package = { icon = '󰏖', hl = 'Label' },
+      Class = { icon = '󰌗', hl = 'Include' },
+      Property = { icon = '󰆧', hl = '@property' },
+      Enum = { icon = '󰒻', hl = '@number' },
+      Function = { icon = '󰊕', hl = 'Function' },
+      String = { icon = '󰀬', hl = 'String' },
+      Number = { icon = '󰎠', hl = 'Number' },
+      Array = { icon = '󰅪', hl = 'Type' },
+      Object = { icon = '󰅩', hl = 'Type' },
+      Key = { icon = '󰌋', hl = '' },
+      Struct = { icon = '󰌗', hl = 'Type' },
+      Operator = { icon = '󰆕', hl = 'Operator' },
+      TypeParameter = { icon = '󰊄', hl = 'Type' },
+      StaticMethod = { icon = '󰠄 ', hl = 'Function' },
     },
   },
   window = {
@@ -169,20 +193,6 @@ require('neo-tree').setup({
         ['bd'] = 'buffer_delete',
         ['<bs>'] = 'navigate_up',
         ['.'] = 'set_root',
-      },
-    },
-  },
-  git_status = {
-    window = {
-      position = 'float',
-      mappings = {
-        ['A'] = 'git_add_all',
-        ['gu'] = 'git_unstage_file',
-        ['ga'] = 'git_add_file',
-        ['gr'] = 'git_revert_file',
-        ['gc'] = 'git_commit',
-        ['gp'] = 'git_push',
-        ['gg'] = 'git_commit_and_push',
       },
     },
   },

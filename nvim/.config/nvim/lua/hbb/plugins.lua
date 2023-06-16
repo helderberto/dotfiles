@@ -2,7 +2,7 @@ local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap =
-      fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
 local _, packer = pcall(require, 'packer')
@@ -19,12 +19,11 @@ packer.init({
 return packer.startup(function(use)
   use('wbthomason/packer.nvim')
   use('lewis6991/impatient.nvim') -- Speed up loading Lua modules to improve startup time
-  use('tpope/vim-fugitive')       -- Git commands in nvim
-  use('tpope/vim-repeat')         -- Enable repeating supported plugin maps with "."
-  use('tpope/vim-surround')       -- Easily delete/change/add surroundings in pairs
-  use('hoob3rt/lualine.nvim')     -- Status line
-  use('windwp/nvim-autopairs')    -- Insert or delete brackets, parens, quotes in pair
-  use({ 'github/copilot.vim', branch = 'release' })
+  use('tpope/vim-fugitive') -- Git commands in nvim
+  use('tpope/vim-repeat') -- Enable repeating supported plugin maps with "."
+  use('tpope/vim-surround') -- Easily delete/change/add surroundings in pairs
+  use('hoob3rt/lualine.nvim') -- Status line
+  use('windwp/nvim-autopairs') -- Insert or delete brackets, parens, quotes in pair
   use('folke/which-key.nvim')
   use('prisma/vim-prisma')
   use({
@@ -33,6 +32,7 @@ return packer.startup(function(use)
       vim.g.Illuminate_delay = 100
     end,
   })
+  use('github/copilot.vim')
 
   -- Comments
   use('numToStr/Comment.nvim')
