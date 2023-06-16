@@ -52,7 +52,7 @@ cmp.setup({
   sources = {
     { name = 'path' },
     { name = 'nvim_lsp' },
-    { name = 'buffer',  keyword_length = 3 },
+    { name = 'buffer', keyword_length = 3 },
     { name = 'luasnip', keyword_length = 2 },
     { name = 'nvim_lua' },
   },
@@ -171,7 +171,7 @@ local null_ls = require('null-ls')
 local null_opts = lsp.build_options('null-ls', {
   on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
-      vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format()')
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ name = 'null-ls' })")
     end
   end,
 })
@@ -189,7 +189,7 @@ null_ls.setup({
 
     -- linting
     lint.eslint,
-    lint.credo,   -- Elixir
+    lint.credo, -- Elixir
     lint.rubocop, -- Ruby
 
     -- code actions
