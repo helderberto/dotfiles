@@ -1,7 +1,7 @@
 local map = require('hbb.utils').map
 
 -- Git (Fugitive)
-map('n', '<leader>gs', ':G<cr>', { desc = 'Git status' })
+map('n', '<leader>gg', ':G<cr>', { desc = 'Git status' })
 map('n', '<leader>dh', ':diffget //2<cr>', { desc = 'Git Diff Hunk' })
 map('n', '<leader>dl', ':diffget //3<cr>', { desc = 'Git Diff Left' })
 map('n', '<leader>ga', '<cmd>Gwrite<cr>', { desc = 'Git add' })
