@@ -25,7 +25,6 @@ return packer.startup(function(use)
   use('hoob3rt/lualine.nvim') -- Status line
   use('windwp/nvim-autopairs') -- Insert or delete brackets, parens, quotes in pair
   use('folke/which-key.nvim')
-  use('prisma/vim-prisma')
   use({
     'RRethy/vim-illuminate', -- Highlight all instances of the word under the cursor
     config = function()
