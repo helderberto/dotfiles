@@ -33,6 +33,7 @@ return packer.startup(function(use)
   })
   use('github/copilot.vim')
   use('christoomey/vim-tmux-navigator') -- Seamless navigation between tmux panes and vim splits
+  use({ 'akinsho/toggleterm.nvim', tag = '*' })
 
   -- Comments
   use('numToStr/Comment.nvim')
