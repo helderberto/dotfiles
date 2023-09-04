@@ -40,10 +40,17 @@ end
 vim.cmd([[autocmd TermOpen * lua set_terminal_keycaps()]])
 
 local Terminal = require('toggleterm.terminal').Terminal
-local lagygit = Terminal:new({ cmd = 'lazygit', hidden = true, direction = 'float' })
 
+local lagygit = Terminal:new({ cmd = 'lazygit', hidden = true, direction = 'float' })
 function _G.__lazygit_toggle()
   lagygit:toggle()
 end
 
+local node = Terminal:new({ cmd = 'node', hidden = true, direction = 'float' })
+function _G.__node_toggle()
+  node:toggle()
+end
+
+-- Keybindings
 map('n', '<leader>lg', '<cmd>lua __lazygit_toggle()<CR>')
+map('n', '<leader>nt', '<cmd>lua __node_toggle()<CR>')
