@@ -38,6 +38,7 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+
 
 # Git
 alias g="git"
+alias lg="lazygit"
 
 # {n}vim
 alias v="nvim"
