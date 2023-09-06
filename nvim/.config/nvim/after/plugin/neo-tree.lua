@@ -77,8 +77,9 @@ require('neo-tree').setup({
     },
   },
   window = {
-    position = 'left',
-    width = 50,
+    position = 'current',
+    -- position = 'left',
+    width = 45,
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -162,7 +163,8 @@ require('neo-tree').setup({
     follow_current_file = true, -- This will find and focus the file in the active buffer every
     -- time the current file is changed while the tree is open.
     group_empty_dirs = false, -- when true, empty folders will be grouped together
-    hijack_netrw_behavior = 'open_default', -- netrw disabled, opening a directory opens neo-tree
+    -- hijack_netrw_behavior = 'open_default', -- netrw disabled, opening a directory opens neo-tree
+    hijack_netrw_behavior = 'open_current', -- netrw disabled, opening a directory opens neo-tree
     -- in whatever position is specified in window.position
     -- "open_current",  -- netrw disabled, opening a directory opens within the
     -- window like netrw would, regardless of window.position
@@ -199,6 +201,8 @@ require('neo-tree').setup({
 })
 
 -- Keymaps
-map('n', '<leader>n', ':Neotree toggle reveal_file=%:p<CR>', { desc = 'Neotree Toggle' })
-map('n', '<leader>.', ':Neotree reveal_file=%:p<CR>', { desc = 'Neotree Current File' })
+-- map('n', '<leader>n', ':Neotree toggle reveal_file=%:p<CR>', { desc = 'Neotree Toggle' })
+-- map('n', '<leader>.', ':Neotree reveal_file=%:p<CR>', { desc = 'Neotree Current File' })
+map('n', '<leader>n', ':Neotree position=float reveal_file=%:p<CR>', { desc = 'Neotree Float' })
+map('n', '<leader>.', ':Neotree toggle reveal_file=%:p<CR>', { desc = 'Neotree Current File' })
 map('n', '<leader>ng', ':Neotree git_status<CR>', { desc = 'Neotree Git Status' })
