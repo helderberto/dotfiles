@@ -21,7 +21,6 @@ return packer.startup(function(use)
   use('lewis6991/impatient.nvim') -- Speed up loading Lua modules to improve startup time
   use('tpope/vim-fugitive') -- Git commands in nvim
   use('tpope/vim-repeat') -- Enable repeating supported plugin maps with "."
-  use('tpope/vim-surround') -- Easily delete/change/add surroundings in pairs
   use('hoob3rt/lualine.nvim') -- Status line
   use('windwp/nvim-autopairs') -- Insert or delete brackets, parens, quotes in pair
   use('folke/which-key.nvim')
@@ -34,6 +33,10 @@ return packer.startup(function(use)
   use('github/copilot.vim')
   use('christoomey/vim-tmux-navigator') -- Seamless navigation between tmux panes and vim splits
   use({ 'akinsho/toggleterm.nvim', tag = '*' })
+  use({
+    'kylechui/nvim-surround',
+    tag = '*', -- Use for stability; omit to use `main` branch for the latest features
+  })
 
   -- Comments
   use('numToStr/Comment.nvim')
