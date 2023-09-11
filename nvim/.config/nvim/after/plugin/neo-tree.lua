@@ -201,8 +201,7 @@ require('neo-tree').setup({
 })
 
 -- Keymaps
--- map('n', '<leader>n', ':Neotree toggle reveal_file=%:p<CR>', { desc = 'Neotree Toggle' })
--- map('n', '<leader>.', ':Neotree reveal_file=%:p<CR>', { desc = 'Neotree Current File' })
-map('n', '<leader>n', ':Neotree position=float reveal_file=%:p<CR>', { desc = 'Neotree Float' })
-map('n', '<leader>.', ':Neotree toggle reveal_file=%:p<CR>', { desc = 'Neotree Current File' })
+map('n', '<leader>n', ':Neotree position=left toggle=true reveal<CR>', { desc = 'Neotree' })
+map('n', '<leader>.', ':Neotree toggle reveal<CR>', { desc = 'Neotree Current File' })
 map('n', '<leader>ng', ':Neotree git_status<CR>', { desc = 'Neotree Git Status' })
+map('n', '<leader>nt', ':Neotree position=float toggle=true reveal<CR>', { desc = 'Neotree Float' })
