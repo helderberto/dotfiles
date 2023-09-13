@@ -22,15 +22,13 @@ alias brm="brew uninstall"
 alias bu="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
 alias bc='brew install --cask'
 
-# ls overwrite by exa
-# https://the.exa.website/
-alias l='exa'
-alias ls='exa'
-alias ll='exa -l'
-alias lll='exa -l | less'
-alias lla='exa -la'
-alias llt='exa -T'
-alias llfu='exa -bghHliS --git'
+# ls overwrite by lsd
+# https://github.com/lsd-rs/lsd
+alias ls='lsd' # https://github.com/lsd-rs/lsd#optional
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 # Net
 alias iplocal="ipconfig getifaddr en0"

@@ -48,7 +48,7 @@ brew install --cask font-hack-nerd-font
 # Install useful packages/binaries
 brew install antigen
 brew install cmake
-brew install exa
+brew install lsd # replace ls command
 brew install fd
 brew install fzf
 brew install git
