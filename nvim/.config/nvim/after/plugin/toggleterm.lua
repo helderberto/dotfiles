@@ -8,6 +8,7 @@ local map = require('hbb.utils').map
 toggleterm.setup({
   size = 20,
   open_mapping = [[<c-\>]],
+  direction = 'horizontal',
   hide_numbers = true,
   shade_filetypes = {},
   shade_terminals = true,
@@ -15,11 +16,9 @@ toggleterm.setup({
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  direction = 'float',
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
-    border = 'curved',
     winblend = 0,
     highlights = {
       border = 'Normal',
@@ -51,6 +50,12 @@ function _G.__node_toggle()
   node:toggle()
 end
 
+local elixir = Terminal:new({ cmd = 'iex', hidden = true, direction = 'float' })
+function _G.__elixir_toggle()
+  elixir:toggle()
+end
+
 -- Keybindings
 map('n', '<leader>lg', '<cmd>lua __lazygit_toggle()<CR>')
 map('n', '<leader>nt', '<cmd>lua __node_toggle()<CR>')
+map('n', '<leader>ex', '<cmd>lua __elixir_toggle()<CR>')
