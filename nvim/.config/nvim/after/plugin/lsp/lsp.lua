@@ -1,6 +1,5 @@
 -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/main/advance-usage.md
 local lsp = require('lsp-zero')
-local map = require('hbb.utils').map
 
 lsp.preset('recommended')
 
@@ -11,6 +10,7 @@ lsp.ensure_installed({
   'html',
   'jsonls',
   'elixirls',
+  'gopls',
 })
 
 -- Fix Undefined global 'vim'
@@ -70,6 +70,8 @@ null_ls.setup({
     lint.eslint,
     lint.credo, -- Elixir
     lint.rubocop, -- Ruby
+    lint.golangci_lint, -- Go
+    lint.shellcheck, -- Shell
 
     -- code actions
     action.eslint,
