@@ -80,6 +80,7 @@ brew install ag
 brew install --cask alacritty
 brew install --cask figma
 brew install --cask google-chrome
+brew install --cask arc # My default browser
 brew install --cask imageoptim
 brew install --cask slack
 brew install --cask discord
@@ -93,7 +94,7 @@ brew install --cask raycast # Override native Spotlight from MacOS
 brew install --cask postman
 brew install --cask insomnia
 brew install --cask logseq # Note-taking - PKM
-brew install --cask brave-browser # Privacy browser
+brew install --cask todoist # Task manager
 
 # Remove outdated versions from the cellar.
 brew cleanup
