@@ -1,4 +1,5 @@
 -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/main/advance-usage.md
+-- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/lsp.md#you-might-not-need-lsp-zero
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
@@ -63,18 +64,16 @@ null_ls.setup({
   on_attach = null_opts.on_attach,
   sources = {
     -- formatting
-    formatting.prettier,
+    formatting.prettierd, -- JavaScript / TypeScript
     formatting.stylua, -- Lua
 
     -- linting
-    lint.eslint,
+    lint.eslint_d, -- JavaScript / TypeScript
     lint.credo, -- Elixir
-    lint.rubocop, -- Ruby
     lint.golangci_lint, -- Go
-    lint.shellcheck, -- Shell
 
     -- code actions
-    action.eslint,
+    action.eslint_d, -- JavaScript / TypeScript
   },
 })
 
