@@ -15,16 +15,18 @@ require('nvim-treesitter.configs').setup({
     'elixir',
     'ruby',
   },
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = true,
+    disable = {},
+  },
   autopairs = {
     enable = true,
   },
   autotag = {
-    enable = true,
-  },
-  highlight = {
-    enable = true, -- false will disable the whole extension
-  },
-  indent = {
     enable = true,
   },
   context_commentstring = {
@@ -33,4 +35,5 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
-require('nvim-ts-autotag').setup()
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { 'javascript', 'typescript.tsx' }

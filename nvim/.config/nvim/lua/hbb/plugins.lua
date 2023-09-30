@@ -1,5 +1,7 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local packer_bootstrap = nil
+
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap =
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
@@ -22,7 +24,6 @@ return packer.startup(function(use)
   use('tpope/vim-fugitive') -- Git commands in nvim
   use('tpope/vim-repeat') -- Enable repeating supported plugin maps with "."
   use('hoob3rt/lualine.nvim') -- Status line
-  use('windwp/nvim-autopairs') -- Insert or delete brackets, parens, quotes in pair
   use('folke/which-key.nvim')
   use({
     'RRethy/vim-illuminate', -- Highlight all instances of the word under the cursor
@@ -37,19 +38,11 @@ return packer.startup(function(use)
     'kylechui/nvim-surround',
     tag = '*', -- Use for stability; omit to use `main` branch for the latest features
   })
-
-  -- Comments
-  use('numToStr/Comment.nvim')
-  use('JoosepAlviste/nvim-ts-context-commentstring') -- make comments work on JSX
-
-  use({
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end,
-  })
-
-  -- Markdown Preview
+  use('lewis6991/gitsigns.nvim')
+  use('dinhhuy258/git.nvim') -- For git blame & browse
+  use({ 'numToStr/Comment.nvim', requires = {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+  } })
   use({
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
@@ -58,8 +51,6 @@ return packer.startup(function(use)
     end,
     ft = { 'markdown' },
   })
-
-  -- File Explorer
   use({
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
@@ -69,16 +60,14 @@ return packer.startup(function(use)
       'MunifTanjim/nui.nvim',
     },
   })
-
-  -- Treesitter Syntax Highlighting
   use({
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    requires = {
-      'windwp/nvim-ts-autotag',
-    },
+    run = function()
+      require('nvim-treesitter.install').update({ with_sync = true })
+    end,
   })
-
+  use('windwp/nvim-autopairs') -- Insert or delete brackets, parens, quotes in pair
+  use('windwp/nvim-ts-autotag') -- Automatically close HTML tags
   use({
     'VonHeikemen/lsp-zero.nvim',
     requires = {
@@ -103,8 +92,6 @@ return packer.startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     },
   })
-
-  -- Telescope - Fuzzy Finder
   use({
     'nvim-telescope/telescope.nvim',
     requires = {
@@ -114,10 +101,7 @@ return packer.startup(function(use)
       { 'kyazdani42/nvim-web-devicons' },
     },
   })
-
-  -- Theme
   use({ 'dracula/vim', as = 'dracula' })
-
   use('folke/zen-mode.nvim')
 
   -- Automatically set up your configuration after cloning packer.nvim
