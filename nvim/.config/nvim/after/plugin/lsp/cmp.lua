@@ -3,19 +3,9 @@ if not cmp_status_ok then
   return
 end
 
-local lsp = require('lsp-zero')
-
 require('luasnip/loaders/from_vscode').lazy_load()
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-Space>'] = cmp.mapping.complete(),
-  -- Accept currently selected item. If none selected, `select` first item.
-  -- Set `select` to `false` to only confirm explicitly selected items.
-  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-})
 
 local kind_icons = {
   Text = '󰀬',
@@ -47,16 +37,23 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 -- Disable <Tab> and <S-Tab> mappings
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({
+cmp.setup({
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,
   },
-  mapping = cmp_mappings,
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    -- Accept currently selected item. If none selected, `select` first item.
+    -- Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = nil,
+    ['<S-Tab>'] = nil,
+  },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
