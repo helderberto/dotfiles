@@ -1,9 +1,5 @@
 local map = require('hbb.utils').map
 
--- Leader key
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Source current file
 map('n', '<leader>rl', ':so %<CR>', { desc = 'Reload current lua file' })
 
@@ -63,3 +59,9 @@ map('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', { desc = 'Markdown Preview
 
 -- Toggle relative number
 map('n', '<leader>rn', ':set relativenumber!<cr>', { desc = 'Relative Number' })
+
+-- Tmux Navigator
+map('n', '<C-h>', '<cmd>TmuxNavigateLeft<cr>', { desc = 'Tmux Navigate Left' })
+map('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>', { desc = 'Tmux Navigate Down' })
+map('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>', { desc = 'Tmux Navigate Up' })
+map('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>', { desc = 'Tmux Navigate Right' })

@@ -32,8 +32,5 @@ vim.o.termguicolors = true -- set term gui colors most terminals support this
 vim.o.showmode = false -- Dont show mode since we have a statusline
 vim.o.updatetime = 250 -- Faster completion (default is 4000 ms = 4 s)
 
--- Enable theme Dracula
-vim.cmd('colorscheme dracula')
-
 -- Show diagnostics on cursor hold (default 500ms)
 vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
