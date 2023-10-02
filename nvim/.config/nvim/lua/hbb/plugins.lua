@@ -20,7 +20,6 @@ packer.init({
 
 return packer.startup(function(use)
   use('wbthomason/packer.nvim')
-  use('lewis6991/impatient.nvim') -- Speed up loading Lua modules to improve startup time
   use('tpope/vim-fugitive') -- Git commands in nvim
   use('tpope/vim-repeat') -- Enable repeating supported plugin maps with "."
   use('hoob3rt/lualine.nvim') -- Status line
