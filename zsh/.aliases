@@ -42,11 +42,6 @@ alias lg="lazygit"
 alias v="nvim"
 alias vim="nvim"
 
-# Yarn
-alias y="yarn"
-alias yui="yarn upgrade-interactive"
-alias yuil="yarn upgrade-interactive --latest"
-
 # Docker
 alias d="docker"
 alias dr="docker run"
@@ -81,3 +76,14 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% |
 
 # clear
 alias k="clear"
+
+# NPM
+alias ni="npm install"
+alias nis="npm install --save"
+alias nid="npm install --save-dev"
+alias nr="npm run"
+alias ns="npm run start"
+alias nd="npm run dev"
+alias nb="npm run build"
+alias nt="npm run test"
+alias ntw="npm run test:watch"
