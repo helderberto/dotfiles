@@ -15,7 +15,6 @@ return {
   { 'akinsho/toggleterm.nvim', version = '*' },
   { 'kylechui/nvim-surround', version = '*' },
   'lewis6991/gitsigns.nvim',
-  'dinhhuy258/git.nvim', -- For git blame & browse
   {
     'numToStr/Comment.nvim',
     dependencies = {
