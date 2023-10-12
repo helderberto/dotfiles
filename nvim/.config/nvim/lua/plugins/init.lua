@@ -22,12 +22,6 @@ return {
     },
   },
   {
-    'iamcco/markdown-preview.nvim',
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
-  },
-  {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
     dependencies = {

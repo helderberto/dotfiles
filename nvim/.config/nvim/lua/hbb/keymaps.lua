@@ -54,9 +54,6 @@ map('n', '<leader>cn', ':cnext<cr>zz', { desc = 'Next Item' })
 -- Search & Replace
 map('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word' })
 
--- Markdown
-map('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', { desc = 'Markdown Preview' })
-
 -- Toggle relative number
 map('n', '<leader>rn', ':set relativenumber!<cr>', { desc = 'Relative Number' })
 
