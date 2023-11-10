@@ -27,7 +27,7 @@ window:
   # DPI and the specified value is always added at both opposing sides.
   padding:
     x: 15
-    y: 5
+    y: 10
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
