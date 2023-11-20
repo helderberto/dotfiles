@@ -87,7 +87,6 @@ brew install --cask discord
 brew install --cask spotify
 brew install --cask 1password # Password manager - https://1password.com/
 brew install --cask grammarly
-brew install --cask rectangle
 brew install --cask visual-studio-code
 brew install --cask dozer # Hide menu Mac - https://github.com/Mortennn/Dozer
 brew install --cask raycast # Override native Spotlight from MacOS
