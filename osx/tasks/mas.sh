@@ -8,13 +8,6 @@ if ! has_app "The Unarchiver"; then
     msg_ok "OK"
 fi
 
-
-if ! has_app "Flycut"; then
-    msg_install "Flycut"
-    mas install 442160987
-    msg_ok "OK"
-fi
-
 if ! has_app "Amphetamine"; then
     msg_install "Amphetamine"
     mas install 937984704
