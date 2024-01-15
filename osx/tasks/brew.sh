@@ -94,6 +94,7 @@ brew install --cask postman
 brew install --cask insomnia
 brew install --cask logseq # Note-taking - PKM
 brew install --cask todoist # Task manager
+brew install --cask betterdisplay # Display resolution manager
 
 # Remove outdated versions from the cellar.
 brew cleanup
