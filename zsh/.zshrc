@@ -46,6 +46,9 @@ unset file
 
 # Bind autocomplete to tab
 # bindkey '\t' autosuggest-accept
+bindkey '\t' autosuggest-accept
+# bindkey '^I'   complete-word       # tab          | complete
+# bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 
 # Add `~/bin` to the `$PATH`
 export PATH="$PATH:/usr/local/bin";
