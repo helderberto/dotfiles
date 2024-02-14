@@ -46,7 +46,7 @@ unset file
 
 # Bind autocomplete to tab
 # bindkey '\t' autosuggest-accept
-bindkey '\t' autosuggest-accept
+bindkey '\t\t' autosuggest-accept # tab - tab
 # bindkey '^I'   complete-word       # tab          | complete
 # bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 
