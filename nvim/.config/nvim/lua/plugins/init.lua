@@ -11,7 +11,6 @@ return {
     end,
   },
   'github/copilot.vim',
-  -- 'christoomey/vim-tmux-navigator', -- Seamless navigation between tmux panes and vim splits
   { 'akinsho/toggleterm.nvim', version = '*' },
   { 'kylechui/nvim-surround', version = '*' },
   'lewis6991/gitsigns.nvim',

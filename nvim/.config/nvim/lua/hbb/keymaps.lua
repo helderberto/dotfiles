@@ -56,9 +56,3 @@ map('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 
 -- Toggle relative number
 map('n', '<leader>rn', ':set relativenumber!<cr>', { desc = 'Relative Number' })
-
--- Tmux Navigator
-map('n', '<C-h>', '<cmd>TmuxNavigateLeft<cr>', { desc = 'Tmux Navigate Left' })
-map('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>', { desc = 'Tmux Navigate Down' })
-map('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>', { desc = 'Tmux Navigate Up' })
-map('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>', { desc = 'Tmux Navigate Right' })
