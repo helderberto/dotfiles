@@ -148,13 +148,13 @@ key = "Key9"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u0001%"
-key = "N"
+chars = "\u0001\""
+key = "D"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
-chars = "\u0001\""
-key = "N"
+chars = "\u0001%"
+key = "D"
 mods = "Command"
 
 [[keyboard.bindings]]
