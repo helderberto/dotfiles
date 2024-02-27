@@ -1,8 +1,5 @@
 local map = require('hbb.utils').map
 
--- Source current file
-map('n', '<leader>rl', ':so %<CR>', { desc = 'Reload current lua file' })
-
 -- Clear search with <esc>
 map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 
