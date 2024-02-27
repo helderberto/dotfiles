@@ -57,5 +57,5 @@ end
 
 -- Keybindings
 map('n', '<leader>lg', '<cmd>lua __lazygit_toggle()<CR>')
-map('n', '<leader>nt', '<cmd>lua __node_toggle()<CR>')
+map('n', '<leader>nd', '<cmd>lua __node_toggle()<CR>')
 map('n', '<leader>ex', '<cmd>lua __elixir_toggle()<CR>')
