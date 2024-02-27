@@ -11,7 +11,6 @@ vim.o.hlsearch = true -- highlight all matches on previous search pattern
 vim.o.ignorecase = true -- ignore case in search patterns
 vim.o.title = true -- Show title at top of the terminal
 vim.o.titlestring = '%<%F%=%l/%L - nvim' -- what the title of the window will be set to
-vim.o.timeoutlen = 300 -- hold up 300ms after key press
 vim.o.hidden = true -- TextEdit might fail if hidden is not set
 vim.o.signcolumn = 'yes'
 vim.o.updatetime = 50 -- Update delay to 5ms
