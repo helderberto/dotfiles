@@ -46,6 +46,7 @@ return {
 
       -- Formatting, Linting
       { 'nvimtools/none-ls.nvim' },
+      { 'nvimtools/none-ls-extras.nvim' },
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },
