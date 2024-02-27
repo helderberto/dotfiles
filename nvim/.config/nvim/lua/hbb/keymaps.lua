@@ -12,8 +12,8 @@ map('n', '<leader>w', '<cmd>w<cr>', { desc = 'Save and format' })
 map('n', '<leader>ww', '<cmd>noa w<cr>', { desc = 'Save without format' })
 
 -- Quitting
-map('n', '<leader>q', ':q!<cr>', { desc = 'Quit buffer' })
-map('n', '<leader>qq', ':qa!<cr>', { desc = 'Quit all buffers' })
+map('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit buffer' })
+map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit all' })
 
 -- better indenting
 map('v', '<', '<gv')
