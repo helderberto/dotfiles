@@ -7,9 +7,9 @@ map('n', '<leader>rl', ':so %<CR>', { desc = 'Reload current lua file' })
 map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 
 --- Saving
-map({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr>', { desc = 'Save buffer' })
-map('n', '<leader>w', '<cmd>w<cr>', { desc = 'Save buffer' })
-map('n', '<leader>ww', '<cmd>noa w<cr>', { desc = 'Save all buffers' })
+map({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr>', { desc = 'Save and format' })
+map('n', '<leader>w', '<cmd>w<cr>', { desc = 'Save and format' })
+map('n', '<leader>ww', '<cmd>noa w<cr>', { desc = 'Save without format' })
 
 -- Quitting
 map('n', '<leader>q', ':q!<cr>', { desc = 'Quit buffer' })
