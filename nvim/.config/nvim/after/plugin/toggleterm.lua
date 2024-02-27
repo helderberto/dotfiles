@@ -7,7 +7,7 @@ local map = require('hbb.utils').map
 
 toggleterm.setup({
   size = 20,
-  open_mapping = [[<c-\>]],
+  open_mapping = [[<C-t>]],
   direction = 'horizontal',
   hide_numbers = true,
   shade_filetypes = {},
