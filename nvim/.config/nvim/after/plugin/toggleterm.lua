@@ -40,9 +40,23 @@ vim.cmd([[autocmd TermOpen * lua set_terminal_keycaps()]])
 
 local Terminal = require('toggleterm.terminal').Terminal
 
-local lagygit = Terminal:new({ cmd = 'lazygit', hidden = true, direction = 'float' })
+local lazygit = Terminal:new({
+  cmd = 'lazygit',
+  hidden = true,
+  direction = 'float',
+  float_opts = {
+    border = 'none',
+    width = 100000,
+    height = 100000,
+  },
+  on_open = function(_)
+    vim.cmd('startinsert!')
+  end,
+  on_close = function(_) end,
+  count = 99,
+})
 function _G.__lazygit_toggle()
-  lagygit:toggle()
+  lazygit:toggle()
 end
 
 local node = Terminal:new({ cmd = 'node', hidden = true, direction = 'float' })
