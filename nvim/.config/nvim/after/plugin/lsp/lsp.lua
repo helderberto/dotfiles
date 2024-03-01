@@ -27,10 +27,6 @@ lsp_zero.set_preferences({
 })
 
 local null_ls = require('null-ls')
-local eslint = {
-  diagnostics = require('none-ls.diagnostics.eslint_d'),
-  code_actions = require('none-ls.code_actions.eslint_d'),
-}
 
 local null_opts = lsp_zero.build_options('null-ls', {
   on_attach = function(client)
@@ -40,6 +36,8 @@ local null_opts = lsp_zero.build_options('null-ls', {
   end,
 })
 
+local lint = null_ls.builtins.diagnostics
+local action = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
@@ -50,12 +48,12 @@ null_ls.setup({
     formatting.stylua, -- Lua
 
     -- linting
-    eslint.diagnostics, -- JavaScript / TypeScript
+    lint.eslint_d, -- JavaScript / TypeScript
     -- lint.credo, -- Elixir
     -- lint.golangci_lint, -- Go
 
     -- code actions
-    eslint.code_actions, -- JavaScript / TypeScript
+    action.eslint_d, -- JavaScript / TypeScript
   },
 })
 
