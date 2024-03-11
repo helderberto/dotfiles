@@ -17,3 +17,11 @@ conform.setup({
     lsp_fallback = true,
   },
 })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>F', function()
+  conform.format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 1000,
+  })
+end, { desc = 'Format file or range (in visual mode)' })
