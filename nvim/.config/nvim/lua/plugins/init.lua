@@ -53,10 +53,6 @@ return {
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
 
-      -- Formatting, Linting
-      { 'nvimtools/none-ls.nvim' },
-      { 'nvimtools/none-ls-extras.nvim' },
-
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-buffer' },

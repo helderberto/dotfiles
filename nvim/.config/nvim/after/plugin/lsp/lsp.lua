@@ -26,37 +26,6 @@ lsp_zero.set_preferences({
   },
 })
 
-local null_ls = require('null-ls')
-
-local null_opts = lsp_zero.build_options('null-ls', {
-  on_attach = function(client)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ name = 'null-ls' })")
-    end
-  end,
-})
-
-local lint = null_ls.builtins.diagnostics
-local action = null_ls.builtins.code_actions
-local formatting = null_ls.builtins.formatting
-
-null_ls.setup({
-  on_attach = null_opts.on_attach,
-  sources = {
-    -- formatting
-    formatting.prettierd, -- JavaScript / TypeScript
-    formatting.stylua, -- Lua
-
-    -- linting
-    lint.eslint_d, -- JavaScript / TypeScript
-    -- lint.credo, -- Elixir
-    -- lint.golangci_lint, -- Go
-
-    -- code actions
-    action.eslint_d, -- JavaScript / TypeScript
-  },
-})
-
 lsp_zero.setup()
 
 require('mason').setup({})
