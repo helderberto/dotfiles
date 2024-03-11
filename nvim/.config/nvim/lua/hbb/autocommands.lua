@@ -12,9 +12,9 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 --------------------
 
 -- Highlight on yank
-augroup('YankHighlight', { clear = true })
+local yank_augroup = augroup('YankHighlight', { clear = true })
 autocmd('TextYankPost', {
-  group = 'YankHighlight',
+  group = yank_augroup,
   pattern = '*',
   callback = function()
     vim.highlight.on_yank({
