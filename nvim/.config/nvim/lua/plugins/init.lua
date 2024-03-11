@@ -66,7 +66,10 @@ return {
       { 'rafamadriz/friendly-snippets' },
     },
   },
-  'mhartington/formatter.nvim',
+  {
+    'stevearc/conform.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {
