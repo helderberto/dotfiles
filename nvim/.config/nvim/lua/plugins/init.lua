@@ -71,6 +71,10 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
   },
   {
+    'mfussenegger/nvim-lint',
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = {
       { 'nvim-lua/plenary.nvim' }, -- Lua utils methods shared with plugins
