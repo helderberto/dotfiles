@@ -35,3 +35,10 @@ autocmd('BufEnter', {
   pattern = '',
   command = 'set fo-=c fo-=r fo-=o',
 })
+
+-- Formatting
+augroup('__formatter__', { clear = true })
+autocmd('BufWritePost', {
+  group = '__formatter__',
+  command = ':FormatWrite',
+})

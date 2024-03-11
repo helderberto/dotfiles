@@ -66,6 +66,7 @@ return {
       { 'rafamadriz/friendly-snippets' },
     },
   },
+  'mhartington/formatter.nvim',
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {
