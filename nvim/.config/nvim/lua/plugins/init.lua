@@ -68,7 +68,8 @@ return {
   },
   {
     'stevearc/conform.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
   },
   {
     'mfussenegger/nvim-lint',
