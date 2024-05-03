@@ -1,5 +1,4 @@
 return {
-  'tpope/vim-fugitive', -- Git commands in nvim
   'tpope/vim-repeat', -- Enable repeating supported plugin maps with "."
   'nvim-lualine/lualine.nvim', -- Status line
   { 'folke/which-key.nvim', event = 'VeryLazy' },
@@ -13,7 +12,6 @@ return {
   'github/copilot.vim',
   { 'akinsho/toggleterm.nvim', version = '*' },
   { 'kylechui/nvim-surround', version = '*' },
-  'lewis6991/gitsigns.nvim',
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
