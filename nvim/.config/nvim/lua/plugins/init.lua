@@ -2,14 +2,6 @@ return {
   'tpope/vim-fugitive', -- Git commands in nvim
   'tpope/vim-repeat', -- Enable repeating supported plugin maps with "."
   'nvim-lualine/lualine.nvim', -- Status line
-  {
-    'dracula/vim',
-    name = 'dracula',
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      vim.cmd([[colorscheme dracula]])
-    end,
-  },
   { 'folke/which-key.nvim', event = 'VeryLazy' },
   'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
   {
