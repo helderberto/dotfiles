@@ -27,10 +27,6 @@ map('n', '<leader>bD', ':bufdo bd<cr>', { desc = 'Buffer Delete all' })
 map('n', '<leader>;', '<C-^>', { desc = 'Toggle last buffers' }) -- toggle last buffers
 
 -- Better window navigation
-map('n', '<C-h>', '<C-w>h', { desc = 'Go to left window' })
-map('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
-map('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
-map('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
 map('n', '<leader>e', '<C-w>', { desc = 'Window' })
 map('n', '<leader>es', '<C-w>s', { desc = 'Split window' })
 map('n', '<leader>ev', '<C-w>v', { desc = 'Split window vertically' })

@@ -84,4 +84,5 @@ return {
     },
   },
   'folke/zen-mode.nvim',
+  'alexghergh/nvim-tmux-navigation',
 }
