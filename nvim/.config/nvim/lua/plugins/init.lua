@@ -9,7 +9,6 @@ return {
   },
   'github/copilot.vim',
   { 'akinsho/toggleterm.nvim', version = '*' },
-  { 'kylechui/nvim-surround', version = '*' },
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
