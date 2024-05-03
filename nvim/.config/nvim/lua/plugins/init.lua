@@ -23,13 +23,6 @@ return {
   { 'kylechui/nvim-surround', version = '*' },
   'lewis6991/gitsigns.nvim',
   {
-    'numToStr/Comment.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    },
-  },
-  {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
     dependencies = {
