@@ -58,14 +58,6 @@ return {
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
   },
-  {
-    'nvim-telescope/telescope.nvim',
-    dependencies = {
-      { 'nvim-lua/plenary.nvim' }, -- Lua utils methods shared with plugins
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-      { 'nvim-telescope/telescope-github.nvim' },
-    },
-  },
   'folke/zen-mode.nvim',
   'alexghergh/nvim-tmux-navigation',
 }
