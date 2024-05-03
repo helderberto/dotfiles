@@ -1,6 +1,5 @@
 return {
   'tpope/vim-repeat', -- Enable repeating supported plugin maps with "."
-  'nvim-lualine/lualine.nvim', -- Status line
   'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
   {
     'RRethy/vim-illuminate', -- Highlight all instances of the word under the cursor
