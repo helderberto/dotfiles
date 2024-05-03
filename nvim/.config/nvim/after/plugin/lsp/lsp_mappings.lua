@@ -1,70 +1,69 @@
 local lsp = require('lsp-zero')
-local map = require('hbb.utils').map
 
 lsp.on_attach(function(_, bufnr)
-  map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', {
+  vim.keymap.set('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Go to declaration',
   })
-  map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', {
+  vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Go to definition',
   })
-  map(
+  vim.keymap.set(
     'n',
     'gI',
     ':lua vim.lsp.buf.implementation()<CR>',
     { buffer = bufnr, noremap = true, desc = 'Go to implementation' }
   )
-  map('n', 'gr', ':lua vim.lsp.buf.references()<CR>', {
+  vim.keymap.set('n', 'gr', ':lua vim.lsp.buf.references()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Go to references',
   })
-  map('n', 'gt', ':lua vim.lsp.buf.type_definition', {
+  vim.keymap.set('n', 'gt', ':lua vim.lsp.buf.type_definition', {
     buffer = bufnr,
     noremap = true,
     desc = 'Go to type definition',
   })
-  map('n', 'K', ':lua vim.lsp.buf.hover()<CR>', {
+  vim.keymap.set('n', 'K', ':lua vim.lsp.buf.hover()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Hover',
   })
-  map('n', '<leader>lf', ':lua vim.lsp.buf.format { async = true }<CR>', {
+  vim.keymap.set('n', '<leader>lf', ':lua vim.lsp.buf.format { async = true }<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Format',
   })
-  map('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>', {
+  vim.keymap.set('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Rename',
   })
-  map('n', '<leader>lk', ':lua vim.diagnostic.goto_prev()<CR>', {
+  vim.keymap.set('n', '<leader>lk', ':lua vim.diagnostic.goto_prev()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Go to previous diagnostic',
   })
-  map('n', '<leader>lj', ':lua vim.diagnostic.goto_next()<CR>', {
+  vim.keymap.set('n', '<leader>lj', ':lua vim.diagnostic.goto_next()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Go to next diagnostic',
   })
-  map(
+  vim.keymap.set(
     { 'n', 'v' },
     '<leader>la',
     ':lua vim.lsp.buf.code_action()<CR>',
     { buffer = bufnr, noremap = true, desc = 'Code Action' }
   )
-  map('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>', {
+  vim.keymap.set('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'Signature Help',
   })
-  map('n', '<leader>li', ':LspInfo<CR>', {
+  vim.keymap.set('n', '<leader>li', ':LspInfo<CR>', {
     buffer = bufnr,
     noremap = true,
     desc = 'LSP Info',
@@ -72,4 +71,4 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 -- Mason
-map('n', '<leader>lI', ':Mason<cr>', { desc = 'Mason' })
+vim.keymap.set('n', '<leader>lI', ':Mason<cr>', { desc = 'Mason' })

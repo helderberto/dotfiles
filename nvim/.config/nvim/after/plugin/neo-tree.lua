@@ -1,5 +1,3 @@
-local map = require('hbb.utils').map
-
 -- If you want icons for diagnostic errors, you'll need to define them somewhere:
 vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
 vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
@@ -201,5 +199,5 @@ require('neo-tree').setup({
 })
 
 -- Keymaps
-map('n', '<leader>.', ':Neotree position=left toggle reveal<CR>', { desc = 'Neotree Toggle' })
-map('n', '<leader>n', ':Neotree position=float toggle reveal<CR>', { desc = 'Neotree Float' })
+vim.keymap.set('n', '<leader>.', ':Neotree position=left toggle reveal<CR>', { desc = 'Neotree Toggle' })
+vim.keymap.set('n', '<leader>n', ':Neotree position=float toggle reveal<CR>', { desc = 'Neotree Float' })

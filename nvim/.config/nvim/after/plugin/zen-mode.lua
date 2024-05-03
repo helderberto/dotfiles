@@ -1,6 +1,4 @@
-local map = require('hbb.utils').map
-
-map('n', '<leader>zz', function()
+vim.keymap.set('n', '<leader>zz', function()
   require('zen-mode').setup({
     window = {
       width = 120,
@@ -13,7 +11,7 @@ map('n', '<leader>zz', function()
   vim.wo.rnu = true
 end, { desc = 'Zen mode with line numbers' })
 
-map('n', '<leader>zZ', function()
+vim.keymap.set('n', '<leader>zZ', function()
   require('zen-mode').setup({
     window = {
       width = 120,

@@ -3,8 +3,6 @@ if not status_ok then
   return
 end
 
-local map = require('hbb.utils').map
-
 toggleterm.setup({
   size = 20,
   open_mapping = [[<C-t>]],
@@ -70,6 +68,6 @@ function _G.__elixir_toggle()
 end
 
 -- Keybindings
-map('n', '<leader>lg', '<cmd>lua __lazygit_toggle()<CR>')
-map('n', '<leader>nd', '<cmd>lua __node_toggle()<CR>')
-map('n', '<leader>ex', '<cmd>lua __elixir_toggle()<CR>')
+vim.keymap.set('n', '<leader>lg', '<cmd>lua __lazygit_toggle()<CR>')
+vim.keymap.set('n', '<leader>nd', '<cmd>lua __node_toggle()<CR>')
+vim.keymap.set('n', '<leader>ex', '<cmd>lua __elixir_toggle()<CR>')
