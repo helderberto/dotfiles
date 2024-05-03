@@ -19,5 +19,4 @@ return {
   },
   'windwp/nvim-autopairs', -- Insert or delete brackets, parens, quotes in pair
   'windwp/nvim-ts-autotag', -- Automatically close HTML tags
-  'alexghergh/nvim-tmux-navigation',
 }
