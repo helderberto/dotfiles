@@ -16,6 +16,4 @@ return {
       'MunifTanjim/nui.nvim',
     },
   },
-  'windwp/nvim-autopairs', -- Insert or delete brackets, parens, quotes in pair
-  'windwp/nvim-ts-autotag', -- Automatically close HTML tags
 }
