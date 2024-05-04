@@ -78,27 +78,24 @@ return {
     require('telescope').load_extension('fzf')
     require('telescope').load_extension('gh')
 
+    local builtin = require('telescope.builtin')
+
     -- Files
-    vim.keymap.set('n', '<leader><leader>', ':Telescope find_files<cr>', { desc = 'Find Files' })
-    vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>', { desc = 'Find Grep' })
-    vim.keymap.set(
-      'n',
-      '<leader>ff',
-      ':Telescope current_buffer_fuzzy_find<cr>',
-      { desc = 'Find Fuzzy current buffer' }
-    )
-    vim.keymap.set('n', '<leader>fq', ':Telescope quickfix<cr>', { desc = 'Find Quickfix' })
+    vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = 'Find Files' })
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find Grep' })
+    vim.keymap.set('n', '<leader>ff', builtin.current_buffer_fuzzy_find, { desc = 'Find Fuzzy current buffer' })
+    vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'Find Quickfix' })
 
     -- Git
-    vim.keymap.set('n', '<leader>fs', ':Telescope git_status<cr>', { desc = 'Find Status' })
-    vim.keymap.set('n', '<leader>fc', ':Telescope git_commits<cr>', { desc = 'Find Commits' })
-    vim.keymap.set('n', '<C-p>', ':Telescope git_files<cr>', { desc = 'Find Git files' })
+    vim.keymap.set('n', '<leader>fs', builtin.git_status, { desc = 'Find Status' })
+    vim.keymap.set('n', '<leader>fc', builtin.git_commits, { desc = 'Find Commits' })
+    vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = 'Find Git files' })
 
     -- Neovim
-    vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<cr>', { desc = 'Find Help' })
-    vim.keymap.set('n', '<leader>fo', ':Telescope vim_options<cr>', { desc = 'Find Options' })
-    vim.keymap.set('n', '<leader>fb', ':Telescope buffers<cr>', { desc = 'Find Buffers' })
-    vim.keymap.set('n', '<leader>fk', ':Telescope keymaps<cr>', { desc = 'Find Keymaps' })
-    vim.keymap.set('n', '<leader>fd', ':Telescope diagnostics<cr>', { desc = 'Find Diagnostics' })
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find Help' })
+    vim.keymap.set('n', '<leader>fo', builtin.vim_options, { desc = 'Find Options' })
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find Buffers' })
+    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Find Keymaps' })
+    vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Find Diagnostics' })
   end,
 }
