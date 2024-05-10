@@ -44,8 +44,6 @@
   cpa = cherry-pick --abort
   cpc = cherry-pick --continue
   #############
-  cl = clone --recurse-submodules
-  #############
   co = checkout
   cob = checkout -b
   #############
@@ -104,10 +102,6 @@
   swc = switch -c
   swm = switch main
   swr = switch master
-  #############
-  sm = submodule
-  sma = submodule add
-  smu = submodule update --recursive --remote --merge
   #############
   t = tag
   ta = tag -a
