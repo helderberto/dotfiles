@@ -169,6 +169,16 @@ chars = "\u0001x"
 key = "W"
 mods = "Command"
 
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Alt"
+
 [scrolling]
 history = 10000
 multiplier = 3
