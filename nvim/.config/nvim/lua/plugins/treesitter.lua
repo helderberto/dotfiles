@@ -55,24 +55,4 @@ return {
       parser_config.tsx.filetype_to_parsername = { 'javascript', 'typescript.tsx' }
     end,
   },
-
-  -- Automatically add closing tags for HTML and JSX
-  {
-    'windwp/nvim-ts-autotag',
-
-    config = function()
-      require('nvim-ts-autotag').setup()
-    end,
-  },
-
-  -- Insert or delete brackets, parens, quotes in pair
-  {
-    'windwp/nvim-autopairs',
-
-    config = function()
-      require('nvim-autopairs').setup({
-        disable_filetype = { 'TelescopePrompt', 'vim' },
-      })
-    end,
-  },
 }
