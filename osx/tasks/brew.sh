@@ -92,7 +92,6 @@ brew install --cask hiddenbar # Hide menu Mac - https://github.com/dwarvesf/hidd
 brew install --cask raycast # Override native Spotlight from MacOS
 brew install --cask postman
 brew install --cask insomnia
-brew install --cask logseq # Note-taking - PKM
 brew install --cask todoist # Task manager
 brew install --cask betterdisplay # Display resolution manager
 
