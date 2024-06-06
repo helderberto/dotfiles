@@ -72,14 +72,16 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% |
 alias k="clear"
 
 # NPM
-alias ni="npm install"
-alias nis="npm install --save"
+alias ni="npm install --save"
 alias nid="npm install --save-dev"
 alias nr="npm run"
 alias ns="npm run start"
+alias nss="npm run start-ssl"
 alias nd="npm run dev"
 alias nb="npm run build"
 alias nt="npm run test"
 alias ntw="npm run test:watch"
 alias nw="npm --workspace"
 alias nws="npm --workspaces"
+alias nl="npm run lint"
+alias np="npm publish"
