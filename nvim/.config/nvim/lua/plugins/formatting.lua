@@ -1,18 +1,18 @@
 return {
   'stevearc/conform.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = { 'LspAttach', 'BufReadPost', 'BufNewFile' },
   config = function()
     local conform = require('conform')
 
     conform.setup({
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'prettier' },
-        javascriptreact = { 'prettier' },
-        typescript = { 'prettier' },
-        typescriptreact = { 'prettier' },
-        json = { 'prettier' },
-        markdown = { 'prettier' },
+        javascript = { 'prettierd' },
+        typescript = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
+        markdown = { 'prettierd' },
+        json = { 'prettierd' },
         html = { 'htmlbeautifier' },
       },
 
@@ -28,7 +28,10 @@ return {
           return
         end
 
-        return { timeout_ms = 500, lsp_fallback = true }
+        return {
+          timeout_ms = 500, -- It freezes the UI if it takes too long
+          lsp_fallback = true,
+        }
       end,
     })
 
