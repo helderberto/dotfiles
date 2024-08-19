@@ -46,8 +46,6 @@ return {
         'cssls',
         'html',
         'jsonls',
-        'elixirls',
-        'gopls',
       },
       handlers = {
         lsp_zero.default_setup,
