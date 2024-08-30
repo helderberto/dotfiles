@@ -85,3 +85,6 @@ alias nw="npm --workspace"
 alias nws="npm --workspaces"
 alias nl="npm run lint"
 alias np="npm publish"
+
+# HTTP Server
+alias hs="http-server"
