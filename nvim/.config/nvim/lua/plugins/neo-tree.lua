@@ -198,6 +198,12 @@ return {
       },
     })
 
+    -- Set transparent background for Neo-tree
+    vim.cmd([[
+      highlight NeoTreeNormal guibg=NONE ctermbg=NONE
+      highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
+    ]])
+
     -- Keymaps
     vim.keymap.set('n', '<leader>.', ':Neotree position=left toggle reveal<CR>', { desc = 'Neotree Toggle' })
     vim.keymap.set('n', '<leader>n', ':Neotree position=float toggle reveal<CR>', { desc = 'Neotree Float' })
