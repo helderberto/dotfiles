@@ -19,7 +19,7 @@ return {
       require('gitsigns').setup()
 
       -- Keymaps
-      vim.keymap.set('n', '<leader>gt', ':Gitsigns blame_line<cr>', { desc = 'Git Blame' })
+      vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line<cr>', { desc = 'Git Blame' })
       vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk<cr>', { desc = 'Git Preview Hunk' })
     end,
   },
