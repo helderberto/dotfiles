@@ -4,14 +4,14 @@ return {
   config = function()
     require('nvim-surround').setup({
       keymaps = {
-        normal = '<leader>sa',
+        normal = '<leader>sa', -- Surround with something
         normal_cur = false,
         normal_line = false,
         normal_cur_line = false,
-        visual = '<leader>s',
-        visual_line = '<leader>S',
-        delete = '<leader>sd',
-        change = '<leader>sr',
+        visual = '<leader>ss', -- Surround selected text
+        visual_line = '<leader>sS', -- Surround selected line
+        delete = '<leader>sd', -- Delete surrounding
+        change = '<leader>sc', -- Change surrounding (using 'c' instead of 'r' to avoid confusion)
       },
       aliases = {
         ['i'] = ']', -- Index
