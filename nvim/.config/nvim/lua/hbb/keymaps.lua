@@ -1,7 +1,7 @@
 --- save file
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
-vim.keymap.set('n', '<leader>s', '<cmd>w<cr>', { desc = 'Save file' })
-vim.keymap.set('n', '<leader>S', '<cmd>noautocmd w<cr>', { desc = 'Save without format' })
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Save file' })
+vim.keymap.set('n', '<leader>W', '<cmd>noautocmd w<cr>', { desc = 'Save without format' })
 
 -- quit
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit buffer' })
@@ -29,7 +29,6 @@ vim.keymap.set('n', '<leader>bD', ':bufdo bd<cr>', { desc = 'Buffer Delete all' 
 vim.keymap.set('n', '<leader>;', '<C-^>', { desc = 'Toggle last buffers' }) -- toggle last buffers
 
 -- better window navigation
-vim.keymap.set('n', '<leader>w', '<C-w>', { desc = 'Window' })
 vim.keymap.set('n', '<leader>ws', '<C-w>s', { desc = 'Horizontal split' })
 vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Vertical split' })
 vim.keymap.set('n', '<leader>wq', '<C-w>q', { desc = 'Close window' })
