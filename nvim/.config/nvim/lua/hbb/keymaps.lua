@@ -13,7 +13,7 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Indent right' })
 
 -- execute code
 vim.keymap.set('n', '<leader>x', '<cmd>.lua<cr>', { desc = 'Execute the current line' })
-vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<cr>', { desc = 'Execute current file' })
+vim.keymap.set('n', '<leader>X', '<cmd>source %<cr>', { desc = 'Execute current file' })
 
 -- clear search with <esc>
 vim.keymap.set({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and Clear hlsearch' })
