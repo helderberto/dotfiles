@@ -25,6 +25,12 @@ return {
 
       -- Browse git log
       vim.keymap.set('n', '<leader>glg', '<cmd>Git log<cr>', { desc = 'Git log' })
+
+      -- Interactive rebase
+      vim.keymap.set('n', '<leader>gri', function()
+        local count = vim.fn.input('Number of commits to rebase: ')
+        vim.cmd('Git rebase -i HEAD~' .. count)
+      end, { desc = 'Git Interactive Rebase' })
     end,
   },
 
