@@ -40,12 +40,8 @@ return {
       -- Enable gitsigns
       require('gitsigns').setup()
 
-      -- Gitsigns keymaps (stage/unstage hunks, preview diffs, etc.)
+      -- keymaps
       vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line<cr>', { desc = 'Git Blame' })
-      vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk<cr>', { desc = 'Git Preview Hunk' })
-      vim.keymap.set('n', '<leader>gS', ':Gitsigns stage_hunk<cr>', { desc = 'Git Stage Hunk' })
-      vim.keymap.set('n', '<leader>gr', ':Gitsigns reset_hunk<cr>', { desc = 'Git Reset Hunk' })
-      vim.keymap.set('n', '<leader>gu', ':Gitsigns undo_stage_hunk<cr>', { desc = 'Git Unstage Hunk' })
     end,
   },
 }
