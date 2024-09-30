@@ -6,9 +6,9 @@ return {
       vim.keymap.set('n', '<leader>gg', ':G<cr>', { desc = 'Git status' })
 
       -- Git diff and merge helpers
-      vim.keymap.set('n', '<leader>gh', ':diffget //2<cr>', { desc = 'Git Diff Hunk (ours)' }) -- Current change
-      vim.keymap.set('n', '<leader>gl', ':diffget //3<cr>', { desc = 'Git Diff Hunk (theirs)' }) -- Incoming change
       vim.keymap.set('n', '<leader>gd', '<cmd>Gvdiffsplit<cr>', { desc = 'Git diff (vertical split)' })
+      vim.keymap.set('n', '<leader>gdh', ':diffget //2<cr>', { desc = 'Git Diff Hunk (ours)' }) -- Current change
+      vim.keymap.set('n', '<leader>gdl', ':diffget //3<cr>', { desc = 'Git Diff Hunk (theirs)' }) -- Incoming change
 
       -- Git pull/push commands
       vim.keymap.set('n', '<leader>gu', '<cmd>Git pull<cr>', { desc = 'Git pull' })
@@ -24,7 +24,12 @@ return {
       vim.keymap.set('n', '<leader>gr', '<cmd>Gread<cr>', { desc = 'Git reset' }) -- Unstage/reset
 
       -- Browse git log
-      vim.keymap.set('n', '<leader>glg', '<cmd>Git log<cr>', { desc = 'Git log' })
+      vim.keymap.set(
+        'n',
+        '<leader>go',
+        '<cmd>Git log --oneline --abbrev-commit --graph --decorate<cr>',
+        { desc = 'Git log' }
+      )
 
       -- Interactive rebase
       vim.keymap.set('n', '<leader>gri', function()
