@@ -1,5 +1,3 @@
-live_config_reload = true
-
 # Catppuccin Mocha theme
 [colors.primary]
 background = "#1e1e2e"
@@ -198,7 +196,7 @@ mods = "Alt"
 history = 10000
 multiplier = 3
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "tmux attach || tmux"]
 program = "/bin/zsh"
 
@@ -215,3 +213,4 @@ lines = 0
 [window.padding]
 x = 10
 y = 10
+
