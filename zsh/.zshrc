@@ -11,8 +11,6 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Load the oh-my-zsh's library.
-antigen bundle npm
-antigen bundle yarn
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
