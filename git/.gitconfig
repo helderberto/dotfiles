@@ -3,7 +3,7 @@
   email = helder.burato@gmail.com
 
 [github]
-  user = helderburato
+  user = helderberto
 
 [core]
   excludesfile = ~/.gitignore_global
