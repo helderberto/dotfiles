@@ -21,14 +21,14 @@ alias bc='brew install --cask'
 
 # ls overwrite by lsd
 # https://github.com/lsd-rs/lsd
-alias ls='lsd' # https://github.com/lsd-rs/lsd#optional
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
+alias ls='lsd'
+alias l='ls -l' # List all files in long format
+alias la='ls -a' # List all files, including hidden files
+alias lla='ls -la' # List all files in long format, including hidden files
+alias lt='ls --tree' # List all files in tree format
 
 # Net
-alias iplocal="ipconfig getifaddr en0"
+alias iplocal="ipconfig getifaddr en0" # Get local IP address
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
 # Git
@@ -39,25 +39,18 @@ alias lg="lazygit"
 alias v="nvim"
 alias vim="nvim"
 
-# Docker
+# Docker essentials
 alias d="docker"
-alias dr="docker run"
-alias drd="docker run -d"
-alias di="docker images"
-alias dri="docker rmi"
-alias dp="docker ps"
-alias dpa="docker ps -a"
-alias dsp="docker system prune --all"
-alias drf='docker rm $(docker ps -a -q) -f'
+alias dp="docker ps" # Show running containers
+alias dpa="docker ps -a" # Show all containers
+alias dsp="docker system prune --all" # Remove all containers
 
-## Docker Compose
+# Docker Compose essentials
 alias dc="docker-compose"
-alias dcu="docker-compose up"
-alias dcud="docker-compose up -d"
-alias dcufb="docker-compose up --force-recreate --build"
-alias dcd="docker-compose down"
-alias dcl="docker-compose logs --tail=all | grep"
-alias dcdri="docker-compose down --rmi all --remove-orphans"
+alias dcu="docker-compose up" # Start all services
+alias dcud="docker-compose up -d" # Start all services in the background
+alias dcd="docker-compose down" # Stop all services
+alias dcl="docker-compose logs --tail=all | grep" # Show logs for a service
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -71,20 +64,44 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% |
 # clear
 alias k="clear"
 
-# NPM
-alias ni="npm install --save"
-alias nid="npm install --save-dev"
-alias nr="npm run"
-alias ns="npm run start"
-alias nss="npm run start-ssl"
-alias nd="npm run dev"
-alias nb="npm run build"
-alias nt="npm run test"
-alias ntw="npm run test:watch"
-alias nw="npm --workspace"
-alias nws="npm --workspaces"
-alias nl="npm run lint"
-alias np="npm publish"
+# NPM Install
+alias ni="npm install" # --save is default since npm 5.0.0
+alias nid="npm install -D" # shorter than --save-dev
+alias nig="npm install -g" # global installs
+alias nu="npm uninstall" # uninstall packages
+
+# NPM Run Scripts
+alias nr="npm run" # base runner
+alias ns="npm start" # start
+alias nss="npm run start-ssl" # start with SSL
+alias nd="npm run dev" # development
+alias nb="npm run build" # build
+alias nt="npm run test" # test
+alias ntw="npm run test:watch" # test watch mode
+alias nc="npm run coverage" # coverage
+alias nl="npm run lint" # lint
+
+# NPM Workspace
+alias nw="npm workspace" # single workspace
+alias nwa="npm workspaces" # all workspaces
+alias nwr="npm workspace run" # run in specific workspace
+alias nwar="npm workspaces run" # run in all workspaces
+
+# NPM Utils
+alias nout="npm outdated"           # check outdated packages
+alias nau="npm audit"               # security audit
+alias nauf="npm audit fix"          # fix security issues
+alias nrb="npm rebuild"             # rebuild packages
+alias nci="npm ci"                  # clean install (uses package-lock.json)
+
+# NPM Info
+alias nls="npm list --depth=0"      # list installed packages
+alias nlsg="npm list -g --depth=0"  # list global packages
+alias nv="npm version"              # version management
+
+# NPM Maintenance (use with caution)
+alias ncp="npm cache clean --force" # clear cache
+alias np="npm publish"              # publish package
 
 # HTTP Server
 alias hs="http-server"
