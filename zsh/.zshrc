@@ -76,6 +76,7 @@ export HOMEBREW_PREFIX=$(brew --prefix)
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX"
 export HOMEBREW_SHELLENV_PREFIX="$HOMEBREW_PREFIX"
+export ASDF_DATA_DIR="$HOMEBREW_PREFIX/opt/asdf"
 
 # Path configuration (consolidated)
 path=(
@@ -84,6 +85,7 @@ path=(
   "/usr/local/bin"
   "/usr/local/sbin"
   "$HOME/.codeium/windsurf/bin"
+  "$ASDF_DATA_DIR/shims"
   $path
 )
 export PATH
