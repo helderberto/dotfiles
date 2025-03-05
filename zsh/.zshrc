@@ -84,7 +84,6 @@ path=(
   "$HOMEBREW_PREFIX/sbin"
   "/usr/local/bin"
   "/usr/local/sbin"
-  "$HOME/.codeium/windsurf/bin"
   "$ASDF_DATA_DIR/shims"
   $path
 )
