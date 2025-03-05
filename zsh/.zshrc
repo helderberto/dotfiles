@@ -76,7 +76,6 @@ export HOMEBREW_PREFIX=$(brew --prefix)
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX"
 export HOMEBREW_SHELLENV_PREFIX="$HOMEBREW_PREFIX"
-export ASDF_DATA_DIR="$HOMEBREW_PREFIX/opt/asdf"
 
 # Path configuration (consolidated)
 path=(
@@ -84,10 +83,9 @@ path=(
   "$HOMEBREW_PREFIX/sbin"
   "/usr/local/bin"
   "/usr/local/sbin"
-  "$ASDF_DATA_DIR/shims"
   $path
 )
-export PATH
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 # Man path
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:"
@@ -102,4 +100,7 @@ export AWS_OKTA_MFA_DUO_DEVICE=token
 
 # Load Powerlevel10k configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
