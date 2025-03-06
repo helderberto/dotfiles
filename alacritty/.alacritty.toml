@@ -347,7 +347,7 @@ osc52 = "CopyPaste"  # Enable OSC52 copying
 working_directory = "None"  # Auto-detect working directory
 
 [terminal.shell]
-args = ["-l", "-c", "tmux attach -t dev || tmux new -s dev"]  # Named session
+args = ["--login", "-c", "tmux new-session"]  # Named session
 program = "/bin/zsh"
 
 [window]
