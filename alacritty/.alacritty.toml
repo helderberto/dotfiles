@@ -76,7 +76,14 @@ index = 17
 color = "#f5e0dc"
 
 [cursor]
-style = "Block"
+style = {
+    shape = "Block"
+    blinking = "On"
+}
+blink_interval = 750
+blink_timeout = 5
+thickness = 0.15
+vi_mode_style = "Block"
 unfocused_hollow = true
 
 # Improve terminal response
@@ -87,6 +94,8 @@ EDITOR = "nvim"  # Set default editor
 
 [font]
 size = 13.0
+use_thin_strokes = true
+scale_with_dpi = true
 
 [font.normal]
 family = "Hack Nerd Font"
@@ -121,6 +130,8 @@ hide_when_typing = true
 bindings = [
   { mouse = "Middle", action = "PasteSelection" }
 ]
+double_click = { threshold = 300 }
+triple_click = { threshold = 300 }
 
 # Creates a new tmux window (CMD + t)
 # Similar to opening a new tab in Terminal.app
@@ -338,8 +349,8 @@ multiplier = 3
 auto_scroll = true  # Enable auto-scroll
 
 [selection]
-save_to_clipboard = true  # Automatically copy selection to clipboard
-semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"  # Better word selection
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
 
 [terminal]
 # Better performance settings
@@ -351,22 +362,22 @@ args = ["--login", "-c", "tmux new-session"]  # Named session
 program = "/bin/zsh"
 
 [window]
+class = { instance = "Alacritty", general = "Alacritty" }
+title = "Alacritty"
 decorations = "buttonless"  # More native macOS look
 opacity = 1.0
-dynamic_padding = true
 dynamic_title = true
-startup_mode = "Windowed"
-option_as_alt = "Both"  # Better Alt key handling
+padding = { x = 8, y = 8 }
+dynamic_padding = true
+option_as_alt = true
+window_decorations = "buttonless"
+# startup_mode = "Windowed"
+# option_as_alt = "Both"  # Better Alt key handling
 
 # Improve window dimensions
 [window.dimensions]
 columns = 120  # Better default width
 lines = 30    # Better default height
-
-# Better padding for Neovim
-[window.padding]
-x = 8
-y = 8
 
 [debug]
 # Improve performance
@@ -378,3 +389,6 @@ print_events = false
 # GPU acceleration
 [gpu]
 vsync = true
+
+[live_config_reload]
+enabled = true
