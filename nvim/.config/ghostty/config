@@ -1,18 +1,17 @@
 shell-integration = zsh
+scrollback-limit = 1000000
 
 font-family = JetBrains Mono
 font-size = 13
 
-window-padding-balance = true
-
 theme = catppuccin-mocha
 
+window-padding-balance = true
 background-blur-radius = 20
 mouse-hide-while-typing = true
 window-decoration = true
 macos-option-as-alt = true
-# background-opacity = 0.7
-# background-blur-radius = 20
+window-save-state = always
 
 keybind = super+n=new_window
 keybind = super+t=new_tab
