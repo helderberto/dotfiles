@@ -1,0 +1,26 @@
+shell-integration = zsh
+
+font-family = JetBrains Mono
+font-size = 13
+
+window-padding-balance = true
+
+theme = catppuccin-mocha
+
+background-blur-radius = 20
+mouse-hide-while-typing = true
+window-decoration = true
+macos-option-as-alt = true
+# background-opacity = 0.7
+# background-blur-radius = 20
+
+keybind = super+n=new_window
+keybind = super+t=new_tab
+keybind = super+w=quit
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+copy-on-select = clipboard

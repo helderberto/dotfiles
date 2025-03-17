@@ -17,3 +17,4 @@ Thumbs.db
 .netrwhist
 nvim/.config/*
 !nvim/.config/nvim
+!nvim/.config/ghostty
