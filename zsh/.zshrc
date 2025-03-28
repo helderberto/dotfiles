@@ -104,3 +104,6 @@ export AWS_OKTA_MFA_DUO_DEVICE=token
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+
+# Added by Windsurf
+export PATH="/Users/hberto/.codeium/windsurf/bin:$PATH"
