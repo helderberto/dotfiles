@@ -20,7 +20,7 @@ COLORTERM = "truecolor"  # Enable true color support
 EDITOR = "nvim"  # Set default editor
 
 [font]
-size = 13.0
+size = 12.0
 use_thin_strokes = true
 scale_with_dpi = true
 
