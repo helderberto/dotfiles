@@ -18,6 +18,8 @@ unfocused_hollow = true
 TERM = "xterm-256color"
 COLORTERM = "truecolor"  # Enable true color support
 EDITOR = "nvim"  # Set default editor
+TMUX_TMPDIR = "/tmp"
+LC_ALL = "en_US.UTF-8"
 
 [font]
 size = 12.0
@@ -55,7 +57,8 @@ builtin_box_drawing = true
 [mouse]
 hide_when_typing = true
 bindings = [
-  { mouse = "Middle", action = "PasteSelection" }
+  { mouse = "Middle", action = "PasteSelection" },
+  { mouse = "Right", action = "ExpandSelection" }
 ]
 double_click = { threshold = 300 }
 triple_click = { threshold = 300 }
@@ -271,9 +274,9 @@ key = "Key0"
 mods = "Command"
 
 [scrolling]
-history = 50000  # Increased from 10000
-multiplier = 3
-auto_scroll = true  # Enable auto-scroll
+history = 100000 # Increased from 10000
+multiplier = 5 # Faster scrolling
+auto_scroll = true
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
@@ -283,10 +286,16 @@ save_to_clipboard = true
 # Better performance settings
 osc52 = "CopyPaste"  # Enable OSC52 copying
 working_directory = "None"  # Auto-detect working directory
+bracketed_paste = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [terminal.shell]
-args = ["--login", "-c", "tmux new-session"]  # Named session
 program = "/bin/zsh"
+args = [
+  "--login",  # Start as a login shell
+  "-c",       # Run command
+  "tmux has-session && tmux attach || tmux new-session"  # Attach or create tmux session
+]
 
 [window]
 class = { instance = "Alacritty", general = "Alacritty" }
