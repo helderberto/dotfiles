@@ -49,7 +49,7 @@ command -v gdircolors >/dev/null 2>&1 && alias dircolors="gdircolors"
 
 ### Source additional configuration files
 # Load custom configurations
-for config_file in ~/.{extra,exports,aliases,functions}; do
+for config_file in ~/.{extra,exports,aliases,private,functions}; do
     [[ -r "$config_file" ]] && source "$config_file"
 done
 unset config_file

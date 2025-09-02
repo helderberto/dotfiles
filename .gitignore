@@ -18,3 +18,6 @@ Thumbs.db
 nvim/.config/*
 !nvim/.config/nvim
 !nvim/.config/ghostty
+
+# ZSH
+.private
