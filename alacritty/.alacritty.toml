@@ -48,213 +48,59 @@ bindings = [
 
 # Creates a new tmux window (CMD + t)
 # Similar to opening a new tab in Terminal.app
-# [[keyboard.bindings]]
-# chars = "\u0001c"
-# key = "T"
-# mods = "Command"
-
-# Opens tmux preferences (CMD + ,)
-# Similar to opening preferences in macOS apps
-# [[keyboard.bindings]]
-# chars = "\u0001,"
-# key = "Comma"
-# mods = "Command"
-
-# # Quick window/tab switching using CMD + number
-# # Similar to Chrome/Safari tab switching
-# [[keyboard.bindings]]
-# chars = "\u00011"
-# key = "Key1"
-# mods = "Command"
-# # Switch to tmux window 1
-#
-# [[keyboard.bindings]]
-# chars = "\u00012"
-# key = "Key2"
-# mods = "Command"
-# # Switch to tmux window 2
-#
-# [[keyboard.bindings]]
-# chars = "\u00013"
-# key = "Key3"
-# mods = "Command"
-# # Switch to tmux window 3
-#
-# [[keyboard.bindings]]
-# chars = "\u00014"
-# key = "Key4"
-# mods = "Command"
-# # Switch to tmux window 4
-#
-# [[keyboard.bindings]]
-# chars = "\u00015"
-# key = "Key5"
-# mods = "Command"
-# # Switch to tmux window 5
-#
-# [[keyboard.bindings]]
-# chars = "\u00016"
-# key = "Key6"
-# mods = "Command"
-# # Switch to tmux window 6
-#
-# [[keyboard.bindings]]
-# chars = "\u00017"
-# key = "Key7"
-# mods = "Command"
-# # Switch to tmux window 7
-#
-# [[keyboard.bindings]]
-# chars = "\u00018"
-# key = "Key8"
-# mods = "Command"
-# # Switch to tmux window 8
-#
-# [[keyboard.bindings]]
-# chars = "\u00019"
-# key = "Key9"
-# mods = "Command"
-# # Switch to tmux window 9
+[[keyboard.bindings]]
+chars = "\u0001c"
+key = "T"
+mods = "Command"
 
 # Split current pane horizontally (CMD + Shift + D)
 # Creates a new pane below the current one
-# [[keyboard.bindings]]
-# chars = "\u0001\""
-# key = "D"
-# mods = "Command|Shift"
+[[keyboard.bindings]]
+chars = "\u0001\""
+key = "D"
+mods = "Command|Shift"
 
 # Split current pane vertically (CMD + D)
 # Creates a new pane to the right of the current one
-# [[keyboard.bindings]]
-# chars = "\u0001%"
-# key = "D"
-# mods = "Command"
-
-# Save in vim/neovim (CMD + S)
-# Sends Escape :w Enter sequence
-# [[keyboard.bindings]]
-# chars = "\u001B:w\r"
-# key = "S"
-# mods = "Command"
+[[keyboard.bindings]]
+chars = "\u0001%"
+key = "D"
+mods = "Command"
 
 # Close current window/tab (CMD + W)
 # Similar to closing tabs in other macOS apps
-# [[keyboard.bindings]]
-# chars = "\u0001x"
-# key = "W"
-# mods = "Command"
-
-# Move cursor forward one word (Alt + Right)
-# Similar to macOS text navigation
-# [[keyboard.bindings]]
-# chars = "\u001BF"
-# key = "Right"
-# mods = "Alt"
-
-# Move cursor backward one word (Alt + Left)
-# Similar to macOS text navigation
-# [[keyboard.bindings]]
-# chars = "\u001BB"
-# key = "Left"
-# mods = "Alt"
-
-# Copy selected text (CMD + C)
-# Uses system clipboard
-# [[keyboard.bindings]]
-# action = "Copy"
-# key = "C"
-# mods = "Command"
-
-# Paste text (CMD + V)
-# Pastes from system clipboard
-# [[keyboard.bindings]]
-# action = "Paste"
-# key = "V"
-# mods = "Command"
-
-# Switch to previous tab (CMD + Left)
-# Similar to tab navigation in Safari/Chrome
-# [[keyboard.bindings]]
-# chars = "\u0001["
-# key = "Left"
-# mods = "Command"
-
-# Switch to next tab (CMD + Right)
-# Similar to tab navigation in Safari/Chrome
-# [[keyboard.bindings]]
-# chars = "\u0001]"
-# key = "Right"
-# mods = "Command"
-
-# Undo last action (CMD + Z)
-# Standard macOS undo shortcut
-# [[keyboard.bindings]]
-# chars = "\u0001z"
-# key = "Z"
-# mods = "Command"
-
-# Find/Search (CMD + F)
-# Standard macOS find shortcut
-# [[keyboard.bindings]]
-# chars = "\u0001f"
-# key = "F"
-# mods = "Command"
+[[keyboard.bindings]]
+chars = "\u0001x"
+key = "W"
+mods = "Command"
 
 # Create new window (CMD + N)
 # Similar to new window in Terminal.app
-# [[keyboard.bindings]]
-# chars = "\u0001n"
-# key = "N"
-# mods = "Command"
-
-# Quit application (CMD + Q)
-# Standard macOS quit shortcut
-# [[keyboard.bindings]]
-# chars = "\u0001q"
-# key = "Q"
-# mods = "Command"
-
-# Scroll up in terminal (CMD + Up)
-# Similar to page up
-# [[keyboard.bindings]]
-# chars = "\u001B[A"
-# key = "Up"
-# mods = "Command"
-
-# Scroll down in terminal (CMD + Down)
-# Similar to page down
-# [[keyboard.bindings]]
-# chars = "\u001B[B"
-# key = "Down"
-# mods = "Command"
-
-# Reopen last closed tab (CMD + Shift + T)
-# Similar to browser behavior
-# [[keyboard.bindings]]
-# chars = "\u0001T"
-# key = "T"
-# mods = "Command|Shift"
+[[keyboard.bindings]]
+chars = "\u0001n"
+key = "N"
+mods = "Command"
 
 # Increase font size (CMD + Plus)
 # Standard zoom in shortcut
-# [[keyboard.bindings]]
-# action = "IncreaseFontSize"
-# key = "Plus"
-# mods = "Command"
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Command"
 
 # Decrease font size (CMD + Minus)
 # Standard zoom out shortcut
-# [[keyboard.bindings]]
-# action = "DecreaseFontSize"
-# key = "Minus"
-# mods = "Command"
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
 
 # Reset font size to default (CMD + 0)
 # Standard zoom reset shortcut
-# [[keyboard.bindings]]
-# action = "ResetFontSize"
-# key = "Key0"
-# mods = "Command"
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
 
 [scrolling]
 history = 100000 # Increased from 10000
