@@ -268,7 +268,9 @@ save_to_clipboard = true
 [terminal.shell]
 program = "/bin/zsh"
 args = [
-  "--login",  # Start as a login shell
+  "--login",
+  "-c",
+  "tmux new-session -A -s main"
 ]
 
 [window]
