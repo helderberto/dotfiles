@@ -12,6 +12,7 @@ DOTFILES=(
     "alacritty"
     "tmux"
     "editorconfig"
+    "ghostty"
 )
 
 cd $DOTFILE_DIR
