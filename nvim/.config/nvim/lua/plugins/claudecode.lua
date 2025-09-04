@@ -1,15 +1,31 @@
 return {
   'coder/claudecode.nvim',
   dependencies = { 'folke/snacks.nvim' },
-  config = function()
-    require('claudecode').setup({
-      terminal_cmd = 'zsh -ic claude', -- Command to start the Claude CLI
-    })
-  end,
+  opts = {
+    terminal_cmd = 'zsh -ic claude', -- Command to start the Claude CLI
+
+    terminal = {
+      snacks_win_opts = {
+        position = 'float',
+        width = 0.85,
+        height = 0.85,
+        border = 'rounded',
+        keys = {
+          claude_hide_alt = {
+            '<M-,>',
+            function(self)
+              self:hide()
+            end,
+            mode = 't',
+            desc = 'Hide (Alt+,)',
+          },
+        },
+      },
+    },
+  },
+  config = true,
   keys = {
-    { '<leader>a', nil, desc = 'AI/Claude Code' },
-    { '<leader>ac', '<cmd>ClaudeCode<cr>', desc = 'Toggle Claude' },
-    { '<leader>af', '<cmd>ClaudeCodeFocus<cr>', desc = 'Focus Claude' },
+    { '<M-,>', '<cmd>ClaudeCodeFocus<cr>', desc = 'Claude Code (Alt+,)', mode = { 'n', 'x' } }, -- Option + Comma
     { '<leader>ar', '<cmd>ClaudeCode --resume<cr>', desc = 'Resume Claude' },
     { '<leader>aC', '<cmd>ClaudeCode --continue<cr>', desc = 'Continue Claude' },
     { '<leader>am', '<cmd>ClaudeCodeSelectModel<cr>', desc = 'Select Claude model' },
