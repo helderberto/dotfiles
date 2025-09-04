@@ -1,12 +1,4 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
-
 [cursor]
-style = {
-    shape = "Block"
-    blinking = "On"
-}
 blink_interval = 750
 blink_timeout = 5
 thickness = 0.15
@@ -18,13 +10,10 @@ unfocused_hollow = true
 TERM = "xterm-256color"
 COLORTERM = "truecolor"  # Enable true color support
 EDITOR = "nvim"  # Set default editor
-TMUX_TMPDIR = "/tmp"
 LC_ALL = "en_US.UTF-8"
 
 [font]
 size = 12.0
-use_thin_strokes = true
-scale_with_dpi = true
 
 [font.normal]
 family = "Hack Nerd Font"
@@ -51,250 +40,235 @@ y = 1
 x = 0
 y = 0
 
-# Disable built-in font scaling
-builtin_box_drawing = true
-
 [mouse]
 hide_when_typing = true
 bindings = [
   { mouse = "Middle", action = "PasteSelection" },
   { mouse = "Right", action = "ExpandSelection" }
 ]
-double_click = { threshold = 300 }
-triple_click = { threshold = 300 }
 
 # Creates a new tmux window (CMD + t)
 # Similar to opening a new tab in Terminal.app
-[[keyboard.bindings]]
-chars = "\u0001c"
-key = "T"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001c"
+# key = "T"
+# mods = "Command"
 
 # Opens tmux preferences (CMD + ,)
 # Similar to opening preferences in macOS apps
-[[keyboard.bindings]]
-chars = "\u0001,"
-key = "Comma"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001,"
+# key = "Comma"
+# mods = "Command"
 
-# Quick window/tab switching using CMD + number
-# Similar to Chrome/Safari tab switching
-[[keyboard.bindings]]
-chars = "\u00011"
-key = "Key1"
-mods = "Command"
-# Switch to tmux window 1
-
-[[keyboard.bindings]]
-chars = "\u00012"
-key = "Key2"
-mods = "Command"
-# Switch to tmux window 2
-
-[[keyboard.bindings]]
-chars = "\u00013"
-key = "Key3"
-mods = "Command"
-# Switch to tmux window 3
-
-[[keyboard.bindings]]
-chars = "\u00014"
-key = "Key4"
-mods = "Command"
-# Switch to tmux window 4
-
-[[keyboard.bindings]]
-chars = "\u00015"
-key = "Key5"
-mods = "Command"
-# Switch to tmux window 5
-
-[[keyboard.bindings]]
-chars = "\u00016"
-key = "Key6"
-mods = "Command"
-# Switch to tmux window 6
-
-[[keyboard.bindings]]
-chars = "\u00017"
-key = "Key7"
-mods = "Command"
-# Switch to tmux window 7
-
-[[keyboard.bindings]]
-chars = "\u00018"
-key = "Key8"
-mods = "Command"
-# Switch to tmux window 8
-
-[[keyboard.bindings]]
-chars = "\u00019"
-key = "Key9"
-mods = "Command"
-# Switch to tmux window 9
+# # Quick window/tab switching using CMD + number
+# # Similar to Chrome/Safari tab switching
+# [[keyboard.bindings]]
+# chars = "\u00011"
+# key = "Key1"
+# mods = "Command"
+# # Switch to tmux window 1
+#
+# [[keyboard.bindings]]
+# chars = "\u00012"
+# key = "Key2"
+# mods = "Command"
+# # Switch to tmux window 2
+#
+# [[keyboard.bindings]]
+# chars = "\u00013"
+# key = "Key3"
+# mods = "Command"
+# # Switch to tmux window 3
+#
+# [[keyboard.bindings]]
+# chars = "\u00014"
+# key = "Key4"
+# mods = "Command"
+# # Switch to tmux window 4
+#
+# [[keyboard.bindings]]
+# chars = "\u00015"
+# key = "Key5"
+# mods = "Command"
+# # Switch to tmux window 5
+#
+# [[keyboard.bindings]]
+# chars = "\u00016"
+# key = "Key6"
+# mods = "Command"
+# # Switch to tmux window 6
+#
+# [[keyboard.bindings]]
+# chars = "\u00017"
+# key = "Key7"
+# mods = "Command"
+# # Switch to tmux window 7
+#
+# [[keyboard.bindings]]
+# chars = "\u00018"
+# key = "Key8"
+# mods = "Command"
+# # Switch to tmux window 8
+#
+# [[keyboard.bindings]]
+# chars = "\u00019"
+# key = "Key9"
+# mods = "Command"
+# # Switch to tmux window 9
 
 # Split current pane horizontally (CMD + Shift + D)
 # Creates a new pane below the current one
-[[keyboard.bindings]]
-chars = "\u0001\""
-key = "D"
-mods = "Command|Shift"
+# [[keyboard.bindings]]
+# chars = "\u0001\""
+# key = "D"
+# mods = "Command|Shift"
 
 # Split current pane vertically (CMD + D)
 # Creates a new pane to the right of the current one
-[[keyboard.bindings]]
-chars = "\u0001%"
-key = "D"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001%"
+# key = "D"
+# mods = "Command"
 
 # Save in vim/neovim (CMD + S)
 # Sends Escape :w Enter sequence
-[[keyboard.bindings]]
-chars = "\u001B:w\r"
-key = "S"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u001B:w\r"
+# key = "S"
+# mods = "Command"
 
 # Close current window/tab (CMD + W)
 # Similar to closing tabs in other macOS apps
-[[keyboard.bindings]]
-chars = "\u0001x"
-key = "W"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001x"
+# key = "W"
+# mods = "Command"
 
 # Move cursor forward one word (Alt + Right)
 # Similar to macOS text navigation
-[[keyboard.bindings]]
-chars = "\u001BF"
-key = "Right"
-mods = "Alt"
+# [[keyboard.bindings]]
+# chars = "\u001BF"
+# key = "Right"
+# mods = "Alt"
 
 # Move cursor backward one word (Alt + Left)
 # Similar to macOS text navigation
-[[keyboard.bindings]]
-chars = "\u001BB"
-key = "Left"
-mods = "Alt"
+# [[keyboard.bindings]]
+# chars = "\u001BB"
+# key = "Left"
+# mods = "Alt"
 
 # Copy selected text (CMD + C)
 # Uses system clipboard
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Command"
+# [[keyboard.bindings]]
+# action = "Copy"
+# key = "C"
+# mods = "Command"
 
 # Paste text (CMD + V)
 # Pastes from system clipboard
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Command"
+# [[keyboard.bindings]]
+# action = "Paste"
+# key = "V"
+# mods = "Command"
 
 # Switch to previous tab (CMD + Left)
 # Similar to tab navigation in Safari/Chrome
-[[keyboard.bindings]]
-chars = "\u0001["
-key = "Left"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001["
+# key = "Left"
+# mods = "Command"
 
 # Switch to next tab (CMD + Right)
 # Similar to tab navigation in Safari/Chrome
-[[keyboard.bindings]]
-chars = "\u0001]"
-key = "Right"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001]"
+# key = "Right"
+# mods = "Command"
 
 # Undo last action (CMD + Z)
 # Standard macOS undo shortcut
-[[keyboard.bindings]]
-chars = "\u0001z"
-key = "Z"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001z"
+# key = "Z"
+# mods = "Command"
 
 # Find/Search (CMD + F)
 # Standard macOS find shortcut
-[[keyboard.bindings]]
-chars = "\u0001f"
-key = "F"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001f"
+# key = "F"
+# mods = "Command"
 
 # Create new window (CMD + N)
 # Similar to new window in Terminal.app
-[[keyboard.bindings]]
-chars = "\u0001n"
-key = "N"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001n"
+# key = "N"
+# mods = "Command"
 
 # Quit application (CMD + Q)
 # Standard macOS quit shortcut
-[[keyboard.bindings]]
-chars = "\u0001q"
-key = "Q"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u0001q"
+# key = "Q"
+# mods = "Command"
 
 # Scroll up in terminal (CMD + Up)
 # Similar to page up
-[[keyboard.bindings]]
-chars = "\u001B[A"
-key = "Up"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u001B[A"
+# key = "Up"
+# mods = "Command"
 
 # Scroll down in terminal (CMD + Down)
 # Similar to page down
-[[keyboard.bindings]]
-chars = "\u001B[B"
-key = "Down"
-mods = "Command"
+# [[keyboard.bindings]]
+# chars = "\u001B[B"
+# key = "Down"
+# mods = "Command"
 
 # Reopen last closed tab (CMD + Shift + T)
 # Similar to browser behavior
-[[keyboard.bindings]]
-chars = "\u0001T"
-key = "T"
-mods = "Command|Shift"
+# [[keyboard.bindings]]
+# chars = "\u0001T"
+# key = "T"
+# mods = "Command|Shift"
 
 # Increase font size (CMD + Plus)
 # Standard zoom in shortcut
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Plus"
-mods = "Command"
+# [[keyboard.bindings]]
+# action = "IncreaseFontSize"
+# key = "Plus"
+# mods = "Command"
 
 # Decrease font size (CMD + Minus)
 # Standard zoom out shortcut
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Command"
+# [[keyboard.bindings]]
+# action = "DecreaseFontSize"
+# key = "Minus"
+# mods = "Command"
 
 # Reset font size to default (CMD + 0)
 # Standard zoom reset shortcut
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Command"
+# [[keyboard.bindings]]
+# action = "ResetFontSize"
+# key = "Key0"
+# mods = "Command"
 
 [scrolling]
 history = 100000 # Increased from 10000
 multiplier = 5 # Faster scrolling
-auto_scroll = true
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
-[terminal]
-# Better performance settings
-osc52 = "CopyPaste"  # Enable OSC52 copying
-working_directory = "None"  # Auto-detect working directory
-bracketed_paste = true
-semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-
 [terminal.shell]
 program = "/bin/zsh"
 args = [
   "--login",  # Start as a login shell
-  "-c",       # Run command
-  "tmux has-session && tmux attach || tmux new-session"  # Attach or create tmux session
 ]
 
 [window]
@@ -305,8 +279,6 @@ opacity = 1.0
 dynamic_title = true
 padding = { x = 8, y = 8 }
 dynamic_padding = true
-option_as_alt = true
-window_decorations = "buttonless"
 # startup_mode = "Windowed"
 # option_as_alt = "Both"  # Better Alt key handling
 
@@ -322,9 +294,82 @@ persistent_logging = false
 log_level = "Warn"
 print_events = false
 
-# GPU acceleration
-[gpu]
-vsync = true
+[general]
+live_config_reload = true
 
-[live_config_reload]
-enabled = true
+[colors.primary]
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+bright_foreground = "#CDD6F4"
+
+[colors.cursor]
+text = "#1E1E2E"
+cursor = "#F5E0DC"
+
+[colors.vi_mode_cursor]
+text = "#1E1E2E"
+cursor = "#B4BEFE"
+
+[colors.search.matches]
+foreground = "#1E1E2E"
+background = "#A6ADC8"
+
+[colors.search.focused_match]
+foreground = "#1E1E2E"
+background = "#A6E3A1"
+
+[colors.footer_bar]
+foreground = "#1E1E2E"
+background = "#A6ADC8"
+
+[colors.hints.start]
+foreground = "#1E1E2E"
+background = "#F9E2AF"
+
+[colors.hints.end]
+foreground = "#1E1E2E"
+background = "#A6ADC8"
+
+[colors.selection]
+text = "#1E1E2E"
+background = "#F5E0DC"
+
+[colors.normal]
+black = "#45475A"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#BAC2DE"
+
+[colors.bright]
+black = "#585B70"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#A6ADC8"
+
+[colors.dim]
+black = "#45475A"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#BAC2DE"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#FAB387"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#F5E0DC"
+
