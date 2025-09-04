@@ -139,6 +139,7 @@ args = [
 dynamic_title = true
 padding = { x = 10, y = 10 }
 option_as_alt = "Both"
+decorations = "buttonless"
 
 # Improve window dimensions
 [window.dimensions]
