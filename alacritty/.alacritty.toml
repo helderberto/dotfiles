@@ -102,6 +102,23 @@ action = "ResetFontSize"
 key = "Key0"
 mods = "Command"
 
+# Navigate between windows (Cmd + 1-9)
+[[keyboard.bindings]]
+chars = "\u00011"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00012"
+key = "Key2"
+mods = "Command"
+
+# Close window (Cmd + W)
+[[keyboard.bindings]]
+chars = "\u0001&"
+key = "W"
+mods = "Command"
+
 [scrolling]
 history = 100000 # Increased from 10000
 multiplier = 5 # Faster scrolling
