@@ -27,15 +27,6 @@ return {
       },
     })
 
-    lsp_zero.set_preferences({
-      sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I',
-      },
-    })
-
     lsp_zero.setup()
 
     require('mason').setup({})
