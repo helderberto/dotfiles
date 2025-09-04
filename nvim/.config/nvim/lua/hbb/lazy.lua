@@ -22,11 +22,59 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '  '
 
 -- Setup lazy.nvim
+
 require('lazy').setup({
   spec = {
     -- import your plugins
     { import = 'plugins' },
   },
+
   -- automatically check for plugin updates
   checker = { enabled = true },
+
+  -- performance optimizations
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    reset_packpath = true, -- reset the package path to improve startup time
+    rtp = {
+      reset = true, -- reset the runtime path to $VIMRUNTIME and your config directory
+      ---@type string[]
+      paths = {}, -- add any custom paths here that you want to includes in the rtp
+      ---@type string[] list any plugins you want to disable here
+      disabled_plugins = {
+        '2html_plugin',
+        'getscript',
+        'getscriptPlugin',
+        'gzip',
+        'logipat',
+        'netrw',
+        'netrwPlugin',
+        'netrwSettings',
+        'netrwFileHandlers',
+        'matchit',
+        'tar',
+        'tarPlugin',
+        'rrhelper',
+        'spellfile_plugin',
+        'vimball',
+        'vimballPlugin',
+        'zip',
+        'zipPlugin',
+        'tutor',
+        'rplugin',
+        'synmenu',
+        'optwin',
+        'compiler',
+        'bugreport',
+        'ftplugin',
+        'matchparen',
+        'shada',
+        'spell',
+        'man',
+        'shada_plugin',
+      },
+    },
+  },
 })
