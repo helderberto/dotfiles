@@ -7,7 +7,7 @@ unfocused_hollow = true
 
 # Improve terminal response
 [env]
-TERM = "xterm-256color"
+TERM = "alacritty"
 COLORTERM = "truecolor"  # Enable true color support
 EDITOR = "nvim"  # Set default editor
 
