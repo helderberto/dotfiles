@@ -136,15 +136,9 @@ args = [
 ]
 
 [window]
-class = { instance = "Alacritty", general = "Alacritty" }
-title = "Alacritty"
-decorations = "buttonless"  # More native macOS look
-opacity = 1.0
 dynamic_title = true
 padding = { x = 10, y = 10 }
-dynamic_padding = true
-option_as_alt = "Both"  # Better Alt key handling
-startup_mode = "Windowed"
+option_as_alt = "Both"
 
 # Improve window dimensions
 [window.dimensions]
