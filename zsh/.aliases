@@ -65,7 +65,7 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% |
 alias k="clear"
 
 # NPM Install
-alias ni="npm install" # --save is default since npm 5.0.0
+alias ni="npm ci" # clean install (using package-lock.json)
 alias nid="npm install -D" # shorter than --save-dev
 alias nig="npm install -g" # global installs
 alias nu="npm uninstall" # uninstall packages
@@ -86,13 +86,6 @@ alias nw="npm workspace" # single workspace
 alias nwa="npm workspaces" # all workspaces
 alias nwr="npm workspace run" # run in specific workspace
 alias nwar="npm workspaces run" # run in all workspaces
-
-# NPM Utils
-alias nout="npm outdated"           # check outdated packages
-alias nau="npm audit"               # security audit
-alias nauf="npm audit fix"          # fix security issues
-alias nrb="npm rebuild"             # rebuild packages
-alias nci="npm ci"                  # clean install (uses package-lock.json)
 
 # NPM Info
 alias nls="npm list --depth=0"      # list installed packages
