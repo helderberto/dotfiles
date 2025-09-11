@@ -65,6 +65,7 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% |
 alias k="clear"
 
 # NPM Install
+alias n="npm" # base command
 alias ni="npm ci" # clean install (using package-lock.json)
 alias nid="npm install -D" # shorter than --save-dev
 alias nig="npm install -g" # global installs
