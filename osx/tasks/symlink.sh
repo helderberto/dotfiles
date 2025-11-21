@@ -13,6 +13,7 @@ DOTFILES=(
     "tmux"
     "editorconfig"
     "ghostty"
+    "claude"
 )
 
 cd $DOTFILE_DIR
