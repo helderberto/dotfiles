@@ -21,3 +21,13 @@ nvim/.config/*
 
 # ZSH
 .private
+
+# Claude
+claude/.claude/debug/
+claude/.claude/projects/
+claude/.claude/todos/
+claude/.claude/shell-snapshots/
+claude/.claude/history.jsonl
+claude/.claude/settings.json
+claude/.claude/settings.json.bak
+.claude/settings.local.json
