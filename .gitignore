@@ -31,4 +31,5 @@ claude/.claude/history.jsonl
 claude/.claude/settings.json
 claude/.claude/settings.json.bak
 claude/.claude/ide/
+claude/.claude/file-history/
 .claude/settings.local.json
