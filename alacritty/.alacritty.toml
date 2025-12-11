@@ -12,7 +12,7 @@ COLORTERM = "truecolor"  # Enable true color support
 EDITOR = "nvim"  # Set default editor
 
 [font]
-size = 12
+size = 13
 
 [font.normal]
 family = "Hack Nerd Font"
