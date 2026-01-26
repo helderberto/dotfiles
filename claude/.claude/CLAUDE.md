@@ -1,32 +1,47 @@
-# Claude Guidelines
+- Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
 
-## Quick Reference
+## TypeScript
 
-**Key Principles:**
+- No `any` - use `unknown` if needed
+- No type assertions (`as Type`) without justification
+- No `@ts-ignore`/`@ts-expect-error` without explanation
+- Strict mode always
+- Define types for all props/state/functions
+- `Readonly` for immutable props
+- `interface` for objects, `type` for unions
+- Objects over `enum`
 
-- Write tests first to define expected behavior
-- Test behavior, not implementation details
-- No `any` or type assertions
-- Immutability is mandatory
+## Code Rules
+
+**Immutability (mandatory):**
+- No array mutations: `push`, `pop`, `splice`, `shift`, `unshift`, `[i]=`, `sort`, `reverse`
+- No object mutations: `obj.key=`, `delete obj.key`
+- Use spread, `slice`, `map`, destructuring
+
+**Structure:**
 - Small pure functions
-- TypeScript strict mode always
+- Max 2 nesting levels
+- No nested ifs - use guards/early returns
+- Single responsibility
+- No comments unless explaining "why"
+- Object options for 3+ params
 
-## Testing Principles
+**Naming:**
+- Functions: `camelCase`, verb-based
+- Types: `PascalCase`, noun-based
+- Constants: `UPPER_SNAKE_CASE`
+- Files: `kebab-case`
 
-See @~/.claude/docs/testing.md
+## Testing
 
-## TypeScript Guidelines
+- Jest/Vitest + React Testing Library
+- Test behavior, not implementation
+- Create `customRender` helper with `defaultProps`
+- Group tests: Rendering, User Interactions, Edge Cases
+- Mock with MSW when needed
 
-See @~/.claude/docs/typescript.md
+## Git/GitHub
 
-## Code Style Guidelines
-
-See @~/.claude/docs/code-style.md
-
-## Working with Git
-
-You MUST NOT stage or commit changes unless explicitly instructed to do so.
-
-## Working with GitHub
-
-Make use of the `gh` CLI tool to interact with GitHub.
+- Use `gh` CLI for GitHub
+- Never stage/commit unless explicitly told
+- At plan end: list unresolved questions (extremely concise)
