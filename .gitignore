@@ -35,3 +35,4 @@ claude/.claude/file-history/
 .claude/settings.local.json
 claude/.claude/stats-cache.json
 claude/.claude/plugins/
+claude/.claude/cache/*
