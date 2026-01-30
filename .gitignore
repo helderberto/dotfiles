@@ -36,3 +36,7 @@ claude/.claude/file-history/
 claude/.claude/stats-cache.json
 claude/.claude/plugins/
 claude/.claude/cache/*
+claude/.claude/paste-cache/
+claude/.claude/session-env/
+claude/.claude/tasks/
+claude/.claude/plans/
