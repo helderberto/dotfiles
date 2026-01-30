@@ -1,3 +1,4 @@
+- Read files before editing them
 - Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
 - Research unknown technical details rather than inventing
 - Only stage/commit when explicitly requested
