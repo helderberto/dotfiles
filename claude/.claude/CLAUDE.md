@@ -2,6 +2,7 @@
 - Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
 - Research unknown technical details rather than inventing
 - Only stage/commit when explicitly requested
+- Use `gh` CLI for GitHub operations
 
 For specific conventions, see:
 
