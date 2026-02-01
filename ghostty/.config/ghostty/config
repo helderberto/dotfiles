@@ -1,15 +1,15 @@
 # Font
-font-family = "JetBrains Mono"
+font-family = "Hack Nerd Font"
 font-size = 12
 
 # Theme
 theme = catppuccin-mocha
 
 # Window
-window-padding-x = 8
-window-padding-y = 8
 window-decoration = true
-macos-titlebar-style = tabs
+macos-titlebar-style = transparent
+window-padding-x = 8
+window-padding-y = 5
 
 # Shell
 shell-integration = detect
