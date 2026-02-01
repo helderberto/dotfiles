@@ -77,23 +77,24 @@ brew install stylua # lua formatter
 brew install ag
 
 # Install cask packages
+brew install --cask ghostty                 # default terminal
 brew install --cask alacritty
 brew install --cask figma
-brew install --cask google-chrome
-brew install --cask arc # My default browser
+brew install --cask google-chrome           # default browser
 brew install --cask imageoptim
 brew install --cask slack
 brew install --cask discord
 brew install --cask spotify
-brew install --cask 1password # Password manager - https://1password.com/
+brew install --cask 1password
 brew install --cask grammarly
 brew install --cask visual-studio-code
-brew install --cask hiddenbar # Hide menu Mac - https://github.com/dwarvesf/hidden
-brew install --cask raycast # Override native Spotlight from MacOS
+brew install --cask cursor
+brew install --cask hiddenbar               # Hide menu Mac - https://github.com/dwarvesf/hidden
+brew install --cask raycast                 # Override native Spotlight from MacOS
 brew install --cask postman
 brew install --cask insomnia
-brew install --cask todoist # Task manager
-brew install --cask betterdisplay # Display resolution manager
+brew install --cask todoist                 # Task manager
+brew install --cask betterdisplay           # Display resolution manager
 
 # Remove outdated versions from the cellar.
 brew cleanup
