@@ -1,0 +1,19 @@
+# Font
+font-family = "JetBrains Mono"
+font-size = 13
+
+# Theme
+theme = catppuccin-mocha
+
+# Window
+window-padding-x = 8
+window-padding-y = 8
+macos-titlebar-style = hidden
+
+# Shell
+shell-integration = detect
+shell-integration-features = cursor,sudo
+
+# Performance
+copy-on-select = true
+
