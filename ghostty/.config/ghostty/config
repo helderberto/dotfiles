@@ -3,7 +3,7 @@ font-family = "Hack Nerd Font"
 font-size = 12
 
 # Theme
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 # Window
 window-decoration = true
