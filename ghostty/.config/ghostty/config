@@ -8,7 +8,8 @@ theme = catppuccin-mocha
 # Window
 window-padding-x = 8
 window-padding-y = 8
-macos-titlebar-style = hidden
+window-decoration = true
+macos-titlebar-style = tabs
 
 # Shell
 shell-integration = detect
