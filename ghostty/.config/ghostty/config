@@ -1,6 +1,6 @@
 # Font
 font-family = "JetBrains Mono"
-font-size = 13
+font-size = 12
 
 # Theme
 theme = catppuccin-mocha
