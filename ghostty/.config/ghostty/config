@@ -1,6 +1,6 @@
 # Font
-font-family = "Hack Nerd Font"
-font-size = 12
+font-family = "JetBrains Mono"
+font-size = 12.5
 
 # Theme
 theme = Catppuccin Mocha
