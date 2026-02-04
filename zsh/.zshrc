@@ -3,40 +3,30 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Powerlevel10k theme
+source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# zsh-completions
+FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
+
 # Performance optimizations
 # Compile zcompdump if modified, to increase startup speed
 autoload -Uz compinit
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
+  compinit -u
   touch ~/.zcompdump
 else
-  compinit -C
+  compinit -C -u
 fi
 
 # Cache expensive completions
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-### Antigen configuration
-source $(brew --prefix)/share/antigen/antigen.zsh
-
-# Load oh-my-zsh library
-antigen use oh-my-zsh
-
-# Bundle configuration (grouped by functionality)
-# Completion and syntax
-antigen bundles <<EOBUNDLES
-  zsh-users/zsh-syntax-highlighting
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-completions
-EOBUNDLES
-
-# Theme configuration
-antigen theme romkatv/powerlevel10k
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-# Apply antigen changes
-antigen apply
+# zsh plugins (must be after compinit)
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### Completion configuration
 zstyle ':completion:*' special-dirs true
