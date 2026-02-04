@@ -24,3 +24,14 @@ keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+k=goto_split:top
 keybind = ctrl+l=goto_split:right
 
+# Pane resizing - vim-style and arrows with cmd+shift
+keybind = cmd+shift+h=resize_split:left,10
+keybind = cmd+shift+j=resize_split:down,10
+keybind = cmd+shift+k=resize_split:up,10
+keybind = cmd+shift+l=resize_split:right,10
+keybind = cmd+shift+left=resize_split:left,10
+keybind = cmd+shift+down=resize_split:down,10
+keybind = cmd+shift+up=resize_split:up,10
+keybind = cmd+shift+right=resize_split:right,10
+keybind = cmd+shift+equal=equalize_splits
+
