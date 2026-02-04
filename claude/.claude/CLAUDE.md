@@ -3,6 +3,7 @@
 - Research unknown technical details rather than inventing
 - Only stage/commit when explicitly requested
 - Use `gh` CLI for GitHub operations
+- No comments in code unless truly necessary. Code should be self-documenting.
 
 For specific conventions, see:
 
