@@ -1,6 +1,6 @@
 ---
-name: pr
-description: This skill should be used when the user asks to "create a pull request", "open a PR", "/pr", or requests creating GitHub pull requests.
+name: create-pr
+description: This skill should be used when the user asks to "create a pull request", "open a PR", "/create-pr", or requests creating GitHub pull requests.
 version: 1.0.0
 ---
 
