@@ -2,7 +2,7 @@
 
 - No `any` - use `unknown` if needed
 - No type assertions (`as Type`) without justification
-- No `@ts-ignore`/`@ts-expect-error` without explanation
+- Avoid `@ts-ignore`/`@ts-expect-error`. If truly necessary (e.g., testing invalid scenarios), add comment explaining why
 - Define types for all props/state/functions
 - `Readonly` for immutable props
 - `interface` for objects, `type` for unions

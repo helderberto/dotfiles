@@ -4,6 +4,7 @@
 - Only stage/commit when explicitly requested
 - Use `gh` CLI for GitHub operations
 - No comments in code unless truly necessary. Code should be self-documenting.
+- Avoid disabling eslint rules. If truly necessary, add comment explaining why.
 
 For specific conventions, see:
 
