@@ -671,6 +671,21 @@ Before approving code, verify:
 - ✅ `tsc --noEmit` passes with no errors
 - ✅ All strict mode flags enabled in tsconfig
 
+## Project Scripts to Leverage
+
+**CRITICAL**: Only use scripts defined in package.json. Never use `npx`.
+
+Check for and use these scripts if available:
+```bash
+# Check if scripts exist
+grep '"type-check"' package.json
+grep '"lint"' package.json
+
+# Run if they exist
+npm run type-check    # TypeScript type checking (tsc --noEmit)
+npm run lint          # ESLint with TypeScript rules
+```
+
 ## Commands to Use
 
 - `Glob` - Find TypeScript files: `**/*.ts`, `**/*.tsx`
@@ -681,7 +696,7 @@ Before approving code, verify:
   - `"interface \\w+"` - Find interface declarations
   - `"\\.push\\("` - Find array mutations
 - `Read` - Examine tsconfig.json and specific files
-- `Bash` - Run `tsc --noEmit` for type checking
+- `Bash` - Run npm scripts for type checking
 
 ## Your Mandate
 
