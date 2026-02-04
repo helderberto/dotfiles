@@ -24,6 +24,7 @@ nvim/.config/*
 
 # Claude
 claude/.claude/debug/
+claude/.claude/image-cache/
 claude/.claude/projects/
 claude/.claude/todos/
 claude/.claude/shell-snapshots/
