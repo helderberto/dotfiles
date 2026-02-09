@@ -1,4 +1,8 @@
-Base directory for this skill: /Users/hberto/.claude/skills/amend-push
+---
+name: amend-push
+description: This skill should be used when the user asks to "amend and push", "/amend-push", or wants to amend the last commit and force push.
+version: 1.0.0
+---
 
 # Amend and Push
 
@@ -20,23 +24,5 @@ Stage changes, amend the previous commit, and force push to remote.
 ## Safety Rules
 
 - **NEVER** force push to main/master branches
-- Warn user before force pushing
 - Use `--force-with-lease` instead of `--force`
 - Verify branch has upstream tracking
-- Check for uncommitted changes first
-- Show clear confirmation of what was pushed
-
-## Usage Examples
-
-```bash
-/amend-push file1.ts file2.tsx
-/amend-push -a
-/amend-push -e file.ts  # Edit message before push
-```
-
-## Warning
-
-Force pushing rewrites history. Only use when:
-- Working on feature branches
-- Commit hasn't been merged
-- Coordinating with team on shared branches

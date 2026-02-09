@@ -1,24 +1,17 @@
 # Claude Code Agents
 
-This directory contains code and resources for developing applications using the Claude AI model by Anthropic. It includes examples, libraries, and documentation to help developers integrate Claude into their projects.
+## Available Agents
 
-## Agent Overview
+| Agent | Purpose |
+|-------|---------|
+| `code-review` | Logic, readability, patterns, performance, code smells |
+| `ts-enforcer` | TypeScript strict mode and type safety |
+| `test-quality` | Test effectiveness beyond coverage |
+| `learn` | Capture insights into CLAUDE.md |
+| `adr` | Architecture Decision Records |
 
-### `ts-enforcer`
+## Design Principles
 
-**Purpose:** Ensures that all TypeScript code adheres to strict type safety and quality standards.
-
-### `learn`
-
-**Purpose:** A learning agent that can analyze codebases and extract useful patterns or information.
-
-### `adr`
-
-**Purpose:** Manages Architectural Decision Records (ADRs) to document important decisions made during the development process.
-
-## Agent Design Principles
-
-All agents should follow the following design principles:
-
-1. **Clear Purpose:** Each agent must have a well-defined purpose and scope.
-2. **Trigger Patterns:** Agents should be activated based on specific triggers or conditions.
+1. **Clear Purpose**: Well-defined scope, no overlap
+2. **Concise**: Minimal context cost, maximum signal
+3. **Actionable**: Checklist-style rules, not essays

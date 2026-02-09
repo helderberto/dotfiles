@@ -5,12 +5,14 @@
 - Use `gh` CLI for GitHub operations
 - No comments in code unless truly necessary. Code should be self-documenting.
 - Avoid disabling eslint rules. If truly necessary, add comment explaining why.
+- Find root cause rather than patching symptoms
 
 For specific conventions, see:
 
 - [TypeScript](docs/typescript.md)
 - [Code Principles](docs/code-principles.md)
 - [Testing](docs/testing.md)
+- [Accessibility](docs/accessibility.md)
+- [Internationalization](docs/internationalization.md)
 - [Git/GitHub](docs/git.md)
-- [Debugging](docs/debugging.md)
 - [Planning](docs/planning.md)
