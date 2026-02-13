@@ -12,8 +12,19 @@ return {
     -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/lsp.md#you-might-not-need-lsp-zero
     local lsp_zero = require('lsp-zero')
 
-    lsp_zero.configure('lua_ls', {
+    -- Use vim.lsp.config instead of lsp_zero.configure
+    vim.lsp.config('lua_ls', {
       cmd = { 'lua-language-server' },
+      root_markers = {
+        '.luarc.json',
+        '.luarc.jsonc',
+        '.luacheckrc',
+        '.stylua.toml',
+        'stylua.toml',
+        'selene.toml',
+        'selene.yml',
+        '.git',
+      },
       settings = {
         Lua = {
           runtime = {
