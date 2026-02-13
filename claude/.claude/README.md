@@ -6,4 +6,4 @@ Custom configuration for Claude Code CLI.
 
 - `agents/` - Custom specialized agents for specific workflows
 - `docs/` - Project conventions (TypeScript, testing, git, code principles)
-- `skills/` - Slash commands (`/commit`, `/ship`, `/open-pr`, etc.)
+- `skills/` - See [helderberto/skills](https://github.com/helderberto/skills)
