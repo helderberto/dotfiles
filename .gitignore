@@ -41,3 +41,6 @@ claude/.claude/paste-cache/
 claude/.claude/session-env/
 claude/.claude/tasks/
 claude/.claude/plans/
+
+# Skills CLI
+.agents/
