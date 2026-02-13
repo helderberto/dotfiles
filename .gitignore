@@ -43,38 +43,5 @@ claude/.claude/tasks/
 claude/.claude/plans/
 
 # Skills CLI
-.agents/
 claude/.claude/skills/
-skills/
 
-# Agent config directories
-.adal/
-.agent/
-.augment/
-.claude/
-.cline/
-.codebuddy/
-.commandcode/
-.continue/
-.crush/
-.cursor/
-.factory/
-.goose/
-.iflow/
-.junie/
-.kilocode/
-.kiro/
-.kode/
-.mcpjam/
-.mux/
-.neovate/
-.openhands/
-.pi/
-.pochi/
-.qoder/
-.qwen/
-.roo/
-.trae/
-.vibe/
-.windsurf/
-.zencoder/
