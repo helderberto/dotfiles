@@ -44,4 +44,6 @@ claude/.claude/plans/
 
 # Skills CLI
 claude/.claude/skills/
+claude/.claude/backups/
+claude/.claude/mcp-needs-auth-cache.json
 
