@@ -102,4 +102,5 @@ alias hs="http-server"
 
 # Claude CLI (force homebrew version over asdf shim)
 alias claude="/opt/homebrew/bin/claude"
+alias cc="/opt/homebrew/bin/claude" # Just because i'm lazy
 
