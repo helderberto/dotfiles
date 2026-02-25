@@ -20,6 +20,8 @@ Set zsh as the default shell. zsh is pre-installed on macOS Catalina+. If not av
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+Check if zsh is the default shell, if not:
+
 ```bash
 sudo chsh -s $(which zsh)
 ```
