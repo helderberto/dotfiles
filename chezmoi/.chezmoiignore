@@ -20,6 +20,9 @@
 .zcompdump*
 .tmux/plugins/
 
+# Editor configs (managed separately or externally)
+.config/nvim/
+
 # App state/cache
 .cache/
 .local/share/
