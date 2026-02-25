@@ -97,8 +97,6 @@ export WORK_API_KEY=...
 [[ -f ~/.extra ]] && source ~/.extra
 ```
 
-Work machines are auto-detected via hostname (`*work*`, `*corp*`) and get a different git email — see `.chezmoi.toml.tmpl`.
-
 ---
 
 ## Author

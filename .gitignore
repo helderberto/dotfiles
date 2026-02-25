@@ -58,10 +58,10 @@ chezmoi/**/*company*
 *-corp.*
 
 # Machine-specific generated files (local only, not in repo)
-.chezmoi.yaml
-.chezmoi.toml
-.chezmoi.json
-chezmoistate.boltdb
+/.chezmoi.yaml
+/.chezmoi.toml
+/.chezmoi.json
+/chezmoistate.boltdb
 
 # Secrets and credentials (paranoid mode)
 **/*secret*
