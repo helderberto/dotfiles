@@ -42,10 +42,10 @@ fi
 # Test aliases
 echo ""
 echo "3️⃣  Aliases..."
-if alias g >/dev/null 2>&1; then
-    echo -e "${GREEN}✓${NC} Git aliases loaded"
+if [ -f "$HOME/.aliases" ]; then
+    echo -e "${GREEN}✓${NC} Aliases file present"
 else
-    echo -e "${RED}✗${NC} Aliases not loaded"
+    echo -e "${RED}✗${NC} ~/.aliases not found"
     ((ERRORS++))
 fi
 
