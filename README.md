@@ -43,6 +43,8 @@ This will automatically:
 
 **3. After setup**
 
+Open a new terminal session so all tools and shell config are loaded.
+
 Generate an SSH key and add it to GitHub:
 ```bash
 ssh-keygen -t ed25519 -C "your@email.com"
@@ -55,7 +57,10 @@ alias workspace="cd ~/workspace"
 # add any machine-specific secrets or aliases here
 ```
 
-Run `p10k configure` to set up your shell prompt.
+Run `p10k configure` to set up your shell prompt:
+```bash
+p10k configure
+```
 
 ---
 
