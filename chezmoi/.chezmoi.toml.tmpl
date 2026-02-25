@@ -1,0 +1,17 @@
+{{- $isWork := false -}}
+{{- $email := "helder.burato@gmail.com" -}}
+{{- $name := "Helder Burato Berto" -}}
+
+{{- /* Detect if this is a work machine */ -}}
+{{- if or (contains "work" .chezmoi.hostname) (contains "corp" .chezmoi.hostname) -}}
+{{-   $isWork = true -}}
+{{-   $email = "your-work@email.com" -}}
+{{- end -}}
+
+[data]
+    isWork = {{ $isWork }}
+    email = {{ $email | quote }}
+    name = {{ $name | quote }}
+
+[edit]
+    command = "nvim"

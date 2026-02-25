@@ -1,0 +1,28 @@
+name: Test Dotfiles
+
+on:
+  push:
+    branches: [ main, feat/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install chezmoi
+        run: |
+          sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+
+      - name: Run test suite
+        run: |
+          chezmoi init --source=$PWD/chezmoi
+          ./test-chezmoi.sh
+
+      - name: Dry-run apply
+        run: |
+          chezmoi apply --dry-run --verbose --source=$PWD/chezmoi
