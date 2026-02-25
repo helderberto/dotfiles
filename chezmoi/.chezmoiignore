@@ -18,6 +18,7 @@
 .p10k.zsh
 .fzf.zsh
 .zcompdump*
+.tmux/plugins/
 
 # App state/cache
 .cache/

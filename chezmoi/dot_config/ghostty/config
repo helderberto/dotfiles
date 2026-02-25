@@ -1,0 +1,37 @@
+# Font
+font-family = "JetBrains Mono"
+font-size = 12.5
+
+# Theme
+theme = Catppuccin Mocha
+
+# Window
+window-decoration = true
+macos-titlebar-style = transparent
+window-padding-x = 8
+window-padding-y = 5
+
+# Shell
+shell-integration = detect
+shell-integration-features = cursor,sudo
+
+# Performance
+copy-on-select = true
+
+# Keybinds - vim-style navigation
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+# Pane resizing - vim-style and arrows with cmd+shift
+keybind = cmd+shift+h=resize_split:left,10
+keybind = cmd+shift+j=resize_split:down,10
+keybind = cmd+shift+k=resize_split:up,10
+keybind = cmd+shift+l=resize_split:right,10
+keybind = cmd+shift+left=resize_split:left,10
+keybind = cmd+shift+down=resize_split:down,10
+keybind = cmd+shift+up=resize_split:up,10
+keybind = cmd+shift+right=resize_split:right,10
+keybind = cmd+shift+equal=equalize_splits
+
