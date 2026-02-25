@@ -65,10 +65,8 @@ brew install --cask figma || true
 brew install --cask google-chrome || true
 brew install --cask imageoptim || true
 brew install --cask slack || true
-brew install --cask discord || true
 brew install --cask spotify || true
 brew install --cask 1password || true
-brew install --cask grammarly || true
 brew install --cask visual-studio-code || true
 brew install --cask cursor || true
 brew install --cask hiddenbar || true
@@ -82,6 +80,6 @@ brew install --cask betterdisplay || true
 $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc || true
 
 # Remove outdated versions
-brew cleanup
+brew cleanup || true
 
 echo "✓ Homebrew packages installed"
