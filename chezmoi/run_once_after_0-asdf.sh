@@ -9,7 +9,7 @@ fi
 echo "🔧 Setting up asdf plugins..."
 
 asdf plugin add nodejs || true
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git 2>/dev/null || true
+asdf plugin add npm || true
 
 echo "📦 Installing asdf versions from ~/.tool-versions..."
 asdf install || true
