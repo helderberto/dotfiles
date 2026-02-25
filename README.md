@@ -2,72 +2,99 @@
 
 macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
-## New Machine Setup
+---
 
-### 1. Prerequisites
+## New Machine
 
-Accept Xcode license and set zsh as default shell:
+**1. Prerequisites**
 
 ```bash
 xcode-select --install
 sudo chsh -s $(which zsh)
 ```
 
-### 2. Bootstrap
-
-Install chezmoi and apply dotfiles in one command:
+**2. Bootstrap (one command)**
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles --source-path chezmoi
 ```
 
-This will:
+This will automatically:
 - Install Homebrew
-- Install all packages from `Brewfile`
-- Symlink all dotfiles to `~`
-- Set up your workspace directory
+- Install all packages and apps
+- Set up asdf with nodejs
+- Bootstrap tmux plugins
+- Write all dotfiles to `~`
+- Create `~/workspace`
+- Configure the Dock
 
-### 3. Generate SSH Key
+**3. After setup**
 
+Generate an SSH key and add it to GitHub:
 ```bash
 ssh-keygen -t ed25519 -C "your@email.com"
-cat ~/.ssh/id_ed25519.pub  # add to GitHub
+cat ~/.ssh/id_ed25519.pub
+```
+
+Create `~/.private` with machine-specific env vars:
+```bash
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS=100000000
+# add any machine-specific secrets here
+```
+
+Run `p10k configure` to set up your shell prompt.
+
+---
+
+## Sync Existing Machine
+
+```bash
+cd ~/.dotfiles
+git pull origin main
+make apply
+```
+
+Or just:
+```bash
+make diff    # preview what would change
+make apply   # apply changes
 ```
 
 ---
 
-## Daily Usage
-
-```bash
-make diff      # preview pending changes
-make apply     # apply dotfiles
-make test      # run test suite
-make doctor    # chezmoi health check
-```
-
-## How Templates Work
-
-Files ending in `.tmpl` are processed as Go templates before being written to `~`. Used to customize per machine:
-
-- `dot_gitconfig.tmpl` — injects `name` and `email` from chezmoi data
-- `.chezmoi.toml.tmpl` — detects work machines via hostname (`*work*`, `*corp*`) and switches git email
-
 ## What's Managed
 
-| Config | File |
-|--------|------|
-| Shell | `~/.zshrc`, `~/.aliases`, `~/.functions`, `~/.exports` |
-| Git | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
-| Terminal | `~/.config/ghostty/config`, `~/.config/alacritty/` |
-| Neovim | `~/.config/nvim/` |
+| Tool | Destination |
+|------|------------|
+| zsh | `~/.zshrc`, `~/.aliases`, `~/.exports`, `~/.functions` |
+| git | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
+| nvim | `~/.config/nvim/` |
 | tmux | `~/.tmux.conf` |
-| Editor | `~/.editorconfig` |
-| Tools | `~/.tool-versions` |
+| ghostty | `~/.config/ghostty/config` |
+| alacritty | `~/.alacritty.toml` |
+| asdf | `~/.tool-versions` |
+| editorconfig | `~/.editorconfig` |
+| claude | `~/.claude/` |
+
+---
+
+## Machine-Specific Config
+
+`~/.private` is intentionally **not** managed by chezmoi — create it manually on each machine:
+
+```bash
+# Work machine example
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS=100000000
+export WORK_API_KEY=...
+
+# Shared with ~/.extra for secrets that should never be committed
+[[ -f ~/.extra ]] && source ~/.extra
+```
+
+Work machines are auto-detected via hostname (`*work*`, `*corp*`) and get a different git email — see `.chezmoi.toml.tmpl`.
+
+---
 
 ## Author
 
-[Helder Burato Berto](https://github.com/helderberto)
-
-## License
-
-[MIT](LICENSE)
+[Helder Burato Berto](https://github.com/helderberto) · [MIT](LICENSE)
