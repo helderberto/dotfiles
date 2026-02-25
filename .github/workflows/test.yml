@@ -18,12 +18,9 @@ jobs:
         run: |
           sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 
-      - name: Initialize chezmoi config
-        run: |
-          chezmoi init --source=$PWD/chezmoi
-
       - name: Run test suite
         run: |
+          chezmoi init --source=$PWD/chezmoi
           ./test-chezmoi.sh
 
       - name: Dry-run apply

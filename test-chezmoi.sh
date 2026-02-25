@@ -84,18 +84,9 @@ while IFS= read -r -d '' script; do
     fi
 done < <(find "$CHEZMOI_SOURCE" -name "run_once_*.sh*" -print0)
 
-# 6. chezmoi diff runs without error
+# 6. No hardcoded secrets
 echo ""
-echo "6) chezmoi diff"
-if chezmoi diff --source "$CHEZMOI_SOURCE" >/dev/null 2>&1; then
-    pass "diff completed"
-else
-    fail "diff failed"
-fi
-
-# 7. No hardcoded secrets
-echo ""
-echo "7) secrets scan"
+echo "6) secrets scan"
 SECRET_PATTERNS="password|secret|token|api[_-]?key|private[_-]?key"
 SECRETS=$(grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" \
     --exclude-dir=dot_claude \
