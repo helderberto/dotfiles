@@ -30,15 +30,11 @@ brew install bash-completion2
 # Install GnuPG for PGP-signing commits
 brew install gnupg
 
-# Brew Tap (homebrew/bundle is deprecated and removed)
-brew tap homebrew/cask-fonts
-
 # Install fonts
 brew install --cask font-hack || true
 brew install --cask font-hack-nerd-font || true
 
 # Install useful packages/binaries
-brew install antigen
 brew install cmake
 brew install lsd
 brew install fd
@@ -49,8 +45,7 @@ brew install gpatch
 brew install mas
 brew install pandoc
 brew install ripgrep
-brew install stow
-brew install tldr
+brew install tealdeer
 brew install neovim
 brew install tmux
 brew install tree
@@ -63,6 +58,17 @@ brew install asdf
 brew install stylua
 brew install ag
 
+# Zsh plugins
+brew install powerlevel10k
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
+brew install zsh-completions
+
+# tmux plugin manager
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # Install GUI applications
 brew install --cask ghostty || true
 brew install --cask alacritty || true
@@ -70,10 +76,8 @@ brew install --cask figma || true
 brew install --cask google-chrome || true
 brew install --cask imageoptim || true
 brew install --cask slack || true
-brew install --cask discord || true
 brew install --cask spotify || true
 brew install --cask 1password || true
-brew install --cask grammarly || true
 brew install --cask visual-studio-code || true
 brew install --cask cursor || true
 brew install --cask hiddenbar || true
@@ -87,6 +91,6 @@ brew install --cask betterdisplay || true
 $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc || true
 
 # Remove outdated versions
-brew cleanup
+brew cleanup || true
 
 echo "✓ Homebrew packages installed"

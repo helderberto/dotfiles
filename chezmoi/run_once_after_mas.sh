@@ -26,8 +26,6 @@ install_if_needed() {
 # Install apps
 install_if_needed "The Unarchiver" "425424353"
 install_if_needed "Amphetamine" "937984704"
-install_if_needed "GIPHY CAPTURE" "668208984"
 install_if_needed "Be Focused Pro: Pomodoro Timer" "961632517"
-install_if_needed "Bear" "1091189122"
 
 echo "✓ Mac App Store apps installed"
