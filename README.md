@@ -48,6 +48,12 @@ Run `p10k configure` to set up your shell prompt.
 
 ## Sync Existing Machine
 
+If not already cloned:
+```bash
+git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
+```
+
+Then:
 ```bash
 cd ~/.dotfiles
 git pull origin main
