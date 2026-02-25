@@ -16,7 +16,7 @@ sudo chsh -s $(which zsh)
 **2. Bootstrap (one command)**
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles --source-path chezmoi
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles
 ```
 
 This will automatically:
