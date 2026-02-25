@@ -42,6 +42,3 @@ clean: ## Remove applied chezmoi files (DESTRUCTIVE!)
 status: ## Show git status
 	@git status --short
 
-# Old stow-based installation (preserved for rollback)
-install-stow: ## Install using old stow method
-	@./osx/tasks/symlink.sh
