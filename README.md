@@ -38,8 +38,8 @@ cat ~/.ssh/id_ed25519.pub
 
 Create `~/.private` with machine-specific env vars:
 ```bash
-export CLAUDE_CODE_MAX_OUTPUT_TOKENS=100000000
-# add any machine-specific secrets here
+alias workspace="cd ~/workspace"
+# add any machine-specific secrets or aliases here
 ```
 
 Run `p10k configure` to set up your shell prompt.
@@ -84,7 +84,7 @@ make apply   # apply changes
 
 ```bash
 # Work machine example
-export CLAUDE_CODE_MAX_OUTPUT_TOKENS=100000000
+alias work="cd ~/work"
 export WORK_API_KEY=...
 
 # Shared with ~/.extra for secrets that should never be committed
