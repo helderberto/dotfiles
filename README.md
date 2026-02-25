@@ -131,6 +131,16 @@ export WORK_API_KEY=...
 
 ---
 
+## Shell Prompt
+
+The prompt config (`.p10k.zsh`) is managed by chezmoi and applied automatically. To reconfigure:
+
+```bash
+p10k configure
+```
+
+---
+
 ## Author
 
 [Helder Burato Berto](https://github.com/helderberto) · [MIT](LICENSE)
