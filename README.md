@@ -57,10 +57,6 @@ alias workspace="cd ~/workspace"
 # add any machine-specific secrets or aliases here
 ```
 
-Run `p10k configure` to set up your shell prompt:
-```bash
-p10k configure
-```
 
 ---
 
