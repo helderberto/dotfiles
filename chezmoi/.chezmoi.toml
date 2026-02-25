@@ -1,0 +1,6 @@
+[data]
+    email = "helder.burato@gmail.com"
+    name = "Helder Burato Berto"
+
+[edit]
+    command = "nvim"

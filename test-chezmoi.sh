@@ -66,7 +66,7 @@ REQUIRED_FILES=(
     "dot_config/ghostty/config"
     "dot_config/nvim/init.lua"
     ".chezmoiignore"
-    ".chezmoi.toml.tmpl"
+    ".chezmoi.toml"
 )
 for file in "${REQUIRED_FILES[@]}"; do
     if [ -e "$CHEZMOI_SOURCE/$file" ]; then
