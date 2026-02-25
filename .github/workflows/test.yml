@@ -16,7 +16,7 @@ jobs:
 
       - name: Install chezmoi
         run: |
-          brew install chezmoi
+          sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 
       - name: Initialize chezmoi config
         run: |
@@ -26,19 +26,6 @@ jobs:
         run: |
           ./test-chezmoi.sh
 
-      - name: Test chezmoi init (dry-run)
+      - name: Dry-run apply
         run: |
-          chezmoi init --source=$PWD/chezmoi --dry-run
-
-      - name: Validate templates
-        run: |
-          chezmoi data --source=$PWD/chezmoi
-
-      - name: Check for secrets
-        run: |
-          # Fail if secrets are found (excluding allowed patterns)
-          ! grep -r -i -E "password|secret|token|api[_-]?key" chezmoi/ \
-            --exclude-dir=dot_claude \
-            --exclude="*.md" \
-            --exclude=".chezmoiignore" \
-            | grep -v "keybind\|keyboard\|AWS_OKTA_MFA_DUO_DEVICE=token\|1password"
+          chezmoi apply --dry-run --verbose --source=$PWD/chezmoi

@@ -1,133 +1,121 @@
 #!/usr/bin/env bash
-# Test chezmoi configuration before applying
-
 set -e
 
 CHEZMOI_SOURCE="${CHEZMOI_SOURCE:-$PWD/chezmoi}"
 ERRORS=0
 
-# Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
-echo "🧪 Testing Chezmoi Configuration"
-echo "================================"
+pass() { echo -e "${GREEN}✓${NC} $1"; }
+fail() { echo -e "${RED}✗${NC} $1"; ((ERRORS++)); }
+warn() { echo -e "${YELLOW}⚠${NC}  $1"; }
+
+echo "Testing Chezmoi Configuration"
+echo "=============================="
+
+# 1. Chezmoi health check
 echo ""
-
-# Test 1: Chezmoi doctor
-echo "1️⃣  Running chezmoi doctor..."
+echo "1) chezmoi doctor"
 if chezmoi doctor --source "$CHEZMOI_SOURCE" >/dev/null 2>&1; then
-    echo -e "${GREEN}✓${NC} Chezmoi health check passed"
+    pass "health check passed"
 else
-    echo -e "${RED}✗${NC} Chezmoi health check failed"
-    ((ERRORS++))
+    fail "health check failed"
 fi
 
-# Test 2: Template syntax
+# 2. Template syntax (all .tmpl files, all depths)
 echo ""
-echo "2️⃣  Validating template syntax..."
+echo "2) template syntax"
 TEMPLATE_ERRORS=0
-for tmpl in "$CHEZMOI_SOURCE"/*.tmpl; do
-    if [ -f "$tmpl" ]; then
-        if chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$tmpl" >/dev/null 2>&1; then
-            echo -e "${GREEN}✓${NC} $(basename "$tmpl")"
-        else
-            echo -e "${RED}✗${NC} $(basename "$tmpl") - template error"
-            ((TEMPLATE_ERRORS++))
-        fi
+while IFS= read -r -d '' tmpl; do
+    if chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$tmpl" >/dev/null 2>&1; then
+        pass "$(basename "$tmpl")"
+    else
+        fail "$(basename "$tmpl") - template error"
+        ((TEMPLATE_ERRORS++))
     fi
-done
-if [ $TEMPLATE_ERRORS -eq 0 ]; then
-    echo -e "${GREEN}✓${NC} All templates valid"
-else
-    echo -e "${RED}✗${NC} $TEMPLATE_ERRORS template(s) failed"
-    ((ERRORS++))
-fi
+done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" -not -path "*/dot_claude/*" -print0)
+[ $TEMPLATE_ERRORS -gt 0 ] && ((ERRORS++)) || true
 
-# Test 3: No secrets in source
+# 3. Shell script syntax
 echo ""
-echo "3️⃣  Checking for secrets..."
-SECRET_PATTERNS="password|secret|token|api[_-]?key|private[_-]?key"
-if grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" --exclude-dir=dot_claude \
-    | grep -v "keybind\|keyboard\|keyword\|AWS_OKTA_MFA_DUO_DEVICE=token" >/dev/null 2>&1; then
-    echo -e "${YELLOW}⚠${NC}  Potential secrets found (review manually)"
-    grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" --exclude-dir=dot_claude \
-        | grep -v "keybind\|keyboard\|keyword\|AWS_OKTA_MFA_DUO_DEVICE=token" || true
-else
-    echo -e "${GREEN}✓${NC} No secrets detected"
-fi
+echo "3) shell script syntax"
+SYNTAX_ERRORS=0
+while IFS= read -r -d '' script; do
+    if bash -n "$script" 2>/dev/null; then
+        pass "$(basename "$script")"
+    else
+        fail "$(basename "$script") - syntax error"
+        bash -n "$script" 2>&1 || true
+        ((SYNTAX_ERRORS++))
+    fi
+done < <(find "$CHEZMOI_SOURCE" -name "*.sh" -o -name "*.sh.tmpl" -print0)
+[ $SYNTAX_ERRORS -gt 0 ] && ((ERRORS++)) || true
 
-# Test 4: Required files exist
+# 4. Required files exist
 echo ""
-echo "4️⃣  Checking required files..."
+echo "4) required files"
 REQUIRED_FILES=(
     "dot_gitconfig.tmpl"
     "dot_zshrc"
     "dot_aliases"
     "dot_config/ghostty/config"
     ".chezmoiignore"
+    ".chezmoi.toml.tmpl"
 )
-MISSING=0
 for file in "${REQUIRED_FILES[@]}"; do
     if [ -e "$CHEZMOI_SOURCE/$file" ]; then
-        echo -e "${GREEN}✓${NC} $file"
+        pass "$file"
     else
-        echo -e "${RED}✗${NC} $file missing"
-        ((MISSING++))
-    fi
-done
-if [ $MISSING -gt 0 ]; then
-    ((ERRORS++))
-fi
-
-# Test 5: Bootstrap scripts are executable
-echo ""
-echo "5️⃣  Checking bootstrap scripts..."
-for script in "$CHEZMOI_SOURCE"/run_once_*.sh*; do
-    if [ -f "$script" ]; then
-        if [ -x "$script" ]; then
-            echo -e "${GREEN}✓${NC} $(basename "$script") is executable"
-        else
-            echo -e "${RED}✗${NC} $(basename "$script") not executable"
-            ((ERRORS++))
-        fi
+        fail "$file missing"
     fi
 done
 
-# Test 6: Validate chezmoi diff runs
+# 5. Bootstrap scripts are executable
 echo ""
-echo "6️⃣  Testing chezmoi diff..."
+echo "5) script permissions"
+while IFS= read -r -d '' script; do
+    if [ -x "$script" ]; then
+        pass "$(basename "$script") is executable"
+    else
+        fail "$(basename "$script") not executable"
+    fi
+done < <(find "$CHEZMOI_SOURCE" -name "run_once_*.sh*" -print0)
+
+# 6. chezmoi diff runs without error
+echo ""
+echo "6) chezmoi diff"
 if chezmoi diff --source "$CHEZMOI_SOURCE" >/dev/null 2>&1; then
-    echo -e "${GREEN}✓${NC} Chezmoi diff completed"
+    pass "diff completed"
 else
-    echo -e "${RED}✗${NC} Chezmoi diff failed"
-    ((ERRORS++))
+    fail "diff failed"
 fi
 
-# Test 7: Check for work-specific patterns
+# 7. No hardcoded secrets
 echo ""
-echo "7️⃣  Checking for work data leaks..."
-WORK_PATTERNS="corp|company"
-if grep -r -i -E "$WORK_PATTERNS" "$CHEZMOI_SOURCE" --exclude="*.md" >/dev/null 2>&1; then
-    echo -e "${YELLOW}⚠${NC}  Found work patterns (review manually)"
-    grep -r -i -E "$WORK_PATTERNS" "$CHEZMOI_SOURCE" --exclude="*.md" || true
+echo "7) secrets scan"
+SECRET_PATTERNS="password|secret|token|api[_-]?key|private[_-]?key"
+SECRETS=$(grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" \
+    --exclude-dir=dot_claude \
+    --exclude="*.md" \
+    --exclude=".chezmoiignore" \
+    | grep -v "keybind\|keyboard\|keyword\|AWS_OKTA_MFA_DUO_DEVICE=token\|1password" || true)
+if [ -n "$SECRETS" ]; then
+    fail "potential secrets found:"
+    echo "$SECRETS"
 else
-    echo -e "${GREEN}✓${NC} No work patterns found"
+    pass "no secrets detected"
 fi
 
 # Summary
 echo ""
-echo "================================"
+echo "=============================="
 if [ $ERRORS -eq 0 ]; then
-    echo -e "${GREEN}✅ All tests passed!${NC}"
-    echo ""
-    echo "Safe to apply with: make apply"
+    echo -e "${GREEN}All tests passed${NC}"
     exit 0
 else
-    echo -e "${RED}❌ $ERRORS test(s) failed${NC}"
-    echo ""
-    echo "Fix errors before applying"
+    echo -e "${RED}$ERRORS test(s) failed${NC}"
     exit 1
 fi
