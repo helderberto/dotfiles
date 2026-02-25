@@ -61,7 +61,10 @@ REQUIRED_FILES=(
     "dot_gitconfig.tmpl"
     "dot_zshrc"
     "dot_aliases"
+    "dot_tmux.conf"
+    "dot_tool-versions"
     "dot_config/ghostty/config"
+    "dot_config/nvim/init.lua"
     ".chezmoiignore"
     ".chezmoi.toml.tmpl"
 )

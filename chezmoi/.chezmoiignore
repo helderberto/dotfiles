@@ -20,8 +20,8 @@
 .zcompdump*
 .tmux/plugins/
 
-# Editor configs (managed separately or externally)
-.config/nvim/
+# Neovim lockfile (managed by lazy.nvim, changes on every plugin update)
+.config/nvim/lazy-lock.json
 
 # App state/cache
 .cache/
