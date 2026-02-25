@@ -54,6 +54,14 @@
 
 **Current Status:** Git + ZSH + Terminal configs ready. Major configs migrated!
 
+### ✅ Step 6: Migrate Remaining Configs (COMPLETE)
+- [x] EditorConfig (.editorconfig - formatting rules)
+- [x] ASDF (.tool-versions - Node 22.21.0, npm 10.9.4)
+- [x] Claude Code config (CLAUDE.md, agents, docs)
+- [x] Nvim excluded (managed separately in ~/.config/nvim/)
+
+**🎉 MIGRATION COMPLETE!** All dotfiles migrated to chezmoi.
+
 ### Step 4: Migrate Shell Configs (Medium Risk)
 - [ ] ZSH configs (exclude .private)
 - [ ] Add templates for machine-specific values
