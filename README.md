@@ -57,25 +57,6 @@ alias workspace="cd ~/workspace"
 # add any machine-specific secrets or aliases here
 ```
 
-
----
-
-## Making Updates
-
-After editing any dotfile in `~/.dotfiles`:
-
-```bash
-cd ~/.dotfiles
-git add <file>
-git commit -m "..."
-git push origin main
-```
-
-Then apply to the current machine:
-```bash
-make apply
-```
-
 ---
 
 ## Sync Existing Machine
@@ -100,6 +81,39 @@ make apply   # apply changes
 
 ---
 
+## Machine-Specific Config
+
+`~/.private` is intentionally **not** managed by chezmoi — create it manually on each machine:
+
+```bash
+# Work machine example
+alias work="cd ~/work"
+export WORK_API_KEY=...
+
+# Shared with ~/.extra for secrets that should never be committed
+[[ -f ~/.extra ]] && source ~/.extra
+```
+
+---
+
+## Making Updates
+
+After editing any dotfile in `~/.dotfiles`:
+
+```bash
+cd ~/.dotfiles
+git add <file>
+git commit -m "..."
+git push origin main
+```
+
+Then apply to the current machine:
+```bash
+make apply
+```
+
+---
+
 ## What's Managed
 
 | Tool | Destination |
@@ -113,21 +127,6 @@ make apply   # apply changes
 | asdf | `~/.tool-versions` |
 | editorconfig | `~/.editorconfig` |
 | claude | `~/.claude/` |
-
----
-
-## Machine-Specific Config
-
-`~/.private` is intentionally **not** managed by chezmoi — create it manually on each machine:
-
-```bash
-# Work machine example
-alias work="cd ~/work"
-export WORK_API_KEY=...
-
-# Shared with ~/.extra for secrets that should never be committed
-[[ -f ~/.extra ]] && source ~/.extra
-```
 
 ---
 
