@@ -5,7 +5,10 @@ CHEZMOI_SOURCE := $(PWD)/chezmoi
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-test: ## Test chezmoi config without applying
+test: ## Run comprehensive test suite
+	@./test-chezmoi.sh
+
+test-quick: ## Quick test (doctor + data only)
 	@echo "🔍 Testing chezmoi configuration..."
 	@chezmoi doctor --source "$(CHEZMOI_SOURCE)" || true
 	@echo "\n📊 Configuration data:"
