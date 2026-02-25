@@ -3,8 +3,27 @@
 ## Current State
 - ✅ Your dotfiles still use **stow** (all symlinks intact)
 - ✅ Chezmoi is installed and configured
-- ✅ Git configs migrated to `chezmoi/` directory
+- ✅ All configs migrated to `chezmoi/` directory
+- ✅ Comprehensive test suite added
+- ✅ GitHub Actions CI configured
 - ⏸️ **Nothing applied yet** - safe testing mode
+
+## Test Suite Overview
+
+### Pre-Apply Tests
+- `make test` - Full test suite (recommended)
+- `make test-quick` - Quick validation
+- `make diff` - Preview changes
+- `make dry-run` - Detailed preview
+
+### Post-Apply Tests
+- `validate-setup.sh` - Runs automatically after apply
+- Validates git, shell, aliases, tools
+
+### CI Tests
+- GitHub Actions runs on push/PR
+- Tests on macOS runner
+- Validates templates and secrets
 
 ## How to Test
 
