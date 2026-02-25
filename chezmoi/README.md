@@ -6,23 +6,20 @@ This directory contains the source files for chezmoi-managed dotfiles.
 
 ```
 chezmoi/
-├── .chezmoi.toml.tmpl       # Config with machine detection
+├── .chezmoi.toml.tmpl       # Config (editor, data)
 ├── .chezmoiignore           # Files to never manage
-├── dot_*                    # Files starting with dot (e.g., dot_zshrc → ~/.zshrc)
-├── private_*                # Files with 0600 permissions
-├── run_once_*               # Scripts that run once
-├── run_onchange_*           # Scripts that run when they change
+├── dot_*                    # Files mapped to ~ (e.g., dot_zshrc → ~/.zshrc)
+├── run_once_before_*        # Scripts that run once, before dotfiles are applied
+├── run_once_after_*         # Scripts that run once, after dotfiles are applied
 └── README.md                # This file
 ```
 
 ## Naming Convention
 
 - `dot_` → `.` (e.g., `dot_zshrc` → `.zshrc`)
-- `private_` → chmod 600 (e.g., `private_dot_ssh/`)
 - `executable_` → chmod +x
 - `.tmpl` suffix → Process as Go template
-- `run_once_` → Run script once (tracks with hash)
-- `run_onchange_` → Run when script content changes
+- `run_once_` → Run script once (tracked by content hash)
 
 ## Testing Commands
 
