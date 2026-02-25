@@ -59,11 +59,10 @@ Files ending in `.tmpl` are processed as Go templates before being written to `~
 | Shell | `~/.zshrc`, `~/.aliases`, `~/.functions`, `~/.exports` |
 | Git | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
 | Terminal | `~/.config/ghostty/config`, `~/.config/alacritty/` |
-| tmux | `~/.config/tmux/` |
+| Neovim | `~/.config/nvim/` |
+| tmux | `~/.tmux.conf` |
 | Editor | `~/.editorconfig` |
 | Tools | `~/.tool-versions` |
-
-Neovim config is managed separately at [helderberto/neovim](https://github.com/helderberto/neovim).
 
 ## Author
 
