@@ -50,10 +50,10 @@ fi
 echo ""
 echo "3️⃣  Checking for secrets..."
 SECRET_PATTERNS="password|secret|token|api[_-]?key|private[_-]?key"
-if grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" --exclude-dir=private_dot_claude \
+if grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" --exclude-dir=dot_claude \
     | grep -v "keybind\|keyboard\|keyword\|AWS_OKTA_MFA_DUO_DEVICE=token" >/dev/null 2>&1; then
     echo -e "${YELLOW}⚠${NC}  Potential secrets found (review manually)"
-    grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" --exclude-dir=private_dot_claude \
+    grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" --exclude-dir=dot_claude \
         | grep -v "keybind\|keyboard\|keyword\|AWS_OKTA_MFA_DUO_DEVICE=token" || true
 else
     echo -e "${GREEN}✓${NC} No secrets detected"

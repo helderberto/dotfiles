@@ -18,6 +18,10 @@ jobs:
         run: |
           brew install chezmoi
 
+      - name: Initialize chezmoi config
+        run: |
+          chezmoi init --source=$PWD/chezmoi
+
       - name: Run test suite
         run: |
           ./test-chezmoi.sh
@@ -34,7 +38,7 @@ jobs:
         run: |
           # Fail if secrets are found (excluding allowed patterns)
           ! grep -r -i -E "password|secret|token|api[_-]?key" chezmoi/ \
-            --exclude-dir=private_dot_claude \
+            --exclude-dir=dot_claude \
             --exclude="*.md" \
             --exclude=".chezmoiignore" \
             | grep -v "keybind\|keyboard\|AWS_OKTA_MFA_DUO_DEVICE=token\|1password"
