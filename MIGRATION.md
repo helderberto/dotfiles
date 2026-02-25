@@ -46,6 +46,14 @@
 
 **Current Status:** Git + ZSH configs ready. Test with `make diff`. Nothing applied yet.
 
+### ✅ Step 5: Migrate Terminal Configs (COMPLETE)
+- [x] Ghostty config (default terminal - Catppuccin, vim keybinds)
+- [x] Alacritty config + Catppuccin theme (backup terminal)
+- [x] Tmux config (vim-style, Catppuccin status bar, tpm)
+- [x] Enhanced .chezmoiignore (excludes .tmux/plugins/)
+
+**Current Status:** Git + ZSH + Terminal configs ready. Major configs migrated!
+
 ### Step 4: Migrate Shell Configs (Medium Risk)
 - [ ] ZSH configs (exclude .private)
 - [ ] Add templates for machine-specific values
