@@ -27,6 +27,8 @@ apply: ## Apply chezmoi (CAREFUL!)
 	@echo "Press Ctrl+C to cancel, Enter to continue..."
 	@read
 	@chezmoi apply --source "$(CHEZMOI_SOURCE)"
+	@echo "\n✅ Applied! Validating setup..."
+	@./validate-setup.sh
 
 doctor: ## Run chezmoi health checks
 	@chezmoi doctor --source "$(CHEZMOI_SOURCE)"
