@@ -8,14 +8,19 @@ macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
 **1. Prerequisites**
 
-zsh is pre-installed on macOS Catalina+. If not available, install it first via [ohmyz.sh](https://ohmyz.sh/#install):
+Install Xcode CLI tools:
+
+```bash
+xcode-select --install
+```
+
+Set zsh as the default shell. zsh is pre-installed on macOS Catalina+. If not available, install it first via [ohmyz.sh](https://ohmyz.sh/#install):
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ```bash
-xcode-select --install
 sudo chsh -s $(which zsh)
 ```
 
