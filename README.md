@@ -8,6 +8,8 @@ macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
 **1. Prerequisites**
 
+zsh is pre-installed on macOS Catalina+. If not available, install it first: [zsh.sourceforge.io](https://zsh.sourceforge.io/) or `brew install zsh`.
+
 ```bash
 xcode-select --install
 sudo chsh -s $(which zsh)
