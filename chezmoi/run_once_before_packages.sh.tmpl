@@ -58,6 +58,17 @@ brew install asdf
 brew install stylua
 brew install ag
 
+# Zsh plugins
+brew install powerlevel10k
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
+brew install zsh-completions
+
+# tmux plugin manager
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # Install GUI applications
 brew install --cask ghostty || true
 brew install --cask alacritty || true
