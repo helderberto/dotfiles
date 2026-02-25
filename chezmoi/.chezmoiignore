@@ -1,0 +1,32 @@
+# Files to never manage with chezmoi
+# These stay in $HOME but chezmoi won't touch them
+
+# Work-specific (never commit these patterns)
+.work-*
+*-work/
+*-corp/
+
+# Sensitive
+.ssh/id_*
+.ssh/*_rsa*
+.gnupg/
+.password-store/
+
+# App state/cache
+.cache/
+.local/share/
+.config/*/cache/
+.npm/
+.yarn/
+
+# IDE specific
+.vscode/
+.cursor/
+.idea/
+
+# macOS
+.Trash/
+.localized
+
+# ZSH private configs (keep in $HOME, not in chezmoi)
+.private

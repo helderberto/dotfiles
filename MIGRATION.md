@@ -1,0 +1,100 @@
+# Chezmoi Migration Plan
+
+## Safety First: Work Data Protection
+
+### .gitignore Strategy
+- Never commit anything from actual $HOME
+- Only commit chezmoi source files from this repo
+- Keep work-specific configs in `.chezmoiignore`
+
+### Branch Strategy
+- Work on `feat/chezmoi-migration` branch
+- Test locally before merging
+- Use `chezmoi diff` before every apply
+
+---
+
+## Migration Steps
+
+### ✅ Step 1: Preparation (COMPLETE)
+- [x] Install chezmoi v2.69.4
+- [x] Create feature branch `feat/chezmoi-migration`
+- [x] Update .gitignore for work safety
+- [x] Create migration docs
+
+### ✅ Step 2: Initial Setup (COMPLETE)
+- [x] Create `chezmoi/` directory in dotfiles repo
+- [x] Add `.chezmoi.toml.tmpl` with template support
+- [x] Create `.chezmoiignore` for sensitive files
+- [x] Test chezmoi commands - working!
+- [x] Create Makefile for easy testing
+
+### 🔄 Step 3: Migrate Git Configs (IN PROGRESS)
+- [x] Git configs (.gitconfig, .gitignore_global, .gitattributes)
+- [x] Git templates (commit message template)
+- [x] Test with `chezmoi diff` - looks good!
+- [ ] **READY TO APPLY** (when you decide)
+
+**Current Status:** All configs created, tested with `make diff`. Your existing stow setup is untouched.
+
+### Step 4: Migrate Shell Configs (Medium Risk)
+- [ ] ZSH configs (exclude .private)
+- [ ] Add templates for machine-specific values
+- [ ] Test in isolated shell
+
+### Step 5: Migrate Complex Configs
+- [ ] Neovim (symlink to external config)
+- [ ] Terminal configs (alacritty, ghostty, tmux)
+- [ ] ASDF tool versions
+
+### Step 6: Bootstrap Scripts
+- [ ] Convert osx/.default_config to run_once script
+- [ ] Convert brew.sh to run_once_install-packages.sh
+- [ ] Add idempotency checks
+
+### Step 7: Testing & Validation
+- [ ] Create test script that validates chezmoi state
+- [ ] Document rollback procedure
+- [ ] Test on clean macOS VM (optional)
+
+### Step 8: Cutover
+- [ ] Backup current symlinks
+- [ ] Remove old stow symlinks
+- [ ] Apply chezmoi
+- [ ] Update README
+
+---
+
+## Commands Reference
+
+```bash
+# Dry-run (safe, shows changes)
+chezmoi diff
+
+# Preview what would be applied
+chezmoi apply --dry-run --verbose
+
+# Actually apply
+chezmoi apply
+
+# Check health
+chezmoi doctor
+
+# Edit source file
+chezmoi edit ~/.zshrc
+
+# Jump to source directory
+chezmoi cd
+```
+
+---
+
+## Rollback Plan
+
+If something breaks:
+```bash
+# Go back to stow
+git checkout main
+cd ~/.dotfiles
+./osx/tasks/symlink.sh
+```

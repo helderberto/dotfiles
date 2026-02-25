@@ -47,3 +47,28 @@ claude/.claude/skills/
 claude/.claude/backups/
 claude/.claude/mcp-needs-auth-cache.json
 
+# Chezmoi - prevent work data leaks
+chezmoi/.work-*
+chezmoi/**/*work*
+chezmoi/**/*corp*
+chezmoi/**/*company*
+*.local
+*.private
+*-work.*
+*-corp.*
+
+# Machine-specific generated files (local only, not in repo)
+.chezmoi.yaml
+.chezmoi.toml
+.chezmoi.json
+chezmoistate.boltdb
+
+# Secrets and credentials (paranoid mode)
+**/*secret*
+**/*credential*
+**/*password*
+**/*token*
+**/.env
+**/.env.*
+!**/.env.example
+
