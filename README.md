@@ -46,6 +46,24 @@ Run `p10k configure` to set up your shell prompt.
 
 ---
 
+## Making Updates
+
+After editing any dotfile in `~/.dotfiles`:
+
+```bash
+cd ~/.dotfiles
+git add <file>
+git commit -m "..."
+git push origin main
+```
+
+Then apply to the current machine:
+```bash
+make apply
+```
+
+---
+
 ## Sync Existing Machine
 
 If not already cloned:
