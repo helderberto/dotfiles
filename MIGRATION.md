@@ -29,13 +29,22 @@
 - [x] Test chezmoi commands - working!
 - [x] Create Makefile for easy testing
 
-### 🔄 Step 3: Migrate Git Configs (IN PROGRESS)
+### ✅ Step 3: Migrate Git Configs (COMPLETE)
 - [x] Git configs (.gitconfig, .gitignore_global, .gitattributes)
 - [x] Git templates (commit message template)
 - [x] Test with `chezmoi diff` - looks good!
 - [ ] **READY TO APPLY** (when you decide)
 
-**Current Status:** All configs created, tested with `make diff`. Your existing stow setup is untouched.
+### ✅ Step 4: Migrate Shell Configs (COMPLETE)
+- [x] ZSH configs (.zshrc with p10k, fzf, plugins)
+- [x] Aliases (.aliases - 100+ shortcuts)
+- [x] Exports (.exports - env variables)
+- [x] Functions (.functions - utility functions)
+- [x] Dircolors (.dircolors - 708 lines)
+- [x] Enhanced .chezmoiignore (excludes .private, .extra, .p10k.zsh, .fzf.zsh)
+- [x] Verified .private is NOT included (safe!)
+
+**Current Status:** Git + ZSH configs ready. Test with `make diff`. Nothing applied yet.
 
 ### Step 4: Migrate Shell Configs (Medium Risk)
 - [ ] ZSH configs (exclude .private)
