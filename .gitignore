@@ -49,7 +49,7 @@ claude/.claude/mcp-needs-auth-cache.json
 
 # Chezmoi - prevent work data leaks
 chezmoi/.work-*
-chezmoi/**/*work*
+chezmoi/**/*-work*
 chezmoi/**/*corp*
 chezmoi/**/*company*
 *.local
