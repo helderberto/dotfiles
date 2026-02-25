@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Install Homebrew if not already installed
+
+set -e
+
+if command -v brew &>/dev/null; then
+    echo "✓ Homebrew already installed"
+    exit 0
+fi
+
+echo "📦 Installing Homebrew..."
+
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add Homebrew to PATH for this session
+{{- if eq .chezmoi.arch "arm64" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- else }}
+eval "$(/usr/local/bin/brew shellenv)"
+{{- end }}
+
+echo "✓ Homebrew installed successfully"
