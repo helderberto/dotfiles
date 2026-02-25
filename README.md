@@ -1,89 +1,74 @@
 # ⚙️ Helder's Dotfiles
 
-My base settings for when I start in a new environment.
+macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
-## Requirements
+## New Machine Setup
 
-Set zsh as your default shell:
+### 1. Prerequisites
+
+Accept Xcode license and set zsh as default shell:
 
 ```bash
+xcode-select --install
 sudo chsh -s $(which zsh)
 ```
 
-## Setting up your Mac
+### 2. Bootstrap
 
-- Update macOS to the latest version with the App Store;
-- Install Xcode from the App Store, open it and accept the license agreement;
-
-## Install
-
-- Clone onto your machine:
+Install chezmoi and apply dotfiles in one command:
 
 ```bash
-git clone git://github.com/helderburato/dotfiles.git ~/.dotfiles
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles --source-path chezmoi
 ```
 
-- Install the dotfiles:
+This will:
+- Install Homebrew
+- Install all packages from `Brewfile`
+- Symlink all dotfiles to `~`
+- Set up your workspace directory
+
+### 3. Generate SSH Key
 
 ```bash
-sh ~/.dotfiles/install.sh
+ssh-keygen -t ed25519 -C "your@email.com"
+cat ~/.ssh/id_ed25519.pub  # add to GitHub
 ```
 
-## fzf
+---
 
-```
-brew install fzf
-```
+## Daily Usage
 
-# To install useful key bindings and fuzzy completion:
-```
-$(brew --prefix)/opt/fzf/install
-```
-
-Read more on the [official guide](https://github.com/junegunn/fzf#installation).
-
-## Neovim/Vim
-
-[Read more](./nvim/.config/nvim/README.md) about my Neovim configuration project structure.
-
-### After Install
-
-Restart your computer and enjoy your new configuration. ✌🏻
-
-## Generate the SSH Keys
-
-It's required to generate in every machine you start.
-
-- Go to your $HOME with `cd ~`;
-- Generate the new key `ssh-keygen`;
-
-## Troubleshoot
-
-### Antigen
-
-If you get any problems with `antigen`, try `rm -rf ~/.antigen` after complete, close your terminal and open again to reinstall the packages from antigen.
-
-### Homebrew
-
-If you get any permissions problems when trying to run `brew` scripts, try to give the following permissions to your current user:
 ```bash
-$ sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
+make diff      # preview pending changes
+make apply     # apply dotfiles
+make test      # run test suite
+make doctor    # chezmoi health check
 ```
+
+## How Templates Work
+
+Files ending in `.tmpl` are processed as Go templates before being written to `~`. Used to customize per machine:
+
+- `dot_gitconfig.tmpl` — injects `name` and `email` from chezmoi data
+- `.chezmoi.toml.tmpl` — detects work machines via hostname (`*work*`, `*corp*`) and switches git email
+
+## What's Managed
+
+| Config | File |
+|--------|------|
+| Shell | `~/.zshrc`, `~/.aliases`, `~/.functions`, `~/.exports` |
+| Git | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
+| Terminal | `~/.config/ghostty/config`, `~/.config/alacritty/` |
+| tmux | `~/.config/tmux/` |
+| Editor | `~/.editorconfig` |
+| Tools | `~/.tool-versions` |
+
+Neovim config is managed separately at [helderberto/neovim](https://github.com/helderberto/neovim).
 
 ## Author
 
-| [![Helder B. Berto](https://avatars3.githubusercontent.com/u/862575?v=3&s=80)](https://github.com/helderburato) |
-| ----------------------------------------------------------------------------------------------------- |
-| [Helder B. Berto](https://helderburato.com)                                                              |
-
-## Inspiration
-
-- [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles);
-- [Cătălin Mariș dotfiles](https://github.com/alrra/dotfiles);
-- [Paul's dotfiles](https://github.com/paulirish/dotfiles);
-- [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles);
-- [Dries's Dotfiles](https://github.com/driesvints/dotfiles);
+[Helder Burato Berto](https://github.com/helderberto)
 
 ## License
 
-[MIT License](LICENSE) © Helder Burato Berto
+[MIT](LICENSE)
