@@ -1,22 +1,22 @@
 return {
   'kylechui/nvim-surround',
   version = '*',
+  init = function()
+    vim.g.nvim_surround_no_mappings = true
+  end,
+  keys = {
+    { '<leader>sa', '<Plug>(nvim-surround-normal)', mode = 'n' },
+    { '<leader>ss', '<Plug>(nvim-surround-visual)', mode = 'x' },
+    { '<leader>sS', '<Plug>(nvim-surround-visual-line)', mode = 'x' },
+    { '<leader>sd', '<Plug>(nvim-surround-delete)', mode = 'n' },
+    { '<leader>sc', '<Plug>(nvim-surround-change)', mode = 'n' },
+  },
   config = function()
     require('nvim-surround').setup({
-      keymaps = {
-        normal = '<leader>sa', -- Surround with something
-        normal_cur = false,
-        normal_line = false,
-        normal_cur_line = false,
-        visual = '<leader>ss', -- Surround selected text
-        visual_line = '<leader>sS', -- Surround selected line
-        delete = '<leader>sd', -- Delete surrounding
-        change = '<leader>sc', -- Change surrounding (using 'c' instead of 'r' to avoid confusion)
-      },
       aliases = {
-        ['i'] = ']', -- Index
-        ['r'] = ')', -- Round
-        ['b'] = '}', -- Brackets
+        ['i'] = ']',
+        ['r'] = ')',
+        ['b'] = '}',
       },
       move_cursor = false,
     })
