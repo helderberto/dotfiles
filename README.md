@@ -25,8 +25,11 @@ chezmoi apply
 - Install Oh My Zsh (if missing)
 - Set zsh as default shell (if needed)
 - Install chezmoi (if missing)
+
+`chezmoi init helderberto/dotfiles --apply` will also:
+
 - Create `~/.private`
-- Generate SSH key and display public key to add to GitHub (if missing)
+- Generate SSH key (prompts for email on first run)
 
 ---
 
@@ -62,14 +65,7 @@ This will automatically:
 
 Open a new terminal session so all tools and shell config are loaded.
 
-If you used **Option B** (or skipped SSH during bootstrap), generate an SSH key manually:
-
-```bash
-ssh-keygen -t ed25519 -C "your@email.com"
-cat ~/.ssh/id_ed25519.pub
-```
-
-Then add the public key to GitHub: https://github.com/settings/ssh/new
+Add the generated SSH public key to GitHub: https://github.com/settings/ssh/new
 
 ---
 

@@ -46,30 +46,6 @@ else
     done_ "chezmoi"
 fi
 
-# 5. ~/.private
-if [ ! -f "$HOME/.private" ]; then
-    touch "$HOME/.private"
-    done_ "Created ~/.private"
-else
-    done_ "~/.private"
-fi
-
-# 6. SSH key
-if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
-    echo ""
-    printf "Enter your email for SSH key: "
-    read -r ssh_email
-    ssh-keygen -t ed25519 -C "$ssh_email" -f "$HOME/.ssh/id_ed25519" -N ""
-    done_ "SSH key generated"
-    echo ""
-    echo "Add this public key to GitHub (https://github.com/settings/ssh/new):"
-    echo ""
-    cat "$HOME/.ssh/id_ed25519.pub"
-    echo ""
-else
-    done_ "SSH key"
-fi
-
 echo ""
 echo "Bootstrap complete. Now run:"
-echo "  chezmoi apply"
+echo "  chezmoi init helderberto/dotfiles --apply"

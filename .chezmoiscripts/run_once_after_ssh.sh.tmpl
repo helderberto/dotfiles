@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+if [ -f "$HOME/.ssh/id_ed25519" ]; then
+    exit 0
+fi
+
+ssh-keygen -t ed25519 -C "{{ .ssh_email }}" -f "$HOME/.ssh/id_ed25519" -N ""
+
+echo "✓ SSH key generated"
+echo ""
+echo "Add this public key to GitHub (https://github.com/settings/ssh/new):"
+echo ""
+cat "$HOME/.ssh/id_ed25519.pub"

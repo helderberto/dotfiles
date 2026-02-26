@@ -36,7 +36,7 @@ while IFS= read -r -d '' tmpl; do
         fail "$(basename "$tmpl") - template error"
         ((TEMPLATE_ERRORS++))
     fi
-done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" -not -path "*/dot_claude/*" -not -path "*/claude/*" -not -path "*/skills/*" -print0)
+done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" -not -path "*/dot_claude/*" -not -path "*/claude/*" -not -path "*/skills/*" -not -name ".chezmoi.toml.tmpl" -not -path "*/.chezmoiscripts/*" -print0)
 [ $TEMPLATE_ERRORS -gt 0 ] && ((ERRORS++)) || true
 
 # 3. Shell script syntax

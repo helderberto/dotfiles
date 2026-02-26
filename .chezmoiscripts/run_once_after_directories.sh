@@ -22,3 +22,8 @@ else
 fi
 
 echo "✓ Workspace directories ready"
+
+if [ ! -f "$HOME/.private" ]; then
+    touch "$HOME/.private"
+    echo "  ✓ Created ~/.private"
+fi
