@@ -6,6 +6,12 @@ if [ -f "$HOME/.ssh/id_ed25519" ]; then
 fi
 
 {{ if not (env "CI") }}
+if [ ! -t 0 ]; then
+    echo "⚠ No TTY available — skipping SSH key generation. Run manually:"
+    echo "  ssh-keygen -t ed25519 -C \"your@email.com\""
+    exit 0
+fi
+
 printf "SSH key email: "
 read -r ssh_email
 
