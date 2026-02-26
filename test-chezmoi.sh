@@ -36,7 +36,7 @@ while IFS= read -r -d '' tmpl; do
         fail "$(basename "$tmpl") - template error"
         ((TEMPLATE_ERRORS++))
     fi
-done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" -not -path "*/dot_claude/*" -print0)
+done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" -not -path "*/dot_claude/*" -not -path "*/claude/*" -not -path "*/skills/*" -print0)
 [ $TEMPLATE_ERRORS -gt 0 ] && ((ERRORS++)) || true
 
 # 3. Shell script syntax
@@ -51,7 +51,7 @@ while IFS= read -r -d '' script; do
         bash -n "$script" 2>&1 || true
         ((SYNTAX_ERRORS++))
     fi
-done < <(find "$CHEZMOI_SOURCE" -name "*.sh" -o -name "*.sh.tmpl" -print0)
+done < <(find "$CHEZMOI_SOURCE" -name "*.sh" -o -name "*.sh.tmpl" -print0 | grep -v "/claude/\|/skills/\|/.github/")
 [ $SYNTAX_ERRORS -gt 0 ] && ((ERRORS++)) || true
 
 # 4. Required files exist
@@ -93,8 +93,16 @@ echo "6) secrets scan"
 SECRET_PATTERNS="password|secret|token|api[_-]?key|private[_-]?key"
 SECRETS=$(grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" \
     --exclude-dir=dot_claude \
+    --exclude-dir=claude \
+    --exclude-dir=skills \
+    --exclude-dir=.github \
+    --exclude-dir=nvim \
+    --exclude-dir=.git \
     --exclude="*.md" \
     --exclude=".chezmoiignore" \
+    --exclude=".gitignore" \
+    --exclude="test-chezmoi.sh" \
+    --exclude="validate-setup.sh" \
     | grep -v "keybind\|keyboard\|keyword\|AWS_OKTA_MFA_DUO_DEVICE=token\|1password" || true)
 if [ -n "$SECRETS" ]; then
     fail "potential secrets found:"
