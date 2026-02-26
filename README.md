@@ -70,13 +70,13 @@ Then:
 ```bash
 cd ~/.dotfiles
 git pull origin main
-make apply
+chezmoi apply
 ```
 
-Or just:
+Or preview first:
 ```bash
-make diff    # preview what would change
-make apply   # apply changes
+chezmoi diff    # preview what would change
+chezmoi apply   # apply changes
 ```
 
 ---
@@ -109,7 +109,7 @@ git push origin main
 
 Then apply to the current machine:
 ```bash
-make apply
+chezmoi apply
 ```
 
 ---
