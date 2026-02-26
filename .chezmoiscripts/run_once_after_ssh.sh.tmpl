@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
-{{ if and (hasKey . "ssh_email") (ne .ssh_email "") }}
 if [ -f "$HOME/.ssh/id_ed25519" ]; then
     exit 0
 fi
 
-ssh-keygen -t ed25519 -C "{{ .ssh_email }}" -f "$HOME/.ssh/id_ed25519" -N ""
+{{ if not (env "CI") }}
+printf "SSH key email: "
+read -r ssh_email
+
+ssh-keygen -t ed25519 -C "$ssh_email" -f "$HOME/.ssh/id_ed25519" -N ""
 
 echo "✓ SSH key generated"
 echo ""
