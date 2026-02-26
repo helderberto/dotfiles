@@ -2,95 +2,98 @@
 
 macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
+**New machine:** `./bootstrap.sh` then `chezmoi init helderberto/dotfiles --apply`  
+**Already using these dotfiles:** `chezmoi update && chezmoi apply`
+
 ---
 
 ## New Machine
 
-Choose one of the two paths below.
+You’ll overwrite existing dotfiles (e.g. `~/.zshrc`). Back up anything you care about first.
+
+Choose one path below.
 
 ---
 
-### Option A — Clone repo first (recommended)
+### Option A — Clone first (recommended if you’ll edit the dotfiles)
+
+Clone [helderberto/dotfiles](https://github.com/helderberto/dotfiles), bootstrap, then point chezmoi at the remote repo:
 
 ```bash
-git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
+git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles   # or any path you prefer
 cd ~/.dotfiles
 ./bootstrap.sh
-chezmoi apply
+chezmoi init helderberto/dotfiles --apply
 ```
 
-`bootstrap.sh` will:
+`bootstrap.sh` installs (if missing):
 
-- Install Xcode CLI tools (if missing)
-- Install Oh My Zsh (if missing)
-- Set zsh as default shell (if needed)
-- Install chezmoi (if missing)
+- Xcode CLI tools — you may need to re-run the script after they finish
+- Oh My Zsh
+- zsh as default shell
+- chezmoi
 
-`chezmoi init helderberto/dotfiles --apply` will also:
+`chezmoi init helderberto/dotfiles --apply` will:
 
 - Create `~/.private`
 - Generate SSH key (prompts for email on first run)
+- Write all dotfiles and run setup scripts (Homebrew, asdf, Dock, etc.)
 
 ---
 
-### Option B — Without cloning (one command)
+### Option B — One command (no clone)
 
-Run prerequisites manually:
+Use this if you don’t need the repo on disk. Run the prerequisites below first, then one chezmoi command.
+
+**Prerequisites** (run once):
 
 ```bash
 xcode-select --install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo chsh -s $(which zsh)
-touch ~/.private
+touch ~/.private   # so runscripts that expect this file don’t fail
 ```
 
-Then bootstrap with chezmoi:
+**Then:**
 
 ```bash
 chezmoi init helderberto/dotfiles --apply
 ```
 
-This will automatically:
+That will:
 
-- Install Homebrew
-- Install all packages and apps
+- Install Homebrew, packages, and apps
 - Set up asdf with nodejs
-- Write all dotfiles to `~`
-- Create `~/workspace`
+- Write all dotfiles and create `~/workspace`
 - Configure the Dock
 
 ---
 
 ### After setup
 
-Open a new terminal session so all tools and shell config are loaded.
-
-Add the generated SSH public key to GitHub: https://github.com/settings/ssh/new
+1. Open a **new terminal** so shell config and tools are loaded.
+2. Add the generated SSH key to GitHub: https://github.com/settings/ssh/new
 
 ---
 
 ## Sync Existing Machine
 
+Pull the latest from the repo and apply:
+
 ```bash
-cd ~/.dotfiles
-git pull origin main
+chezmoi update
+chezmoi diff    # optional: preview changes
 chezmoi apply
-```
-
-Or preview first:
-
-```bash
-chezmoi diff    # preview what would change
-chezmoi apply   # apply changes
 ```
 
 ---
 
 ## Machine-Specific Config
 
-`~/.private` is intentionally **not** managed by chezmoi — add machine-specific env vars there:
+`~/.private` is **not** managed by chezmoi. Put machine-only env vars and aliases there; your shell config sources it.
 
 ```bash
+# in ~/.private
 alias workspace="cd ~/workspace"
 export WORK_API_KEY=...
 ```
@@ -99,30 +102,27 @@ export WORK_API_KEY=...
 
 ## Making Updates
 
-After editing any dotfile in `~/.dotfiles`:
+Edit the dotfiles in your clone of **helderberto/dotfiles**, push, then apply:
 
 ```bash
+cd ~/.dotfiles   # or wherever you cloned the repo
 git add <file>
 git commit -m "..."
 git push origin main
 chezmoi apply
 ```
 
+On other machines, `chezmoi update && chezmoi apply` is enough.
+
 ---
 
-## What's Managed
+## Reference
 
-| Tool         | Destination                                               |
-| ------------ | --------------------------------------------------------- |
-| zsh          | `~/.zshrc`, `~/.aliases`, `~/.exports`                    |
-| git          | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
-| nvim         | `~/.config/nvim/`                                         |
-| tmux         | `~/.tmux.conf`                                            |
-| ghostty      | `~/.config/ghostty/config`                                |
-| alacritty    | `~/.alacritty.toml`                                       |
-| asdf         | `~/.tool-versions`                                        |
-| editorconfig | `~/.editorconfig`                                         |
-| claude       | `~/.claude/`                                              |
+| Command | Purpose |
+| ------- | ------- |
+| `chezmoi managed` | List all managed paths |
+| `chezmoi diff` | Preview changes before applying |
+| `chezmoi apply` | Apply dotfiles to `~` |
 
 ---
 
