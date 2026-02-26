@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-{{ if and .ssh_email (not (eq .ssh_email "")) }}
+{{ if and (hasKey . "ssh_email") (ne .ssh_email "") }}
 if [ -f "$HOME/.ssh/id_ed25519" ]; then
     exit 0
 fi
