@@ -23,29 +23,7 @@ nvim/.config/*
 .private
 
 # Claude
-claude/.claude/debug/
-claude/.claude/image-cache/
-claude/.claude/projects/
-claude/.claude/todos/
-claude/.claude/shell-snapshots/
-claude/.claude/history.jsonl
-claude/.claude/settings.json
-claude/.claude/settings.json.bak
-claude/.claude/ide/
-claude/.claude/file-history/
-.claude/settings.local.json
-claude/.claude/stats-cache.json
-claude/.claude/plugins/
-claude/.claude/cache/*
-claude/.claude/paste-cache/
-claude/.claude/session-env/
-claude/.claude/tasks/
-claude/.claude/plans/
-
-# Skills CLI
-claude/.claude/skills/
-claude/.claude/backups/
-claude/.claude/mcp-needs-auth-cache.json
+claude/
 skills/
 skills-lock.json
 .adal/
