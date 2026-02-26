@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-CHEZMOI_SOURCE="${CHEZMOI_SOURCE:-$PWD/chezmoi}"
+CHEZMOI_SOURCE="${CHEZMOI_SOURCE:-$PWD/home}"
 ERRORS=0
 
 RED='\033[0;31m'
