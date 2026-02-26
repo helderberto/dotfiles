@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+{{ if and .ssh_email (not (eq .ssh_email "")) }}
 if [ -f "$HOME/.ssh/id_ed25519" ]; then
     exit 0
 fi
@@ -12,3 +13,4 @@ echo ""
 echo "Add this public key to GitHub (https://github.com/settings/ssh/new):"
 echo ""
 cat "$HOME/.ssh/id_ed25519.pub"
+{{ end }}

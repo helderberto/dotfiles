@@ -1,7 +1,11 @@
+{{- $sshEmail := "" -}}
+{{- if not (env "CI") -}}
+{{-   $sshEmail = promptStringOnce . "ssh_email" "SSH key email" -}}
+{{- end -}}
 [data]
     email = "helder.burato@gmail.com"
     name = "Helder Burato Berto"
-    ssh_email = "{{ promptStringOnce . "ssh_email" "SSH key email" }}"
+    ssh_email = "{{ $sshEmail }}"
 
 [edit]
     command = "nvim"
