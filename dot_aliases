@@ -4,9 +4,6 @@ alias labs="cd $HOME/workspace/labs"
 
 # Find Aliases
 alias al="less ~/.aliases"
-alias alf="less ~/.aliases | grep"
-alias gal="g al"
-alias gaf="g al | grep"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -94,7 +91,6 @@ alias nlsg="npm list -g --depth=0"  # list global packages
 alias nv="npm version"              # version management
 
 # NPM Maintenance (use with caution)
-alias ncp="npm cache clean --force" # clear cache
 alias np="npm publish"              # publish package
 
 # HTTP Server
