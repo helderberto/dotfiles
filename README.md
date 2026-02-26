@@ -2,7 +2,6 @@
 
 macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
-**New machine:** `./bootstrap.sh`
 **Already using these dotfiles:** `chezmoi update && chezmoi apply`
 
 ---
@@ -11,18 +10,25 @@ macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
 You’ll overwrite existing dotfiles (e.g. `~/.zshrc`). Back up anything you care about first.
 
+**Prerequisites** (run once, requires GUI prompt):
+
 ```bash
-git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-./bootstrap.sh
+xcode-select --install
 ```
 
-`bootstrap.sh` will:
+**Then — one command:**
 
-1. Check for Xcode CLI tools — re-run if prompted to install them first
-2. Install chezmoi and apply all dotfiles
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles
+```
 
-That includes: Homebrew, packages, apps, asdf with nodejs, SSH key generation, and Dock config.
+This installs chezmoi, pulls the repo, and applies everything: Homebrew, packages, apps, asdf with nodejs, SSH key generation, and Dock config.
+
+> If you plan to edit these dotfiles, clone the repo first:
+> ```bash
+> git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
+> cd ~/.dotfiles && ./bootstrap.sh
+> ```
 
 ---
 
