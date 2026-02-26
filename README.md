@@ -130,6 +130,6 @@ chezmoi apply
 
 ---
 
-## Author
+## License
 
-[Helder Burato Berto](https://github.com/helderberto) · [MIT](LICENSE)
+MIT License © [helderberto](https://github.com/helderberto)
