@@ -2,7 +2,7 @@
 
 macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
-**New machine:** `./bootstrap.sh` then `chezmoi init helderberto/dotfiles --apply`  
+**New machine:** `./bootstrap.sh`
 **Already using these dotfiles:** `chezmoi update && chezmoi apply`
 
 ---
@@ -11,61 +11,18 @@ macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
 You’ll overwrite existing dotfiles (e.g. `~/.zshrc`). Back up anything you care about first.
 
-Choose one path below.
-
----
-
-### Option A — Clone first (recommended if you’ll edit the dotfiles)
-
-Clone [helderberto/dotfiles](https://github.com/helderberto/dotfiles), bootstrap, then point chezmoi at the remote repo:
-
 ```bash
-git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles   # or any path you prefer
+git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./bootstrap.sh
-chezmoi init helderberto/dotfiles --apply
 ```
 
-`bootstrap.sh` installs (if missing):
+`bootstrap.sh` will:
 
-- Xcode CLI tools — you may need to re-run the script after they finish
-- Oh My Zsh
-- zsh as default shell
-- chezmoi
+1. Check for Xcode CLI tools — re-run if prompted to install them first
+2. Install chezmoi and apply all dotfiles
 
-`chezmoi init helderberto/dotfiles --apply` will:
-
-- Create `~/.private`
-- Generate SSH key (prompts for email on first run)
-- Write all dotfiles and run setup scripts (Homebrew, asdf, Dock, etc.)
-
----
-
-### Option B — One command (no clone)
-
-Use this if you don’t need the repo on disk. Run the prerequisites below first, then one chezmoi command.
-
-**Prerequisites** (run once):
-
-```bash
-xcode-select --install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo chsh -s $(which zsh)
-touch ~/.private   # so runscripts that expect this file don’t fail
-```
-
-**Then:**
-
-```bash
-chezmoi init helderberto/dotfiles --apply
-```
-
-That will:
-
-- Install Homebrew, packages, and apps
-- Set up asdf with nodejs
-- Write all dotfiles and create `~/workspace`
-- Configure the Dock
+That includes: Homebrew, packages, apps, asdf with nodejs, SSH key generation, and Dock config.
 
 ---
 
