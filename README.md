@@ -47,12 +47,12 @@ chezmoi apply
 
 ## Machine-Specific Config
 
-`~/.private` is **not** managed by chezmoi. Put machine-only env vars and aliases there; your shell config sources it.
+`~/.private` is **not** managed by chezmoi. Put machine-only env vars and secrets there; your shell config sources it automatically.
 
 ```bash
 # in ~/.private
-alias workspace="cd ~/workspace"
 export WORK_API_KEY=...
+alias workspace="cd ~/my-company/workspace"
 ```
 
 ---
