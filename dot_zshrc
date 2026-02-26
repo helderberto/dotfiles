@@ -1,8 +1,5 @@
 # Homebrew configuration
 export HOMEBREW_PREFIX=$(brew --prefix)
-export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
-export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX"
-export HOMEBREW_SHELLENV_PREFIX="$HOMEBREW_PREFIX"
 
 # Enable Powerlevel10k instant prompt (keep this at the top)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -62,9 +59,7 @@ export FZF_DEFAULT_OPTS=" \
 --multi"
 
 ### Key bindings
-bindkey '\t\t' autosuggest-accept # Double tab for suggestions
-bindkey '^[[A' history-substring-search-up     # Up arrow
-bindkey '^[[B' history-substring-search-down   # Down arrow
+bindkey '\t\t' autosuggest-accept
 
 ### Path configuration
 path=(
@@ -84,12 +79,9 @@ export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}"
 # Z jump configuration
 . $HOMEBREW_PREFIX/etc/profile.d/z.sh
 
-# AWS configuration
-export AWS_OKTA_MFA_DUO_DEVICE=token
-
 # Load Powerlevel10k configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
 
