@@ -20,11 +20,13 @@ chezmoi apply
 ```
 
 `bootstrap.sh` will:
+
 - Install Xcode CLI tools (if missing)
 - Install Oh My Zsh (if missing)
 - Set zsh as default shell (if needed)
 - Install chezmoi (if missing)
 - Create `~/.private`
+- Generate SSH key and display public key to add to GitHub (if missing)
 
 ---
 
@@ -42,10 +44,11 @@ touch ~/.private
 Then bootstrap with chezmoi:
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles
+chezmoi init helderberto/dotfiles --apply
 ```
 
 This will automatically:
+
 - Install Homebrew
 - Install all packages and apps
 - Set up asdf with nodejs
@@ -59,11 +62,14 @@ This will automatically:
 
 Open a new terminal session so all tools and shell config are loaded.
 
-Generate an SSH key and add it to GitHub:
+If you used **Option B** (or skipped SSH during bootstrap), generate an SSH key manually:
+
 ```bash
 ssh-keygen -t ed25519 -C "your@email.com"
 cat ~/.ssh/id_ed25519.pub
 ```
+
+Then add the public key to GitHub: https://github.com/settings/ssh/new
 
 ---
 
@@ -76,6 +82,7 @@ chezmoi apply
 ```
 
 Or preview first:
+
 ```bash
 chezmoi diff    # preview what would change
 chezmoi apply   # apply changes
@@ -109,17 +116,17 @@ chezmoi apply
 
 ## What's Managed
 
-| Tool | Destination |
-|------|------------|
-| zsh | `~/.zshrc`, `~/.aliases`, `~/.exports` |
-| git | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
-| nvim | `~/.config/nvim/` |
-| tmux | `~/.tmux.conf` |
-| ghostty | `~/.config/ghostty/config` |
-| alacritty | `~/.alacritty.toml` |
-| asdf | `~/.tool-versions` |
-| editorconfig | `~/.editorconfig` |
-| claude | `~/.claude/` |
+| Tool         | Destination                                               |
+| ------------ | --------------------------------------------------------- |
+| zsh          | `~/.zshrc`, `~/.aliases`, `~/.exports`                    |
+| git          | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
+| nvim         | `~/.config/nvim/`                                         |
+| tmux         | `~/.tmux.conf`                                            |
+| ghostty      | `~/.config/ghostty/config`                                |
+| alacritty    | `~/.alacritty.toml`                                       |
+| asdf         | `~/.tool-versions`                                        |
+| editorconfig | `~/.editorconfig`                                         |
+| claude       | `~/.claude/`                                              |
 
 ---
 
