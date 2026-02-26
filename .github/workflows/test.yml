@@ -20,9 +20,9 @@ jobs:
 
       - name: Run test suite
         run: |
-          chezmoi init --source=$PWD/home
+          chezmoi init --source=$PWD
           ./test-chezmoi.sh
 
       - name: Dry-run apply
         run: |
-          chezmoi apply --dry-run --verbose --source=$PWD/home
+          chezmoi apply --dry-run --verbose --source=$PWD
