@@ -6,27 +6,40 @@ macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
 ## New Machine
 
-**1. Prerequisites**
+Choose one of the two paths below.
 
-Install Xcode CLI tools:
+---
+
+### Option A — Clone repo first (recommended)
+
+```bash
+git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./bootstrap.sh
+chezmoi apply
+```
+
+`bootstrap.sh` will:
+- Install Xcode CLI tools (if missing)
+- Install Oh My Zsh (if missing)
+- Set zsh as default shell (if needed)
+- Install chezmoi (if missing)
+- Create `~/.private`
+
+---
+
+### Option B — Without cloning (one command)
+
+Run prerequisites manually:
 
 ```bash
 xcode-select --install
-```
-
-Set zsh as the default shell. zsh is pre-installed on macOS Catalina+. If not available, install it first via [ohmyz.sh](https://ohmyz.sh/#install):
-
-```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Check if zsh is the default shell, if not:
-
-```bash
 sudo chsh -s $(which zsh)
+touch ~/.private
 ```
 
-**2. Bootstrap (one command)**
+Then bootstrap with chezmoi:
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles
@@ -36,12 +49,13 @@ This will automatically:
 - Install Homebrew
 - Install all packages and apps
 - Set up asdf with nodejs
-- Bootstrap tmux plugins
 - Write all dotfiles to `~`
 - Create `~/workspace`
 - Configure the Dock
 
-**3. After setup**
+---
+
+### After setup
 
 Open a new terminal session so all tools and shell config are loaded.
 
@@ -51,22 +65,10 @@ ssh-keygen -t ed25519 -C "your@email.com"
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Create `~/.private` with machine-specific env vars:
-```bash
-alias workspace="cd ~/workspace"
-# add any machine-specific secrets or aliases here
-```
-
 ---
 
 ## Sync Existing Machine
 
-If not already cloned:
-```bash
-git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
-```
-
-Then:
 ```bash
 cd ~/.dotfiles
 git pull origin main
@@ -83,15 +85,11 @@ chezmoi apply   # apply changes
 
 ## Machine-Specific Config
 
-`~/.private` is intentionally **not** managed by chezmoi — create it manually on each machine:
+`~/.private` is intentionally **not** managed by chezmoi — add machine-specific env vars there:
 
 ```bash
-# Work machine example
-alias work="cd ~/work"
+alias workspace="cd ~/workspace"
 export WORK_API_KEY=...
-
-# Shared with ~/.extra for secrets that should never be committed
-[[ -f ~/.extra ]] && source ~/.extra
 ```
 
 ---
@@ -101,14 +99,9 @@ export WORK_API_KEY=...
 After editing any dotfile in `~/.dotfiles`:
 
 ```bash
-cd ~/.dotfiles
 git add <file>
 git commit -m "..."
 git push origin main
-```
-
-Then apply to the current machine:
-```bash
 chezmoi apply
 ```
 
@@ -118,7 +111,7 @@ chezmoi apply
 
 | Tool | Destination |
 |------|------------|
-| zsh | `~/.zshrc`, `~/.aliases`, `~/.exports`, `~/.functions` |
+| zsh | `~/.zshrc`, `~/.aliases`, `~/.exports` |
 | git | `~/.gitconfig`, `~/.gitignore_global`, `~/.gitattributes` |
 | nvim | `~/.config/nvim/` |
 | tmux | `~/.tmux.conf` |
@@ -127,16 +120,6 @@ chezmoi apply
 | asdf | `~/.tool-versions` |
 | editorconfig | `~/.editorconfig` |
 | claude | `~/.claude/` |
-
----
-
-## Shell Prompt
-
-The prompt config (`.p10k.zsh`) is managed by chezmoi and applied automatically. To reconfigure:
-
-```bash
-p10k configure
-```
 
 ---
 
