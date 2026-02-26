@@ -18,11 +18,14 @@ alias bc='brew install --cask'
 
 # ls overwrite by lsd
 # https://github.com/lsd-rs/lsd
-alias ls='lsd'
-alias l='ls -l' # List all files in long format
-alias la='ls -a' # List all files, including hidden files
-alias lla='ls -la' # List all files in long format, including hidden files
-alias lt='ls --tree' # List all files in tree format
+alias ls='lsd --group-dirs first'
+alias l='ls -l'
+alias la='ls -A'
+alias lla='ls -lA'
+alias l.='lsd -A | grep "^\."'
+alias lsg='lsd -l --git --group-dirs first'
+alias lt='lsd --tree --depth 2'
+alias lt3='lsd --tree --depth 3'
 
 # Net
 alias iplocal="ipconfig getifaddr en0" # Get local IP address
