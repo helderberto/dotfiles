@@ -45,11 +45,11 @@ return {
       keymap('t', '<esc>', [[<C-\><C-n>]], opts)
       keymap('t', 'jk', [[<C-\><C-n>]], opts)
 
-      -- Window navigation from terminal
-      keymap('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-      keymap('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-      keymap('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-      keymap('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+      -- Window navigation from terminal (via smart-splits)
+      keymap('t', '<C-h>', [[<Cmd>lua require('smart-splits').move_cursor_left()<CR>]], opts)
+      keymap('t', '<C-j>', [[<Cmd>lua require('smart-splits').move_cursor_down()<CR>]], opts)
+      keymap('t', '<C-k>', [[<Cmd>lua require('smart-splits').move_cursor_up()<CR>]], opts)
+      keymap('t', '<C-l>', [[<Cmd>lua require('smart-splits').move_cursor_right()<CR>]], opts)
 
       -- Window management
       keymap('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)

@@ -18,11 +18,11 @@ shell-integration-features = cursor,sudo
 # Performance
 copy-on-select = true
 
-# Keybinds - vim-style navigation
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+l=goto_split:right
+# Pane navigation
+keybind = opt+h=goto_split:left
+keybind = opt+j=goto_split:bottom
+keybind = opt+k=goto_split:top
+keybind = opt+l=goto_split:right
 
 # Pane resizing - vim-style and arrows with cmd+shift
 keybind = cmd+shift+h=resize_split:left,10
