@@ -17,8 +17,14 @@ return {
       group = lint_augroup,
       callback = function()
         local ft = vim.bo.filetype
-        if lint.linters_by_ft[ft] then
-          lint.try_lint()
+        local linters = lint.linters_by_ft[ft]
+        if not linters then return end
+        local available = vim.tbl_filter(function(name)
+          local l = lint.linters[name]
+          return l and vim.fn.executable(l.cmd) == 1
+        end, linters)
+        if #available > 0 then
+          lint.try_lint(available)
         end
       end,
     })
