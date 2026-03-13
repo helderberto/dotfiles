@@ -25,7 +25,9 @@ return {
   },
   config = true,
   keys = {
-    { '<M-,>', '<cmd>ClaudeCodeFocus<cr>', desc = 'Claude Code (Alt+,)', mode = { 'n', 'x' } }, -- Option + Comma
+    { '<leader>a', nil, desc = 'AI/Claude Code' },
+    { '<leader>ac', '<cmd>ClaudeCode<cr>', desc = 'Toggle Claude' },
+    { '<leader>af', '<cmd>ClaudeCodeFocus<cr>', desc = 'Focus Claude' },
     { '<leader>ar', '<cmd>ClaudeCode --resume<cr>', desc = 'Resume Claude' },
     { '<leader>aC', '<cmd>ClaudeCode --continue<cr>', desc = 'Continue Claude' },
     { '<leader>am', '<cmd>ClaudeCodeSelectModel<cr>', desc = 'Select Claude model' },
@@ -35,7 +37,7 @@ return {
       '<leader>as',
       '<cmd>ClaudeCodeTreeAdd<cr>',
       desc = 'Add file',
-      ft = { 'NvimTree', 'neo-tree', 'oil', 'minifiles' },
+      ft = { 'NvimTree', 'neo-tree', 'oil', 'minifiles', 'netrw' },
     },
     -- Diff management
     { '<leader>aa', '<cmd>ClaudeCodeDiffAccept<cr>', desc = 'Accept diff' },
