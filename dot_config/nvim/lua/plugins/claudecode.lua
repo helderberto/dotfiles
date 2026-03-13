@@ -2,27 +2,27 @@ return {
   'coder/claudecode.nvim',
   dependencies = { 'folke/snacks.nvim' },
   opts = {
-    terminal_cmd = 'zsh -ic claude', -- Command to start the Claude CLI
-
-    terminal = {
-      snacks_win_opts = {
-        position = 'float',
-        width = 0.85,
-        height = 0.85,
-        border = 'rounded',
-        keys = {
-          claude_hide_alt = {
-            '<M-,>',
-            function(self)
-              self:hide()
-            end,
-            mode = 't',
-            desc = 'Hide (Alt+,)',
-          },
-        },
-      },
-    },
+    terminal_cmd = 'zsh -ic claude',
   },
+
+  -- terminal = {
+  --   snacks_win_opts = {
+  --     position = 'float',
+  --     width = 0.85,
+  --     height = 0.85,
+  --     border = 'rounded',
+  --     keys = {
+  --       claude_hide_alt = {
+  --         '<M-,>',
+  --         function(self)
+  --           self:hide()
+  --         end,
+  --         mode = 't',
+  --         desc = 'Hide (Alt+,)',
+  --       },
+  --     },
+  --   },
+  -- },
   config = true,
   keys = {
     { '<leader>a', nil, desc = 'AI/Claude Code' },
