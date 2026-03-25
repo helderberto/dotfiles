@@ -7,7 +7,7 @@ theme = Catppuccin Mocha
 
 # Window
 window-decoration = true
-macos-titlebar-style = transparent
+macos-titlebar-style = tabs
 window-padding-x = 8
 window-padding-y = 5
 
