@@ -42,7 +42,7 @@ command -v gdircolors >/dev/null 2>&1 && alias dircolors="gdircolors"
 
 ### Source additional configuration files
 # Load custom configurations
-for config_file in ~/.{extra,exports,aliases,private,functions}; do
+for config_file in ~/.{extra,exports,aliases,private}; do
     [[ -r "$config_file" ]] && source "$config_file"
 done
 unset config_file
@@ -50,13 +50,6 @@ unset config_file
 ### FZF configuration
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
-# Catppuccin Mocha theme for FZF
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
---color=selected-bg:#45475a \
---multi"
 
 ### Key bindings
 bindkey '\t\t' autosuggest-accept
@@ -69,7 +62,6 @@ path=(
   "/usr/local/sbin"
   $path
 )
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 # Man path
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:"
@@ -83,5 +75,11 @@ export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
+# Lazy-load asdf for faster shell startup
+asdf() {
+  unfunction asdf
+  . $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
+  asdf "$@"
+}
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
