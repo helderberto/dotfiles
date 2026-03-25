@@ -30,7 +30,6 @@ brew "zsh-syntax-highlighting"
 brew "zsh-completions"
 
 # Fonts
-cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-jetbrains-mono"
 
