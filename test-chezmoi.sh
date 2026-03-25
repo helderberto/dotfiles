@@ -36,7 +36,15 @@ while IFS= read -r -d '' tmpl; do
         fail "$(basename "$tmpl") - template error"
         ((TEMPLATE_ERRORS++))
     fi
-done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" -not -path "*/dot_claude/*" -not -path "*/claude/*" -not -path "*/skills/*" -not -name ".chezmoi.toml.tmpl" -not -path "*/.chezmoiscripts/*" -print0)
+done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" \
+    -not -path "*/dot_claude/*" \
+    -not -path "*/claude/*" \
+    -not -path "*/skills/*" \
+    -not -path "*/.agents/*" \
+    -not -path "*/.git/*" \
+    -not -name ".chezmoi.toml.tmpl" \
+    -not -path "*/.chezmoiscripts/*" \
+    -print0)
 [ $TEMPLATE_ERRORS -gt 0 ] && ((ERRORS++)) || true
 
 # 3. Shell script syntax
@@ -51,7 +59,13 @@ while IFS= read -r -d '' script; do
         bash -n "$script" 2>&1 || true
         ((SYNTAX_ERRORS++))
     fi
-done < <(find "$CHEZMOI_SOURCE" -name "*.sh" -o -name "*.sh.tmpl" -print0 | grep -v "/claude/\|/skills/\|/.github/")
+done < <(find "$CHEZMOI_SOURCE" \( -name "*.sh" -o -name "*.sh.tmpl" \) \
+    -not -path "*/.git/*" \
+    -not -path "*/.github/*" \
+    -not -path "*/.agents/*" \
+    -not -path "*/dot_claude/*" \
+    -not -path "*/.chezmoiscripts/*" \
+    -print0)
 [ $SYNTAX_ERRORS -gt 0 ] && ((ERRORS++)) || true
 
 # 4. Required files exist
@@ -95,6 +109,8 @@ SECRETS=$(grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" \
     --exclude-dir=dot_claude \
     --exclude-dir=claude \
     --exclude-dir=skills \
+    --exclude-dir=.agents \
+    --exclude-dir=.chezmoiscripts \
     --exclude-dir=.github \
     --exclude-dir=nvim \
     --exclude-dir=.git \
