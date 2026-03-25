@@ -93,11 +93,6 @@ alias nls="npm list --depth=0"      # list installed packages
 alias nlsg="npm list -g --depth=0"  # list global packages
 alias nv="npm version"              # version management
 
-# NPM Maintenance (use with caution)
-alias np="npm publish"              # publish package
-
-# HTTP Server
-alias hs="http-server"
 
 # Claude CLI (force homebrew version over asdf shim)
 alias claude="/opt/homebrew/bin/claude"
