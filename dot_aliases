@@ -9,11 +9,7 @@ alias al="less ~/.aliases"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Brew
-alias bt="brew tap"
-alias bi="brew install"
-alias brm="brew uninstall"
 alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
-alias bc='brew install --cask'
 
 # ls overwrite by lsd
 # https://github.com/lsd-rs/lsd
@@ -55,7 +51,7 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% |
 alias k="clear"
 
 # NPM Install
-alias n="npm" # base command
+alias n="npm"
 alias ni="npm ci" # clean install (using package-lock.json)
 alias nid="npm install -D" # shorter than --save-dev
 alias nig="npm install -g" # global installs
@@ -68,9 +64,6 @@ alias nss="npm run start-ssl" # start with SSL
 alias nd="npm run dev" # development
 alias nb="npm run build" # build
 alias nt="npm run test" # test
-alias ntw="npm run test:watch" # test watch mode
-alias nc="npm run coverage" # coverage
-alias nl="npm run lint" # lint
 
 # NPM Workspace
 alias nw="npm workspace" # single workspace
@@ -86,5 +79,5 @@ alias nv="npm version"              # version management
 
 # Claude CLI (force homebrew version over asdf shim)
 alias claude="/opt/homebrew/bin/claude"
-alias cc="/opt/homebrew/bin/claude" # Just because i'm lazy
+alias c="/opt/homebrew/bin/claude" # Just because i'm lazy
 
