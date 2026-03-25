@@ -1,0 +1,52 @@
+# GNU utilities
+brew "coreutils"
+brew "moreutils"
+brew "findutils"
+brew "gnu-sed"
+brew "bash"
+brew "bash-completion@2"
+brew "gnupg"
+
+# CLI tools
+brew "lsd"
+brew "fd"
+brew "fzf"
+brew "git"
+brew "mas"
+brew "ripgrep"
+brew "tealdeer"
+brew "lazygit"
+brew "neovim"
+brew "tmux"
+brew "z"
+brew "asdf"
+brew "chezmoi"
+brew "stylua"
+
+# Zsh plugins
+brew "powerlevel10k"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zsh-completions"
+
+# Fonts
+cask "font-hack"
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono"
+
+# GUI applications
+cask "1password"
+cask "betterdisplay"
+cask "cursor"
+cask "figma"
+cask "ghostty"
+cask "google-chrome"
+cask "hiddenbar"
+cask "imageoptim"
+cask "obsidian"
+cask "postman"
+cask "raycast"
+cask "slack"
+cask "spotify"
+cask "todoist-app"
+cask "visual-studio-code"
