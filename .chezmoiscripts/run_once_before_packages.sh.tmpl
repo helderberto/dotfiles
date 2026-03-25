@@ -1,89 +1,24 @@
 #!/usr/bin/env bash
-# Install Homebrew packages and casks
-
 set -e
 
-echo "📦 Installing Homebrew packages..."
+echo "Installing Homebrew packages..."
 
-# Make sure we're using the latest Homebrew
 brew update
-
-# Upgrade any already-installed formulae
 brew upgrade
+brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
 
-# Save Homebrew's installed location
 BREW_PREFIX=$(brew --prefix)
 
-# Install GNU core utilities
-brew install coreutils
 if [ ! -L "${BREW_PREFIX}/bin/sha256sum" ]; then
     ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
 fi
 
-# Install useful utilities
-brew install moreutils
-brew install findutils
-brew install gnu-sed
-brew install bash
-brew install bash-completion2
+$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc || true
 
-# Install GnuPG for PGP-signing commits
-brew install gnupg
-
-# Install fonts
-brew install --cask font-hack || true
-brew install --cask font-hack-nerd-font || true
-brew install --cask font-jetbrains-mono || true
-
-# Install useful packages/binaries
-brew install lsd
-brew install fd
-brew install fzf
-brew install git
-brew install mas
-brew install ripgrep
-brew install tealdeer
-brew install lazygit
-brew install neovim
-brew install tmux
-brew install z
-brew install http-server
-brew install asdf
-brew install chezmoi
-brew install stylua
-
-# Zsh plugins
-brew install powerlevel10k
-brew install zsh-autosuggestions
-brew install zsh-syntax-highlighting
-brew install zsh-completions
-
-# tmux plugin manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-# Install GUI applications
-brew install --cask ghostty || true
-brew install --cask figma || true
-brew install --cask google-chrome || true
-brew install --cask imageoptim || true
-brew install --cask slack || true
-brew install --cask spotify || true
-brew install --cask 1password || true
-brew install --cask visual-studio-code || true
-brew install --cask cursor || true
-brew install --cask hiddenbar || true
-brew install --cask raycast || true
-brew install --cask postman || true
-brew install --cask todoist || true
-brew install --cask betterdisplay || true
-brew install --cask obsidian || true
-
-# Install fzf key bindings and fuzzy completion
-$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc || true
-
-# Remove outdated versions
 brew cleanup || true
 
-echo "✓ Homebrew packages installed"
+echo "Homebrew packages installed"
