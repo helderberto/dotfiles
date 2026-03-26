@@ -16,6 +16,10 @@
 - No object mutations: `obj.key=`, `delete obj.key`
 - Use: spread `[...]`, `slice`, `map`, destructuring
 
+## Linting
+
+- Avoid disabling eslint rules. If truly necessary, add comment explaining why
+
 ## Structure
 
 **Why: Reduce cognitive load**

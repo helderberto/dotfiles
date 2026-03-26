@@ -1,15 +1,7 @@
 - Read files before editing them
 - Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
 - Research unknown technical details rather than inventing
-- Only stage/commit when explicitly requested
-- Use `gh` CLI for GitHub operations
-- No comments in code unless truly necessary. Code should be self-documenting.
-- Avoid disabling eslint rules. If truly necessary, add comment explaining why.
 - Find root cause rather than patching symptoms
-
-## TDD Approach (Red-Green-Refactor)
-- Always follow red-green-refactor: write failing tests first, then implement to make them pass
-- Each step: write failing test → implement minimal code to pass → refactor
 
 ## Verification (CRITICAL)
 - Always run tests after implementation; fix all failures
