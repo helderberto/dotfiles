@@ -10,6 +10,7 @@
 | `learner` | Capture insights into CLAUDE.md |
 | `git-detective` | Investigate git history and trace changes |
 | `frontend-architect` | Component design, deep modules, structural health |
+| `junior-engineer` | Ask every clarifying question before acting |
 
 ## Design Principles
 
