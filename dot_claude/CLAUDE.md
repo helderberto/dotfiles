@@ -2,6 +2,7 @@
 - Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
 - Research unknown technical details rather than inventing
 - Find root cause rather than patching symptoms
+- Always TDD: red → green → refactor (see [Code Principles](docs/code-principles.md))
 
 ## Verification (CRITICAL)
 - Always run tests after implementation; fix all failures
