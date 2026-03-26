@@ -2,7 +2,6 @@
 name: debugger
 description: Debugging specialist for root cause analysis. Use when encountering errors, test failures, or unexpected behavior.
 tools: Read, Edit, Grep, Glob, Bash
-model: sonnet
 color: red
 ---
 

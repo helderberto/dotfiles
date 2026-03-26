@@ -2,7 +2,6 @@
 name: frontend-architect
 description: Evaluate frontend architecture for deep modules, component design, and structural health. Use when planning features or auditing existing code.
 tools: Read, Grep, Glob, Bash
-model: sonnet
 color: purple
 ---
 
