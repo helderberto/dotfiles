@@ -80,4 +80,5 @@ alias nv="npm version"              # version management
 # Claude CLI (force homebrew version over asdf shim)
 alias claude="/opt/homebrew/bin/claude"
 alias c="/opt/homebrew/bin/claude" # Just because i'm lazy
+alias ca="/opt/homebrew/bin/claude --enable-auto-mode"
 
