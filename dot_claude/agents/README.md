@@ -4,14 +4,15 @@
 
 | Agent | Purpose |
 |-------|---------|
-| `code-review` | Logic, readability, patterns, performance, code smells |
-| `ts-enforcer` | TypeScript strict mode and type safety |
-| `test-quality` | Test effectiveness beyond coverage |
-| `learn` | Capture insights into CLAUDE.md |
-| `adr` | Architecture Decision Records |
+| `code-reviewer` | Code quality, security, maintainability |
+| `debugger` | Root cause analysis for errors and failures |
+| `test-auditor` | Test effectiveness beyond coverage |
+| `learner` | Capture insights into CLAUDE.md |
+| `git-detective` | Investigate git history and trace changes |
+| `frontend-architect` | Component design, deep modules, structural health |
 
 ## Design Principles
 
-1. **Clear Purpose**: Well-defined scope, no overlap
+1. **Clear purpose**: Well-defined scope, no overlap
 2. **Concise**: Minimal context cost, maximum signal
-3. **Actionable**: Checklist-style rules, not essays
+3. **Actionable**: Checklists, not essays
