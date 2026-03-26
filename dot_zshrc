@@ -50,10 +50,9 @@ unset config_file
 ### FZF configuration
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
-# Reset kitty keyboard protocol after any TUI app exits (e.g. killed via Ctrl-C)
-# \e[=0u disables all kitty protocol flags, restoring legacy key encoding
+# Reset kitty keyboard protocol stack after any TUI app exits (e.g. killed via Ctrl-C)
 [[ $TERM == xterm-ghostty ]] && precmd_functions+=(_reset_kitty_kbd)
-_reset_kitty_kbd() { printf '\e[=0u' }
+_reset_kitty_kbd() { printf '\e[<u' }
 
 
 ### Key bindings
