@@ -11,6 +11,7 @@
 | `git-detective` | Investigate git history and trace changes |
 | `frontend-architect` | Component design, deep modules, structural health |
 | `junior-engineer` | Ask every clarifying question before acting |
+| `parity-check` | Audit legacy-to-React migrations for missing functionality |
 
 ## Design Principles
 
