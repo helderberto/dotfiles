@@ -11,7 +11,14 @@
 | `git-detective` | Investigate git history and trace changes |
 | `frontend-architect` | Component design, deep modules, structural health |
 | `junior-engineer` | Ask every clarifying question before acting |
-| `parity-check` | Audit legacy-to-React migrations for missing functionality |
+| `parity-check` | Audit code migrations for missing functionality |
+
+## Usage Examples
+
+**parity-check** — requires source path, target path, and scope:
+```
+Use parity-check: source=src/legacy target=src/v2 scope="user profile form"
+```
 
 ## Design Principles
 
