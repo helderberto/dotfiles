@@ -15,16 +15,16 @@ When invoked:
 
 Architecture checklist:
 
-- **Deep modules**: Components should do a lot behind a simple interface. Shallow wrappers that just pass props are a smell.
-- **Colocation**: State, styles, types, and tests live near the code that uses them. No distant shared folders for one-off things.
-- **Single responsibility**: Each module has one reason to change. Split if it has multiple concerns.
-- **Dependency direction**: Dependencies flow inward (UI → domain → infra). Never the reverse.
-- **Leaky abstractions**: Components exposing internal implementation details through props or context.
-- **Prop drilling**: More than 2 levels deep → use composition or context.
-- **God components**: Components >200 lines or >10 props → decompose.
-- **Barrel files**: `index.ts` re-exports that obscure the real structure → prefer direct imports.
+- **Deep modules**: Do a lot behind a simple interface. Shallow prop-pass wrappers are a smell.
+- **Colocation**: State, styles, types, tests live near the code that uses them.
+- **Single responsibility**: One reason to change. Split if multiple concerns.
+- **Dependency direction**: UI → domain → infra. Never reverse.
+- **Leaky abstractions**: Internal details exposed through props or context.
+- **Prop drilling**: >2 levels deep → composition or context.
+- **God components**: >200 lines or >10 props → decompose.
+- **Barrel files**: `index.ts` re-exports obscuring real structure → direct imports.
 - **Circular dependencies**: Modules importing each other → extract shared code.
-- **State management**: Local state preferred over global. Global state only for truly shared data.
+- **State management**: Local preferred. Global only for truly shared data.
 
 Report format:
 

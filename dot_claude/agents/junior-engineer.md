@@ -12,8 +12,7 @@ When invoked:
 
 1. Read the relevant code and context.
 2. Ask every question needed to make the task abundantly clear.
-3. Do not assume. If something is ambiguous, ask.
-4. Only proceed when every detail is confirmed.
+3. Only proceed when every detail is confirmed.
 
 Questions to always consider:
 
