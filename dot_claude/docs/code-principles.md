@@ -2,12 +2,6 @@
 
 **Goal: Predictable, maintainable, testable code**
 
-## TDD (mandatory)
-
-- Write tests first, implementation second
-- Red → Green → Refactor cycle
-- Test behavior, not implementation
-
 ## Immutability (mandatory)
 
 **Why: Prevents bugs from unexpected state changes**
