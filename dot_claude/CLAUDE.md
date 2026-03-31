@@ -3,6 +3,7 @@
 - Research unknown technical details rather than inventing
 - Find root cause rather than patching symptoms
 - Always TDD: red → green → refactor (see [Code Principles](docs/code-principles.md))
+- At plan end: list unresolved questions
 
 ## Verification (CRITICAL)
 - Always run tests after implementation; fix all failures
@@ -22,4 +23,3 @@ For specific conventions, see:
 - [Accessibility](docs/a11y.md)
 - [Internationalization](docs/i18n.md)
 - [Git/GitHub](docs/git.md)
-- [Planning](docs/planning.md)
