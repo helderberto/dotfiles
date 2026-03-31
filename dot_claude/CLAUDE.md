@@ -21,5 +21,4 @@ For specific conventions, see:
 - [Code Principles](docs/code-principles.md)
 - [Testing](docs/testing.md)
 - [Accessibility](docs/a11y.md)
-- [Internationalization](docs/i18n.md)
 - [Git/GitHub](docs/git.md)
