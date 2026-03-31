@@ -15,6 +15,8 @@
 - Test output must be pristine (zero warnings/errors)
 - Group: Rendering → User Interactions → Edge Cases
 - Network: MSW for HTTP mocking
+- Prefer `userEvent` over `fireEvent` — simulates real browser behavior
+- If `render()` returns `user` (e.g. `const { user } = render(...)`), use that instance
 - Prefer `getByRole` / `getByText` over `container.querySelector` — query by accessibility, not DOM structure
 
 ## Vitest Globals
