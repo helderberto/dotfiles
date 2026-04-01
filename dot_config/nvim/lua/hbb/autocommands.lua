@@ -39,7 +39,7 @@ autocmd('BufEnter', {
 -- nvim 0.12 bundled markdown parser triggers nil range errors via injections;
 -- stop treesitter highlighter and fall back to vim syntax
 autocmd('FileType', {
-  pattern = { 'markdown', 'markdown.mdx' },
+  pattern = { 'markdown', 'markdown.mdx', 'neo-tree' },
   callback = function(args)
     vim.treesitter.stop(args.buf)
   end,
