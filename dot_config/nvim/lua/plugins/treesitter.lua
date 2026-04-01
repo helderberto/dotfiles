@@ -28,6 +28,8 @@ return {
         'vim',
         'elixir',
         'ruby',
+        'markdown',
+        'markdown_inline',
       },
       highlight = {
         enable = true,
@@ -37,22 +39,9 @@ return {
         enable = true,
         disable = {},
       },
-      autopairs = {
-        enable = true,
-      },
-      autotag = {
-        enable = true,
-      },
-      enable_autocmd = false,
-      languages = {
-        typescript = '// %s',
-      },
     },
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
-
-      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-      parser_config.tsx.filetype_to_parsername = { 'javascript', 'typescript.tsx' }
     end,
   },
 }

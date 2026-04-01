@@ -1,6 +1,9 @@
 return {
-  'RRethy/vim-illuminate', -- Highlight all instances of the word under the cursor
+  'RRethy/vim-illuminate',
   config = function()
-    vim.g.Illuminate_delay = 100
+    require('illuminate').configure({
+      delay = 100,
+      providers = { 'lsp', 'regex' },
+    })
   end,
 }
