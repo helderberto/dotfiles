@@ -35,3 +35,12 @@ autocmd('BufEnter', {
   pattern = '',
   command = 'set fo-=c fo-=r fo-=o',
 })
+
+-- nvim 0.12 bundled markdown parser triggers nil range errors via injections;
+-- stop treesitter highlighter and fall back to vim syntax
+autocmd('FileType', {
+  pattern = { 'markdown', 'markdown.mdx' },
+  callback = function(args)
+    vim.treesitter.stop(args.buf)
+  end,
+})
