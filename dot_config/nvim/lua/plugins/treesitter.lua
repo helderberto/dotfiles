@@ -29,12 +29,11 @@ return {
         'vim',
         'elixir',
         'ruby',
-        'markdown',
-        'markdown_inline',
       },
       highlight = {
         enable = true,
-        disable = {},
+        -- nvim 0.12 ships bundled markdown parsers; injections conflict with nvim-treesitter queries
+        disable = { 'markdown', 'markdown_inline' },
       },
       indent = {
         enable = true,
