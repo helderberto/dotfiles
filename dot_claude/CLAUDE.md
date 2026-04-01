@@ -4,6 +4,7 @@
 - Find root cause rather than patching symptoms
 - Always TDD: red → green → refactor (see [Code Principles](docs/code-principles.md))
 - At plan end: list unresolved questions
+- Never commit or stage `.tracerkit/` dirs unless user explicitly forces it (TracerKit artifacts)
 
 ## Verification (CRITICAL)
 - Always run tests after implementation; fix all failures
