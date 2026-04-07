@@ -4,7 +4,7 @@
 
 ## Setup
 
-- Vitest + React Testing Library
+- Default: Vitest + React Testing Library (if no Vitest, check for Jest)
 - Create `customRender` helper with `defaultProps`
 
 ## Rules
