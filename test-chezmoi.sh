@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2088
+# shellcheck disable=SC2088,SC2015
 set -e
 
 CHEZMOI_SOURCE="${CHEZMOI_SOURCE:-$PWD}"
