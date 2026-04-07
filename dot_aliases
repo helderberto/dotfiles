@@ -39,10 +39,10 @@ alias dpa="docker ps -a"
 alias dsp="docker system prune --all"
 
 # Docker Compose essentials
-alias dc="docker-compose"
-alias dcu="docker-compose up"
-alias dcud="docker-compose up -d"
-alias dcd="docker-compose down"
+alias dc="docker compose"
+alias dcu="docker compose up"
+alias dcud="docker compose up -d"
+alias dcd="docker compose down"
 
 # tldr with fzf
 alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% | xargs tldr'

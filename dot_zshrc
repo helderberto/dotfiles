@@ -1,5 +1,5 @@
 # Homebrew configuration
-export HOMEBREW_PREFIX=$(brew --prefix)
+export HOMEBREW_PREFIX="/opt/homebrew"
 
 # Enable Powerlevel10k instant prompt (keep this at the top)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -35,10 +35,6 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive completion
-
-### Directory colors
-command -v gdircolors >/dev/null 2>&1 && alias dircolors="gdircolors"
-[[ -f ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)"
 
 ### Source additional configuration files
 # Load custom configurations
