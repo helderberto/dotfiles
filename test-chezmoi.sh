@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2088
 set -e
 
 CHEZMOI_SOURCE="${CHEZMOI_SOURCE:-$PWD}"

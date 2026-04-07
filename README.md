@@ -79,6 +79,23 @@ On other machines, `chezmoi update && chezmoi apply` is enough.
 
 ---
 
+## Testing
+
+```bash
+./test-chezmoi.sh              # syntax & config checks
+./test-chezmoi.sh --post-apply # also validates installed tools
+```
+
+CI runs the test suite on every push and PR via GitHub Actions.
+
+---
+
+## AI Agent Config
+
+`AGENTS.md` is the source of truth for agent instructions. `CLAUDE.md` is a symlink to it, so it works with Claude Code, Open Code, and other tools that look for either file.
+
+---
+
 ## Reference
 
 | Command | Purpose |
