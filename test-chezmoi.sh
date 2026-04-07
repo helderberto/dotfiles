@@ -133,6 +133,7 @@ echo "7) secrets scan"
 SECRET_PATTERNS="password|secret|token|api[_-]?key|private[_-]?key"
 SECRETS=$(grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" \
     --exclude-dir=dot_claude \
+    --exclude-dir=.claude \
     --exclude-dir=claude \
     --exclude-dir=skills \
     --exclude-dir=.agents \
