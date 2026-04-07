@@ -1,6 +1,12 @@
-# Helder's Dotfiles
+<h1 align="center">Helder's Dotfiles</h1>
 
-macOS dotfiles managed with [chezmoi](https://chezmoi.io).
+<p align="center">
+  macOS dotfiles managed with <a href="https://chezmoi.io">chezmoi</a>
+  <br><br>
+  <a href="https://github.com/helderberto/dotfiles/actions/workflows/ci.yml">
+    <img src="https://github.com/helderberto/dotfiles/actions/workflows/ci.yml/badge.svg" alt="CI">
+  </a>
+</p>
 
 **Already using these?** `chezmoi update && chezmoi apply`
 
