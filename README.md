@@ -1,14 +1,14 @@
-# ⚙️ Helder's Dotfiles
+# Helder's Dotfiles
 
 macOS dotfiles managed with [chezmoi](https://chezmoi.io).
 
-**Already using these dotfiles:** `chezmoi update && chezmoi apply`
+**Already using these?** `chezmoi update && chezmoi apply`
 
 ---
 
 ## New Machine
 
-You’ll overwrite existing dotfiles (e.g. `~/.zshrc`). Back up anything you care about first.
+Back up existing dotfiles first (e.g. `~/.zshrc`) — they will be overwritten.
 
 **Prerequisites** (run once, requires GUI prompt):
 
@@ -24,6 +24,11 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles
 
 This installs chezmoi, pulls the repo, and applies everything: Homebrew, packages, apps, asdf with nodejs, SSH key generation, and Dock config.
 
+After it finishes:
+
+1. Open a **new terminal** so shell config and tools are loaded.
+2. Add the generated SSH key to GitHub: https://github.com/settings/ssh/new
+
 > If you plan to edit these dotfiles, clone the repo first:
 > ```bash
 > git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
@@ -32,26 +37,28 @@ This installs chezmoi, pulls the repo, and applies everything: Homebrew, package
 
 ---
 
-### After setup
+<details>
+<summary><strong>Day-to-day usage</strong></summary>
 
-1. Open a **new terminal** so shell config and tools are loaded.
-2. Add the generated SSH key to GitHub: https://github.com/settings/ssh/new
-
----
-
-## Sync Existing Machine
-
-Pull the latest from the repo and apply:
+### Syncing
 
 ```bash
-chezmoi update
-chezmoi diff    # optional: preview changes
+chezmoi update && chezmoi apply
+```
+
+### Making updates
+
+Edit files in your clone, push, then apply:
+
+```bash
+cd ~/.dotfiles
+git add <file> && git commit -m "..." && git push
 chezmoi apply
 ```
 
----
+On other machines, `chezmoi update && chezmoi apply` is enough.
 
-## Machine-Specific Config
+### Machine-specific config
 
 `~/.private` is **not** managed by chezmoi. Put machine-only env vars and secrets there; your shell config sources it automatically.
 
@@ -61,25 +68,20 @@ export WORK_API_KEY=...
 alias workspace="cd ~/my-company/workspace"
 ```
 
----
+### Chezmoi reference
 
-## Making Updates
+| Command | Purpose |
+| ------- | ------- |
+| `chezmoi managed` | List all managed paths |
+| `chezmoi diff` | Preview changes before applying |
+| `chezmoi apply` | Apply dotfiles to `~` |
 
-Edit the dotfiles in your clone of **helderberto/dotfiles**, push, then apply:
+</details>
 
-```bash
-cd ~/.dotfiles   # or wherever you cloned the repo
-git add <file>
-git commit -m "..."
-git push origin main
-chezmoi apply
-```
+<details>
+<summary><strong>Development</strong></summary>
 
-On other machines, `chezmoi update && chezmoi apply` is enough.
-
----
-
-## Testing
+### Testing
 
 ```bash
 ./test-chezmoi.sh              # syntax & config checks
@@ -88,24 +90,12 @@ On other machines, `chezmoi update && chezmoi apply` is enough.
 
 CI runs the test suite on every push and PR via GitHub Actions.
 
----
+### AI agent config
 
-## AI Agent Config
+`AGENTS.md` is the source of truth for agent instructions. `~/.claude/CLAUDE.md` symlinks to it, so it works with Claude Code, Open Code, and other tools that look for either file.
 
-`AGENTS.md` is the source of truth for agent instructions. `CLAUDE.md` is a symlink to it, so it works with Claude Code, Open Code, and other tools that look for either file.
-
----
-
-## Reference
-
-| Command | Purpose |
-| ------- | ------- |
-| `chezmoi managed` | List all managed paths |
-| `chezmoi diff` | Preview changes before applying |
-| `chezmoi apply` | Apply dotfiles to `~` |
+</details>
 
 ---
-
-## License
 
 MIT License © [helderberto](https://github.com/helderberto)
