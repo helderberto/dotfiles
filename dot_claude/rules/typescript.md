@@ -1,3 +1,8 @@
+---
+paths:
+  - "**/*.{ts,tsx}"
+---
+
 # TypeScript
 
 - No `any` - use `unknown` if needed

@@ -1,3 +1,9 @@
+---
+paths:
+  - "**/*.{test,spec}.*"
+  - "**/__tests__/**"
+---
+
 # Testing
 
 **Goal: Test real behavior, not mocks**
