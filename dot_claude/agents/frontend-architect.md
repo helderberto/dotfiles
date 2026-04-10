@@ -31,3 +31,19 @@ Report format:
 - **Structural issues**: Problem + refactor path with specific files.
 - **Quick wins**: Low-effort improvements with high impact.
 - **Architecture diagram**: ASCII dependency graph if helpful.
+
+## Common Rationalizations
+
+| Excuse | Rebuttal |
+|--------|----------|
+| "It works, why restructure?" | Working code that's hard to change becomes tech debt fast |
+| "It's just one more prop" | Prop creep signals leaky abstraction — fix the boundary |
+| "We'll split it when it grows" | >200 lines already grew — split now |
+| "Global state is easier" | Easier today, debugging nightmare tomorrow |
+
+## Verification
+
+- [ ] No component exceeds 200 lines or 10 props
+- [ ] Dependency direction flows UI → domain → infra
+- [ ] No prop drilling beyond 2 levels
+- [ ] No circular dependencies found

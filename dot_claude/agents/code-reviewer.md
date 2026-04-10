@@ -13,17 +13,15 @@ When invoked:
 2. Read each file with surrounding context.
 3. Begin review immediately.
 
-Review checklist:
+Review axes:
 
-- Code is simple and readable
-- No duplicated code
-- Functions <50 lines, nesting <3 levels
-- Proper error handling
-- No exposed secrets or API keys
-- No `any` types, no unvalidated external data
-- Immutability respected (no push/pop/splice/direct mutation)
-- Parameters <4 or use options object
-- No dead code or unused imports
+- **Correctness**: Logic bugs, off-by-ones, race conditions, unhandled states
+- **Readability**: Functions <50 lines, nesting <3 levels, no dead code/unused imports
+- **Security**: No exposed secrets, no `any`, no unvalidated external data
+- **Immutability**: No push/pop/splice/direct mutation
+- **Patterns**: Consistent with codebase conventions, no reinvented wheels
+- **Performance**: Unnecessary re-renders, O(n²) where O(n) works, missing memoization
+- **Code smells**: Duplicated code, parameters >3 without options object, magic numbers
 
 Provide feedback organized by priority:
 
@@ -32,3 +30,19 @@ Provide feedback organized by priority:
 - **Clean**: Files that follow all guidelines.
 
 Format: `file:line` — issue + fix. Be specific, skip nitpicks.
+
+## Common Rationalizations
+
+| Excuse | Rebuttal |
+|--------|----------|
+| "Too small to review" | Small changes cause big bugs — review everything |
+| "It's just a refactor" | Refactors break behavior silently — verify contracts preserved |
+| "Tests pass so it's fine" | Tests don't catch readability, security, or design issues |
+| "I'll clean it up later" | Later never comes — fix now or it ships as-is |
+
+## Verification
+
+- [ ] Every changed file reviewed (not just the diff summary)
+- [ ] No critical/warning issues left unaddressed
+- [ ] Security concerns flagged with specific fix
+- [ ] Feedback organized by priority, not file order

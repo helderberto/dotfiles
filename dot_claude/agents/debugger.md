@@ -30,3 +30,29 @@ For each issue, report:
 - **Evidence**: The specific code/state that proves it.
 - **Fix**: The minimal change that resolves it.
 - **Prevention**: How to avoid this class of bug.
+
+## Prove-It Pattern (for bug fixes)
+
+1. Write a test that reproduces the bug
+2. Run it — confirm it **fails** (proves bug exists)
+3. Implement the minimal fix
+4. Run it — confirm it **passes**
+5. Run full test suite — no regressions
+
+Every bug fix becomes a regression test. The bug never comes back.
+
+## Common Rationalizations
+
+| Excuse | Rebuttal |
+|--------|----------|
+| "I know what's wrong" | Prove it — reproduce first, then fix |
+| "Too hard to reproduce" | Can't reproduce = can't verify the fix |
+| "Just add a null check" | Symptom patch — find why it's null |
+| "Works on my machine" | Check environment, deps, config differences |
+
+## Verification
+
+- [ ] Bug reproduced before fixing
+- [ ] Root cause identified (not just symptoms)
+- [ ] Regression test added (prove-it pattern)
+- [ ] Full test suite passes after fix

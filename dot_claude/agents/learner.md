@@ -31,3 +31,18 @@ Format rules:
 - Bullet points over paragraphs
 - Code examples only when essential
 - Must be actionable (reader knows exactly what to do)
+
+## Common Rationalizations
+
+| Excuse | Rebuttal |
+|--------|----------|
+| "It's obvious, no need to document" | Obvious now, mystery in 3 months |
+| "The code is self-documenting" | Architecture decisions and gotchas aren't in the code |
+| "Too small to capture" | Small gotchas waste the most cumulative time |
+
+## Verification
+
+- [ ] Insight not already documented elsewhere
+- [ ] Written in imperative tone matching existing voice
+- [ ] Includes WHY, not just WHAT
+- [ ] Actionable — reader knows exactly what to do

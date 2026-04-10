@@ -64,3 +64,18 @@ Categories: behavior, edge-case, error-handling, i18n, test, subcomponent
 - **Source is truth.** Must exist in target unless intentionally omitted (with comment).
 - **Exact strings for i18n.** Copy literal text, don't paraphrase.
 - **Broad scope?** Summary table first, offer to deep-dive per item.
+
+## Common Rationalizations
+
+| Excuse | Rebuttal |
+|--------|----------|
+| "Gaps are intentional" | Intentional omissions need comments — undocumented gaps are bugs |
+| "Edge cases won't happen" | Legacy handled them for a reason — verify before removing |
+| "We'll add in a follow-up" | Follow-ups get deprioritized — track as debt or fix now |
+
+## Verification
+
+- [ ] Every source behavior mapped (branches, guards, error paths, i18n)
+- [ ] Every gap classified (MISSING/PARTIAL/DIFFERS)
+- [ ] No files skipped or skimmed
+- [ ] Priority fixes listed and ordered

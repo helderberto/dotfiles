@@ -4,8 +4,9 @@
 
 | Agent | Purpose |
 |-------|---------|
-| `code-reviewer` | Code quality, security, maintainability |
-| `debugger` | Root cause analysis for errors and failures |
+| `code-reviewer` | Code quality, security, performance, patterns, maintainability |
+| `debugger` | Root cause analysis with prove-it pattern |
+| `security-auditor` | Threat modeling, OWASP, vulnerability assessment |
 | `test-auditor` | Test effectiveness beyond coverage |
 | `learner` | Capture insights into CLAUDE.md |
 | `git-detective` | Investigate git history and trace changes |
