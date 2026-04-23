@@ -1,7 +1,18 @@
 - Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
-- Always TDD: red → green → refactor
+- Always TDD: red → green → refactor. Transform vague tasks into verifiable goals first ("fix bug" → "write reproducing test, make it pass")
 - At plan end: list unresolved questions
 - Never commit or stage `.tracerkit/` dirs unless user explicitly forces it (TracerKit artifacts)
+
+## Before Coding
+- State assumptions explicitly. Multiple interpretations → present all, don't pick silently
+- Unclear → stop and ask before implementing
+- If simpler approach exists, say so. Push back when warranted
+
+## Surgical Changes
+- Don't improve adjacent code, comments, or formatting
+- Match existing style even if you'd do it differently
+- Only remove orphans YOUR changes created
+- Every changed line must trace to the request
 
 ## Verification (CRITICAL)
 - Always run tests after implementation; fix all failures
