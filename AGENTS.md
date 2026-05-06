@@ -18,7 +18,6 @@
 ## Verification (CRITICAL)
 - Always run tests after implementation; fix all failures
 - For UI changes: take before/after screenshots, compare
-- Never ship without passing verification
 
 ## Task Sizing
 
@@ -40,7 +39,3 @@
 | Security concern | security-auditor → code-reviewer |
 | Architecture question | frontend-architect |
 | Capture insight | learner |
-
-## Context Management
-- Use /clear between unrelated tasks
-- When compacting, preserve: modified files list, test results
