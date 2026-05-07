@@ -44,6 +44,13 @@ alias dcu="docker compose up"
 alias dcud="docker compose up -d"
 alias dcd="docker compose down"
 
+# Colima (Docker VM)
+alias co="colima"
+alias cos="colima start"
+alias cox="colima stop"
+alias cost="colima status"
+alias cor="colima restart"
+
 # tldr with fzf
 alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% | xargs tldr'
 

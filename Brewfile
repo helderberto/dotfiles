@@ -23,6 +23,13 @@ brew "asdf"
 brew "chezmoi"
 brew "stylua"
 
+# Container runtime
+brew "colima"
+brew "docker"
+brew "docker-compose"
+brew "docker-buildx"
+brew "docker-credential-helper-ecr"
+
 # Zsh plugins
 brew "powerlevel10k"
 brew "zsh-autosuggestions"
