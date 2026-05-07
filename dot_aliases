@@ -34,6 +34,7 @@ alias v="nvim"
 alias vim="nvim"
 
 # Docker essentials
+alias d="docker"
 alias dp="docker ps"
 alias dpa="docker ps -a"
 alias dsp="docker system prune --all"
