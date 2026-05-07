@@ -38,6 +38,7 @@ alias d="docker"
 alias dp="docker ps"
 alias dpa="docker ps -a"
 alias dsp="docker system prune --all"
+alias dnuke='docker rm -f $(docker ps -aq)'
 
 # Docker Compose essentials
 alias dc="docker compose"
