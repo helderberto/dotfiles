@@ -15,6 +15,10 @@
 - Only remove orphans YOUR changes created
 - Every changed line must trace to the request
 
+## Ad-hoc Scripts
+- Default to Node or shell for one-off scripts. Python under asdf can fail with "no version set" when the cwd has no `.tool-versions`. Reserve Python for tasks that genuinely need its stdlib (data crunching, scientific libs)
+- For string manipulation, JSON munging, or PR/API automation: Node `<<'JS' ... JS` or POSIX shell pipelines are the safer default
+
 ## Verification (CRITICAL)
 - Always run tests after implementation; fix all failures
 - For UI changes: take before/after screenshots, compare
