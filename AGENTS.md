@@ -2,7 +2,7 @@
 - **English always** for all written artifacts: code, comments, commit messages, branch names, PR titles/bodies, GitHub issues, ADRs, plans, READMEs, and inline docs. Chat replies follow the user's language; written artifacts do not.
 - Always TDD: red → green → refactor. Transform vague tasks into verifiable goals first ("fix bug" → "write reproducing test, make it pass")
 - At plan end: list unresolved questions
-- Never commit or stage `.tracerkit/` dirs unless user explicitly forces it (TracerKit artifacts)
+- Never commit or stage `.specs/` dirs unless user explicitly forces it (workflow artifacts from /hb:prd and /hb:plan)
 
 ## Before Coding
 - State assumptions explicitly. Multiple interpretations → present all, don't pick silently
