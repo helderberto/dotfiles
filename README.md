@@ -100,6 +100,8 @@ CI runs the test suite on every push and PR via GitHub Actions.
 
 `AGENTS.md` is the source of truth for agent instructions. `~/.claude/CLAUDE.md` symlinks to it, so it works with Claude Code, Open Code, and other tools that look for either file.
 
+Curated SDLC skills (PRD → ship) live in a separate plugin: [helderberto/agent-skills](https://github.com/helderberto/agent-skills). Install via `/plugin marketplace add helderberto/agent-skills` in Claude Code.
+
 </details>
 
 ---
