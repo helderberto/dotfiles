@@ -1,6 +1,6 @@
 [user]
-  name = {{ .name }}
-  email = {{ .email }}
+  name = Helder Burato Berto
+  email = helder.burato@gmail.com
 
 [github]
   user = helderburato
