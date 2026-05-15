@@ -94,7 +94,7 @@ fi
 echo ""
 echo "5) required files"
 REQUIRED_FILES=(
-    "dot_gitconfig.tmpl"
+    "dot_gitconfig"
     "dot_zshrc"
     "dot_aliases"
     "dot_exports"
@@ -230,7 +230,7 @@ if $POST_APPLY; then
         fi
     done
 
-    # Git support files (referenced in dot_gitconfig.tmpl)
+    # Git support files (referenced in dot_gitconfig)
     for file in ~/.gitignore_global ~/.gitattributes ~/.gittemplates/commit; do
         if [ -e "$file" ]; then
             pass "$(basename "$file") present"
@@ -252,6 +252,86 @@ if $POST_APPLY; then
     else
         fail "~/workspace missing"
     fi
+fi
+
+# 10. Content asserts (regression guards for hardcoded values)
+echo ""
+echo "10) content asserts"
+
+GITCONFIG="$CHEZMOI_SOURCE/dot_gitconfig"
+if grep -q "name = Helder Burato Berto" "$GITCONFIG" && \
+   grep -q "email = helder.burato@gmail.com" "$GITCONFIG"; then
+    pass "dot_gitconfig has expected name/email"
+else
+    fail "dot_gitconfig missing expected name/email"
+fi
+
+if ! grep -q "{{" "$GITCONFIG"; then
+    pass "dot_gitconfig has no template syntax"
+else
+    fail "dot_gitconfig has stray template syntax"
+fi
+
+if ! grep -q "^\[data\]" "$CHEZMOI_SOURCE/.chezmoi.toml.tmpl"; then
+    pass ".chezmoi.toml.tmpl has no dead [data] section"
+else
+    fail ".chezmoi.toml.tmpl still has [data] section"
+fi
+
+# 11. Template matrix (env-conditional rendering)
+echo ""
+echo "11) template matrix"
+
+SSH_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_ssh.sh.tmpl"
+MATRIX_TMP=$(mktemp -d)
+trap 'rm -rf "$MATRIX_TMP"' EXIT
+cp "$SSH_TMPL" "$MATRIX_TMP/ssh.tmpl"
+ssh_with_ci=$(CI=1 chezmoi execute-template --source "$MATRIX_TMP" < "$MATRIX_TMP/ssh.tmpl" 2>/dev/null || true)
+ssh_no_ci=$(env -u CI chezmoi execute-template --source "$MATRIX_TMP" < "$MATRIX_TMP/ssh.tmpl" 2>/dev/null || true)
+
+if ! echo "$ssh_with_ci" | grep -q "ssh-keygen"; then
+    pass "ssh script skips keygen when CI=1"
+else
+    fail "ssh script still renders keygen with CI=1"
+fi
+
+if echo "$ssh_no_ci" | grep -q "ssh-keygen"; then
+    pass "ssh script includes keygen when CI unset"
+else
+    fail "ssh script missing keygen when CI unset"
+fi
+
+BREW_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_once_before_homebrew.sh.tmpl"
+if grep -q "/opt/homebrew" "$BREW_TMPL" && grep -q "/usr/local/bin" "$BREW_TMPL"; then
+    pass "homebrew script handles both arm64 and amd64 paths"
+else
+    fail "homebrew script missing arch branches"
+fi
+
+# 12. Render determinism (proxy for idempotency without full apply)
+echo ""
+echo "12) render determinism"
+
+render_all() {
+    find "$CHEZMOI_SOURCE" -name "*.tmpl" \
+        -not -path "*/dot_claude/*" \
+        -not -path "*/claude/*" \
+        -not -path "*/skills/*" \
+        -not -path "*/.agents/*" \
+        -not -path "*/.git/*" \
+        -not -name ".chezmoi.toml.tmpl" \
+        -not -path "*/.chezmoiscripts/*" \
+        -print0 | sort -z | while IFS= read -r -d '' tmpl; do
+            chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$tmpl" 2>/dev/null || true
+        done
+}
+
+hash1=$(render_all | shasum | awk '{print $1}')
+hash2=$(render_all | shasum | awk '{print $1}')
+if [ "$hash1" = "$hash2" ] && [ -n "$hash1" ]; then
+    pass "template rendering is deterministic"
+else
+    fail "template rendering differs between runs ($hash1 vs $hash2)"
 fi
 
 # Summary
