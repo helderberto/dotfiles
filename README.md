@@ -22,24 +22,20 @@ Back up existing dotfiles first (e.g. `~/.zshrc`) — they will be overwritten.
 xcode-select --install
 ```
 
-**Then — one command:**
+**Then — clone and bootstrap:**
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply helderberto/dotfiles
+git clone https://github.com/helderberto/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles && ./bootstrap.sh
 ```
 
-This installs chezmoi, pulls the repo, and applies everything: Homebrew, packages, apps, asdf with nodejs, SSH key generation, and Dock config.
+This installs chezmoi, points it at `~/.dotfiles` as the source, and applies everything: Homebrew, packages, apps, asdf with nodejs, SSH key generation, and Dock config.
 
 After it finishes:
 
 1. Open a **new terminal** so shell config and tools are loaded.
 2. Add the generated SSH key to GitHub: https://github.com/settings/ssh/new
-
-> If you plan to edit these dotfiles, clone the repo first:
-> ```bash
-> git clone git@github.com:helderberto/dotfiles.git ~/.dotfiles
-> cd ~/.dotfiles && ./bootstrap.sh
-> ```
+3. Switch the remote to SSH if you plan to push: `git -C ~/.dotfiles remote set-url origin git@github.com:helderberto/dotfiles.git`
 
 ---
 
@@ -54,15 +50,16 @@ chezmoi update && chezmoi apply
 
 ### Making updates
 
-Edit files in your clone, push, then apply:
+Edit files in `~/.dotfiles` and apply directly — chezmoi reads from the clone:
 
 ```bash
 cd ~/.dotfiles
-git add <file> && git commit -m "..." && git push
+# edit files
 chezmoi apply
+git add <file> && git commit -m "..." && git push
 ```
 
-On other machines, `chezmoi update && chezmoi apply` is enough.
+On other machines, `chezmoi update && chezmoi apply` pulls and applies.
 
 ### Machine-specific config
 
