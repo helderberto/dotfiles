@@ -1,6 +1,7 @@
 # Navigate faster
 alias ws="cd $HOME/workspace"
 alias labs="cd $HOME/workspace/labs"
+alias ad="cd $HOME/ai-desktop"
 
 # Find Aliases
 alias al="less ~/.aliases"
@@ -90,4 +91,5 @@ alias nv="npm version"              # version management
 alias claude="/opt/homebrew/bin/claude"
 alias c="/opt/homebrew/bin/claude" # Just because i'm lazy
 alias ca="/opt/homebrew/bin/claude --enable-auto-mode"
+alias cad="cd $HOME/ai-desktop && /opt/homebrew/bin/claude" # AI desktop session
 
