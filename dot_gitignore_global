@@ -14,4 +14,3 @@ Session.vim
 ctags
 *.log
 **/.claude/settings.local.json
-.specs/
