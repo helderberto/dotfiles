@@ -87,6 +87,5 @@ alias nlsg="npm list -g --depth=0"  # list global packages
 alias nv="npm version"              # version management
 
 # Claude CLI (native install)
-alias c="$HOME/.local/bin/claude" # Just because i'm lazy
-alias ca="cd $HOME/ai-desktop && $HOME/.local/bin/claude" # AI desktop session
+alias ca="$HOME/.local/bin/claude" # Just because i'm lazy
 
