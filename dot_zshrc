@@ -78,5 +78,5 @@ asdf() {
   . $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
   asdf "$@"
 }
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$HOME/.local/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
