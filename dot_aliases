@@ -86,10 +86,7 @@ alias nls="npm list --depth=0"      # list installed packages
 alias nlsg="npm list -g --depth=0"  # list global packages
 alias nv="npm version"              # version management
 
-
-# Claude CLI (force homebrew version over asdf shim)
-alias claude="/opt/homebrew/bin/claude"
-alias c="/opt/homebrew/bin/claude" # Just because i'm lazy
-alias ca="/opt/homebrew/bin/claude --enable-auto-mode"
-alias cad="cd $HOME/ai-desktop && /opt/homebrew/bin/claude" # AI desktop session
+# Claude CLI (native install)
+alias c="$HOME/.local/bin/claude" # Just because i'm lazy
+alias ca="cd $HOME/ai-desktop && $HOME/.local/bin/claude" # AI desktop session
 
