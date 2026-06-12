@@ -1,5 +1,5 @@
 - Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
-- Always TDD: red → green → refactor. Transform vague tasks into verifiable goals first ("fix bug" → "write reproducing test, make it pass")
+- Always TDD: failing test first, even for vague asks ("fix bug" → reproducing test)
 - At plan end: list unresolved questions
 - Never commit or stage `.specs/` dirs unless user explicitly forces it (workflow artifacts from /hb:prd and /hb:plan)
 
