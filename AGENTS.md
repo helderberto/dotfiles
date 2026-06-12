@@ -10,7 +10,6 @@
 
 ## Surgical Changes
 - Don't improve adjacent code, comments, or formatting
-- Match existing style even if you'd do it differently
 - Only remove orphans YOUR changes created
 - Every changed line must trace to the request
 
@@ -19,26 +18,5 @@
 - For string manipulation, JSON munging, or PR/API automation: Node `<<'JS' ... JS` or POSIX shell pipelines are the safer default
 
 ## Verification (CRITICAL)
-- Always run tests after implementation; fix all failures
 - For UI changes: take before/after screenshots, compare
-
-## Task Sizing
-
-| Size | Files | Action |
-|------|-------|--------|
-| XS | 1 | Single function/fix |
-| S | 1–2 | One component/endpoint |
-| M | 3–5 | Complete feature slice |
-| L | 5–8 | Multi-component feature |
-| XL | 8+ | **Break down further** |
-
-## Lifecycle → Agent Mapping
-
-| Task type | Flow |
-|-----------|------|
-| Bug | debugger (prove-it) → test-auditor |
-| New feature | junior-engineer (clarify) → plan → code-reviewer |
-| Migration | parity-check → code-reviewer |
-| Security concern | security-auditor → code-reviewer |
-| Architecture question | frontend-architect |
-| Capture insight | learner |
+- 8+ files → break into phases first
