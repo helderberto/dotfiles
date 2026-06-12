@@ -1,6 +1,7 @@
 # Font
 font-family = "Hack Nerd Font"
 font-size = 12
+font-thicken = false
 
 # Theme
 theme = Catppuccin Mocha
@@ -17,6 +18,7 @@ shell-integration-features = cursor,sudo
 
 # Performance
 copy-on-select = true
+resize-overlay = never
 
 # Pane navigation
 keybind = opt+h=goto_split:left
