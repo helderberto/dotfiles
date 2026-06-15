@@ -8,10 +8,8 @@
 | `debugger` | Root cause analysis with prove-it pattern |
 | `security-auditor` | Threat modeling, OWASP, vulnerability assessment |
 | `test-auditor` | Test effectiveness beyond coverage |
-| `learner` | Capture insights into CLAUDE.md |
 | `git-detective` | Investigate git history and trace changes |
 | `frontend-architect` | Component design, deep modules, structural health |
-| `junior-engineer` | Ask every clarifying question before acting |
 | `parity-check` | Audit code migrations for missing functionality |
 
 ## Usage Examples
