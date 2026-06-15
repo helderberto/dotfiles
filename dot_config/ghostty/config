@@ -12,6 +12,9 @@ macos-titlebar-style = tabs
 window-padding-x = 8
 window-padding-y = 5
 
+# Terminal
+term = xterm-256color
+
 # Shell
 shell-integration = detect
 shell-integration-features = cursor,sudo
