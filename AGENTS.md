@@ -20,6 +20,13 @@
 ## Code Principles
 **Goal: predictable, maintainable, testable code**
 
+### Simplicity (mandatory)
+- Minimum code that solves the problem. Nothing speculative
+- No abstractions for single-use code
+- No flexibility/config that wasn't requested
+- No error handling for impossible scenarios
+- 200 lines that could be 50 → rewrite. "Would a senior call this overcomplicated?" → simplify
+
 ### Immutability (mandatory)
 - No array mutations: `push`, `pop`, `splice`, `shift`, `unshift`, `[i]=`, `sort`, `reverse`
 - No object mutations: `obj.key=`, `delete obj.key`
