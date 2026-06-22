@@ -12,5 +12,3 @@ paths:
 - `Readonly` for immutable props
 - `interface` for objects, `type` for unions
 - Objects over `enum`
-
-For structure and naming conventions, see [Code Principles](code-principles.md)
