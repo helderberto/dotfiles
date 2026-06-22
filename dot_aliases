@@ -86,6 +86,6 @@ alias nls="npm list --depth=0"      # list installed packages
 alias nlsg="npm list -g --depth=0"  # list global packages
 alias nv="npm version"              # version management
 
-# Claude CLI (npm install)
+# Claude CLI (brew install)
 alias ca="claude" # Just because i'm lazy
 
