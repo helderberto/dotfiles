@@ -87,7 +87,6 @@ alias nlsg="npm list -g --depth=0"  # list global packages
 alias nv="npm version"              # version management
 
 # Claude CLI (brew install)
-# CLAUDE_CODE_NO_FLICKER=1 fixes image rendering and scroll artifacts
-alias claude="CLAUDE_CODE_NO_FLICKER=1 claude"
-alias ca="claude"
+# alias claude won't work — claude is a shell function (_cmux_claude_wrapper_command)
+alias ca="CLAUDE_CODE_NO_FLICKER=1 claude"
 
