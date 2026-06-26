@@ -88,5 +88,5 @@ alias nv="npm version"              # version management
 
 # Claude CLI (brew install)
 # alias claude won't work — claude is a shell function (_cmux_claude_wrapper_command)
-alias ca="CLAUDE_CODE_NO_FLICKER=1 claude"
+alias ca="claude"
 
