@@ -1,26 +1,25 @@
 # Font
 font-family = "JetBrainsMono Nerd Font"
 font-size = 12
-font-thicken = false
 
 # Theme
 theme = Catppuccin Mocha
 
 # Window
-window-decoration = true
-macos-titlebar-style = tabs
+macos-titlebar-style = transparent
 window-padding-x = 8
 window-padding-y = 5
+window-colorspace = display-p3
+background-opacity = 0.92
+background-blur = true
 
 # Terminal
 term = xterm-256color
 
 # Shell
-shell-integration = detect
 shell-integration-features = cursor,sudo
 
 # Performance
-copy-on-select = true
 resize-overlay = never
 
 # Pane navigation
