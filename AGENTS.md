@@ -52,4 +52,3 @@
 - NEVER use `git add .` or `git add -A` — always stage files explicitly by name
 - Always atomic commits: one commit per logical concern
 - Conventional commits, unless repo history says otherwise
-- NEVER commit project `.claude/settings.local.json`
