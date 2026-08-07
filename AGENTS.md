@@ -2,6 +2,7 @@
 - Always TDD: failing test first, even for vague asks ("fix bug" → reproducing test)
 - Refactor: suite green before AND after, no behavior change
 - At plan end: list unresolved questions
+- Prefer CLI over MCP; MCP only when the CLI can't do it
 - Never commit or stage `.specs/` dirs unless user explicitly forces it (workflow artifacts from /hb:prd and /hb:plan)
 
 ## Before Coding
@@ -46,7 +47,6 @@
 - Object options for 3+ params (readability)
 
 ## Git/GitHub
-- Always prefer `gh` CLI over GitHub MCP for GitHub operations. Only use GitHub MCP as fallback when `gh` can't do it
 - Only stage/commit when explicitly requested
 - Never skip pre-commit hooks
 - NEVER use `git add .` or `git add -A` — always stage files explicitly by name
