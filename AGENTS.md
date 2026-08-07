@@ -3,12 +3,14 @@
 - Refactor: suite green before AND after, no behavior change
 - At plan end: list unresolved questions
 - Prefer CLI over MCP; MCP only when the CLI can't do it
+- Repetitive edits → write a script, don't hand-edit N files
+- 3 failed attempts → stop, report what you learned, ask
 - Never commit or stage `.specs/` dirs unless user explicitly forces it (workflow artifacts from /hb:prd and /hb:plan)
 
 ## Before Coding
 - State assumptions explicitly. Multiple interpretations → present all, don't pick silently
 - Unclear → stop, name what's confusing, ask before implementing
-- If simpler approach exists, say so. Push back when warranted
+- If simpler approach exists, say so. Push back when warranted — no sycophancy or superficial agreement
 
 ## Surgical Changes
 - Don't improve adjacent code, comments, or formatting
