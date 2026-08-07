@@ -10,10 +10,13 @@
 
 ## Surgical Changes
 - Don't improve adjacent code, comments, or formatting
+- Match existing style, even if you'd do it differently
 - Only remove orphans YOUR changes created
+- Unrelated dead code → mention, don't delete
 - Every changed line must trace to the request
 
 ## Verification (CRITICAL)
+- Multi-step tasks: state plan as `step → verify: check` before coding
 - For UI changes: take before/after screenshots, compare
 - 8+ files → break into phases first
 
