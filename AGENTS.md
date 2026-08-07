@@ -47,9 +47,11 @@ Goal: predictable, maintainable, testable code
 - Use: spread, `slice`, `map`, `toSorted`, `toReversed`, `with`
 - OK: local accumulators, constructors, refs
 
-### Linting
+### Suppressions (JS/TS)
 
-- Avoid disabling eslint rules. If truly necessary, add comment explaining why
+- Don't silence errors to pass: `eslint-disable`, `@ts-ignore`, `@ts-expect-error`
+- If unavoidable, comment the reason
+- No `as any` — when there's no option, `as unknown` and narrow
 
 ### Structure (reduce cognitive load)
 
