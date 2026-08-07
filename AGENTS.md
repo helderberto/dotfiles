@@ -58,7 +58,7 @@ Goal: predictable, maintainable, testable code
 - No comments — code must self-document; comment only the non-obvious "why"
 - Object options for 3+ params (readability)
 
-## Git/GitHub
+## Git
 
 - Only stage/commit when explicitly requested
 - Always atomic commits: one commit per logical concern
