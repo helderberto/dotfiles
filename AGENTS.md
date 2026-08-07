@@ -12,7 +12,7 @@
 ## Before Coding
 
 - State assumptions explicitly. Multiple interpretations → present all, don't pick silently
-- Unclear → stop, name what's confusing, ask before implementing
+- Ambiguity that changes the work → stop, name it, ask. Routine ambiguity → state assumption, proceed
 - If simpler approach exists, say so. Push back when warranted — no sycophancy or superficial agreement
 
 ## Surgical Changes
@@ -55,9 +55,8 @@ Goal: predictable, maintainable, testable code
 
 ### Structure (reduce cognitive load)
 
-- Max 2 nesting levels (flatten with guards/early returns)
-- No nested ifs - use guards at function start
-- No comments — code must self-document; comment only the non-obvious "why"
+- Prefer guards/early returns over nesting
+- Comments only for non-obvious "why" — never restate what code does
 - Object options for 3+ params (readability)
 
 ## Git
