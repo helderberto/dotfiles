@@ -3,11 +3,9 @@
 - Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
 - Always TDD: failing test first, even for vague asks ("fix bug" → reproducing test)
 - Refactor: suite green before AND after, no behavior change
-- At plan end: list unresolved questions
 - Prefer CLI over MCP; MCP only when the CLI can't do it
 - Repetitive edits → write a script, don't hand-edit N files
 - 3 failed attempts → stop, report what you learned, ask
-- Never commit or stage `.specs/` dirs unless user explicitly forces it (workflow artifacts from /hb:prd and /hb:plan)
 
 ## Before Coding
 
