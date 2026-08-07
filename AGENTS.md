@@ -61,7 +61,5 @@ Goal: predictable, maintainable, testable code
 ## Git/GitHub
 
 - Only stage/commit when explicitly requested
-- Never skip pre-commit hooks
-- NEVER use `git add .` or `git add -A` — always stage files explicitly by name
 - Always atomic commits: one commit per logical concern
 - Conventional commits, unless repo history says otherwise
