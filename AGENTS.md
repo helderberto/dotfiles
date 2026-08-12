@@ -54,7 +54,7 @@ Goal: predictable, maintainable, testable code
 ### Structure (reduce cognitive load)
 
 - Prefer guards/early returns over nesting
-- Comments only for non-obvious "why" — never restate what code does
+- No comments — code must self-document; comment only the non-obvious "why"
 - Object options for 3+ params (readability)
 
 ## Git
