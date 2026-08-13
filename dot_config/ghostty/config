@@ -10,7 +10,6 @@ macos-titlebar-style = transparent
 window-padding-x = 8
 window-padding-y = 5
 window-colorspace = display-p3
-background-opacity = 1
 
 # Terminal
 term = xterm-256color
