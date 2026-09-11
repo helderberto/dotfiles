@@ -1,6 +1,6 @@
 # AGENTS.md
 
-- Extreme concision in all interactions and commits. Sacrifice grammar for brevity.
+- Extreme concision in all interactions and commits. Sacrifice grammar for the sake of concision.
 - Always TDD: failing test first, even for vague asks ("fix bug" → reproducing test)
 - Refactor: suite green before AND after, no behavior change
 - Prefer CLI over MCP; MCP only when the CLI can't do it
