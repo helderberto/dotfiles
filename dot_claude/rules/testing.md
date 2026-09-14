@@ -10,7 +10,7 @@ paths:
 
 ## Setup
 
-- Default: Vitest + React Testing Library (if no Vitest, check for Jest)
+- Detect the runner from the manifest; greenfield → Vitest + React Testing Library
 - Create `customRender` helper with `defaultProps`
 
 ## Rules
