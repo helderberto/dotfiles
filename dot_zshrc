@@ -72,11 +72,5 @@ export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-# Lazy-load asdf for faster shell startup
-asdf() {
-  unfunction asdf
-  . $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
-  asdf "$@"
-}
 export PATH="$HOME/.local/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
