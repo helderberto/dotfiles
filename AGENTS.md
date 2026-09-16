@@ -20,7 +20,7 @@
 
 - Minimum code that solves the problem. Nothing speculative: no abstractions for single-use code, no unrequested flexibility/config, no error handling for impossible scenarios
 - 200 lines that could be 50 → rewrite. "Would a senior call this overcomplicated?" → simplify
-- No comments — code must self-document; comment only the non-obvious "why"
+- No comments — code must self-document; comment only the non-obvious "why". When you do: ≤20 words/sentence, one idea per sentence, active voice, no em-dashes or parentheses
 
 ## Git
 
