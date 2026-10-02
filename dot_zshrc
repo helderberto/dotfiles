@@ -51,6 +51,7 @@ unset config_file
 bindkey '\t\t' autosuggest-accept
 
 ### Path configuration
+typeset -U path
 path=(
   "$HOMEBREW_PREFIX/bin"
   "$HOMEBREW_PREFIX/sbin"
