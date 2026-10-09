@@ -20,6 +20,7 @@ Save these to 1Password:
 
 - Raycast settings: Settings → Advanced → Export (`.rayconfig` file)
 - `~/.private`
+- `~/.claude/settings.json` (Claude Code permissions, plugins, statusline)
 - Shottr license key
 
 ### 2. Install
@@ -44,6 +45,7 @@ Then open Terminal and run each command **one at a time**. Wait for each to fini
    ```bash
    chezmoi init --apply --source ~/.dotfiles helderberto
    ```
+   This takes a while. It stops to ask for your password (some apps need it) and an email for the new SSH key.
 
 ### 3. What you get
 
@@ -79,7 +81,7 @@ These need a login or a manual step:
 
 | App | Step |
 | --- | ---- |
-| Claude Code | Run `claude` and log in. Recreate `~/.claude/settings.json`. Run `/plugin marketplace add helderberto/agent-skills` |
+| Claude Code | Run `claude` and log in. Restore `~/.claude/settings.json` from 1Password. Run `/plugin marketplace add helderberto/agent-skills` |
 | Raycast | Turn off Spotlight's `⌘ Space` (System Settings → Keyboard → Keyboard Shortcuts → Spotlight). Import the `.rayconfig` |
 | Shottr | Allow Screen Recording. Enter the license key |
 | VSCode | Turn on Settings Sync. It restores settings and extensions |
