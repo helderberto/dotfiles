@@ -29,6 +29,7 @@ brew "tree"
 brew "hyperfine"
 brew "tig"
 brew "pandoc"
+brew "uv"
 
 # Container runtime
 brew "colima"
