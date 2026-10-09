@@ -246,6 +246,10 @@ if $POST_APPLY; then
         fail "TPM missing (~/.tmux/plugins/tpm)"
     fi
 
+    while read -r plugin; do
+        [ -d "$HOME/.tmux/plugins/${plugin##*/}" ] && pass "tmux plugin ${plugin##*/}" || fail "tmux plugin ${plugin##*/} missing"
+    done < <(sed -n "s/^set -g @plugin '\(.*\)'/\1/p" "$HOME/.tmux.conf")
+
     # Workspace
     if [ -d "$HOME/workspace" ]; then
         pass "~/workspace exists"
@@ -383,6 +387,14 @@ else
     fail "asdf script not driven by .tool-versions"
 fi
 
+TMUX_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_tmux.sh.tmpl"
+if grep -qF '{{ include "dot_tmux.conf" | sha256sum }}' "$TMUX_TMPL" 2>/dev/null && \
+   grep -qF 'tpm/bin/install_plugins' "$TMUX_TMPL"; then
+    pass "tmux plugins install on dot_tmux.conf change"
+else
+    fail "tmux plugins not installed on apply"
+fi
+
 grep -qx 'cask "claude"' "$BREWFILE" && pass "claude desktop via brew" || fail "claude desktop cask missing"
 ! grep -q '^cask "claude-code' "$BREWFILE" && pass "claude code installed natively, not via brew" || fail "claude-code cask in Brewfile"
 
@@ -396,7 +408,7 @@ else
     fail "claude code installer script missing"
 fi
 
-for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl; do
+for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl run_onchange_after_tmux.sh.tmpl; do
     rendered=$(chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$CHEZMOI_SOURCE/.chezmoiscripts/$script")
     if env -i HOME="$HOME" PATH=/usr/bin:/bin bash -c "$(echo "$rendered" | sed -n '/brew shellenv/p'); command -v brew" >/dev/null 2>&1; then
         pass "$script finds brew on a fresh PATH"

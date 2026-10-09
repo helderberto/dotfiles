@@ -64,12 +64,12 @@ Then open Terminal and run each command **one at a time**. Wait for each to fini
 
 Close Terminal and open Ghostty. Your shell config loads from here on.
 
-1. Add your SSH key to GitHub. Git pushes to GitHub over SSH.
-   ```bash
-   pbcopy < ~/.ssh/id_ed25519.pub   # paste at https://github.com/settings/ssh/new
-   ssh -T git@github.com            # answer "yes" to trust GitHub
-   ```
-2. Start `tmux` and press `prefix + I` to install its plugins.
+Add your SSH key to GitHub. Git pushes to GitHub over SSH.
+
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub   # paste at https://github.com/settings/ssh/new
+ssh -T git@github.com            # answer "yes" to trust GitHub
+```
 
 ### 5. Set up apps
 
