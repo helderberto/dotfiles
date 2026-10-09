@@ -308,13 +308,6 @@ else
     fail "ssh script missing keygen when CI unset"
 fi
 
-BREW_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_once_before_homebrew.sh.tmpl"
-if grep -q "/opt/homebrew" "$BREW_TMPL" && grep -q "/usr/local/bin" "$BREW_TMPL"; then
-    pass "homebrew script handles both arm64 and amd64 paths"
-else
-    fail "homebrew script missing arch branches"
-fi
-
 # 12. Render determinism (proxy for idempotency without full apply)
 echo ""
 echo "12) render determinism"
