@@ -104,6 +104,7 @@ REQUIRED_FILES=(
     "dot_gitattributes"
     "dot_gittemplates/commit"
     "dot_config/ghostty/config"
+    "dot_p10k.zsh"
     "dot_config/nvim/init.lua"
     "Brewfile"
     ".chezmoiignore"
