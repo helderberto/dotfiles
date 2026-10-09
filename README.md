@@ -8,13 +8,22 @@
   </a>
 </p>
 
-**Already using these?** `chezmoi update && chezmoi apply`
+**Already using these?** `chezmoi update`
 
 ---
 
 ## New Machine
 
 ### 1. Before leaving the old Mac
+
+Check the repo has everything:
+
+```bash
+chezmoi status                                   # managed files edited outside the repo → chezmoi re-add
+brew bundle cleanup --file ~/.dotfiles/Brewfile  # installed but not in Brewfile → add or ignore
+```
+
+Never pass `--force` to `cleanup`. It uninstalls everything unlisted, including Apple's apps.
 
 Save these to 1Password:
 
@@ -64,16 +73,12 @@ Then open Terminal and run each command **one at a time**. Wait for each to fini
 
 Close Terminal and open Ghostty. Your shell config loads from here on.
 
-1. Add your SSH key to GitHub. Git uses SSH for every GitHub URL, so clones fail until this is done.
-   ```bash
-   pbcopy < ~/.ssh/id_ed25519.pub   # paste at https://github.com/settings/ssh/new
-   ssh -T git@github.com            # answer "yes" to trust GitHub
-   ```
-2. Install runtimes. This step failed during install because the key didn't exist yet.
-   ```bash
-   cut -d' ' -f1 ~/.tool-versions | xargs -n1 asdf plugin add; asdf install
-   ```
-3. Start `tmux` and press `prefix + I` to install its plugins.
+Add your SSH key to GitHub. Git pushes to GitHub over SSH.
+
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub   # paste at https://github.com/settings/ssh/new
+ssh -T git@github.com            # answer "yes" to trust GitHub
+```
 
 ### 5. Set up apps
 
@@ -89,6 +94,25 @@ These need a login or a manual step:
 | `~/.private` | Restore from 1Password |
 
 Work tools stay out of this repo. Set them up on the work Mac.
+
+## Existing Mac
+
+Adds what's missing. Preview first: `~` may hold edits you want to keep.
+
+1. Clone without applying.
+   ```bash
+   brew install chezmoi
+   chezmoi init --source ~/.dotfiles helderberto
+   ```
+2. Preview changes to `~`. Move machine-only bits to `~/.private` first.
+   ```bash
+   chezmoi diff
+   ```
+3. Sign in to the App Store, then apply. `brew bundle` installs only what's missing.
+   ```bash
+   chezmoi apply
+   ```
+4. Do [steps 4 and 5](#4-finish-in-ghostty) for anything not set up yet.
 
 ---
 

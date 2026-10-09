@@ -19,10 +19,6 @@ fi
 
 $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc || true
 
-if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi
-
 brew cleanup || true
 
 echo "Homebrew packages installed"

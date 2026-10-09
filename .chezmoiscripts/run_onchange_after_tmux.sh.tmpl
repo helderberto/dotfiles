@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# dot_tmux.conf hash: {{ include "dot_tmux.conf" | sha256sum }}
+set -e
+{{- if eq .chezmoi.arch "arm64" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- else }}
+eval "$(/usr/local/bin/brew shellenv)"
+{{- end }}
+
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+"$HOME/.tmux/plugins/tpm/bin/install_plugins"

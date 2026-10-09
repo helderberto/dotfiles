@@ -215,6 +215,12 @@ if $POST_APPLY; then
         fi
     done
 
+    if brew bundle check --file "$CHEZMOI_SOURCE/Brewfile" >/dev/null 2>&1; then
+        pass "Brewfile satisfied"
+    else
+        fail "Brewfile has missing packages (brew bundle check --verbose)"
+    fi
+
     # Zsh plugin paths (referenced in dot_zshrc)
     ZSH_PLUGINS=(
         "/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme"
@@ -245,6 +251,10 @@ if $POST_APPLY; then
     else
         fail "TPM missing (~/.tmux/plugins/tpm)"
     fi
+
+    while read -r plugin; do
+        [ -d "$HOME/.tmux/plugins/${plugin##*/}" ] && pass "tmux plugin ${plugin##*/}" || fail "tmux plugin ${plugin##*/} missing"
+    done < <(sed -n "s/^set -g @plugin '\(.*\)'/\1/p" "$HOME/.tmux.conf")
 
     # Workspace
     if [ -d "$HOME/workspace" ]; then
@@ -277,6 +287,13 @@ if ! grep -q "{{" "$GITCONFIG"; then
     pass "dot_gitconfig has no template syntax"
 else
     fail "dot_gitconfig has stray template syntax"
+fi
+
+if grep -q "pushInsteadOf = https://github.com/" "$GITCONFIG" && \
+   ! grep -qE "^[[:space:]]*insteadOf" "$GITCONFIG"; then
+    pass "dot_gitconfig rewrites only pushes to SSH"
+else
+    fail "dot_gitconfig rewrites clones to SSH, breaking installs before key setup"
 fi
 
 if ! grep -q "^\[data\]" "$CHEZMOI_SOURCE/.chezmoi.toml.tmpl"; then
@@ -376,8 +393,18 @@ else
     fail "asdf script not driven by .tool-versions"
 fi
 
+TMUX_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_tmux.sh.tmpl"
+if grep -qF '{{ include "dot_tmux.conf" | sha256sum }}' "$TMUX_TMPL" 2>/dev/null && \
+   grep -qF 'tpm/bin/install_plugins' "$TMUX_TMPL"; then
+    pass "tmux plugins install on dot_tmux.conf change"
+else
+    fail "tmux plugins not installed on apply"
+fi
+
 grep -qx 'cask "claude"' "$BREWFILE" && pass "claude desktop via brew" || fail "claude desktop cask missing"
 ! grep -q '^cask "claude-code' "$BREWFILE" && pass "claude code installed natively, not via brew" || fail "claude-code cask in Brewfile"
+
+grep -q 'add_app_to_dock "Claude"' "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_dock.sh" && pass "Claude in Dock" || fail "Claude missing from Dock"
 
 grep -q '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh" 2>/dev/null && pass "macos defaults script present" || fail "macos defaults script missing"
 
@@ -389,7 +416,7 @@ else
     fail "claude code installer script missing"
 fi
 
-for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl; do
+for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl run_onchange_after_tmux.sh.tmpl; do
     rendered=$(chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$CHEZMOI_SOURCE/.chezmoiscripts/$script")
     if env -i HOME="$HOME" PATH=/usr/bin:/bin bash -c "$(echo "$rendered" | sed -n '/brew shellenv/p'); command -v brew" >/dev/null 2>&1; then
         pass "$script finds brew on a fresh PATH"
