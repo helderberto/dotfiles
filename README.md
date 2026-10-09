@@ -8,7 +8,7 @@
   </a>
 </p>
 
-**Already using these?** `chezmoi update && chezmoi apply`
+**Already using these?** `chezmoi update`
 
 ---
 
@@ -85,6 +85,25 @@ These need a login or a manual step:
 | `~/.private` | Restore from 1Password |
 
 Work tools stay out of this repo. Set them up on the work Mac.
+
+## Existing Mac
+
+Adds what's missing. Preview first: `~` may hold edits you want to keep.
+
+1. Clone without applying.
+   ```bash
+   brew install chezmoi
+   chezmoi init --source ~/.dotfiles helderberto
+   ```
+2. Preview changes to `~`. Move machine-only bits to `~/.private` first.
+   ```bash
+   chezmoi diff
+   ```
+3. Sign in to the App Store, then apply. `brew bundle` installs only what's missing.
+   ```bash
+   chezmoi apply
+   ```
+4. Do [steps 4 and 5](#4-finish-in-ghostty) for anything not set up yet.
 
 ---
 
