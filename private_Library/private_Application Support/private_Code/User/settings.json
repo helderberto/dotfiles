@@ -1,0 +1,104 @@
+{
+  // Editor Settings
+  "editor.renderLineHighlight": "gutter",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "workbench.welcome.enabled": false,
+  "editor.accessibilitySupport": "off",
+  "editor.rulers": [120],
+
+  // Fonts
+  "editor.fontSize": 12,
+  "terminal.integrated.fontSize": 12,
+  "chat.fontSize": 14,
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono, Fira Code, Cascadia Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+
+  // Theme
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "catppuccin.italicComments": false,
+  "catppuccin.italicKeywords": false,
+
+  // Bracket Highlighter
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+
+  // Files
+  "files.insertFinalNewline": true,
+
+  // Explorer
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Configurations from the following article
+  // https://www.roboleary.net/vscode/2020/08/05/dont-need-extensions.html
+  "editor.linkedEditing": true,
+
+  // JavaScript and TypeScript Settings
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // On save organize imports and format
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": "explicit",
+  //   "source.fixAll": "explicit"
+  // },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  // Emmet
+  "emmet.includeLanguages": {
+    "typescript": "typescriptreact",
+    "javascript": "javascriptreact",
+    "phoenix-heex": "html",
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "git.openRepositoryInParentFolders": "never",
+  "totalTypeScript.hideAllTips": true,
+  "totalTypeScript.hideBasicTips": true,
+  "githubPullRequests.pullBranch": "never",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "pullRequest": true,
+    "issue": true,
+    "discussion": true,
+    "repository": true,
+    "commit": true,
+    "prReview": true,
+  },
+  "git.confirmSync": false,
+
+  // VIM Settings
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.disableExtension": false,
+  "vim.useSystemClipboard": true,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "gitlens.advanced.messages": {
+    "suppressIntegrationRequestTimedOutWarning": true,
+  },
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "claudeCode.disableLoginPrompt": true,
+  "claudeCode.hideOnboarding": true,
+  "claudeCode.useTerminal": true,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml",
+  ],
+  "docker.extension.enableComposeLanguageServer": false,
+  "security.workspace.trust.untrustedFiles": "open",
+}
