@@ -50,6 +50,7 @@ cask "font-jetbrains-mono-nerd-font"
 # GUI applications
 cask "1password"
 cask "betterdisplay"
+cask "claude"
 cask "deepl"
 cask "figma"
 cask "ghostty"

@@ -370,7 +370,8 @@ else
     fail "asdf script not driven by .tool-versions"
 fi
 
-! grep -q '^cask "claude' "$BREWFILE" && pass "claude installed natively, not via brew" || fail "claude cask in Brewfile"
+grep -qx 'cask "claude"' "$BREWFILE" && pass "claude desktop via brew" || fail "claude desktop cask missing"
+! grep -q '^cask "claude-code' "$BREWFILE" && pass "claude code installed natively, not via brew" || fail "claude-code cask in Brewfile"
 
 grep -q '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh" 2>/dev/null && pass "macos defaults script present" || fail "macos defaults script missing"
 

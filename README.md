@@ -80,11 +80,10 @@ These need a login or a manual step:
 | App | Step |
 | --- | ---- |
 | Claude Code | Run `claude` and log in. Recreate `~/.claude/settings.json`. Run `/plugin marketplace add helderberto/agent-skills` |
-| Claude desktop | Download from https://claude.ai/download |
 | Raycast | Turn off Spotlight's `⌘ Space` (System Settings → Keyboard → Keyboard Shortcuts → Spotlight). Import the `.rayconfig` |
 | Shottr | Allow Screen Recording. Enter the license key |
 | VSCode | Turn on Settings Sync. It restores settings and extensions |
-| Chrome, Todoist, Slack, Obsidian, Spotify, 1Password | Sign in |
+| Claude, Chrome, Todoist, Slack, Obsidian, Spotify, 1Password | Sign in |
 | `~/.private` | Restore from 1Password |
 
 Work tools stay out of this repo. Set them up on the work Mac.
