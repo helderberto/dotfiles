@@ -14,24 +14,36 @@
 
 ## New Machine
 
-### 1. On the old Mac
+### 1. Before leaving the old Mac
 
-Save to 1Password: Raycast export (Settings → Advanced → Export), `~/.private`, Shottr license.
+Save these to 1Password:
+
+- Raycast settings: Settings → Advanced → Export (`.rayconfig` file)
+- `~/.private`
+- Shottr license key
 
 ### 2. Install
 
-Sign in to the App Store first. `brew bundle` needs it for App Store apps.
+First, open the App Store and sign in. App Store apps fail to install without it.
 
-In Terminal:
+Then open Terminal and run each command **one at a time**. Wait for each to finish. Pasting them together breaks the Homebrew installer, which reads your password and an Enter keypress.
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-brew install chezmoi
-chezmoi init --apply --source ~/.dotfiles helderberto
-```
-
-The Homebrew installer also installs the Xcode Command Line Tools. `chezmoi init` clones this repo to `~/.dotfiles` and applies everything. Existing dotfiles in `~` get overwritten.
+1. Install Homebrew. It also installs the Xcode Command Line Tools.
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+2. Load Homebrew in this Terminal session.
+   ```bash
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   ```
+3. Install chezmoi.
+   ```bash
+   brew install chezmoi
+   ```
+4. Clone this repo to `~/.dotfiles` and apply everything. Existing dotfiles in `~` get overwritten.
+   ```bash
+   chezmoi init --apply --source ~/.dotfiles helderberto
+   ```
 
 ### 3. What you get
 
@@ -46,23 +58,32 @@ The Homebrew installer also installs the Xcode Command Line Tools. `chezmoi init
 | Claude Code | Native install, `CLAUDE.md`, rules, statusline script |
 | macOS | Dock, key repeat, scrolling, Finder, no `.DS_Store` on shares, `~/workspace/labs`, SSH key |
 
-### 4. Finish
+### 4. Finish in Ghostty
 
-1. Open a new terminal.
-2. [Add the SSH key to GitHub](https://github.com/settings/ssh/new) and trust the host with `ssh -T git@github.com`. Git rewrites GitHub HTTPS URLs to SSH, so clones fail until this is done.
-3. Install runtimes, which failed before the key existed:
+Close Terminal and open Ghostty. Your shell config loads from here on.
+
+1. Add your SSH key to GitHub. Git uses SSH for every GitHub URL, so clones fail until this is done.
+   ```bash
+   pbcopy < ~/.ssh/id_ed25519.pub   # paste at https://github.com/settings/ssh/new
+   ssh -T git@github.com            # answer "yes" to trust GitHub
+   ```
+2. Install runtimes. This step failed during install because the key didn't exist yet.
    ```bash
    cut -d' ' -f1 ~/.tool-versions | xargs -n1 asdf plugin add; asdf install
    ```
-4. In `tmux`, press `prefix + I` to install plugins.
+3. Start `tmux` and press `prefix + I` to install its plugins.
+
+### 5. Set up apps
+
+These need a login or a manual step:
 
 | App | Step |
 | --- | ---- |
-| Claude Code | Log in, recreate `~/.claude/settings.json`, `/plugin marketplace add helderberto/agent-skills` |
+| Claude Code | Run `claude` and log in. Recreate `~/.claude/settings.json`. Run `/plugin marketplace add helderberto/agent-skills` |
 | Claude desktop | Download from https://claude.ai/download |
-| Raycast | Turn off Spotlight `⌘ Space` in Keyboard Shortcuts, import the export |
-| Shottr | Allow Screen Recording, enter license |
-| VSCode | Turn on Settings Sync |
+| Raycast | Turn off Spotlight's `⌘ Space` (System Settings → Keyboard → Keyboard Shortcuts → Spotlight). Import the `.rayconfig` |
+| Shottr | Allow Screen Recording. Enter the license key |
+| VSCode | Turn on Settings Sync. It restores settings and extensions |
 | Chrome, Todoist, Slack, Obsidian, Spotify, 1Password | Sign in |
 | `~/.private` | Restore from 1Password |
 
