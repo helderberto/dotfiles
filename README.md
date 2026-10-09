@@ -22,13 +22,16 @@ Save to 1Password: Raycast export (Settings → Advanced → Export), `~/.privat
 
 Sign in to the App Store first. `brew bundle` needs it for App Store apps.
 
+In Terminal:
+
 ```bash
-xcode-select --install
-git clone https://github.com/helderberto/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles && ./bootstrap.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew install chezmoi
+chezmoi init --apply --source ~/.dotfiles helderberto
 ```
 
-Existing dotfiles in `~` get overwritten.
+The Homebrew installer also installs the Xcode Command Line Tools. `chezmoi init` clones this repo to `~/.dotfiles` and applies everything. Existing dotfiles in `~` get overwritten.
 
 ### 3. What you get
 
