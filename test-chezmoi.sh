@@ -13,7 +13,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 pass() { echo -e "${GREEN}✓${NC} $1"; }
-fail() { echo -e "${RED}✗${NC} $1"; ((ERRORS++)); }
+fail() { echo -e "${RED}✗${NC} $1"; ERRORS=$((ERRORS+1)); }
 warn() { echo -e "${YELLOW}⚠${NC}  $1"; }
 
 echo "Testing Chezmoi Configuration"
@@ -37,7 +37,7 @@ while IFS= read -r -d '' tmpl; do
         pass "$(basename "$tmpl")"
     else
         fail "$(basename "$tmpl") - template error"
-        ((TEMPLATE_ERRORS++))
+        TEMPLATE_ERRORS=$((TEMPLATE_ERRORS+1))
     fi
 done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" \
     -not -path "*/dot_claude/*" \
@@ -48,7 +48,7 @@ done < <(find "$CHEZMOI_SOURCE" -name "*.tmpl" \
     -not -name ".chezmoi.toml.tmpl" \
     -not -path "*/.chezmoiscripts/*" \
     -print0)
-[ $TEMPLATE_ERRORS -gt 0 ] && ((ERRORS++)) || true
+[ $TEMPLATE_ERRORS -gt 0 ] && ERRORS=$((ERRORS+1)) || true
 
 # 3. Shell script syntax
 echo ""
@@ -60,7 +60,7 @@ while IFS= read -r -d '' script; do
     else
         fail "$(basename "$script") - syntax error"
         bash -n "$script" 2>&1 || true
-        ((SYNTAX_ERRORS++))
+        SYNTAX_ERRORS=$((SYNTAX_ERRORS+1))
     fi
 done < <(find "$CHEZMOI_SOURCE" \( -name "*.sh" -o -name "*.sh.tmpl" \) \
     -not -path "*/.git/*" \
@@ -69,7 +69,7 @@ done < <(find "$CHEZMOI_SOURCE" \( -name "*.sh" -o -name "*.sh.tmpl" \) \
     -not -path "*/dot_claude/*" \
     -not -path "*/.chezmoiscripts/*" \
     -print0)
-[ $SYNTAX_ERRORS -gt 0 ] && ((ERRORS++)) || true
+[ $SYNTAX_ERRORS -gt 0 ] && ERRORS=$((ERRORS+1)) || true
 
 # 4. Lua syntax (neovim config)
 echo ""
@@ -82,10 +82,10 @@ if command -v luajit >/dev/null 2>&1; then
             pass "$relative"
         else
             fail "$relative - syntax error"
-            ((LUA_ERRORS++))
+            LUA_ERRORS=$((LUA_ERRORS+1))
         fi
     done < <(find "$CHEZMOI_SOURCE/dot_config/nvim" -name "*.lua" -print0)
-    [ $LUA_ERRORS -gt 0 ] && ((ERRORS++)) || true
+    [ $LUA_ERRORS -gt 0 ] && ERRORS=$((ERRORS+1)) || true
 else
     warn "luajit not found, skipping lua syntax checks"
 fi
@@ -146,7 +146,7 @@ SECRETS=$(grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" \
     --exclude=".chezmoiignore" \
     --exclude=".gitignore" \
     --exclude="test-chezmoi.sh" \
-    | grep -v "keybind\|keyboard\|keyword\|AWS_OKTA_MFA_DUO_DEVICE=token\|1password" || true)
+    | grep -v "keybind\|keyboard\|keyword\|1password" || true)
 if [ -n "$SECRETS" ]; then
     fail "potential secrets found:"
     echo "$SECRETS"
@@ -200,7 +200,7 @@ if $POST_APPLY; then
     fi
 
     # Key tools (all referenced in configs)
-    for tool in git nvim tmux fzf brew lsd lazygit z.sh; do
+    for tool in git nvim tmux fzf brew lsd lazygit asdf z.sh; do
         if [ "$tool" = "z.sh" ]; then
             if [ -f "/opt/homebrew/etc/profile.d/z.sh" ]; then
                 pass "z.sh plugin present"
@@ -220,7 +220,6 @@ if $POST_APPLY; then
         "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
         "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
         "/opt/homebrew/share/zsh-completions"
-        "/opt/homebrew/opt/asdf/libexec/asdf.sh"
     )
     for plugin in "${ZSH_PLUGINS[@]}"; do
         if [ -e "$plugin" ]; then
