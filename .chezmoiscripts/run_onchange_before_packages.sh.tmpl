@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
 set -e
 
 echo "Installing Homebrew packages..."
 
-brew update
-brew upgrade
 brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
 
 BREW_PREFIX=$(brew --prefix)

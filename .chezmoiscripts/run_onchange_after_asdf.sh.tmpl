@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# .tool-versions hash: {{ include "dot_tool-versions" | sha256sum }}
 set -e
 
 if ! command -v asdf &>/dev/null; then
@@ -8,8 +9,9 @@ fi
 
 echo "🔧 Setting up asdf plugins..."
 
-asdf plugin add nodejs || true
-asdf plugin add npm || true
+while read -r plugin _; do
+    asdf plugin add "$plugin" || true
+done < "$HOME/.tool-versions"
 
 echo "📦 Installing asdf versions from ~/.tool-versions..."
 asdf install || true
