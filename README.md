@@ -47,8 +47,12 @@ Existing dotfiles in `~` get overwritten.
 ### 4. Finish
 
 1. Open a new terminal.
-2. [Add the SSH key to GitHub](https://github.com/settings/ssh/new), then `git -C ~/.dotfiles remote set-url origin git@github.com:helderberto/dotfiles.git`
-3. In `tmux`, press `prefix + I` to install plugins.
+2. [Add the SSH key to GitHub](https://github.com/settings/ssh/new) and trust the host with `ssh -T git@github.com`. Git rewrites GitHub HTTPS URLs to SSH, so clones fail until this is done.
+3. Install runtimes, which failed before the key existed:
+   ```bash
+   cut -d' ' -f1 ~/.tool-versions | xargs -n1 asdf plugin add; asdf install
+   ```
+4. In `tmux`, press `prefix + I` to install plugins.
 
 | App | Step |
 | --- | ---- |
