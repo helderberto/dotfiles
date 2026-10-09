@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # Brewfile hash: {{ include "Brewfile" | sha256sum }}
 set -e
+{{- if eq .chezmoi.arch "arm64" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- else }}
+eval "$(/usr/local/bin/brew shellenv)"
+{{- end }}
 
 echo "Installing Homebrew packages..."
 

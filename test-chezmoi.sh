@@ -380,6 +380,15 @@ else
     fail "claude code installer script missing"
 fi
 
+for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl; do
+    rendered=$(chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$CHEZMOI_SOURCE/.chezmoiscripts/$script")
+    if env -i HOME="$HOME" PATH=/usr/bin:/bin bash -c "$(echo "$rendered" | sed -n '/brew shellenv/p'); command -v brew" >/dev/null 2>&1; then
+        pass "$script finds brew on a fresh PATH"
+    else
+        fail "$script can't find brew on a fresh PATH"
+    fi
+done
+
 for file in settings.json keybindings.json; do
     if chezmoi managed --source "$CHEZMOI_SOURCE" | grep -qF "Library/Application Support/Code/User/$file"; then
         pass "vscode $file managed"
