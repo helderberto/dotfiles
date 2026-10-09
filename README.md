@@ -42,7 +42,7 @@ Existing dotfiles in `~` get overwritten.
 | Git | Config, aliases, global ignore, commit template |
 | Runtimes | asdf versions from `.tool-versions` |
 | Claude Code | Native install, `CLAUDE.md`, rules, statusline script |
-| macOS | Dock, `~/workspace/labs`, SSH key |
+| macOS | Dock, key repeat, scrolling, Finder, no `.DS_Store` on shares, `~/workspace/labs`, SSH key |
 
 ### 4. Finish
 

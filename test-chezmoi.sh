@@ -252,6 +252,13 @@ if $POST_APPLY; then
     else
         fail "~/workspace missing"
     fi
+
+    while read -r _ _ domain key type value; do
+        expected="$value"
+        [ "$type" = "-bool" ] && { [ "$value" = true ] && expected=1 || expected=0; }
+        actual=$(defaults read "$domain" "$key" 2>/dev/null || echo unset)
+        [ "$actual" = "$expected" ] && pass "$domain $key" || fail "$domain $key is $actual, expected $expected"
+    done < <(grep '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh")
 fi
 
 # 10. Content asserts (regression guards for hardcoded values)
@@ -371,6 +378,8 @@ else
 fi
 
 ! grep -q '^cask "claude' "$BREWFILE" && pass "claude installed natively, not via brew" || fail "claude cask in Brewfile"
+
+grep -q '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh" 2>/dev/null && pass "macos defaults script present" || fail "macos defaults script missing"
 
 [ ! -e "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_mas.sh" ] && pass "mas script merged into Brewfile" || fail "mas script still present"
 
