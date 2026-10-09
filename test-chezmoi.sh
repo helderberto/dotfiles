@@ -398,6 +398,8 @@ fi
 grep -qx 'cask "claude"' "$BREWFILE" && pass "claude desktop via brew" || fail "claude desktop cask missing"
 ! grep -q '^cask "claude-code' "$BREWFILE" && pass "claude code installed natively, not via brew" || fail "claude-code cask in Brewfile"
 
+grep -q 'add_app_to_dock "Claude"' "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_dock.sh" && pass "Claude in Dock" || fail "Claude missing from Dock"
+
 grep -q '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh" 2>/dev/null && pass "macos defaults script present" || fail "macos defaults script missing"
 
 [ ! -e "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_mas.sh" ] && pass "mas script merged into Brewfile" || fail "mas script still present"

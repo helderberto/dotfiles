@@ -29,9 +29,10 @@ defaults write com.apple.dock show-recents -bool false
 
 add_app_to_dock "Chrome"
 add_app_to_dock "Ghostty"
-add_app_to_dock "Visual Studio Code"
 add_app_to_dock "Obsidian"
+add_app_to_dock "Visual Studio Code"
 add_app_to_dock "Slack"
+add_app_to_dock "Claude"
 add_app_to_dock "Spotify"
 add_folder_to_dock "$HOME/Downloads"
 
