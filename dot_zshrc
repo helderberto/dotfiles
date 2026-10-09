@@ -38,7 +38,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive com
 
 ### Source additional configuration files
 # Load custom configurations
-for config_file in ~/.{extra,exports,aliases,private}; do
+for config_file in ~/.{exports,aliases,private}; do
     [[ -r "$config_file" ]] && source "$config_file"
 done
 unset config_file

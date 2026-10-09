@@ -285,6 +285,12 @@ else
     fail ".chezmoi.toml.tmpl still has [data] section"
 fi
 
+if ! grep -q "extra" "$CHEZMOI_SOURCE/dot_zshrc"; then
+    pass "dot_zshrc sources only ~/.private for local config"
+else
+    fail "dot_zshrc still sources ~/.extra"
+fi
+
 # 11. Template matrix (env-conditional rendering)
 echo ""
 echo "11) template matrix"

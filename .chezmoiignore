@@ -12,7 +12,6 @@
 .gnupg/
 .password-store/
 .private
-.extra
 
 # Repo-only files
 Brewfile
