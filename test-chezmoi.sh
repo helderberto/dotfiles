@@ -333,6 +333,60 @@ else
     fail "template rendering differs between runs ($hash1 vs $hash2)"
 fi
 
+# 13. Brewfile covers apps and configs on a fresh machine
+echo ""
+echo "13) brewfile coverage"
+
+BREWFILE="$CHEZMOI_SOURCE/Brewfile"
+for entry in 'cask "font-jetbrains-mono-nerd-font"' 'cask "shottr"' 'cask "deepl"' \
+    'brew "gh"' 'brew "jq"' 'brew "shellcheck"' 'brew "tree"' 'brew "hyperfine"' 'brew "tig"' 'brew "pandoc"' \
+    'mas "The Unarchiver", id: 425424353' 'mas "Presentify", id: 1507246666' 'vscode "vscodevim.vim"'; do
+    if grep -qF "$entry" "$BREWFILE"; then
+        pass "$entry"
+    else
+        fail "Brewfile missing $entry"
+    fi
+done
+
+if ! grep -rqi "cursor" "$BREWFILE" "$CHEZMOI_SOURCE/.chezmoiscripts"; then
+    pass "no cursor references"
+else
+    fail "cursor still referenced"
+fi
+
+PACKAGES_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_before_packages.sh.tmpl"
+if grep -qF '{{ include "Brewfile" | sha256sum }}' "$PACKAGES_TMPL" 2>/dev/null; then
+    pass "packages script reruns on Brewfile change"
+else
+    fail "packages script not keyed on Brewfile hash"
+fi
+
+ASDF_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_asdf.sh.tmpl"
+if grep -qF '{{ include "dot_tool-versions" | sha256sum }}' "$ASDF_TMPL" 2>/dev/null && \
+   grep -qF "done < \"\$HOME/.tool-versions\"" "$ASDF_TMPL"; then
+    pass "asdf script adds plugins from .tool-versions"
+else
+    fail "asdf script not driven by .tool-versions"
+fi
+
+! grep -q '^cask "claude' "$BREWFILE" && pass "claude installed natively, not via brew" || fail "claude cask in Brewfile"
+
+[ ! -e "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_mas.sh" ] && pass "mas script merged into Brewfile" || fail "mas script still present"
+
+if grep -q "claude.ai/install.sh" "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_claude-code.sh" 2>/dev/null; then
+    pass "claude code installer script present"
+else
+    fail "claude code installer script missing"
+fi
+
+for file in settings.json keybindings.json; do
+    if chezmoi managed --source "$CHEZMOI_SOURCE" | grep -qF "Library/Application Support/Code/User/$file"; then
+        pass "vscode $file managed"
+    else
+        fail "vscode $file not managed"
+    fi
+done
+
 # Summary
 echo ""
 echo "=============================="
