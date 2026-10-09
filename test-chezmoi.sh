@@ -279,6 +279,13 @@ else
     fail "dot_gitconfig has stray template syntax"
 fi
 
+if grep -q "pushInsteadOf = https://github.com/" "$GITCONFIG" && \
+   ! grep -qE "^[[:space:]]*insteadOf" "$GITCONFIG"; then
+    pass "dot_gitconfig rewrites only pushes to SSH"
+else
+    fail "dot_gitconfig rewrites clones to SSH, breaking installs before key setup"
+fi
+
 if ! grep -q "^\[data\]" "$CHEZMOI_SOURCE/.chezmoi.toml.tmpl"; then
     pass ".chezmoi.toml.tmpl has no dead [data] section"
 else
