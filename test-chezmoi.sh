@@ -215,6 +215,12 @@ if $POST_APPLY; then
         fi
     done
 
+    if brew bundle check --file "$CHEZMOI_SOURCE/Brewfile" >/dev/null 2>&1; then
+        pass "Brewfile satisfied"
+    else
+        fail "Brewfile has missing packages (brew bundle check --verbose)"
+    fi
+
     # Zsh plugin paths (referenced in dot_zshrc)
     ZSH_PLUGINS=(
         "/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme"

@@ -16,6 +16,15 @@
 
 ### 1. Before leaving the old Mac
 
+Check the repo has everything:
+
+```bash
+chezmoi status                                   # managed files edited outside the repo → chezmoi re-add
+brew bundle cleanup --file ~/.dotfiles/Brewfile  # installed but not in Brewfile → add or ignore
+```
+
+Never pass `--force` to `cleanup`. It uninstalls everything unlisted, including Apple's apps.
+
 Save these to 1Password:
 
 - Raycast settings: Settings → Advanced → Export (`.rayconfig` file)
