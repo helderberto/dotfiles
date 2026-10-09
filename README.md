@@ -14,102 +14,79 @@
 
 ## New Machine
 
-### Before leaving the old Mac
+### 1. On the old Mac
 
-- Raycast: Settings → Advanced → Export → save the `.rayconfig` to 1Password
-- Copy `~/.private` content to 1Password (machine-only env vars, never committed)
-- Note the Shottr license key
+Save to 1Password: Raycast export (Settings → Advanced → Export), `~/.private`, Shottr license.
 
-### 1. Prerequisites
+### 2. Install
 
-Back up existing dotfiles first (e.g. `~/.zshrc`) — they will be overwritten.
+Sign in to the App Store first. `brew bundle` needs it for App Store apps.
 
 ```bash
 xcode-select --install
-```
-
-Sign in to the **App Store** too — `brew bundle` installs App Store apps via `mas` and fails without it.
-
-### 2. Clone and bootstrap
-
-```bash
 git clone https://github.com/helderberto/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles && ./bootstrap.sh
 ```
 
-### 3. What you get automatically
+Existing dotfiles in `~` get overwritten.
+
+### 3. What you get
 
 | Area | Result |
 | ---- | ------ |
-| Packages | Everything in `Brewfile`: CLI tools, apps, fonts, App Store apps, VSCode extensions |
-| Ghostty | Catppuccin Mocha theme, JetBrainsMono Nerd Font, split keybinds |
-| Shell | zsh + Powerlevel10k prompt (same look, `~/.p10k.zsh`), autosuggestions, syntax highlighting, fzf, z |
-| Neovim | Full config; lazy.nvim installs plugins on first `nvim` launch |
-| VSCode | `settings.json`, `keybindings.json`, extensions |
+| Packages | All of `Brewfile`: CLI tools, apps, fonts, App Store apps, VSCode extensions |
+| Ghostty | Catppuccin Mocha, JetBrainsMono Nerd Font, split keybinds |
+| Shell | zsh, Powerlevel10k prompt, autosuggestions, syntax highlighting, fzf, z |
+| Neovim | Full config, plugins install on first launch |
+| VSCode | Settings, keybindings, extensions |
 | Git | Config, aliases, global ignore, commit template |
-| Runtimes | asdf plugins + versions from `.tool-versions` (nodejs, python) |
-| Claude Code | Native install, `CLAUDE.md` → `AGENTS.md`, rules, statusline script |
-| macOS | Dock apps, `~/workspace/labs`, SSH key |
+| Runtimes | asdf versions from `.tool-versions` |
+| Claude Code | Native install, `CLAUDE.md`, rules, statusline script |
+| macOS | Dock, `~/workspace/labs`, SSH key |
 
-### 4. Finish setup
+### 4. Finish
 
-1. Open a **new terminal** so shell config and tools are loaded.
-2. Add the generated SSH key to GitHub: https://github.com/settings/ssh/new
-3. Switch the remote to SSH: `git -C ~/.dotfiles remote set-url origin git@github.com:helderberto/dotfiles.git`
-4. tmux: start `tmux`, press `prefix + I` to install plugins.
-5. `nvim` once to let lazy.nvim install plugins.
-
-### 5. Manual (not in repo)
+1. Open a new terminal.
+2. [Add the SSH key to GitHub](https://github.com/settings/ssh/new), then `git -C ~/.dotfiles remote set-url origin git@github.com:helderberto/dotfiles.git`
+3. In `tmux`, press `prefix + I` to install plugins.
 
 | App | Step |
 | --- | ---- |
-| Claude Code | `claude` to log in; recreate `~/.claude/settings.json` (statusline, permissions, plugins); `/plugin marketplace add helderberto/agent-skills` |
-| Claude desktop | Download from https://claude.ai/download (native, not brew) |
-| Raycast | Disable Spotlight `⌘ Space` (System Settings → Keyboard → Keyboard Shortcuts → Spotlight), import `.rayconfig` |
-| Shottr | Grant Screen Recording permission, enter license |
-| Chrome | Sign in to sync extensions/bookmarks |
-| Todoist, Slack, Obsidian, Spotify, 1Password | Sign in |
+| Claude Code | Log in, recreate `~/.claude/settings.json`, `/plugin marketplace add helderberto/agent-skills` |
+| Claude desktop | Download from https://claude.ai/download |
+| Raycast | Turn off Spotlight `⌘ Space` in Keyboard Shortcuts, import the export |
+| Shottr | Allow Screen Recording, enter license |
+| Chrome, Todoist, Slack, Obsidian, Spotify, 1Password | Sign in |
 | `~/.private` | Restore from 1Password |
-| Work tools | Configure on the work Mac only, never in this repo |
+
+Work tools stay out of this repo. Set them up on the work Mac.
 
 ---
 
 <details>
 <summary><strong>Day-to-day usage</strong></summary>
 
-### Syncing
-
-```bash
-chezmoi update && chezmoi apply
-```
-
 ### Making updates
 
-Edit files in `~/.dotfiles` and apply directly — chezmoi reads from the clone:
+Edit in `~/.dotfiles`, then apply and push:
 
 ```bash
-cd ~/.dotfiles
-# edit files
 chezmoi apply
 git add <file> && git commit -m "..." && git push
 ```
 
-On other machines, `chezmoi update && chezmoi apply` pulls and applies.
-
-### Keeping in sync
-
-- New app or CLI tool → add to `Brewfile`; next `chezmoi apply` reruns `brew bundle`
-- New VSCode extension → add a `vscode "<id>"` line (`code --list-extensions`)
-- New runtime version → edit `dot_tool-versions`; next apply reruns `asdf install`
+- New app or CLI tool → add it to `Brewfile`
+- New VSCode extension → add `vscode "<id>"` to `Brewfile`
+- New runtime version → edit `dot_tool-versions`
 - App rewrote a managed file (VSCode settings, `p10k configure`) → `chezmoi re-add`
-- `chezmoi status` shows drift between `~` and the repo
+
+`chezmoi apply` reruns `brew bundle` or `asdf install` when those files change.
 
 ### Machine-specific config
 
-`~/.private` is **not** managed by chezmoi. Put machine-only env vars and secrets there; your shell config sources it automatically.
+`~/.private` is not managed. Put machine-only env vars and secrets there. The shell sources it.
 
 ```bash
-# in ~/.private
 export WORK_API_KEY=...
 alias workspace="cd ~/my-company/workspace"
 ```
@@ -118,29 +95,24 @@ alias workspace="cd ~/my-company/workspace"
 
 | Command | Purpose |
 | ------- | ------- |
-| `chezmoi managed` | List all managed paths |
-| `chezmoi diff` | Preview changes before applying |
+| `chezmoi status` | Show drift between `~` and the repo |
+| `chezmoi diff` | Preview changes |
 | `chezmoi apply` | Apply dotfiles to `~` |
+| `chezmoi managed` | List managed paths |
 
 </details>
 
 <details>
 <summary><strong>Development</strong></summary>
 
-### Testing
-
 ```bash
 ./test-chezmoi.sh              # syntax & config checks
 ./test-chezmoi.sh --post-apply # also validates installed tools
 ```
 
-CI runs the test suite on every push and PR via GitHub Actions.
+CI runs the suite on every push and PR.
 
-### AI agent config
-
-`AGENTS.md` is the source of truth for agent instructions. `~/.claude/CLAUDE.md` symlinks to it, so it works with Claude Code, Open Code, and other tools that look for either file.
-
-Curated SDLC skills (PRD → ship) live in a separate plugin: [helderberto/agent-skills](https://github.com/helderberto/agent-skills). Install via `/plugin marketplace add helderberto/agent-skills` in Claude Code.
+`AGENTS.md` holds the agent instructions. `~/.claude/CLAUDE.md` imports it. Skills live in [helderberto/agent-skills](https://github.com/helderberto/agent-skills).
 
 </details>
 
