@@ -34,11 +34,10 @@ Existing dotfiles in `~` get overwritten.
 
 | Area | Result |
 | ---- | ------ |
-| Packages | All of `Brewfile`: CLI tools, apps, fonts, App Store apps, VSCode extensions |
+| Packages | All of `Brewfile`: CLI tools, apps, fonts, App Store apps |
 | Ghostty | Catppuccin Mocha, JetBrainsMono Nerd Font, split keybinds |
 | Shell | zsh, Powerlevel10k prompt, autosuggestions, syntax highlighting, fzf, z |
 | Neovim | Full config, plugins install on first launch |
-| VSCode | Settings, keybindings, extensions |
 | Git | Config, aliases, global ignore, commit template |
 | Runtimes | asdf versions from `.tool-versions` |
 | Claude Code | Native install, `CLAUDE.md`, rules, statusline script |
@@ -60,6 +59,7 @@ Existing dotfiles in `~` get overwritten.
 | Claude desktop | Download from https://claude.ai/download |
 | Raycast | Turn off Spotlight `⌘ Space` in Keyboard Shortcuts, import the export |
 | Shottr | Allow Screen Recording, enter license |
+| VSCode | Turn on Settings Sync |
 | Chrome, Todoist, Slack, Obsidian, Spotify, 1Password | Sign in |
 | `~/.private` | Restore from 1Password |
 
@@ -80,9 +80,8 @@ git add <file> && git commit -m "..." && git push
 ```
 
 - New app or CLI tool → add it to `Brewfile`
-- New VSCode extension → add `vscode "<id>"` to `Brewfile`
 - New runtime version → edit `dot_tool-versions`
-- App rewrote a managed file (VSCode settings, `p10k configure`) → `chezmoi re-add`
+- App rewrote a managed file (`p10k configure`) → `chezmoi re-add`
 
 `chezmoi apply` reruns `brew bundle` or `asdf install` when those files change.
 

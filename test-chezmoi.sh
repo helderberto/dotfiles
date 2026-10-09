@@ -348,7 +348,7 @@ echo "13) brewfile coverage"
 BREWFILE="$CHEZMOI_SOURCE/Brewfile"
 for entry in 'cask "font-jetbrains-mono-nerd-font"' 'cask "shottr"' 'cask "deepl"' \
     'brew "gh"' 'brew "jq"' 'brew "shellcheck"' 'brew "tree"' 'brew "hyperfine"' 'brew "tig"' 'brew "pandoc"' \
-    'mas "The Unarchiver", id: 425424353' 'mas "Presentify", id: 1507246666' 'vscode "vscodevim.vim"'; do
+    'mas "The Unarchiver", id: 425424353' 'mas "Presentify", id: 1507246666'; do
     if grep -qF "$entry" "$BREWFILE"; then
         pass "$entry"
     else
@@ -395,14 +395,6 @@ for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tm
         pass "$script finds brew on a fresh PATH"
     else
         fail "$script can't find brew on a fresh PATH"
-    fi
-done
-
-for file in settings.json keybindings.json; do
-    if chezmoi managed --source "$CHEZMOI_SOURCE" | grep -qF "Library/Application Support/Code/User/$file"; then
-        pass "vscode $file managed"
-    else
-        fail "vscode $file not managed"
     fi
 done
 
