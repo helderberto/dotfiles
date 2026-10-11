@@ -8,7 +8,9 @@
   </a>
 </p>
 
-**Updating an existing machine:** `chezmoi update`
+**Already using these?** `chezmoi update`
+
+New Mac → [New Mac](#new-mac). Mac already in use → [Existing Mac](#existing-mac).
 
 ---
 
@@ -28,11 +30,11 @@
 
 </details>
 
-## New Machine
+## New Mac
 
 ### 1. Before leaving the old Mac
 
-Check the repo has everything:
+Check that the repo has everything:
 
 ```bash
 chezmoi status                                   # managed files edited outside the repo → chezmoi re-add
@@ -106,12 +108,12 @@ Work tools stay out of this repo. Set them up on the work Mac.
 
 Adds what's missing. Preview first: `~` may hold edits you want to keep.
 
-1. Clone without applying.
+1. Clone without applying. Needs [Homebrew](#2-install).
    ```bash
    brew install chezmoi
    chezmoi init --source ~/.dotfiles helderberto
    ```
-2. Preview changes to `~`. Move machine-only bits to `~/.private` first.
+2. Preview changes to `~`. Move machine-only bits to `~/.private` before applying.
    ```bash
    chezmoi diff
    ```
