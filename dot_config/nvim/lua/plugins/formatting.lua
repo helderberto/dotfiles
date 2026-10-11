@@ -13,7 +13,7 @@ return {
         typescriptreact = { 'prettierd' },
         markdown = { 'prettierd' },
         json = { 'prettierd' },
-        html = { 'htmlbeautifier' },
+        html = { 'prettierd' },
       },
 
       format_on_save = function(bufnr)
