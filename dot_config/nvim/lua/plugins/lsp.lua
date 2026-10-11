@@ -5,6 +5,7 @@ return {
     { 'neovim/nvim-lspconfig' },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
+    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
   },
 
   config = function()
@@ -52,6 +53,9 @@ return {
       handlers = {
         lsp_zero.default_setup,
       },
+    })
+    require('mason-tool-installer').setup({
+      ensure_installed = { 'lua-language-server', 'prettierd', 'js-debug-adapter' },
     })
 
     vim.diagnostic.config({

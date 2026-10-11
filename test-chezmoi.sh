@@ -308,6 +308,16 @@ else
     fail "dot_zshrc still sources ~/.extra"
 fi
 
+NVIM_PLUGINS="$CHEZMOI_SOURCE/dot_config/nvim/lua/plugins"
+NVIM_FORMATTERS=$(sed -n "s/^ *[a-z]* = { '\([^',]*\)' },$/\1/p" "$NVIM_PLUGINS/formatting.lua" | sort -u)
+for tool in lua-language-server js-debug-adapter $NVIM_FORMATTERS; do
+    if grep -qE "ensure_installed = \{.*'$tool'" "$NVIM_PLUGINS/lsp.lua" || echo "$BREW_TOOLS" | grep -qx "$tool"; then
+        pass "nvim tool $tool installed by Mason or Brewfile"
+    else
+        fail "nvim tool $tool not installed on new machines"
+    fi
+done
+
 # 11. Template matrix (env-conditional rendering)
 echo ""
 echo "11) template matrix"
