@@ -22,6 +22,7 @@ New Mac → [New Mac](#new-mac). Mac already in use → [Existing Mac](#existing
 | Packages | All of `Brewfile`: CLI tools, apps, fonts, App Store apps |
 | Ghostty | Catppuccin Mocha, JetBrainsMono Nerd Font, split keybinds |
 | Shell | zsh, Powerlevel10k prompt, autosuggestions, syntax highlighting, fzf, z |
+| tmux | Config, plugins install on apply |
 | Neovim | Full config, plugins install on first launch |
 | Git | Config, aliases, global ignore, commit template |
 | Runtimes | asdf versions from `.tool-versions` |
@@ -141,7 +142,7 @@ git add <file> && git commit -m "..." && git push
 - New runtime version → edit `dot_tool-versions`
 - App rewrote a managed file (`p10k configure`) → `chezmoi re-add`
 
-`chezmoi apply` reruns `brew bundle` or `asdf install` when those files change.
+`chezmoi apply` reruns `brew bundle`, `asdf install`, or the tmux plugin install when those files change.
 
 ### Machine-specific config
 
@@ -156,6 +157,8 @@ alias workspace="cd ~/my-company/workspace"
 
 | Command | Purpose |
 | ------- | ------- |
+| `chezmoi update` | Pull the repo and apply |
+| `chezmoi re-add` | Copy edits made in `~` back to the repo |
 | `chezmoi status` | Show drift between `~` and the repo |
 | `chezmoi diff` | Preview changes |
 | `chezmoi apply` | Apply dotfiles to `~` |
