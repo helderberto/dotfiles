@@ -8,9 +8,25 @@
   </a>
 </p>
 
-**Already using these?** `chezmoi update`
+**Updating an existing machine:** `chezmoi update`
 
 ---
+
+<details>
+<summary><strong>What you get</strong></summary>
+
+| Area | Result |
+| ---- | ------ |
+| Packages | All of `Brewfile`: CLI tools, apps, fonts, App Store apps |
+| Ghostty | Catppuccin Mocha, JetBrainsMono Nerd Font, split keybinds |
+| Shell | zsh, Powerlevel10k prompt, autosuggestions, syntax highlighting, fzf, z |
+| Neovim | Full config, plugins install on first launch |
+| Git | Config, aliases, global ignore, commit template |
+| Runtimes | asdf versions from `.tool-versions` |
+| Claude Code | Native install, `CLAUDE.md`, rules, statusline script |
+| macOS | Dock, key repeat, scrolling, Finder, no `.DS_Store` on shares, `~/workspace/labs`, SSH key |
+
+</details>
 
 ## New Machine
 
@@ -56,22 +72,9 @@ Then open Terminal and run each command **one at a time**. Wait for each to fini
    ```
    This takes a while. It stops to ask for your password (some apps need it) and an email for the new SSH key.
 
-### 3. What you get
+### 3. Finish in Ghostty
 
-| Area | Result |
-| ---- | ------ |
-| Packages | All of `Brewfile`: CLI tools, apps, fonts, App Store apps |
-| Ghostty | Catppuccin Mocha, JetBrainsMono Nerd Font, split keybinds |
-| Shell | zsh, Powerlevel10k prompt, autosuggestions, syntax highlighting, fzf, z |
-| Neovim | Full config, plugins install on first launch |
-| Git | Config, aliases, global ignore, commit template |
-| Runtimes | asdf versions from `.tool-versions` |
-| Claude Code | Native install, `CLAUDE.md`, rules, statusline script |
-| macOS | Dock, key repeat, scrolling, Finder, no `.DS_Store` on shares, `~/workspace/labs`, SSH key |
-
-### 4. Finish in Ghostty
-
-Close Terminal and open Ghostty. Your shell config loads from here on.
+Restore `~/.private` from 1Password. Then close Terminal and open Ghostty. Your shell config loads from here on.
 
 Add your SSH key to GitHub. Git pushes to GitHub over SSH.
 
@@ -80,18 +83,22 @@ pbcopy < ~/.ssh/id_ed25519.pub   # paste at https://github.com/settings/ssh/new
 ssh -T git@github.com            # answer "yes" to trust GitHub
 ```
 
-### 5. Set up apps
+### 4. Set up apps
 
 These need a login or a manual step:
 
 | App | Step |
 | --- | ---- |
-| Claude Code | Run `claude` and log in. Restore `~/.claude/settings.json` from 1Password. Run `/plugin marketplace add helderberto/agent-skills` |
 | Raycast | Turn off Spotlight's `⌘ Space` (System Settings → Keyboard → Keyboard Shortcuts → Spotlight). Import the `.rayconfig` |
 | Shottr | Allow Screen Recording. Enter the license key |
 | VSCode | Turn on Settings Sync. It restores settings and extensions |
 | Claude, Chrome, Todoist, Slack, Obsidian, Spotify, 1Password | Sign in |
-| `~/.private` | Restore from 1Password |
+
+Claude Code:
+
+1. Run `claude` and log in.
+2. Restore `~/.claude/settings.json` from 1Password.
+3. Run `/plugin marketplace add helderberto/agent-skills`.
 
 Work tools stay out of this repo. Set them up on the work Mac.
 
@@ -112,7 +119,7 @@ Adds what's missing. Preview first: `~` may hold edits you want to keep.
    ```bash
    chezmoi apply
    ```
-4. Do [steps 4 and 5](#4-finish-in-ghostty) for anything not set up yet.
+4. Do [steps 3 and 4](#3-finish-in-ghostty) for anything not set up yet.
 
 ---
 
