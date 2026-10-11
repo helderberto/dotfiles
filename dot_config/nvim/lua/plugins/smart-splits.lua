@@ -2,9 +2,7 @@ return {
   'mrjones2014/smart-splits.nvim',
   lazy = false,
   config = function()
-    require('smart-splits').setup({
-      multiplexer_integration = false,
-    })
+    require('smart-splits').setup({})
 
     vim.keymap.set({ 'n', 't' }, '<C-h>', require('smart-splits').move_cursor_left, { desc = 'Go to left window' })
     vim.keymap.set({ 'n', 't' }, '<C-j>', require('smart-splits').move_cursor_down, { desc = 'Go to lower window' })
