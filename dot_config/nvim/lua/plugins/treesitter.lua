@@ -2,19 +2,11 @@ return {
   -- Treesitter is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
   {
     'nvim-treesitter/nvim-treesitter',
-    version = false, -- track HEAD for nvim 0.12 compat
+    branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
-    cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
-    init = function()
-      -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
-      -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
-      -- no longer trigger the **nvim-treesitter** module to be loaded in time.
-      -- Luckily, the only things that those plugins need are the custom queries, which we make available
-      -- during startup.
-      require('nvim-treesitter.query_predicates')
-    end,
-    opts = {
-      ensure_installed = {
+    config = function()
+      local parsers = {
         'bash',
         'css',
         'dockerfile',
@@ -29,19 +21,18 @@ return {
         'vim',
         'elixir',
         'ruby',
-      },
-      highlight = {
-        enable = true,
-        -- nvim 0.12 ships bundled markdown parsers; injections conflict with nvim-treesitter queries
-        disable = { 'markdown', 'markdown_inline' },
-      },
-      indent = {
-        enable = true,
-        disable = {},
-      },
-    },
-    config = function(_, opts)
-      require('nvim-treesitter.configs').setup(opts)
+      }
+      require('nvim-treesitter').install(parsers)
+
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          -- nvim 0.12 ships bundled markdown parsers; injections conflict with nvim-treesitter queries
+          if args.match == 'markdown' or not pcall(vim.treesitter.start, args.buf) then
+            return
+          end
+          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
     end,
   },
 }
