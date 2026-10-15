@@ -262,6 +262,7 @@ if $POST_APPLY; then
     else
         fail "~/workspace missing"
     fi
+    [ -d "$HOME/ai-desktop" ] && pass "~/ai-desktop exists" || fail "~/ai-desktop missing"
 
     while read -r _ _ domain key type value; do
         expected="$value"
