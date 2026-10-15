@@ -1,7 +1,7 @@
 # Navigate faster
 alias ws="cd $HOME/workspace"
 alias labs="cd $HOME/workspace/labs"
-alias ad="cd $HOME/ai-desktop"
+alias ad="cd $HOME/ai-desktop && claude"
 
 # Find Aliases
 alias al="less ~/.aliases"
