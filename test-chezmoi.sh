@@ -215,7 +215,7 @@ if $POST_APPLY; then
         fi
     done
 
-    if brew bundle check --file "$CHEZMOI_SOURCE/Brewfile" >/dev/null 2>&1; then
+    if brew bundle check --no-upgrade --file "$CHEZMOI_SOURCE/Brewfile" >/dev/null 2>&1; then
         pass "Brewfile satisfied"
     else
         fail "Brewfile has missing packages (brew bundle check --verbose)"
