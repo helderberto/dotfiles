@@ -48,6 +48,7 @@ unset config_file
 
 
 ### Key bindings
+bindkey -e # Emacs keymap even when EDITOR=nvim, so opt+backspace deletes a word
 bindkey '\t\t' autosuggest-accept
 
 ### Path configuration

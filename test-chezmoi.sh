@@ -312,6 +312,12 @@ else
     fail "dot_zshrc still sources ~/.extra"
 fi
 
+ZSH_TMP=$(mktemp -d)
+cp "$CHEZMOI_SOURCE/dot_zshrc" "$ZSH_TMP/.zshrc"
+opt_backspace=$(ZDOTDIR="$ZSH_TMP" EDITOR=nvim zsh -ic "bindkey '^[^?'" 2>/dev/null | tail -1)
+rm -rf "$ZSH_TMP"
+[[ "$opt_backspace" == *backward-kill-word ]] && pass "opt+backspace deletes word with EDITOR=nvim" || fail "opt+backspace bound to '$opt_backspace' with EDITOR=nvim"
+
 NVIM_PLUGINS="$CHEZMOI_SOURCE/dot_config/nvim/lua/plugins"
 NVIM_FORMATTERS=$(sed -n "s/^ *[a-z]* = { '\([^',]*\)' },$/\1/p" "$NVIM_PLUGINS/formatting.lua" | sort -u)
 for tool in lua-language-server js-debug-adapter $NVIM_FORMATTERS; do
