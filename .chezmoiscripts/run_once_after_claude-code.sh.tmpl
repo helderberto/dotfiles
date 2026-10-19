@@ -15,3 +15,4 @@ jq '.statusLine = {type: "command", command: "~/.claude/statusline.sh"}' "$setti
 mv "$settings.tmp" "$settings"
 
 claude mcp get chrome-devtools &>/dev/null || claude mcp add chrome-devtools --scope user -- npx -y chrome-devtools-mcp@latest
+[ -f "$HOME/.claude/skills/todoist-cli/SKILL.md" ] || td skill install claude-code
