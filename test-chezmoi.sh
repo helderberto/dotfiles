@@ -263,6 +263,8 @@ if $POST_APPLY; then
         fail "~/workspace missing"
     fi
     [ -d "$HOME/ai-desktop" ] && pass "~/ai-desktop exists" || fail "~/ai-desktop missing"
+    hidutil property --get UserKeyMapping | grep -q 'HIDKeyboardModifierMappingDst = 30064771296' \
+        && pass "capslock mapped to left ctrl" || fail "capslock not mapped (hidutil)"
 
     [ "$(jq -r '.statusLine.command' "$HOME/.claude/settings.json" 2>/dev/null)" = "~/.claude/statusline.sh" ] && pass "claude statusline configured" || fail "claude statusline not configured"
     claude mcp get chrome-devtools >/dev/null 2>&1 && pass "chrome-devtools mcp configured" || fail "chrome-devtools mcp missing"
@@ -317,6 +319,12 @@ cp "$CHEZMOI_SOURCE/dot_zshrc" "$ZSH_TMP/.zshrc"
 opt_backspace=$(ZDOTDIR="$ZSH_TMP" EDITOR=nvim zsh -ic "bindkey '^[^?'" 2>/dev/null | tail -1)
 rm -rf "$ZSH_TMP"
 [[ "$opt_backspace" == *backward-kill-word ]] && pass "opt+backspace deletes word with EDITOR=nvim" || fail "opt+backspace bound to '$opt_backspace' with EDITOR=nvim"
+
+CAPSLOCK_PLIST="$CHEZMOI_SOURCE/private_Library/LaunchAgents/local.capslock-ctrl.plist"
+plutil -lint "$CAPSLOCK_PLIST" >/dev/null 2>&1 && grep -q '"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0' "$CAPSLOCK_PLIST" \
+    && pass "capslock maps to left ctrl" || fail "capslock launch agent missing or invalid"
+grep -q 'launchctl bootstrap.*local.capslock-ctrl.plist' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh" \
+    && pass "macos script loads capslock agent" || fail "macos script doesn't load capslock agent"
 
 NVIM_PLUGINS="$CHEZMOI_SOURCE/dot_config/nvim/lua/plugins"
 NVIM_FORMATTERS=$(sed -n "s/^ *[a-z]* = { '\([^',]*\)' },$/\1/p" "$NVIM_PLUGINS/formatting.lua" | sort -u)

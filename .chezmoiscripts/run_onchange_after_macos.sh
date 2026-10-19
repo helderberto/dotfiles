@@ -12,4 +12,6 @@ defaults write com.apple.finder ShowPathbar -bool true                  # Finder
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true # No .DS_Store on network shares
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true     # No .DS_Store on USB drives
 
+launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/local.capslock-ctrl.plist 2>/dev/null || true # Caps Lock → Left Ctrl
+
 killall Dock Finder 2>/dev/null || true
