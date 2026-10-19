@@ -391,7 +391,7 @@ echo "13) brewfile coverage"
 
 BREWFILE="$CHEZMOI_SOURCE/Brewfile"
 for entry in 'cask "font-jetbrains-mono-nerd-font"' 'cask "shottr"' 'cask "deepl"' \
-    'brew "gh"' 'brew "jq"' 'brew "shellcheck"' 'brew "tree"' 'brew "hyperfine"' 'brew "tig"' 'brew "pandoc"' \
+    'brew "gh"' 'brew "jq"' 'brew "shellcheck"' 'brew "tree"' 'brew "hyperfine"' 'brew "tig"' 'brew "pandoc"' 'brew "todoist-cli"' \
     'mas "The Unarchiver", id: 425424353' 'mas "Presentify", id: 1507246666'; do
     if grep -qF "$entry" "$BREWFILE"; then
         pass "$entry"

@@ -31,6 +31,7 @@ brew "hyperfine"
 brew "tig"
 brew "pandoc"
 brew "uv"
+brew "todoist-cli"
 
 # Container runtime
 brew "colima"
