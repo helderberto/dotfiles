@@ -274,7 +274,7 @@ if $POST_APPLY; then
         [ "$type" = "-bool" ] && { [ "$value" = true ] && expected=1 || expected=0; }
         actual=$(defaults read "$domain" "$key" 2>/dev/null || echo unset)
         [ "$actual" = "$expected" ] && pass "$domain $key" || fail "$domain $key is $actual, expected $expected"
-    done < <(grep '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh")
+    done < <(grep '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_macos.sh" | sed 's/[[:space:]]*#.*//')
 fi
 
 # 10. Content asserts (regression guards for hardcoded values)
