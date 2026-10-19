@@ -16,3 +16,6 @@ mv "$settings.tmp" "$settings"
 
 claude mcp get chrome-devtools &>/dev/null || claude mcp add chrome-devtools --scope user -- npx -y chrome-devtools-mcp@latest
 [ -f "$HOME/.claude/skills/todoist-cli/SKILL.md" ] || td skill install claude-code
+
+claude plugin marketplace list | grep -q helderberto-skills || claude plugin marketplace add helderberto/agent-skills
+claude plugin list | grep -q hb@helderberto-skills || claude plugin install hb@helderberto-skills --scope user

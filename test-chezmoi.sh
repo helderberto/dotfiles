@@ -447,6 +447,7 @@ fi
 grep -qF '~/.claude/statusline.sh' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script wires statusline" || fail "claude script doesn't wire statusline"
 grep -qF 'chrome-devtools-mcp' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script adds chrome-devtools mcp" || fail "claude script doesn't add chrome-devtools mcp"
 grep -qF 'td skill install claude-code' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script installs todoist skill" || fail "claude script doesn't install todoist skill"
+grep -qF 'claude plugin install hb@helderberto-skills' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script installs hb plugin" || fail "claude script doesn't install hb plugin"
 
 for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl run_onchange_after_tmux.sh.tmpl; do
     rendered=$(chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$CHEZMOI_SOURCE/.chezmoiscripts/$script")
