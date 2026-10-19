@@ -21,13 +21,13 @@ New Mac → [New Mac](#new-mac). Mac already in use → [Existing Mac](#existing
 | ---- | ------ |
 | Packages | All of `Brewfile`: CLI tools, apps, fonts, App Store apps |
 | Ghostty | Catppuccin Mocha, JetBrainsMono Nerd Font, split keybinds |
-| Shell | zsh, Powerlevel10k prompt, autosuggestions, syntax highlighting, fzf, z |
+| Shell | zsh, Powerlevel10k prompt, autosuggestions, syntax highlighting, fzf, z, Opt+Backspace deletes word |
 | tmux | Config, plugins install on apply |
 | Neovim | Full config, plugins install on first launch |
 | Git | Config, aliases, global ignore, commit template |
 | Runtimes | asdf versions from `.tool-versions` |
 | Claude Code | Native install, `CLAUDE.md`, rules, statusline script |
-| macOS | Dock, key repeat, scrolling, Finder, no `.DS_Store` on shares, `~/workspace/labs`, SSH key |
+| macOS | Dock, key repeat, Caps Lock → Left Ctrl, scrolling, Finder, no `.DS_Store` on shares, `~/workspace/labs`, SSH key |
 
 </details>
 
