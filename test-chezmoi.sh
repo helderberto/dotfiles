@@ -264,6 +264,9 @@ if $POST_APPLY; then
     fi
     [ -d "$HOME/ai-desktop" ] && pass "~/ai-desktop exists" || fail "~/ai-desktop missing"
 
+    [ "$(jq -r '.statusLine.command' "$HOME/.claude/settings.json" 2>/dev/null)" = "~/.claude/statusline.sh" ] && pass "claude statusline configured" || fail "claude statusline not configured"
+    claude mcp get chrome-devtools >/dev/null 2>&1 && pass "chrome-devtools mcp configured" || fail "chrome-devtools mcp missing"
+
     while read -r _ _ domain key type value; do
         expected="$value"
         [ "$type" = "-bool" ] && { [ "$value" = true ] && expected=1 || expected=0; }
@@ -421,11 +424,14 @@ grep -q '^defaults write' "$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_ma
 
 [ ! -e "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_mas.sh" ] && pass "mas script merged into Brewfile" || fail "mas script still present"
 
-if grep -q "claude.ai/install.sh" "$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_claude-code.sh" 2>/dev/null; then
+CLAUDE_SCRIPT="$CHEZMOI_SOURCE/.chezmoiscripts/run_once_after_claude-code.sh.tmpl"
+if grep -q "claude.ai/install.sh" "$CLAUDE_SCRIPT" 2>/dev/null; then
     pass "claude code installer script present"
 else
     fail "claude code installer script missing"
 fi
+grep -qF '~/.claude/statusline.sh' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script wires statusline" || fail "claude script doesn't wire statusline"
+grep -qF 'chrome-devtools-mcp' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script adds chrome-devtools mcp" || fail "claude script doesn't add chrome-devtools mcp"
 
 for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl run_onchange_after_tmux.sh.tmpl; do
     rendered=$(chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$CHEZMOI_SOURCE/.chezmoiscripts/$script")

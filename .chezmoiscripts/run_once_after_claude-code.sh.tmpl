@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+{{- if eq .chezmoi.arch "arm64" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- else }}
+eval "$(/usr/local/bin/brew shellenv)"
+{{- end }}
+
+command -v claude &>/dev/null || curl -fsSL https://claude.ai/install.sh | bash
+export PATH="$HOME/.local/bin:$PATH"
+
+settings="$HOME/.claude/settings.json"
+[ -f "$settings" ] || echo '{}' > "$settings"
+jq '.statusLine = {type: "command", command: "~/.claude/statusline.sh"}' "$settings" > "$settings.tmp"
+mv "$settings.tmp" "$settings"
+
+claude mcp get chrome-devtools &>/dev/null || claude mcp add chrome-devtools --scope user -- npx -y chrome-devtools-mcp@latest
