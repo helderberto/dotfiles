@@ -283,7 +283,7 @@ echo "10) content asserts"
 
 GITCONFIG="$CHEZMOI_SOURCE/dot_gitconfig"
 if grep -q "name = Helder Burato Berto" "$GITCONFIG" && \
-   grep -q "email = helder.burato@gmail.com" "$GITCONFIG"; then
+   grep -q "email = hello@helderberto.com" "$GITCONFIG"; then
     pass "dot_gitconfig has expected name/email"
 else
     fail "dot_gitconfig missing expected name/email"
