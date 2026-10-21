@@ -281,6 +281,14 @@ fi
 echo ""
 echo "10) content asserts"
 
+for key in server.pem server.key private_dot_ssh/private_id_rsa private_dot_ssh/private_id_ed25519; do
+    if git -C "$CHEZMOI_SOURCE" check-ignore -q --no-index "$key"; then
+        pass ".gitignore ignores $key"
+    else
+        fail ".gitignore does not ignore $key"
+    fi
+done
+
 GITCONFIG="$CHEZMOI_SOURCE/dot_gitconfig"
 if grep -q "name = Helder Burato Berto" "$GITCONFIG" && \
    grep -q "email = hello@helderberto.com" "$GITCONFIG"; then
