@@ -147,6 +147,7 @@ SECRETS=$(grep -r -i -E "$SECRET_PATTERNS" "$CHEZMOI_SOURCE" \
     --exclude=".chezmoiignore" \
     --exclude=".gitignore" \
     --exclude="test-chezmoi.sh" \
+    --exclude="claude-settings.json" \
     | grep -v "keybind\|keyboard\|keyword\|1password" || true)
 if [ -n "$SECRETS" ]; then
     fail "potential secrets found:"
@@ -462,6 +463,11 @@ grep -qF '~/.claude/statusline.sh' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude 
 grep -qF 'chrome-devtools-mcp' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script adds chrome-devtools mcp" || fail "claude script doesn't add chrome-devtools mcp"
 grep -qF 'td skill install claude-code' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script installs todoist skill" || fail "claude script doesn't install todoist skill"
 grep -qF 'claude plugin install hb@helderberto-skills' "$CLAUDE_SCRIPT" 2>/dev/null && pass "claude script installs hb plugin" || fail "claude script doesn't install hb plugin"
+CLAUDE_SEED="$CHEZMOI_SOURCE/claude-settings.json"
+jq -e '.attribution.commit == "" and .idleCompaction == false and .editorMode == "vim"' "$CLAUDE_SEED" >/dev/null 2>&1 && pass "claude settings seed valid" || fail "claude settings seed missing or invalid"
+grep -qF '{{ include "claude-settings.json" }}' "$CLAUDE_SCRIPT" && pass "claude script merges settings seed" || fail "claude script doesn't merge settings seed"
+grep -qx 'claude-settings.json' "$CHEZMOI_SOURCE/.chezmoiignore" && pass "claude settings seed is repo-only" || fail "claude settings seed deployed as a file"
+! grep -qiE 'autoMode|runlayer|pagerduty|pd-internal' "$CLAUDE_SEED" 2>/dev/null && pass "claude settings seed has no work config" || fail "claude settings seed leaks work config"
 
 for script in run_onchange_before_packages.sh.tmpl run_onchange_after_asdf.sh.tmpl run_onchange_after_tmux.sh.tmpl; do
     rendered=$(chezmoi execute-template --source "$CHEZMOI_SOURCE" < "$CHEZMOI_SOURCE/.chezmoiscripts/$script")

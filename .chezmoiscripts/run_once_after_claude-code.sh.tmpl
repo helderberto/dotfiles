@@ -11,6 +11,10 @@ export PATH="$HOME/.local/bin:$PATH"
 
 settings="$HOME/.claude/settings.json"
 [ -f "$settings" ] || echo '{}' > "$settings"
+jq --argjson seed '{{ include "claude-settings.json" }}' \
+  '$seed * . | .permissions.deny = ($seed.permissions.deny + (.permissions.deny // []) | unique)' \
+  "$settings" > "$settings.tmp"
+mv "$settings.tmp" "$settings"
 jq '.statusLine = {type: "command", command: "~/.claude/statusline.sh"}' "$settings" > "$settings.tmp"
 mv "$settings.tmp" "$settings"
 
