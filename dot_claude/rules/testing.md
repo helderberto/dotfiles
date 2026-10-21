@@ -15,9 +15,12 @@ paths:
 
 ## Rules
 
-- Prefer `vi.spyOn` over `vi.mock` for your own code
-- Only use `vi.mock` for third-party libraries
+- Mocking:
+  - `vi.spyOn()` for most cases, easier to control
+  - `vi.mock()` only for third-party libraries
+  - `vi.stubGlobal()` for browser APIs
 - Don't test mocked behavior - test real integration
+- Increasing a timeout is NEVER a fix for a slow or flaky test. Find the slow step and fix it
 - Test output must be pristine (zero warnings/errors)
 - Group: Rendering → User Interactions → Edge Cases
 - Network: MSW for HTTP mocking
