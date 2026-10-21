@@ -22,6 +22,10 @@
 - 200 lines that could be 50 → rewrite. "Would a senior call this overcomplicated?" → simplify
 - No comments — code must self-document; comment only the non-obvious "why". When you do: ≤20 words/sentence, one idea per sentence, active voice, no em-dashes or parentheses
 
+## Claude Code
+
+- Worktree sessions: one plain command per Bash call, literal absolute paths, no shell variables as script args
+
 ## Git
 
 - Atomic commits: one per logical concern. Conventional commits, unless repo history says otherwise
