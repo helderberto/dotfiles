@@ -9,7 +9,7 @@ eval "$(/usr/local/bin/brew shellenv)"
 
 echo "Installing Homebrew packages..."
 
-brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+brew bundle --no-upgrade --file="{{ .chezmoi.sourceDir }}/Brewfile"
 
 BREW_PREFIX=$(brew --prefix)
 

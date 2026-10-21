@@ -413,6 +413,12 @@ else
     fail "packages script not keyed on Brewfile hash"
 fi
 
+if grep -qE '^brew bundle --no-upgrade ' "$PACKAGES_TMPL" 2>/dev/null; then
+    pass "packages script installs without upgrading"
+else
+    fail "packages script upgrades on apply"
+fi
+
 ASDF_TMPL="$CHEZMOI_SOURCE/.chezmoiscripts/run_onchange_after_asdf.sh.tmpl"
 if grep -qF '{{ include "dot_tool-versions" | sha256sum }}' "$ASDF_TMPL" 2>/dev/null && \
    grep -qF "done < \"\$HOME/.tool-versions\"" "$ASDF_TMPL"; then
