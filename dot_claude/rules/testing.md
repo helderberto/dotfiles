@@ -11,7 +11,7 @@ paths:
 ## Setup
 
 - Detect the runner from the manifest; greenfield → Vitest + React Testing Library
-- Create `customRender` helper with `defaultProps`
+- Create `customRender` helper with `defaultProps`, returning a `userEvent.setup()` instance as `user`
 
 ## Rules
 
@@ -25,8 +25,18 @@ paths:
 - Group: Rendering → User Interactions → Edge Cases
 - Network: MSW for HTTP mocking
 - Prefer `userEvent` over `fireEvent` — simulates real browser behavior
+  - `userEvent` is slower. When an interaction is the slow step, switch to `fireEvent`
 - If `render()` returns `user` (e.g. `const { user } = render(...)`), use that instance
-- Prefer `getByRole` / `getByText` over `container.querySelector` — query by accessibility, not DOM structure
+  - Otherwise `const user = userEvent.setup()` before `render()`. Never call `userEvent.click()` on the default instance
+- Split growing test files by feature/behavior. The runner parallelizes per file
+
+## Queries
+
+- Query by accessibility, not DOM structure. Never `container.querySelector`
+- Prefer `screen` over queries destructured from `render()`
+- Priority: `getByRole` → `getByLabelText` → `getByPlaceholderText` → `getByText` → `getByDisplayValue` → `getByAltText` → `getByTitle` → `getByTestId`
+- `getByTestId` only when nothing above matches (e.g. dynamic text)
+- Stuck on a query → `screen.logTestingPlaygroundURL()`
 
 ## Vitest Globals
 
