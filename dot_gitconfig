@@ -111,3 +111,9 @@
   alf = config --get-regexp alias | grep
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
+
+# Work email lives in an untracked file so it stays off this public repo
+[includeIf "gitdir:~/workspace/"]
+	path = ~/.work-gitconfig
+[includeIf "gitdir:~/workspace/labs/"]
+	path = ~/.gitconfig-personal
