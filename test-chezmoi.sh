@@ -311,6 +311,30 @@ else
     fail "dot_gitconfig rewrites clones to SSH, breaking installs before key setup"
 fi
 
+IDENTITY_HOME="$(mktemp -d)"
+cp "$GITCONFIG" "$IDENTITY_HOME/.gitconfig"
+cp "$CHEZMOI_SOURCE/dot_gitconfig-personal" "$IDENTITY_HOME/.gitconfig-personal" 2>/dev/null || true
+mkdir -p "$IDENTITY_HOME/workspace/work" "$IDENTITY_HOME/workspace/labs/side" "$IDENTITY_HOME/other"
+for repo in workspace/work workspace/labs/side other; do
+    git init -q "$IDENTITY_HOME/$repo"
+done
+identity() { HOME="$IDENTITY_HOME" GIT_CONFIG_NOSYSTEM=1 git -C "$IDENTITY_HOME/$1" config user.email; }
+if [ "$(identity workspace/work)" = "hello@helderberto.com" ] && \
+   [ "$(identity workspace/labs/side)" = "hello@helderberto.com" ]; then
+    pass "gitconfig falls back to personal email without ~/.work-gitconfig"
+else
+    fail "gitconfig breaks without ~/.work-gitconfig"
+fi
+printf '[user]\n  email = me@work.example\n' > "$IDENTITY_HOME/.work-gitconfig"
+if [ "$(identity workspace/work)" = "me@work.example" ] && \
+   [ "$(identity workspace/labs/side)" = "hello@helderberto.com" ] && \
+   [ "$(identity other)" = "hello@helderberto.com" ]; then
+    pass "gitconfig uses work email in ~/workspace, personal in labs"
+else
+    fail "gitconfig does not scope email by directory"
+fi
+rm -rf "$IDENTITY_HOME"
+
 if ! grep -q "^\[data\]" "$CHEZMOI_SOURCE/.chezmoi.toml.tmpl"; then
     pass ".chezmoi.toml.tmpl has no dead [data] section"
 else
