@@ -9,7 +9,6 @@ paths:
 - No `@ts-ignore` / `@ts-expect-error` / `eslint-disable` to make errors pass. If unavoidable (e.g. testing invalid scenarios), comment the reason
 - Define types for all props/state/functions; `Readonly` for immutable props
 - `interface` for objects, `type` for unions; objects over `enum`
-- Object options for 3+ params
 
 ## Immutability (new code only — overrides "match existing style")
 
