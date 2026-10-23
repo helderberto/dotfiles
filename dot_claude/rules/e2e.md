@@ -18,3 +18,21 @@ paths:
 - Stub third-party services; test only what you own
 - Passing on retry is still flaky. Fix it, don't add retries
 - Debug from traces/screenshots, not added logs
+- Split specs by flow. Runners parallelize per file
+- Always `await` actions and assertions. Lint with `@typescript-eslint/no-floating-promises`
+
+## Playwright
+
+- Shared setup in fixtures, combined with `mergeTests`. Specs import `test`/`expect` from the fixtures module
+- Pre-load state (cookies, `localStorage`, hiding dev-only UI) by overriding `context` with `addCookies` / `addInitScript`
+- Assert requests with `page.waitForRequest`. Create the promise before the triggering action
+- CI: `trace: 'on-first-retry'`, install only the browsers used, shard large suites
+
+## Cypress
+
+- Use `@testing-library/cypress` queries (`cy.findByRole`, ...)
+- Wait on aliased requests (`cy.intercept(...).as('x')` → `cy.wait('@x')`), never `cy.wait(ms)`
+- No `{ force: true }` without a comment explaining why
+- Log in with `cy.session()`
+- Never assign command return values. Chain, `.then()` or alias
+- Shadow DOM: wrap `cy.get(host).shadow()` + `.within()` in a custom command. Portals (toasts, modals) may live in a separate shadow root. `includeShadowDom` is the global alternative
