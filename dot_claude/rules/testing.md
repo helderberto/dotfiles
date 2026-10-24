@@ -11,7 +11,7 @@ paths:
 ## Setup
 
 - Detect the runner from the manifest; greenfield → Vitest + React Testing Library
-- Create `customRender` helper with `defaultProps`, returning a `userEvent.setup()` instance as `user`
+- Wrap Testing Library in `src/lib/testing-library/index.ts`: re-export what tests use, plus a `customRender` with `defaultProps` that returns a `userEvent.setup()` instance as `user`
 
 ## Rules
 
@@ -20,6 +20,7 @@ paths:
   - `vi.mock()` only for third-party libraries
   - `vi.stubGlobal()` for browser APIs
 - Don't test mocked behavior - test real integration
+- Every API endpoint gets an integration test
 - Increasing a timeout is NEVER a fix for a slow or flaky test. Find the slow step and fix it
 - Test output must be pristine (zero warnings/errors)
 - Group: Rendering → User Interactions → Edge Cases
@@ -42,6 +43,6 @@ paths:
 
 - `globals: true` = no vitest imports needed
 - `describe`, `it`, `expect`, `vi`, `beforeEach` auto-available
-- Only import `@testing-library/react`
+- Import Testing Library from the project's wrapper (`@/lib/testing-library`)
 
 For test typing patterns, see [TypeScript](typescript.md)
