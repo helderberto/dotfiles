@@ -1,6 +1,8 @@
 # AGENTS.md
 
 - Extreme concision in all interactions and commits. Sacrifice grammar for the sake of concision.
+- No explanations nobody asked for
+- Code, comments, commits and docs in English, whatever language the conversation is in
 - Always TDD: failing test first, even for vague asks ("fix bug" → reproducing test)
 - Prefer CLI over MCP; MCP only when the CLI can't do it
 - Repetitive edits → write a script, don't hand-edit N files
