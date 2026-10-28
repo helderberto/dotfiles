@@ -1,3 +1,6 @@
+# Taps
+tap "atlassian/homebrew-acli"
+
 # GNU utilities
 brew "coreutils"
 brew "moreutils"
@@ -32,6 +35,7 @@ brew "tig"
 brew "pandoc"
 brew "uv"
 brew "todoist-cli"
+brew "acli"
 
 # Container runtime
 brew "colima"
